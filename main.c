@@ -1,5 +1,4 @@
 #include "./pars/mslib.h"
-// #include "../include/minishell.h"
 # include <stdio.h>
 
 int main(int argc, char const *argv[], char **envp) {
@@ -18,7 +17,7 @@ int main(int argc, char const *argv[], char **envp) {
 		add_history(line);
 		if (first_fnc(&line, envp, &gen) == 1)
 			printf("there are errors\n");
-		// fmint's code И ЗДЕСЬ!!
+		logica(&gen);
 	}
 	return 0;
 }

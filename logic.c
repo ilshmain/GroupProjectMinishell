@@ -22,15 +22,13 @@ void	builtFunc(t_gnrl *zik, t_list *ptr)
 
 // *****************************************
 
-int logica(t_gnrl *zik)
+int logica(t_gnrl **zik)
 {
-	int i;
-
-	i = 0;
-	while (zik->cmd[i])
+	while ((*zik)->cmd->nextList)
 	{
-		if (zik->cmd->flg_pipe == 1)
-			builtFunc(zik, zik->ptr);
-		i++;
+		if ((*zik)->cmd->flg_pipe == 1)
+			builtFunc((*zik), (*zik)->ptr);
+		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
+	return (1);
 }

@@ -5,7 +5,7 @@
 # include <unistd.h>
 # include <readline/readline.h>
 # include <stdbool.h>
-// # include "../include/minishell.h"
+ # include "../include/minishell.h"
 
 typedef struct s_cmnd
 {
@@ -16,7 +16,7 @@ typedef struct s_cmnd
 
 typedef struct s_gnrl
 {
-	// t_list  *ptr;
+	 t_list  *ptr;
 	t_cmnd	*cmd;
 	int		errors;
 	char	**env;
@@ -50,5 +50,11 @@ char	*preUseFncDollar(char *line, int *i, char **env);
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine);
 t_cmnd	*ft_lstnewMS(void);
 char	**envPrisv(char **envp);
+int		logica(t_gnrl **zik);
+
+void	cdBuilt(t_list *ptr, t_gnrl *zik);
+void	echoBuilt(t_gnrl *zik);
+void	exportBuilt(t_list *ptr, t_gnrl *zik);
+void	unsetBuilt(t_list *ptr, t_gnrl *zik);
 
 #endif

@@ -12,8 +12,7 @@ set(BUILTS_FILES
         builts/pwd.c
         builts/unset.c
         builts/utils.c
-        include/minishell.h
-        logic.c)
+        include/minishell.h)
 
 set(SOURCE_FILES
         Libft/ft_strtrim.c 	    Libft/ft_strjoin.c	    Libft/ft_substr.c
@@ -30,4 +29,21 @@ set(SOURCE_FILES
         Libft/ft_lstlast.c	    Libft/ft_lstadd_back.c
         Libft/ft_strnstr.c 	    Libft/ft_strrchr.c 	    Libft/ft_tolower.c	Libft/ft_toupper.c Libft/libft.h)
 
-add_executable(checkMinishell ${BUILTS_FILES} ${SOURCE_FILES})
+set(PARS_FILES
+        pars/error_call.c
+        pars/ft_isalnum.c
+        pars/ft_split.c
+        pars/ft_strchr.c
+        pars/ft_strdup.c
+        pars/ft_strjoin.c
+        pars/ft_strlcat.c
+        pars/ft_strlcpy.c
+        pars/ft_strlen.c
+        pars/ft_strncmp.c
+        pars/ft_strnstr.c
+        pars/ft_substr.c
+        pars/mslib.h
+        logic.c
+        main.c)
+
+add_executable(checkMinishell ${BUILTS_FILES} ${SOURCE_FILES} ${PARS_FILES})

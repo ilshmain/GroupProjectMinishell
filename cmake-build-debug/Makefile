@@ -57,10 +57,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/fmint/Osnova/checkMinishell
+CMAKE_SOURCE_DIR = /Users/fmint/shell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/fmint/Osnova/checkMinishell/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/fmint/shell/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fmint/Osnova/checkMinishell/cmake-build-debug/CMakeFiles /Users/fmint/Osnova/checkMinishell/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fmint/shell/cmake-build-debug/CMakeFiles /Users/fmint/shell/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fmint/Osnova/checkMinishell/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fmint/shell/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1281,6 +1281,318 @@ logic.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/logic.c.s
 .PHONY : logic.c.s
 
+main.o: main.c.o
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/main.c.s
+.PHONY : main.c.s
+
+pars/error_call.o: pars/error_call.c.o
+.PHONY : pars/error_call.o
+
+# target to build an object file
+pars/error_call.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/error_call.c.o
+.PHONY : pars/error_call.c.o
+
+pars/error_call.i: pars/error_call.c.i
+.PHONY : pars/error_call.i
+
+# target to preprocess a source file
+pars/error_call.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/error_call.c.i
+.PHONY : pars/error_call.c.i
+
+pars/error_call.s: pars/error_call.c.s
+.PHONY : pars/error_call.s
+
+# target to generate assembly for a file
+pars/error_call.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/error_call.c.s
+.PHONY : pars/error_call.c.s
+
+pars/ft_isalnum.o: pars/ft_isalnum.c.o
+.PHONY : pars/ft_isalnum.o
+
+# target to build an object file
+pars/ft_isalnum.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o
+.PHONY : pars/ft_isalnum.c.o
+
+pars/ft_isalnum.i: pars/ft_isalnum.c.i
+.PHONY : pars/ft_isalnum.i
+
+# target to preprocess a source file
+pars/ft_isalnum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.i
+.PHONY : pars/ft_isalnum.c.i
+
+pars/ft_isalnum.s: pars/ft_isalnum.c.s
+.PHONY : pars/ft_isalnum.s
+
+# target to generate assembly for a file
+pars/ft_isalnum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.s
+.PHONY : pars/ft_isalnum.c.s
+
+pars/ft_split.o: pars/ft_split.c.o
+.PHONY : pars/ft_split.o
+
+# target to build an object file
+pars/ft_split.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_split.c.o
+.PHONY : pars/ft_split.c.o
+
+pars/ft_split.i: pars/ft_split.c.i
+.PHONY : pars/ft_split.i
+
+# target to preprocess a source file
+pars/ft_split.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_split.c.i
+.PHONY : pars/ft_split.c.i
+
+pars/ft_split.s: pars/ft_split.c.s
+.PHONY : pars/ft_split.s
+
+# target to generate assembly for a file
+pars/ft_split.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_split.c.s
+.PHONY : pars/ft_split.c.s
+
+pars/ft_strchr.o: pars/ft_strchr.c.o
+.PHONY : pars/ft_strchr.o
+
+# target to build an object file
+pars/ft_strchr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o
+.PHONY : pars/ft_strchr.c.o
+
+pars/ft_strchr.i: pars/ft_strchr.c.i
+.PHONY : pars/ft_strchr.i
+
+# target to preprocess a source file
+pars/ft_strchr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.i
+.PHONY : pars/ft_strchr.c.i
+
+pars/ft_strchr.s: pars/ft_strchr.c.s
+.PHONY : pars/ft_strchr.s
+
+# target to generate assembly for a file
+pars/ft_strchr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.s
+.PHONY : pars/ft_strchr.c.s
+
+pars/ft_strdup.o: pars/ft_strdup.c.o
+.PHONY : pars/ft_strdup.o
+
+# target to build an object file
+pars/ft_strdup.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o
+.PHONY : pars/ft_strdup.c.o
+
+pars/ft_strdup.i: pars/ft_strdup.c.i
+.PHONY : pars/ft_strdup.i
+
+# target to preprocess a source file
+pars/ft_strdup.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.i
+.PHONY : pars/ft_strdup.c.i
+
+pars/ft_strdup.s: pars/ft_strdup.c.s
+.PHONY : pars/ft_strdup.s
+
+# target to generate assembly for a file
+pars/ft_strdup.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.s
+.PHONY : pars/ft_strdup.c.s
+
+pars/ft_strjoin.o: pars/ft_strjoin.c.o
+.PHONY : pars/ft_strjoin.o
+
+# target to build an object file
+pars/ft_strjoin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o
+.PHONY : pars/ft_strjoin.c.o
+
+pars/ft_strjoin.i: pars/ft_strjoin.c.i
+.PHONY : pars/ft_strjoin.i
+
+# target to preprocess a source file
+pars/ft_strjoin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.i
+.PHONY : pars/ft_strjoin.c.i
+
+pars/ft_strjoin.s: pars/ft_strjoin.c.s
+.PHONY : pars/ft_strjoin.s
+
+# target to generate assembly for a file
+pars/ft_strjoin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.s
+.PHONY : pars/ft_strjoin.c.s
+
+pars/ft_strlcat.o: pars/ft_strlcat.c.o
+.PHONY : pars/ft_strlcat.o
+
+# target to build an object file
+pars/ft_strlcat.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o
+.PHONY : pars/ft_strlcat.c.o
+
+pars/ft_strlcat.i: pars/ft_strlcat.c.i
+.PHONY : pars/ft_strlcat.i
+
+# target to preprocess a source file
+pars/ft_strlcat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.i
+.PHONY : pars/ft_strlcat.c.i
+
+pars/ft_strlcat.s: pars/ft_strlcat.c.s
+.PHONY : pars/ft_strlcat.s
+
+# target to generate assembly for a file
+pars/ft_strlcat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.s
+.PHONY : pars/ft_strlcat.c.s
+
+pars/ft_strlcpy.o: pars/ft_strlcpy.c.o
+.PHONY : pars/ft_strlcpy.o
+
+# target to build an object file
+pars/ft_strlcpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o
+.PHONY : pars/ft_strlcpy.c.o
+
+pars/ft_strlcpy.i: pars/ft_strlcpy.c.i
+.PHONY : pars/ft_strlcpy.i
+
+# target to preprocess a source file
+pars/ft_strlcpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.i
+.PHONY : pars/ft_strlcpy.c.i
+
+pars/ft_strlcpy.s: pars/ft_strlcpy.c.s
+.PHONY : pars/ft_strlcpy.s
+
+# target to generate assembly for a file
+pars/ft_strlcpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.s
+.PHONY : pars/ft_strlcpy.c.s
+
+pars/ft_strlen.o: pars/ft_strlen.c.o
+.PHONY : pars/ft_strlen.o
+
+# target to build an object file
+pars/ft_strlen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o
+.PHONY : pars/ft_strlen.c.o
+
+pars/ft_strlen.i: pars/ft_strlen.c.i
+.PHONY : pars/ft_strlen.i
+
+# target to preprocess a source file
+pars/ft_strlen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.i
+.PHONY : pars/ft_strlen.c.i
+
+pars/ft_strlen.s: pars/ft_strlen.c.s
+.PHONY : pars/ft_strlen.s
+
+# target to generate assembly for a file
+pars/ft_strlen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.s
+.PHONY : pars/ft_strlen.c.s
+
+pars/ft_strncmp.o: pars/ft_strncmp.c.o
+.PHONY : pars/ft_strncmp.o
+
+# target to build an object file
+pars/ft_strncmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o
+.PHONY : pars/ft_strncmp.c.o
+
+pars/ft_strncmp.i: pars/ft_strncmp.c.i
+.PHONY : pars/ft_strncmp.i
+
+# target to preprocess a source file
+pars/ft_strncmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.i
+.PHONY : pars/ft_strncmp.c.i
+
+pars/ft_strncmp.s: pars/ft_strncmp.c.s
+.PHONY : pars/ft_strncmp.s
+
+# target to generate assembly for a file
+pars/ft_strncmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.s
+.PHONY : pars/ft_strncmp.c.s
+
+pars/ft_strnstr.o: pars/ft_strnstr.c.o
+.PHONY : pars/ft_strnstr.o
+
+# target to build an object file
+pars/ft_strnstr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o
+.PHONY : pars/ft_strnstr.c.o
+
+pars/ft_strnstr.i: pars/ft_strnstr.c.i
+.PHONY : pars/ft_strnstr.i
+
+# target to preprocess a source file
+pars/ft_strnstr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.i
+.PHONY : pars/ft_strnstr.c.i
+
+pars/ft_strnstr.s: pars/ft_strnstr.c.s
+.PHONY : pars/ft_strnstr.s
+
+# target to generate assembly for a file
+pars/ft_strnstr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.s
+.PHONY : pars/ft_strnstr.c.s
+
+pars/ft_substr.o: pars/ft_substr.c.o
+.PHONY : pars/ft_substr.o
+
+# target to build an object file
+pars/ft_substr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o
+.PHONY : pars/ft_substr.c.o
+
+pars/ft_substr.i: pars/ft_substr.c.i
+.PHONY : pars/ft_substr.i
+
+# target to preprocess a source file
+pars/ft_substr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_substr.c.i
+.PHONY : pars/ft_substr.c.i
+
+pars/ft_substr.s: pars/ft_substr.c.s
+.PHONY : pars/ft_substr.s
+
+# target to generate assembly for a file
+pars/ft_substr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_substr.c.s
+.PHONY : pars/ft_substr.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1434,6 +1746,45 @@ help:
 	@echo "... logic.o"
 	@echo "... logic.i"
 	@echo "... logic.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... pars/error_call.o"
+	@echo "... pars/error_call.i"
+	@echo "... pars/error_call.s"
+	@echo "... pars/ft_isalnum.o"
+	@echo "... pars/ft_isalnum.i"
+	@echo "... pars/ft_isalnum.s"
+	@echo "... pars/ft_split.o"
+	@echo "... pars/ft_split.i"
+	@echo "... pars/ft_split.s"
+	@echo "... pars/ft_strchr.o"
+	@echo "... pars/ft_strchr.i"
+	@echo "... pars/ft_strchr.s"
+	@echo "... pars/ft_strdup.o"
+	@echo "... pars/ft_strdup.i"
+	@echo "... pars/ft_strdup.s"
+	@echo "... pars/ft_strjoin.o"
+	@echo "... pars/ft_strjoin.i"
+	@echo "... pars/ft_strjoin.s"
+	@echo "... pars/ft_strlcat.o"
+	@echo "... pars/ft_strlcat.i"
+	@echo "... pars/ft_strlcat.s"
+	@echo "... pars/ft_strlcpy.o"
+	@echo "... pars/ft_strlcpy.i"
+	@echo "... pars/ft_strlcpy.s"
+	@echo "... pars/ft_strlen.o"
+	@echo "... pars/ft_strlen.i"
+	@echo "... pars/ft_strlen.s"
+	@echo "... pars/ft_strncmp.o"
+	@echo "... pars/ft_strncmp.i"
+	@echo "... pars/ft_strncmp.s"
+	@echo "... pars/ft_strnstr.o"
+	@echo "... pars/ft_strnstr.i"
+	@echo "... pars/ft_strnstr.s"
+	@echo "... pars/ft_substr.o"
+	@echo "... pars/ft_substr.i"
+	@echo "... pars/ft_substr.s"
 .PHONY : help
 
 
