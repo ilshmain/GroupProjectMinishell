@@ -17,7 +17,7 @@ void	builtFunc(t_gnrl *zik, t_list *ptr)
 		levelUpBash(ptr);
 	if (ft_strcmp(zik->cmd->command_array[0], "unset") == 0)
 		unsetBuilt(ptr, zik);
-	printEnvBuilt(ptr);
+//	printEnvBuilt(ptr);
 }
 
 // *****************************************
@@ -30,5 +30,6 @@ int logica(t_gnrl **zik)
 			builtFunc((*zik), (*zik)->ptr);
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
+	builtFunc((*zik), (*zik)->ptr);
 	return (1);
 }

@@ -16,7 +16,7 @@ typedef struct s_cmnd
 
 typedef struct s_gnrl
 {
-	 t_list  *ptr;
+	t_list  *ptr;
 	t_cmnd	*cmd;
 	int		errors;
 	char	**env;

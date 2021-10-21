@@ -26,11 +26,9 @@ stdlib.h
 ../pars/mslib.h
 /Users/hportife/hportife/gitTest/pars/mslib.h
 
-/Users/hportife/hportife/gitTest/main.c
-./pars/mslib.h
-/Users/hportife/hportife/gitTest/pars/mslib.h
-stdio.h
--
+/Users/hportife/hportife/gitTest/logic.c
+include/minishell.h
+/Users/hportife/hportife/gitTest/include/minishell.h
 
 /Users/hportife/hportife/gitTest/pars/mslib.h
 stdio.h

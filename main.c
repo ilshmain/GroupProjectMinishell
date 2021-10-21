@@ -7,9 +7,9 @@ int main(int argc, char const *argv[], char **envp) {
 	char	*line;
 	t_gnrl	*gen;
 
-	gen = malloc(sizeof (gen));
+	gen = malloc(sizeof (t_gnrl));
 	gen->env = envPrisv(envp);
-//ЗДЕСЬ!!!!!!!!!!
+	initialEnv(envp, &gen->ptr, 0);
 	while (1)
 	{
 		gen->errors = 0;
@@ -52,9 +52,9 @@ int	first_fnc(char **line, char **env, t_gnrl **gen)
 	printf("1 array command: %s\n", (*gen)->cmd->command_array[0]);
 	printf("1 array arg: %s\n", (*gen)->cmd->command_array[1]);
 	printf("1 array flgpipe: %d\n", (*gen)->cmd->flg_pipe);
-	 printf("2 array command: %s\n", (*gen)->cmd->nextList->command_array[0]);
-	 printf("2 array arg: %s\n", (*gen)->cmd->nextList->command_array[1]);
-	 printf("2 array flgpipe: %d\n", (*gen)->cmd->nextList->flg_pipe);
+//	 printf("2 array command: %s\n", (*gen)->cmd->nextList->command_array[0]);
+//	 printf("2 array arg: %s\n", (*gen)->cmd->nextList->command_array[1]);
+//	 printf("2 array flgpipe: %d\n", (*gen)->cmd->nextList->flg_pipe);
 	// printf("3 array command: %s\n", (*gen)->cmd->nextList->nextList->command_array[0]);
 	// printf("3 array arg: %s\n", (*gen)->cmd->nextList->nextList->command_array[1]);
 	// printf("3 array flgpipe: %d\n", (*gen)->cmd->nextList->nextList->flg_pipe);
