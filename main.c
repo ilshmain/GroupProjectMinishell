@@ -52,9 +52,9 @@ int	first_fnc(char **line, char **env, t_gnrl **gen)
 	printf("1 array command: %s\n", (*gen)->cmd->command_array[0]);
 	printf("1 array arg: %s\n", (*gen)->cmd->command_array[1]);
 	printf("1 array flgpipe: %d\n", (*gen)->cmd->flg_pipe);
-	// printf("2 array command: %s\n", (*gen)->cmd->nextList->command_array[0]);
-	// printf("2 array arg: %s\n", (*gen)->cmd->nextList->command_array[1]);
-	// printf("2 array flgpipe: %d\n", (*gen)->cmd->nextList->flg_pipe);
+	 printf("2 array command: %s\n", (*gen)->cmd->nextList->command_array[0]);
+	 printf("2 array arg: %s\n", (*gen)->cmd->nextList->command_array[1]);
+	 printf("2 array flgpipe: %d\n", (*gen)->cmd->nextList->flg_pipe);
 	// printf("3 array command: %s\n", (*gen)->cmd->nextList->nextList->command_array[0]);
 	// printf("3 array arg: %s\n", (*gen)->cmd->nextList->nextList->command_array[1]);
 	// printf("3 array flgpipe: %d\n", (*gen)->cmd->nextList->nextList->flg_pipe);
@@ -84,8 +84,8 @@ t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine)
 		commandLine->nextList = fnc_pars(&line[k], 0, ft_lstnewMS());
 		commandLine->flg_pipe = 1;
 	}
-	else
-		return (NULL);
+//	else if ()
+//		return (NULL);
 	commandLine->command_array[1] = ft_substrMS(line, beginOfLine, i - beginOfLine);
 	return (commandLine);
 }
@@ -94,8 +94,8 @@ t_cmnd	*ft_lstnewMS(void)
 {
 	t_cmnd *tmp;
 
-	tmp = malloc(sizeof (t_cmnd));
-	tmp->command_array = malloc(sizeof (char*));
+	tmp = malloc(sizeof (t_cmnd) * 1);
+	tmp->command_array = malloc(sizeof (char*) * 1);
 	tmp->flg_pipe = 0;
 	tmp->nextList = NULL;
 	return (tmp);
