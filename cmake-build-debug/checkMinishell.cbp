@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/fmint/shell/cmake-build-debug"/>
+				<Option working_dir="/Users/hportife/hportife/gitTest/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/fmint/shell/cmake-build-debug"/>
+				<Option working_dir="/Users/hportife/hportife/gitTest/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/fmint/shell/cmake-build-debug"/>
+				<Option working_dir="/Users/hportife/hportife/gitTest/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="checkMinishell">
-				<Option output="/Users/fmint/shell/cmake-build-debug/checkMinishell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/fmint/shell/cmake-build-debug"/>
+				<Option output="/Users/hportife/hportife/gitTest/cmake-build-debug/checkMinishell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/hportife/hportife/gitTest/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -51,15 +51,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 checkMinishell"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 checkMinishell"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="checkMinishell/fast">
-				<Option output="/Users/fmint/shell/cmake-build-debug/checkMinishell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/fmint/shell/cmake-build-debug"/>
+				<Option output="/Users/hportife/hportife/gitTest/cmake-build-debug/checkMinishell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/hportife/hportife/gitTest/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -71,206 +71,206 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 checkMinishell/fast"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/fmint/shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 checkMinishell/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/hportife/hportife/gitTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/fmint/shell/Libft/ft_atoi.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_atoi.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_bzero.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_bzero.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_calloc.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_calloc.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_isalnum.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_isalnum.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_isalpha.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_isalpha.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_isascii.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_isascii.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_isdigit.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_isdigit.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_isprint.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_isprint.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_itoa.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_itoa.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_lstadd_back.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_lstadd_back.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_lstadd_front.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_lstadd_front.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_lstlast.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_lstlast.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_lstnew.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_lstnew.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_lstsize.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_lstsize.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_memccpy.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_memccpy.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_memchr.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_memchr.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_memcmp.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_memcmp.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_memcpy.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_memcpy.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_memmove.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_memmove.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_memset.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_memset.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_putchar_fd.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_putchar_fd.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_putendl_fd.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_putendl_fd.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_putnbr_fd.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_putnbr_fd.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_putstr_fd.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_putstr_fd.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_split.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_split.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strchr.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strchr.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strdup.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strdup.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strjoin.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strjoin.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strlcat.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strlcat.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strlcpy.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strlcpy.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strlen.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strlen.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strmapi.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strmapi.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strncmp.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strncmp.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strnstr.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strnstr.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strrchr.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strrchr.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_strtrim.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_strtrim.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_substr.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_substr.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_tolower.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_tolower.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/ft_toupper.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/ft_toupper.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/Libft/libft.h">
+		<Unit filename="/Users/hportife/hportife/gitTest/Libft/libft.h">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/builts/bash.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/builts/bash.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/builts/cd.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/builts/cd.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/builts/echo.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/builts/echo.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/builts/env.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/builts/env.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/builts/export.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/builts/export.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/builts/pwd.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/builts/pwd.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/builts/unset.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/builts/unset.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/builts/utils.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/builts/utils.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/include/minishell.h">
+		<Unit filename="/Users/hportife/hportife/gitTest/include/minishell.h">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/logic.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/logic.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/main.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/main.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/error_call.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/error_call.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_isalnum.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_isalnum.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_split.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_split.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_strchr.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_strchr.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_strdup.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_strdup.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_strjoin.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_strjoin.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_strlcat.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_strlcat.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_strlcpy.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_strlcpy.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_strlen.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_strlen.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_strncmp.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_strncmp.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_strnstr.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_strnstr.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/ft_substr.c">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/ft_substr.c">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/pars/mslib.h">
+		<Unit filename="/Users/hportife/hportife/gitTest/pars/mslib.h">
 			<Option target="checkMinishell"/>
 		</Unit>
-		<Unit filename="/Users/fmint/shell/CMakeLists.txt">
+		<Unit filename="/Users/hportife/hportife/gitTest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 project(checkMinishell C)
 
+set(CMAKE_C_FLAGS "-lreadline")
+
 set(CMAKE_C_STANDARD 99)
 
 set(BUILTS_FILES
@@ -46,4 +48,4 @@ set(PARS_FILES
         logic.c
         main.c)
 
-add_executable(checkMinishell ${BUILTS_FILES} ${SOURCE_FILES} ${PARS_FILES})
+add_executable(checkMinishell ${BUILTS_FILES} ${SOURCE_FILES} ${PARS_FILES} )
