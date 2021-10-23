@@ -5,12 +5,17 @@
 # include <unistd.h>
 # include <readline/readline.h>
 # include <stdbool.h>
- # include "../include/minishell.h"
+# include "../include/minishell.h"
+#include <fcntl.h>
 
 typedef struct s_cmnd
 {
-	char	**command_array;
-	int		flg_pipe;
+	char			**command_array;
+	int				flg_pipe;
+	int				fd_open;
+	int				fd_write;
+	int				fd_reWrite;
+	char 			*heredoc;
 	struct s_cmnd	*nextList;
 }	t_cmnd;
 

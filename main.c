@@ -14,10 +14,11 @@ int main(int argc, char const *argv[], char **envp) {
 	{
 		gen->errors = 0;
 		line = readline("minishell$ ");
-		add_history(line);
+		printf("%s\n", line);
 		if (first_fnc(&line, envp, &gen) == 1)
 			printf("there are errors\n");
-		logica(&gen);
+		else
+			logica(&gen);
 	}
 	return 0;
 }
@@ -42,23 +43,64 @@ int	first_fnc(char **line, char **env, t_gnrl **gen)
 			line[0] = preUseFncDQuot(line[0], &i, env, gen);
 		else if (line[0][i] == '$')
 			line[0] = preUseFncDollar(line[0], &i, env);
+		else if (line[0][i] == '>' || line[0][i] == '<')
+			line[0] = preUseFncRedir(line[0], &i, gen);
 		else
 			i++;
 	}
-//	printf("%s\n", line[0]);
 	(*gen)->cmd = fnc_pars(line[0], 0, ft_lstnewMS());
 	if ((*gen)->cmd == NULL)
 		(*gen)->errors = 1;
-	printf("1 array command: %s\n", (*gen)->cmd->command_array[0]);
-	printf("1 array arg: %s\n", (*gen)->cmd->command_array[1]);
-	printf("1 array flgpipe: %d\n", (*gen)->cmd->flg_pipe);
-//	 printf("2 array command: %s\n", (*gen)->cmd->nextList->command_array[0]);
-//	 printf("2 array arg: %s\n", (*gen)->cmd->nextList->command_array[1]);
-//	 printf("2 array flgpipe: %d\n", (*gen)->cmd->nextList->flg_pipe);
-	// printf("3 array command: %s\n", (*gen)->cmd->nextList->nextList->command_array[0]);
-	// printf("3 array arg: %s\n", (*gen)->cmd->nextList->nextList->command_array[1]);
-	// printf("3 array flgpipe: %d\n", (*gen)->cmd->nextList->nextList->flg_pipe);
 	return ((*gen)->errors);
+}
+
+char *preUseFncRedir(char *line, int *i, t_gnrl *gen)
+{
+	char	*tmp;
+
+	tmp = fnc_redir(line, i, gen);
+	free (line);
+	return (tmp);
+}
+
+char *fnc_redir(char *line, int *i, t_gnrl *gen)
+{
+	if (line[*i] == '>' && line[*i + 1] == '>')
+		line = fncRedirWrite(line, ++i, gen);
+	if (line[*i] == '>')
+		line = fncRedirReWrite(line, i, gen);
+	if (line[*i] == '<' && line[*i + 1] == '<')
+		line = fncReidHereDoc(line, ++i, gen);
+	if (line[*i] == '<')
+		line = fncRedirOpen(line, i, gen);
+	return (line);
+}
+
+char *fncRedirReWrite(char *line, int *i, t_gnrl *gen)
+{
+	int nameLen;
+	char *nameFile;
+	int fd;
+
+	while (ft_isalnum(line[*i])) //пропускаем все символы кроме цифр и букв
+	{
+		if (line[*i] == '>' || line[*i] == '<') // если редир, ретёрнаем с ошибкой
+		{
+			gen->errors = 1;
+			return (line);
+		}
+		i++;
+	}
+	nameLen = *i;
+	while (line[nameLen] != ' ') // пропускаем символы, которые не могут входить в нейминг
+		nameLen++;
+	nameFile = ft_substr(line, *i, nameLen); // берём имя
+	fd = open(nameFile, O_TRUNC); // открываем на перезапись
+	if (fd == -1) //если файла не существует, создаём
+		fd = open(nameFile, O_CREAT);
+	//эесли дескриптора не было, если был, то надо закрытьы
+	gen->cmd->fd_reWrite = fd; // записываем дескриптор
+	return (line);
 }
 
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine)
@@ -66,7 +108,7 @@ t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine)
 	int i;
 
 	i = 0;
-	while (line[i] != ' ')
+	while (line[i] && line[i] != ' ')
 		i++;
 	commandLine->command_array[0] = ft_substrMS(line, beginOfLine, i - beginOfLine);
 	beginOfLine = i;
