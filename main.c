@@ -8,14 +8,15 @@ int main(int argc, char const *argv[], char **envp) {
 	t_gnrl	*gen;
 
 	gen = malloc(sizeof (t_gnrl));
+//	genInit(&gen);
 	gen->env = envPrisv(envp);
 	initialEnv(envp, &gen->ptr, 0);
 	while (1)
 	{
 		gen->errors = 0;
 		line = readline("minishell$ ");
-		printf("%s\n", line);
-		if (first_fnc(&line, envp, &gen) == 1)
+//		printf("%s\n", line);
+		if (first_fnc(&line, envp, &gen, 0) == 1)
 			printf("there are errors\n");
 		else
 			logica(&gen);
@@ -28,11 +29,10 @@ char	**envPrisv(char **envp)
 	return (envp);
 }
 
-int	first_fnc(char **line, char **env, t_gnrl **gen)
+int	first_fnc(char **line, char **env, t_gnrl **gen, int i)
 {
-	int	i;
-
-	i = 0;
+//	line = ft_strdupMS(line);
+	(*gen)->cmd = ft_lstnewMS();
 	while (line[0][i])
 	{
 		if (line[0][i] == '\'')
@@ -54,52 +54,85 @@ int	first_fnc(char **line, char **env, t_gnrl **gen)
 	return ((*gen)->errors);
 }
 
-char *preUseFncRedir(char *line, int *i, t_gnrl *gen)
+char *preUseFncRedir(char *line, int *i, t_gnrl **gen)
 {
 	char	*tmp;
 
-	tmp = fnc_redir(line, i, gen);
-	free (line);
+	if (line[*i] == '>' && line[*i + 1] == '>')
+		tmp = fnc_redir(line, ++i, gen, 1);
+	if (line[*i] == '>')
+		tmp = fnc_redir(line, i, gen, 2);
+	//	if (line[*i] == '<' && line[*i + 1] == '<')
+	//		tmp = fnc_redir(line, ++i, gen, 3);
+	if (line[*i] == '<')
+		tmp = fnc_redir(line, i, gen, 4);
+//	free (line); // задекоментить, когда будет изменяться лайн (удаляться символы редиров)
 	return (tmp);
 }
 
-char *fnc_redir(char *line, int *i, t_gnrl *gen)
-{
-	if (line[*i] == '>' && line[*i + 1] == '>')
-		line = fncRedirWrite(line, ++i, gen);
-	if (line[*i] == '>')
-		line = fncRedirReWrite(line, i, gen);
-	if (line[*i] == '<' && line[*i + 1] == '<')
-		line = fncReidHereDoc(line, ++i, gen);
-	if (line[*i] == '<')
-		line = fncRedirOpen(line, i, gen);
-	return (line);
-}
-
-char *fncRedirReWrite(char *line, int *i, t_gnrl *gen)
+char *fnc_redir(char *line, int *i, t_gnrl **gen, int ident)
 {
 	int nameLen;
 	char *nameFile;
-	int fd;
 
-	while (ft_isalnum(line[*i])) //пропускаем все символы кроме цифр и букв
-	{
-		if (line[*i] == '>' || line[*i] == '<') // если редир, ретёрнаем с ошибкой
-		{
-			gen->errors = 1;
-			return (line);
-		}
-		i++;
-	}
+	while (ft_isalnum(line[*i]) == 0) //пропускаем все символы кроме цифр и букв
+		*i += 1;
 	nameLen = *i;
-	while (line[nameLen] != ' ') // пропускаем символы, которые не могут входить в нейминг
+	while (line[nameLen] && line[nameLen] != ' ') // пропускаем символы, которые не могут входить в нейминг
 		nameLen++;
 	nameFile = ft_substr(line, *i, nameLen); // берём имя
+	if (ident == 1)
+		fncRedirWrite(line, i, gen, nameFile);
+	else if (ident == 2)
+		fncRedirReWrite(line, i, gen, nameFile);
+//	else if (ident == 3)
+//		fncRedirHeredoc(line, i, gen);
+	else if (ident == 4)
+		fncRedirOpen(line, i, gen, nameFile);
+	return (line);
+}
+
+char *fncRedirOpen(char *line, int *i, t_gnrl **gen, char *nameFile)
+{
+	int fd;
+	if ((*gen)->cmd->fd_open)
+		close((*gen)->cmd->fd_open);//если дескриптора не было, если был, то надо закрыть
+	fd = open(nameFile, O_RDONLY); // открываем на чтение
+	if (fd == -1)
+	{
+		(*gen)->errors = 1;
+		return (line);
+	}
+	(*gen)->cmd->fd_open = fd; // записываем дескриптор
+	return (line);
+}
+
+char *fncRedirWrite(char *line, int *i, t_gnrl **gen, char *nameFile)
+{
+	int fd;
+
+	if ((*gen)->cmd->fd_write)
+		close((*gen)->cmd->fd_write);//если дескриптора не было, если был, то надо закрыть
+	fd = open(nameFile, O_CREAT); // открываем на дозапись
+	if (fd == -1)
+	{
+		(*gen)->errors = 1;
+		return (line);
+	}
+	(*gen)->cmd->fd_write = fd; // записываем дескриптор
+	return (line);
+}
+
+char *fncRedirReWrite(char *line, int *i, t_gnrl **gen, char *nameFile)
+{
+	int fd;
+
+	if ((*gen)->cmd->fd_reWrite)
+		close((*gen)->cmd->fd_reWrite);//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_TRUNC); // открываем на перезапись
 	if (fd == -1) //если файла не существует, создаём
 		fd = open(nameFile, O_CREAT);
-	//эесли дескриптора не было, если был, то надо закрытьы
-	gen->cmd->fd_reWrite = fd; // записываем дескриптор
+	(*gen)->cmd->fd_reWrite = fd; // записываем дескриптор
 	return (line);
 }
 
@@ -139,6 +172,10 @@ t_cmnd	*ft_lstnewMS(void)
 	tmp = malloc(sizeof (t_cmnd) * 1);
 	tmp->command_array = malloc(sizeof (char*) * 1);
 	tmp->flg_pipe = 0;
+	tmp->fd_reWrite = 0;
+	tmp->fd_write = 0;
+	tmp->fd_open = 0;
+	tmp->heredoc = NULL;
 	tmp->nextList = NULL;
 	return (tmp);
 }

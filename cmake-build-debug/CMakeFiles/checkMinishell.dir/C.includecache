@@ -45,4 +45,6 @@ stdbool.h
 -
 ../include/minishell.h
 /Users/hportife/hportife/gitTest/include/minishell.h
+fcntl.h
+-
 

@@ -38,7 +38,7 @@ void	error_call(char *message);
 void	ft_putstr_fdMS(char *s, int fd);
 char	*ft_substrMS(char const *s, unsigned int start, size_t len);
 char	*ft_strdupMS(const char *s1);
-int		first_fnc(char **line, char **env, t_gnrl **gen);
+int		first_fnc(char **line, char **env, t_gnrl **gen, int i);
 char	*fnc_quot(char *line, int *i, t_gnrl **gen);
 char	*fnc_dquot(char *line, int *i, char **env, t_gnrl **gen);
 char	*fnc_bslsh(char *line, int *i,t_gnrl **gen);
@@ -54,6 +54,14 @@ char	*preUseFncDQuot(char *line, int *i, char **env, t_gnrl **gen);
 char	*preUseFncDollar(char *line, int *i, char **env);
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine);
 t_cmnd	*ft_lstnewMS(void);
+void	genInit(t_gnrl **gen);
+
+char	*preUseFncRedir(char *line, int *i, t_gnrl **gen);
+char	*fnc_redir(char *line, int *i, t_gnrl **gen, int ident);
+char	*fncRedirOpen(char *line, int *i, t_gnrl **gen, char *nameFile);
+char	*fncRedirReWrite(char *line, int *i, t_gnrl **gen, char *nameFile);
+char	*fncRedirWrite(char *line, int *i, t_gnrl **gen, char *nameFile);
+
 char	**envPrisv(char **envp);
 int		logica(t_gnrl **zik);
 
