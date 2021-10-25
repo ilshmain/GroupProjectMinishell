@@ -6,22 +6,28 @@ int main(int argc, char const *argv[], char **envp) {
 	(void)argv;
 	char	*line;
 	t_gnrl	*gen;
+//	int history;
 
 	gen = malloc(sizeof (t_gnrl));
 //	genInit(&gen);
 	gen->env = envPrisv(envp);
 	initialEnv(envp, &gen->ptr, 0);
+	exefnc(&line, &gen);
+	return 0;
+}
+
+void exefnc(char **line, t_gnrl **gen)
+{
 	while (1)
 	{
-		gen->errors = 0;
-		line = readline("minishell$ ");
-//		printf("%s\n", line);
-		if (first_fnc(&line, envp, &gen, 0) == 1)
+		(*gen)->errors = 0;
+		*line = readline("minishell$ ");
+		printf("%d\n", add_history(*line));
+		if (first_fnc(line, (*gen)->env, gen, 0) == 1)
 			printf("there are errors\n");
 		else
-			logica(&gen);
+			logica(gen);
 	}
-	return 0;
 }
 
 char	**envPrisv(char **envp)
@@ -75,12 +81,16 @@ char *fnc_redir(char *line, int *i, t_gnrl **gen, int ident)
 	int nameLen;
 	char *nameFile;
 
-	while (ft_isalnum(line[*i]) == 0) //пропускаем все символы кроме цифр и букв
-		*i += 1;
+	nameLen = *i;
+	while (ft_isalnumMS(line[nameLen]) == 0) // пропускаем символы, которые не могут входить в нейминг
+		nameLen++;
+	line = strCutStr(line, *i, nameLen);
 	nameLen = *i;
 	while (line[nameLen] && line[nameLen] != ' ') // пропускаем символы, которые не могут входить в нейминг
 		nameLen++;
-	nameFile = ft_substr(line, *i, nameLen); // берём имя
+	nameFile = ft_substr(line, *i, nameLen - *i);// берём имя
+	while (line[nameLen] && line[nameLen] == ' ') // пропускаем лишние пробелы
+		nameLen++;
 	if (ident == 1)
 		fncRedirWrite(line, i, gen, nameFile);
 	else if (ident == 2)
@@ -89,12 +99,26 @@ char *fnc_redir(char *line, int *i, t_gnrl **gen, int ident)
 //		fncRedirHeredoc(line, i, gen);
 	else if (ident == 4)
 		fncRedirOpen(line, i, gen, nameFile);
+	line = strCutStr(line, *i, nameLen);
 	return (line);
 }
 
-char *fncRedirOpen(char *line, int *i, t_gnrl **gen, char *nameFile)
+char *strCutStr(char *inStr, int startOfCut, int endOfCut)
 {
-	int fd;
+	char	*tmp;
+	char	*tmp1;
+
+	tmp = ft_substrMS(inStr, 0, startOfCut);
+	tmp1 = ft_substrMS(inStr, endOfCut, ft_strlen(inStr));
+	free (inStr);
+	inStr = preUseStrJoin(tmp, tmp1);
+	return (inStr);
+}
+
+char *fncRedirOpen(char *line, int *i, t_gnrl **gen, char *nameFile) //доработать
+{
+	int	fd;
+
 	if ((*gen)->cmd->fd_open)
 		close((*gen)->cmd->fd_open);//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_RDONLY); // открываем на чтение
@@ -112,7 +136,9 @@ char *fncRedirWrite(char *line, int *i, t_gnrl **gen, char *nameFile)
 	int fd;
 
 	if ((*gen)->cmd->fd_write)
-		close((*gen)->cmd->fd_write);//если дескриптора не было, если был, то надо закрыть
+		close((*gen)->cmd->fd_write);
+	if ((*gen)->cmd->fd_reWrite)
+		close((*gen)->cmd->fd_reWrite);//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_CREAT); // открываем на дозапись
 	if (fd == -1)
 	{
@@ -127,11 +153,18 @@ char *fncRedirReWrite(char *line, int *i, t_gnrl **gen, char *nameFile)
 {
 	int fd;
 
+	if ((*gen)->cmd->fd_write)
+		close((*gen)->cmd->fd_write);
 	if ((*gen)->cmd->fd_reWrite)
 		close((*gen)->cmd->fd_reWrite);//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_TRUNC); // открываем на перезапись
 	if (fd == -1) //если файла не существует, создаём
 		fd = open(nameFile, O_CREAT);
+	if (fd == -1)
+	{
+		(*gen)->errors = 1;//ОШИППППКИ)
+		return (line);
+	}
 	(*gen)->cmd->fd_reWrite = fd; // записываем дескриптор
 	return (line);
 }

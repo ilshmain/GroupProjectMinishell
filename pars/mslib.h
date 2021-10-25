@@ -27,6 +27,7 @@ typedef struct s_gnrl
 	char	**env;
 }	t_gnrl;
 
+void	exefnc(char **line, t_gnrl **gen);
 char	**ft_splitMS(char const *s, char c);
 size_t	ft_strlcatMS(char *dst, const char *src, size_t size);
 size_t	ft_strlcpyMS(char *dst, const char *src, size_t size);
@@ -55,6 +56,7 @@ char	*preUseFncDollar(char *line, int *i, char **env);
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine);
 t_cmnd	*ft_lstnewMS(void);
 void	genInit(t_gnrl **gen);
+char	*strCutStr(char *inStr, int startOfCut, int endOfCut);
 
 char	*preUseFncRedir(char *line, int *i, t_gnrl **gen);
 char	*fnc_redir(char *line, int *i, t_gnrl **gen, int ident);
