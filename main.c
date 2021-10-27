@@ -22,7 +22,7 @@ void exefnc(char **line, t_gnrl **gen)
 	{
 		(*gen)->errors = 0;
 		*line = readline("minishell$ ");
-		printf("%d\n", add_history(*line));
+		add_history(*line);
 		if (first_fnc(line, (*gen)->env, gen, 0) == 1)
 			printf("there are errors\n");
 		else
@@ -65,7 +65,7 @@ char *preUseFncRedir(char *line, int *i, t_gnrl **gen)
 	char	*tmp;
 
 	if (line[*i] == '>' && line[*i + 1] == '>')
-		tmp = fnc_redir(line, ++i, gen, 1);
+		tmp = fnc_redir(line, i, gen, 1);
 	if (line[*i] == '>')
 		tmp = fnc_redir(line, i, gen, 2);
 	//	if (line[*i] == '<' && line[*i + 1] == '<')
@@ -92,13 +92,13 @@ char *fnc_redir(char *line, int *i, t_gnrl **gen, int ident)
 	while (line[nameLen] && line[nameLen] == ' ') // пропускаем лишние пробелы
 		nameLen++;
 	if (ident == 1)
-		fncRedirWrite(line, i, gen, nameFile);
+		fncRedirWrite(line, gen, nameFile);
 	else if (ident == 2)
-		fncRedirReWrite(line, i, gen, nameFile);
+		fncRedirReWrite(line, gen, nameFile);
 //	else if (ident == 3)
 //		fncRedirHeredoc(line, i, gen);
 	else if (ident == 4)
-		fncRedirOpen(line, i, gen, nameFile);
+		fncRedirOpen(line, gen, nameFile);
 	line = strCutStr(line, *i, nameLen);
 	return (line);
 }
@@ -115,12 +115,15 @@ char *strCutStr(char *inStr, int startOfCut, int endOfCut)
 	return (inStr);
 }
 
-char *fncRedirOpen(char *line, int *i, t_gnrl **gen, char *nameFile) //доработать
+char *fncRedirOpen(char *line, t_gnrl **gen, char *nameFile) //доработать
 {
 	int	fd;
 
 	if ((*gen)->cmd->fd_open)
-		close((*gen)->cmd->fd_open);//если дескриптора не было, если был, то надо закрыть
+	{
+		close((*gen)->cmd->fd_open);
+		(*gen)->cmd->fd_open = 0;
+	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_RDONLY); // открываем на чтение
 	if (fd == -1)
 	{
@@ -131,14 +134,20 @@ char *fncRedirOpen(char *line, int *i, t_gnrl **gen, char *nameFile) //дора�
 	return (line);
 }
 
-char *fncRedirWrite(char *line, int *i, t_gnrl **gen, char *nameFile)
+char *fncRedirWrite(char *line, t_gnrl **gen, char *nameFile)
 {
 	int fd;
 
 	if ((*gen)->cmd->fd_write)
+	{
 		close((*gen)->cmd->fd_write);
+		(*gen)->cmd->fd_write = 0;
+	}
 	if ((*gen)->cmd->fd_reWrite)
-		close((*gen)->cmd->fd_reWrite);//если дескриптора не было, если был, то надо закрыть
+	{
+		close((*gen)->cmd->fd_reWrite);
+		(*gen)->cmd->fd_reWrite = 0;
+	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_CREAT); // открываем на дозапись
 	if (fd == -1)
 	{
@@ -149,7 +158,7 @@ char *fncRedirWrite(char *line, int *i, t_gnrl **gen, char *nameFile)
 	return (line);
 }
 
-char *fncRedirReWrite(char *line, int *i, t_gnrl **gen, char *nameFile)
+char *fncRedirReWrite(char *line, t_gnrl **gen, char *nameFile)
 {
 	int fd;
 
@@ -169,33 +178,67 @@ char *fncRedirReWrite(char *line, int *i, t_gnrl **gen, char *nameFile)
 	return (line);
 }
 
+//t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine)
+//{
+//	int i;
+//	int k;
+//
+//	i = 0;
+//	while (line[i] && line[i] != ' ')
+//		i++;
+//	commandLine->command_array[0] = ft_substrMS(line, beginOfLine, i - beginOfLine);
+//	beginOfLine = i;
+//	while (line[i] && line[i] != '|')
+//		i++;
+//	k = i;
+//	if (line[k] == '|' && line[k + 1] != '\0')
+//	{
+//		while (line[k] == ' ' || line[k] == '|')
+//			k++;
+//		commandLine->nextList = fnc_pars(&line[k], 0, ft_lstnewMS());
+//		commandLine->flg_pipe = 1;
+//	}
+//	commandLine->command_array[1] = ft_substrMS(line, beginOfLine, i - beginOfLine);
+//	commandLine->command_array[1] = fncCutTbl(commandLine->command_array[1]);
+//	return (commandLine);
+//}
+
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine)
 {
 	int i;
+	int k;
 
 	i = 0;
-	while (line[i] && line[i] != ' ')
-		i++;
-	commandLine->command_array[0] = ft_substrMS(line, beginOfLine, i - beginOfLine);
-	beginOfLine = i;
-	while (line[beginOfLine] == ' ')
-		beginOfLine++;
 	while (line[i] && line[i] != '|')
 		i++;
-	if (line[i] == '|' && line[i + 1] != '\0')
+	k = i;
+	if (line[k] == '|' && line[k + 1] != '\0')
 	{
-		int k;
-
-		k = i;
 		while (line[k] == ' ' || line[k] == '|')
 			k++;
 		commandLine->nextList = fnc_pars(&line[k], 0, ft_lstnewMS());
 		commandLine->flg_pipe = 1;
+		line = ft_substrMS(line, 0, i);
 	}
-//	else if ()
-//		return (NULL);
-	commandLine->command_array[1] = ft_substrMS(line, beginOfLine, i - beginOfLine);
+	commandLine->command_array = ft_split(line, ' ');
 	return (commandLine);
+}
+
+char	*fncCutTbl(char *str)
+{
+	int		startOfStr;
+	int		endOfStr;
+	char	*tmp;
+
+	startOfStr = 0;
+	while (str[startOfStr] && ft_isalnum(str[startOfStr]) == 0)
+		startOfStr++;
+	endOfStr = (int)ft_strlenMS(str);
+	while (endOfStr > startOfStr && ft_isalnum(str[endOfStr - 1]) == 0)
+		endOfStr--;
+	tmp = ft_substr(str, startOfStr, endOfStr - startOfStr);
+	free (str);
+	return (tmp);
 }
 
 t_cmnd	*ft_lstnewMS(void)

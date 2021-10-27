@@ -57,12 +57,13 @@ t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine);
 t_cmnd	*ft_lstnewMS(void);
 void	genInit(t_gnrl **gen);
 char	*strCutStr(char *inStr, int startOfCut, int endOfCut);
+char	*fncCutTbl(char *str);
 
 char	*preUseFncRedir(char *line, int *i, t_gnrl **gen);
 char	*fnc_redir(char *line, int *i, t_gnrl **gen, int ident);
-char	*fncRedirOpen(char *line, int *i, t_gnrl **gen, char *nameFile);
-char	*fncRedirReWrite(char *line, int *i, t_gnrl **gen, char *nameFile);
-char	*fncRedirWrite(char *line, int *i, t_gnrl **gen, char *nameFile);
+char	*fncRedirOpen(char *line, t_gnrl **gen, char *nameFile);
+char	*fncRedirReWrite(char *line, t_gnrl **gen, char *nameFile);
+char	*fncRedirWrite(char *line, t_gnrl **gen, char *nameFile);
 
 char	**envPrisv(char **envp);
 int		logica(t_gnrl **zik);

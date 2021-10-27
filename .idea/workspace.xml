@@ -59,6 +59,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="checkMinishell" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkMinishell" TARGET_NAME="checkMinishell" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkMinishell" RUN_TARGET_NAME="checkMinishell">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -101,7 +106,11 @@
       <workItem from="1635147481263" duration="1259000" />
       <workItem from="1635149294900" duration="1212000" />
       <workItem from="1635152230526" duration="1654000" />
-      <workItem from="1635154070633" duration="1001000" />
+      <workItem from="1635154070633" duration="1778000" />
+      <workItem from="1635309164035" duration="1578000" />
+      <workItem from="1635310990406" duration="1328000" />
+      <workItem from="1635312809235" duration="1550000" />
+      <workItem from="1635314617499" duration="1350000" />
     </task>
     <servers />
   </component>
@@ -169,6 +178,16 @@
           <url>file://$PROJECT_DIR$/main.c</url>
           <line>14</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>205</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>220</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
