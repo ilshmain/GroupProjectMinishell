@@ -1,4 +1,4 @@
-#include "mslib.h"
+#include "../mslib.h"
 
 char	*ft_strjoinMS(char const *s1, char const *s2)
 {

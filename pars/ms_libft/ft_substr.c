@@ -1,4 +1,4 @@
-#include "mslib.h"
+#include "../mslib.h"
 
 char	*ft_substrMS(char const *s, unsigned int start, size_t len)
 {

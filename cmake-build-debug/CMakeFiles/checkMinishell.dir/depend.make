@@ -168,63 +168,98 @@ CMakeFiles/checkMinishell.dir/main.c.o: \
  ../include/minishell.h \
  ../main.c \
  ../pars/mslib.h
+CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o: \
+ ../Libft/libft.h \
+ ../include/minishell.h \
+ ../pars/bslshWorkPage.c \
+ ../pars/mslib.h
+CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o: \
+ ../Libft/libft.h \
+ ../include/minishell.h \
+ ../pars/dollarWorkPage.c \
+ ../pars/mslib.h
 CMakeFiles/checkMinishell.dir/pars/error_call.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
  ../pars/error_call.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o: \
+CMakeFiles/checkMinishell.dir/pars/exec.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_isalnum.c \
+ ../pars/exec.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_split.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_split.c \
+ ../pars/ms_libft/ft_isalnum.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_strchr.c \
+ ../pars/ms_libft/ft_split.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_strdup.c \
+ ../pars/ms_libft/ft_strchr.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_strjoin.c \
+ ../pars/ms_libft/ft_strdup.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_strlcat.c \
+ ../pars/ms_libft/ft_strjoin.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_strlcpy.c \
+ ../pars/ms_libft/ft_strlcat.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_strlen.c \
+ ../pars/ms_libft/ft_strlcpy.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_strncmp.c \
+ ../pars/ms_libft/ft_strlen.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_strnstr.c \
+ ../pars/ms_libft/ft_strncmp.c \
  ../pars/mslib.h
-CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o: \
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o: \
  ../Libft/libft.h \
  ../include/minishell.h \
- ../pars/ft_substr.c \
+ ../pars/ms_libft/ft_strnstr.c \
  ../pars/mslib.h
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o: \
+ ../Libft/libft.h \
+ ../include/minishell.h \
+ ../pars/ms_libft/ft_substr.c \
+ ../pars/mslib.h
+CMakeFiles/checkMinishell.dir/pars/preUsers.c.o: \
+ ../Libft/libft.h \
+ ../include/minishell.h \
+ ../pars/mslib.h \
+ ../pars/preUsers.c
+CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o: \
+ ../Libft/libft.h \
+ ../include/minishell.h \
+ ../pars/mslib.h \
+ ../pars/quotWorkPage.c
+CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o: \
+ ../Libft/libft.h \
+ ../include/minishell.h \
+ ../pars/mslib.h \
+ ../pars/redirWorkPage.c
+CMakeFiles/checkMinishell.dir/pars/servFns.c.o: \
+ ../Libft/libft.h \
+ ../include/minishell.h \
+ ../pars/mslib.h \
+ ../pars/servFns.c

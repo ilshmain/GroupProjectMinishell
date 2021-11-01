@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 project(checkMinishell C)
 
-set(CMAKE_C_FLAGS "-lreadline")
+set(CMAKE_C_FLAGS "-L/Users/hportife/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
+#set(CMAKE_C_FLAGS "-L/Users/fmint/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
 
 set(CMAKE_C_STANDARD 99)
 
@@ -33,19 +34,19 @@ set(SOURCE_FILES
 
 set(PARS_FILES
         pars/error_call.c
-        pars/ft_isalnum.c
-        pars/ft_split.c
-        pars/ft_strchr.c
-        pars/ft_strdup.c
-        pars/ft_strjoin.c
-        pars/ft_strlcat.c
-        pars/ft_strlcpy.c
-        pars/ft_strlen.c
-        pars/ft_strncmp.c
-        pars/ft_strnstr.c
-        pars/ft_substr.c
+        pars/ms_libft/ft_isalnum.c
+        pars/ms_libft/ft_split.c
+        pars/ms_libft/ft_strchr.c
+        pars/ms_libft/ft_strdup.c
+        pars/ms_libft/ft_strjoin.c
+        pars/ms_libft/ft_strlcat.c
+        pars/ms_libft/ft_strlcpy.c
+        pars/ms_libft/ft_strlen.c
+        pars/ms_libft/ft_strncmp.c
+        pars/ms_libft/ft_strnstr.c
+        pars/ms_libft/ft_substr.c
         pars/mslib.h
         logic.c
-        main.c)
+        main.c pars/preUsers.c pars/quotWorkPage.c pars/dollarWorkPage.c pars/redirWorkPage.c pars/servFns.c pars/exec.c pars/bslshWorkPage.c)
 
 add_executable(checkMinishell ${BUILTS_FILES} ${SOURCE_FILES} ${PARS_FILES} )

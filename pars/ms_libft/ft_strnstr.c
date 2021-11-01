@@ -1,4 +1,4 @@
-#include "mslib.h"
+#include "../mslib.h"
 
 char	*ft_strnstrMS(const char *str1, const char *str2, size_t len)
 {

@@ -690,148 +690,148 @@ CMakeFiles/checkMinishell.dir/pars/error_call.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/error_call.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/error_call.c -o CMakeFiles/checkMinishell.dir/pars/error_call.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o: ../pars/ft_isalnum.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o -c /Users/hportife/hportife/gitTest/pars/ft_isalnum.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o: ../pars/ms_libft/ft_isalnum.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_isalnum.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_isalnum.c > CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_isalnum.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_isalnum.c -o CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_isalnum.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_split.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_split.c.o: ../pars/ft_split.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_split.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_split.c.o -c /Users/hportife/hportife/gitTest/pars/ft_split.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o: ../pars/ms_libft/ft_split.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_split.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_split.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_split.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_split.c > CMakeFiles/checkMinishell.dir/pars/ft_split.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_split.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_split.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_split.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_split.c -o CMakeFiles/checkMinishell.dir/pars/ft_split.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_split.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o: ../pars/ft_strchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o -c /Users/hportife/hportife/gitTest/pars/ft_strchr.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o: ../pars/ms_libft/ft_strchr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strchr.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_strchr.c > CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strchr.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_strchr.c -o CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strchr.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o: ../pars/ft_strdup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o -c /Users/hportife/hportife/gitTest/pars/ft_strdup.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o: ../pars/ms_libft/ft_strdup.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strdup.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_strdup.c > CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strdup.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_strdup.c -o CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strdup.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o: ../pars/ft_strjoin.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o -c /Users/hportife/hportife/gitTest/pars/ft_strjoin.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o: ../pars/ms_libft/ft_strjoin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strjoin.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_strjoin.c > CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strjoin.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_strjoin.c -o CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strjoin.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o: ../pars/ft_strlcat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o -c /Users/hportife/hportife/gitTest/pars/ft_strlcat.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o: ../pars/ms_libft/ft_strlcat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlcat.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_strlcat.c > CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlcat.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_strlcat.c -o CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlcat.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o: ../pars/ft_strlcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o -c /Users/hportife/hportife/gitTest/pars/ft_strlcpy.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o: ../pars/ms_libft/ft_strlcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlcpy.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_strlcpy.c > CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlcpy.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_strlcpy.c -o CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlcpy.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o: ../pars/ft_strlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o -c /Users/hportife/hportife/gitTest/pars/ft_strlen.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o: ../pars/ms_libft/ft_strlen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlen.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_strlen.c > CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlen.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_strlen.c -o CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strlen.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o: ../pars/ft_strncmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o -c /Users/hportife/hportife/gitTest/pars/ft_strncmp.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o: ../pars/ms_libft/ft_strncmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strncmp.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_strncmp.c > CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strncmp.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_strncmp.c -o CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strncmp.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o: ../pars/ft_strnstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o -c /Users/hportife/hportife/gitTest/pars/ft_strnstr.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o: ../pars/ms_libft/ft_strnstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strnstr.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_strnstr.c > CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strnstr.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_strnstr.c -o CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_strnstr.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.s
 
-CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o: CMakeFiles/checkMinishell.dir/flags.make
-CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o: ../pars/ft_substr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o -c /Users/hportife/hportife/gitTest/pars/ft_substr.c
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o: ../pars/ms_libft/ft_substr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o -c /Users/hportife/hportife/gitTest/pars/ms_libft/ft_substr.c
 
-CMakeFiles/checkMinishell.dir/pars/ft_substr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ft_substr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ft_substr.c > CMakeFiles/checkMinishell.dir/pars/ft_substr.c.i
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/ms_libft/ft_substr.c > CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.i
 
-CMakeFiles/checkMinishell.dir/pars/ft_substr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ft_substr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ft_substr.c -o CMakeFiles/checkMinishell.dir/pars/ft_substr.c.s
+CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/ms_libft/ft_substr.c -o CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.s
 
 CMakeFiles/checkMinishell.dir/logic.c.o: CMakeFiles/checkMinishell.dir/flags.make
 CMakeFiles/checkMinishell.dir/logic.c.o: ../logic.c
@@ -858,6 +858,97 @@ CMakeFiles/checkMinishell.dir/main.c.i: cmake_force
 CMakeFiles/checkMinishell.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/main.c -o CMakeFiles/checkMinishell.dir/main.c.s
+
+CMakeFiles/checkMinishell.dir/pars/preUsers.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/preUsers.c.o: ../pars/preUsers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/checkMinishell.dir/pars/preUsers.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/preUsers.c.o -c /Users/hportife/hportife/gitTest/pars/preUsers.c
+
+CMakeFiles/checkMinishell.dir/pars/preUsers.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/preUsers.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/preUsers.c > CMakeFiles/checkMinishell.dir/pars/preUsers.c.i
+
+CMakeFiles/checkMinishell.dir/pars/preUsers.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/preUsers.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/preUsers.c -o CMakeFiles/checkMinishell.dir/pars/preUsers.c.s
+
+CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o: ../pars/quotWorkPage.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o -c /Users/hportife/hportife/gitTest/pars/quotWorkPage.c
+
+CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/quotWorkPage.c > CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.i
+
+CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/quotWorkPage.c -o CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.s
+
+CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o: ../pars/dollarWorkPage.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o -c /Users/hportife/hportife/gitTest/pars/dollarWorkPage.c
+
+CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/dollarWorkPage.c > CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.i
+
+CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/dollarWorkPage.c -o CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.s
+
+CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o: ../pars/redirWorkPage.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o -c /Users/hportife/hportife/gitTest/pars/redirWorkPage.c
+
+CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/redirWorkPage.c > CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.i
+
+CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/redirWorkPage.c -o CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.s
+
+CMakeFiles/checkMinishell.dir/pars/servFns.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/servFns.c.o: ../pars/servFns.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/checkMinishell.dir/pars/servFns.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/servFns.c.o -c /Users/hportife/hportife/gitTest/pars/servFns.c
+
+CMakeFiles/checkMinishell.dir/pars/servFns.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/servFns.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/servFns.c > CMakeFiles/checkMinishell.dir/pars/servFns.c.i
+
+CMakeFiles/checkMinishell.dir/pars/servFns.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/servFns.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/servFns.c -o CMakeFiles/checkMinishell.dir/pars/servFns.c.s
+
+CMakeFiles/checkMinishell.dir/pars/exec.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/exec.c.o: ../pars/exec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/checkMinishell.dir/pars/exec.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/exec.c.o -c /Users/hportife/hportife/gitTest/pars/exec.c
+
+CMakeFiles/checkMinishell.dir/pars/exec.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/exec.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/exec.c > CMakeFiles/checkMinishell.dir/pars/exec.c.i
+
+CMakeFiles/checkMinishell.dir/pars/exec.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/exec.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/exec.c -o CMakeFiles/checkMinishell.dir/pars/exec.c.s
+
+CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o: CMakeFiles/checkMinishell.dir/flags.make
+CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o: ../pars/bslshWorkPage.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o -c /Users/hportife/hportife/gitTest/pars/bslshWorkPage.c
+
+CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hportife/hportife/gitTest/pars/bslshWorkPage.c > CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.i
+
+CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hportife/hportife/gitTest/pars/bslshWorkPage.c -o CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.s
 
 # Object files for target checkMinishell
 checkMinishell_OBJECTS = \
@@ -909,19 +1000,26 @@ checkMinishell_OBJECTS = \
 "CMakeFiles/checkMinishell.dir/Libft/ft_tolower.c.o" \
 "CMakeFiles/checkMinishell.dir/Libft/ft_toupper.c.o" \
 "CMakeFiles/checkMinishell.dir/pars/error_call.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_split.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o" \
-"CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o" \
 "CMakeFiles/checkMinishell.dir/logic.c.o" \
-"CMakeFiles/checkMinishell.dir/main.c.o"
+"CMakeFiles/checkMinishell.dir/main.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/preUsers.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/servFns.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/exec.c.o" \
+"CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o"
 
 # External object files for target checkMinishell
 checkMinishell_EXTERNAL_OBJECTS =
@@ -974,22 +1072,29 @@ checkMinishell: CMakeFiles/checkMinishell.dir/Libft/ft_strrchr.c.o
 checkMinishell: CMakeFiles/checkMinishell.dir/Libft/ft_tolower.c.o
 checkMinishell: CMakeFiles/checkMinishell.dir/Libft/ft_toupper.c.o
 checkMinishell: CMakeFiles/checkMinishell.dir/pars/error_call.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_split.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o
-checkMinishell: CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o
 checkMinishell: CMakeFiles/checkMinishell.dir/logic.c.o
 checkMinishell: CMakeFiles/checkMinishell.dir/main.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/preUsers.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/servFns.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/exec.c.o
+checkMinishell: CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o
 checkMinishell: CMakeFiles/checkMinishell.dir/build.make
 checkMinishell: CMakeFiles/checkMinishell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Linking C executable checkMinishell"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hportife/hportife/gitTest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Linking C executable checkMinishell"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/checkMinishell.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,4 +1,4 @@
-#include "mslib.h"
+#include "../mslib.h"
 
 static char	**mem_clean(char **res)
 {

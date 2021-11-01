@@ -1,4 +1,4 @@
-#include "mslib.h"
+#include "../mslib.h"
 
 int	ft_isalnumMS(int c)
 {

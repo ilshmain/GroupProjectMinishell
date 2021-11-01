@@ -1,4 +1,4 @@
-#include "mslib.h"
+#include "../mslib.h"
 
 size_t	ft_strlenMS(const char *str)
 {

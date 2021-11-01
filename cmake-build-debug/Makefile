@@ -1305,6 +1305,54 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/main.c.s
 .PHONY : main.c.s
 
+pars/bslshWorkPage.o: pars/bslshWorkPage.c.o
+.PHONY : pars/bslshWorkPage.o
+
+# target to build an object file
+pars/bslshWorkPage.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o
+.PHONY : pars/bslshWorkPage.c.o
+
+pars/bslshWorkPage.i: pars/bslshWorkPage.c.i
+.PHONY : pars/bslshWorkPage.i
+
+# target to preprocess a source file
+pars/bslshWorkPage.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.i
+.PHONY : pars/bslshWorkPage.c.i
+
+pars/bslshWorkPage.s: pars/bslshWorkPage.c.s
+.PHONY : pars/bslshWorkPage.s
+
+# target to generate assembly for a file
+pars/bslshWorkPage.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.s
+.PHONY : pars/bslshWorkPage.c.s
+
+pars/dollarWorkPage.o: pars/dollarWorkPage.c.o
+.PHONY : pars/dollarWorkPage.o
+
+# target to build an object file
+pars/dollarWorkPage.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o
+.PHONY : pars/dollarWorkPage.c.o
+
+pars/dollarWorkPage.i: pars/dollarWorkPage.c.i
+.PHONY : pars/dollarWorkPage.i
+
+# target to preprocess a source file
+pars/dollarWorkPage.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.i
+.PHONY : pars/dollarWorkPage.c.i
+
+pars/dollarWorkPage.s: pars/dollarWorkPage.c.s
+.PHONY : pars/dollarWorkPage.s
+
+# target to generate assembly for a file
+pars/dollarWorkPage.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.s
+.PHONY : pars/dollarWorkPage.c.s
+
 pars/error_call.o: pars/error_call.c.o
 .PHONY : pars/error_call.o
 
@@ -1329,269 +1377,389 @@ pars/error_call.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/error_call.c.s
 .PHONY : pars/error_call.c.s
 
-pars/ft_isalnum.o: pars/ft_isalnum.c.o
-.PHONY : pars/ft_isalnum.o
+pars/exec.o: pars/exec.c.o
+.PHONY : pars/exec.o
 
 # target to build an object file
-pars/ft_isalnum.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.o
-.PHONY : pars/ft_isalnum.c.o
+pars/exec.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/exec.c.o
+.PHONY : pars/exec.c.o
 
-pars/ft_isalnum.i: pars/ft_isalnum.c.i
-.PHONY : pars/ft_isalnum.i
+pars/exec.i: pars/exec.c.i
+.PHONY : pars/exec.i
 
 # target to preprocess a source file
-pars/ft_isalnum.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.i
-.PHONY : pars/ft_isalnum.c.i
+pars/exec.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/exec.c.i
+.PHONY : pars/exec.c.i
 
-pars/ft_isalnum.s: pars/ft_isalnum.c.s
-.PHONY : pars/ft_isalnum.s
+pars/exec.s: pars/exec.c.s
+.PHONY : pars/exec.s
 
 # target to generate assembly for a file
-pars/ft_isalnum.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_isalnum.c.s
-.PHONY : pars/ft_isalnum.c.s
+pars/exec.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/exec.c.s
+.PHONY : pars/exec.c.s
 
-pars/ft_split.o: pars/ft_split.c.o
-.PHONY : pars/ft_split.o
+pars/ms_libft/ft_isalnum.o: pars/ms_libft/ft_isalnum.c.o
+.PHONY : pars/ms_libft/ft_isalnum.o
 
 # target to build an object file
-pars/ft_split.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_split.c.o
-.PHONY : pars/ft_split.c.o
+pars/ms_libft/ft_isalnum.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o
+.PHONY : pars/ms_libft/ft_isalnum.c.o
 
-pars/ft_split.i: pars/ft_split.c.i
-.PHONY : pars/ft_split.i
+pars/ms_libft/ft_isalnum.i: pars/ms_libft/ft_isalnum.c.i
+.PHONY : pars/ms_libft/ft_isalnum.i
 
 # target to preprocess a source file
-pars/ft_split.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_split.c.i
-.PHONY : pars/ft_split.c.i
+pars/ms_libft/ft_isalnum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.i
+.PHONY : pars/ms_libft/ft_isalnum.c.i
 
-pars/ft_split.s: pars/ft_split.c.s
-.PHONY : pars/ft_split.s
+pars/ms_libft/ft_isalnum.s: pars/ms_libft/ft_isalnum.c.s
+.PHONY : pars/ms_libft/ft_isalnum.s
 
 # target to generate assembly for a file
-pars/ft_split.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_split.c.s
-.PHONY : pars/ft_split.c.s
+pars/ms_libft/ft_isalnum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.s
+.PHONY : pars/ms_libft/ft_isalnum.c.s
 
-pars/ft_strchr.o: pars/ft_strchr.c.o
-.PHONY : pars/ft_strchr.o
+pars/ms_libft/ft_split.o: pars/ms_libft/ft_split.c.o
+.PHONY : pars/ms_libft/ft_split.o
 
 # target to build an object file
-pars/ft_strchr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.o
-.PHONY : pars/ft_strchr.c.o
+pars/ms_libft/ft_split.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o
+.PHONY : pars/ms_libft/ft_split.c.o
 
-pars/ft_strchr.i: pars/ft_strchr.c.i
-.PHONY : pars/ft_strchr.i
+pars/ms_libft/ft_split.i: pars/ms_libft/ft_split.c.i
+.PHONY : pars/ms_libft/ft_split.i
 
 # target to preprocess a source file
-pars/ft_strchr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.i
-.PHONY : pars/ft_strchr.c.i
+pars/ms_libft/ft_split.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.i
+.PHONY : pars/ms_libft/ft_split.c.i
 
-pars/ft_strchr.s: pars/ft_strchr.c.s
-.PHONY : pars/ft_strchr.s
+pars/ms_libft/ft_split.s: pars/ms_libft/ft_split.c.s
+.PHONY : pars/ms_libft/ft_split.s
 
 # target to generate assembly for a file
-pars/ft_strchr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strchr.c.s
-.PHONY : pars/ft_strchr.c.s
+pars/ms_libft/ft_split.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.s
+.PHONY : pars/ms_libft/ft_split.c.s
 
-pars/ft_strdup.o: pars/ft_strdup.c.o
-.PHONY : pars/ft_strdup.o
+pars/ms_libft/ft_strchr.o: pars/ms_libft/ft_strchr.c.o
+.PHONY : pars/ms_libft/ft_strchr.o
 
 # target to build an object file
-pars/ft_strdup.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.o
-.PHONY : pars/ft_strdup.c.o
+pars/ms_libft/ft_strchr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o
+.PHONY : pars/ms_libft/ft_strchr.c.o
 
-pars/ft_strdup.i: pars/ft_strdup.c.i
-.PHONY : pars/ft_strdup.i
+pars/ms_libft/ft_strchr.i: pars/ms_libft/ft_strchr.c.i
+.PHONY : pars/ms_libft/ft_strchr.i
 
 # target to preprocess a source file
-pars/ft_strdup.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.i
-.PHONY : pars/ft_strdup.c.i
+pars/ms_libft/ft_strchr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.i
+.PHONY : pars/ms_libft/ft_strchr.c.i
 
-pars/ft_strdup.s: pars/ft_strdup.c.s
-.PHONY : pars/ft_strdup.s
+pars/ms_libft/ft_strchr.s: pars/ms_libft/ft_strchr.c.s
+.PHONY : pars/ms_libft/ft_strchr.s
 
 # target to generate assembly for a file
-pars/ft_strdup.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strdup.c.s
-.PHONY : pars/ft_strdup.c.s
+pars/ms_libft/ft_strchr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.s
+.PHONY : pars/ms_libft/ft_strchr.c.s
 
-pars/ft_strjoin.o: pars/ft_strjoin.c.o
-.PHONY : pars/ft_strjoin.o
+pars/ms_libft/ft_strdup.o: pars/ms_libft/ft_strdup.c.o
+.PHONY : pars/ms_libft/ft_strdup.o
 
 # target to build an object file
-pars/ft_strjoin.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.o
-.PHONY : pars/ft_strjoin.c.o
+pars/ms_libft/ft_strdup.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o
+.PHONY : pars/ms_libft/ft_strdup.c.o
 
-pars/ft_strjoin.i: pars/ft_strjoin.c.i
-.PHONY : pars/ft_strjoin.i
+pars/ms_libft/ft_strdup.i: pars/ms_libft/ft_strdup.c.i
+.PHONY : pars/ms_libft/ft_strdup.i
 
 # target to preprocess a source file
-pars/ft_strjoin.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.i
-.PHONY : pars/ft_strjoin.c.i
+pars/ms_libft/ft_strdup.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.i
+.PHONY : pars/ms_libft/ft_strdup.c.i
 
-pars/ft_strjoin.s: pars/ft_strjoin.c.s
-.PHONY : pars/ft_strjoin.s
+pars/ms_libft/ft_strdup.s: pars/ms_libft/ft_strdup.c.s
+.PHONY : pars/ms_libft/ft_strdup.s
 
 # target to generate assembly for a file
-pars/ft_strjoin.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strjoin.c.s
-.PHONY : pars/ft_strjoin.c.s
+pars/ms_libft/ft_strdup.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.s
+.PHONY : pars/ms_libft/ft_strdup.c.s
 
-pars/ft_strlcat.o: pars/ft_strlcat.c.o
-.PHONY : pars/ft_strlcat.o
+pars/ms_libft/ft_strjoin.o: pars/ms_libft/ft_strjoin.c.o
+.PHONY : pars/ms_libft/ft_strjoin.o
 
 # target to build an object file
-pars/ft_strlcat.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.o
-.PHONY : pars/ft_strlcat.c.o
+pars/ms_libft/ft_strjoin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o
+.PHONY : pars/ms_libft/ft_strjoin.c.o
 
-pars/ft_strlcat.i: pars/ft_strlcat.c.i
-.PHONY : pars/ft_strlcat.i
+pars/ms_libft/ft_strjoin.i: pars/ms_libft/ft_strjoin.c.i
+.PHONY : pars/ms_libft/ft_strjoin.i
 
 # target to preprocess a source file
-pars/ft_strlcat.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.i
-.PHONY : pars/ft_strlcat.c.i
+pars/ms_libft/ft_strjoin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.i
+.PHONY : pars/ms_libft/ft_strjoin.c.i
 
-pars/ft_strlcat.s: pars/ft_strlcat.c.s
-.PHONY : pars/ft_strlcat.s
+pars/ms_libft/ft_strjoin.s: pars/ms_libft/ft_strjoin.c.s
+.PHONY : pars/ms_libft/ft_strjoin.s
 
 # target to generate assembly for a file
-pars/ft_strlcat.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcat.c.s
-.PHONY : pars/ft_strlcat.c.s
+pars/ms_libft/ft_strjoin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.s
+.PHONY : pars/ms_libft/ft_strjoin.c.s
 
-pars/ft_strlcpy.o: pars/ft_strlcpy.c.o
-.PHONY : pars/ft_strlcpy.o
+pars/ms_libft/ft_strlcat.o: pars/ms_libft/ft_strlcat.c.o
+.PHONY : pars/ms_libft/ft_strlcat.o
 
 # target to build an object file
-pars/ft_strlcpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.o
-.PHONY : pars/ft_strlcpy.c.o
+pars/ms_libft/ft_strlcat.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o
+.PHONY : pars/ms_libft/ft_strlcat.c.o
 
-pars/ft_strlcpy.i: pars/ft_strlcpy.c.i
-.PHONY : pars/ft_strlcpy.i
+pars/ms_libft/ft_strlcat.i: pars/ms_libft/ft_strlcat.c.i
+.PHONY : pars/ms_libft/ft_strlcat.i
 
 # target to preprocess a source file
-pars/ft_strlcpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.i
-.PHONY : pars/ft_strlcpy.c.i
+pars/ms_libft/ft_strlcat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.i
+.PHONY : pars/ms_libft/ft_strlcat.c.i
 
-pars/ft_strlcpy.s: pars/ft_strlcpy.c.s
-.PHONY : pars/ft_strlcpy.s
+pars/ms_libft/ft_strlcat.s: pars/ms_libft/ft_strlcat.c.s
+.PHONY : pars/ms_libft/ft_strlcat.s
 
 # target to generate assembly for a file
-pars/ft_strlcpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlcpy.c.s
-.PHONY : pars/ft_strlcpy.c.s
+pars/ms_libft/ft_strlcat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.s
+.PHONY : pars/ms_libft/ft_strlcat.c.s
 
-pars/ft_strlen.o: pars/ft_strlen.c.o
-.PHONY : pars/ft_strlen.o
+pars/ms_libft/ft_strlcpy.o: pars/ms_libft/ft_strlcpy.c.o
+.PHONY : pars/ms_libft/ft_strlcpy.o
 
 # target to build an object file
-pars/ft_strlen.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.o
-.PHONY : pars/ft_strlen.c.o
+pars/ms_libft/ft_strlcpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o
+.PHONY : pars/ms_libft/ft_strlcpy.c.o
 
-pars/ft_strlen.i: pars/ft_strlen.c.i
-.PHONY : pars/ft_strlen.i
+pars/ms_libft/ft_strlcpy.i: pars/ms_libft/ft_strlcpy.c.i
+.PHONY : pars/ms_libft/ft_strlcpy.i
 
 # target to preprocess a source file
-pars/ft_strlen.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.i
-.PHONY : pars/ft_strlen.c.i
+pars/ms_libft/ft_strlcpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.i
+.PHONY : pars/ms_libft/ft_strlcpy.c.i
 
-pars/ft_strlen.s: pars/ft_strlen.c.s
-.PHONY : pars/ft_strlen.s
+pars/ms_libft/ft_strlcpy.s: pars/ms_libft/ft_strlcpy.c.s
+.PHONY : pars/ms_libft/ft_strlcpy.s
 
 # target to generate assembly for a file
-pars/ft_strlen.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strlen.c.s
-.PHONY : pars/ft_strlen.c.s
+pars/ms_libft/ft_strlcpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.s
+.PHONY : pars/ms_libft/ft_strlcpy.c.s
 
-pars/ft_strncmp.o: pars/ft_strncmp.c.o
-.PHONY : pars/ft_strncmp.o
+pars/ms_libft/ft_strlen.o: pars/ms_libft/ft_strlen.c.o
+.PHONY : pars/ms_libft/ft_strlen.o
 
 # target to build an object file
-pars/ft_strncmp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.o
-.PHONY : pars/ft_strncmp.c.o
+pars/ms_libft/ft_strlen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o
+.PHONY : pars/ms_libft/ft_strlen.c.o
 
-pars/ft_strncmp.i: pars/ft_strncmp.c.i
-.PHONY : pars/ft_strncmp.i
+pars/ms_libft/ft_strlen.i: pars/ms_libft/ft_strlen.c.i
+.PHONY : pars/ms_libft/ft_strlen.i
 
 # target to preprocess a source file
-pars/ft_strncmp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.i
-.PHONY : pars/ft_strncmp.c.i
+pars/ms_libft/ft_strlen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.i
+.PHONY : pars/ms_libft/ft_strlen.c.i
 
-pars/ft_strncmp.s: pars/ft_strncmp.c.s
-.PHONY : pars/ft_strncmp.s
+pars/ms_libft/ft_strlen.s: pars/ms_libft/ft_strlen.c.s
+.PHONY : pars/ms_libft/ft_strlen.s
 
 # target to generate assembly for a file
-pars/ft_strncmp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strncmp.c.s
-.PHONY : pars/ft_strncmp.c.s
+pars/ms_libft/ft_strlen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.s
+.PHONY : pars/ms_libft/ft_strlen.c.s
 
-pars/ft_strnstr.o: pars/ft_strnstr.c.o
-.PHONY : pars/ft_strnstr.o
+pars/ms_libft/ft_strncmp.o: pars/ms_libft/ft_strncmp.c.o
+.PHONY : pars/ms_libft/ft_strncmp.o
 
 # target to build an object file
-pars/ft_strnstr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.o
-.PHONY : pars/ft_strnstr.c.o
+pars/ms_libft/ft_strncmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o
+.PHONY : pars/ms_libft/ft_strncmp.c.o
 
-pars/ft_strnstr.i: pars/ft_strnstr.c.i
-.PHONY : pars/ft_strnstr.i
+pars/ms_libft/ft_strncmp.i: pars/ms_libft/ft_strncmp.c.i
+.PHONY : pars/ms_libft/ft_strncmp.i
 
 # target to preprocess a source file
-pars/ft_strnstr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.i
-.PHONY : pars/ft_strnstr.c.i
+pars/ms_libft/ft_strncmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.i
+.PHONY : pars/ms_libft/ft_strncmp.c.i
 
-pars/ft_strnstr.s: pars/ft_strnstr.c.s
-.PHONY : pars/ft_strnstr.s
+pars/ms_libft/ft_strncmp.s: pars/ms_libft/ft_strncmp.c.s
+.PHONY : pars/ms_libft/ft_strncmp.s
 
 # target to generate assembly for a file
-pars/ft_strnstr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_strnstr.c.s
-.PHONY : pars/ft_strnstr.c.s
+pars/ms_libft/ft_strncmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.s
+.PHONY : pars/ms_libft/ft_strncmp.c.s
 
-pars/ft_substr.o: pars/ft_substr.c.o
-.PHONY : pars/ft_substr.o
+pars/ms_libft/ft_strnstr.o: pars/ms_libft/ft_strnstr.c.o
+.PHONY : pars/ms_libft/ft_strnstr.o
 
 # target to build an object file
-pars/ft_substr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_substr.c.o
-.PHONY : pars/ft_substr.c.o
+pars/ms_libft/ft_strnstr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o
+.PHONY : pars/ms_libft/ft_strnstr.c.o
 
-pars/ft_substr.i: pars/ft_substr.c.i
-.PHONY : pars/ft_substr.i
+pars/ms_libft/ft_strnstr.i: pars/ms_libft/ft_strnstr.c.i
+.PHONY : pars/ms_libft/ft_strnstr.i
 
 # target to preprocess a source file
-pars/ft_substr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_substr.c.i
-.PHONY : pars/ft_substr.c.i
+pars/ms_libft/ft_strnstr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.i
+.PHONY : pars/ms_libft/ft_strnstr.c.i
 
-pars/ft_substr.s: pars/ft_substr.c.s
-.PHONY : pars/ft_substr.s
+pars/ms_libft/ft_strnstr.s: pars/ms_libft/ft_strnstr.c.s
+.PHONY : pars/ms_libft/ft_strnstr.s
 
 # target to generate assembly for a file
-pars/ft_substr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ft_substr.c.s
-.PHONY : pars/ft_substr.c.s
+pars/ms_libft/ft_strnstr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.s
+.PHONY : pars/ms_libft/ft_strnstr.c.s
+
+pars/ms_libft/ft_substr.o: pars/ms_libft/ft_substr.c.o
+.PHONY : pars/ms_libft/ft_substr.o
+
+# target to build an object file
+pars/ms_libft/ft_substr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o
+.PHONY : pars/ms_libft/ft_substr.c.o
+
+pars/ms_libft/ft_substr.i: pars/ms_libft/ft_substr.c.i
+.PHONY : pars/ms_libft/ft_substr.i
+
+# target to preprocess a source file
+pars/ms_libft/ft_substr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.i
+.PHONY : pars/ms_libft/ft_substr.c.i
+
+pars/ms_libft/ft_substr.s: pars/ms_libft/ft_substr.c.s
+.PHONY : pars/ms_libft/ft_substr.s
+
+# target to generate assembly for a file
+pars/ms_libft/ft_substr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.s
+.PHONY : pars/ms_libft/ft_substr.c.s
+
+pars/preUsers.o: pars/preUsers.c.o
+.PHONY : pars/preUsers.o
+
+# target to build an object file
+pars/preUsers.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/preUsers.c.o
+.PHONY : pars/preUsers.c.o
+
+pars/preUsers.i: pars/preUsers.c.i
+.PHONY : pars/preUsers.i
+
+# target to preprocess a source file
+pars/preUsers.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/preUsers.c.i
+.PHONY : pars/preUsers.c.i
+
+pars/preUsers.s: pars/preUsers.c.s
+.PHONY : pars/preUsers.s
+
+# target to generate assembly for a file
+pars/preUsers.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/preUsers.c.s
+.PHONY : pars/preUsers.c.s
+
+pars/quotWorkPage.o: pars/quotWorkPage.c.o
+.PHONY : pars/quotWorkPage.o
+
+# target to build an object file
+pars/quotWorkPage.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o
+.PHONY : pars/quotWorkPage.c.o
+
+pars/quotWorkPage.i: pars/quotWorkPage.c.i
+.PHONY : pars/quotWorkPage.i
+
+# target to preprocess a source file
+pars/quotWorkPage.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.i
+.PHONY : pars/quotWorkPage.c.i
+
+pars/quotWorkPage.s: pars/quotWorkPage.c.s
+.PHONY : pars/quotWorkPage.s
+
+# target to generate assembly for a file
+pars/quotWorkPage.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.s
+.PHONY : pars/quotWorkPage.c.s
+
+pars/redirWorkPage.o: pars/redirWorkPage.c.o
+.PHONY : pars/redirWorkPage.o
+
+# target to build an object file
+pars/redirWorkPage.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o
+.PHONY : pars/redirWorkPage.c.o
+
+pars/redirWorkPage.i: pars/redirWorkPage.c.i
+.PHONY : pars/redirWorkPage.i
+
+# target to preprocess a source file
+pars/redirWorkPage.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.i
+.PHONY : pars/redirWorkPage.c.i
+
+pars/redirWorkPage.s: pars/redirWorkPage.c.s
+.PHONY : pars/redirWorkPage.s
+
+# target to generate assembly for a file
+pars/redirWorkPage.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.s
+.PHONY : pars/redirWorkPage.c.s
+
+pars/servFns.o: pars/servFns.c.o
+.PHONY : pars/servFns.o
+
+# target to build an object file
+pars/servFns.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/servFns.c.o
+.PHONY : pars/servFns.c.o
+
+pars/servFns.i: pars/servFns.c.i
+.PHONY : pars/servFns.i
+
+# target to preprocess a source file
+pars/servFns.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/servFns.c.i
+.PHONY : pars/servFns.c.i
+
+pars/servFns.s: pars/servFns.c.s
+.PHONY : pars/servFns.s
+
+# target to generate assembly for a file
+pars/servFns.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkMinishell.dir/build.make CMakeFiles/checkMinishell.dir/pars/servFns.c.s
+.PHONY : pars/servFns.c.s
 
 # Help Target
 help:
@@ -1749,42 +1917,63 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... pars/bslshWorkPage.o"
+	@echo "... pars/bslshWorkPage.i"
+	@echo "... pars/bslshWorkPage.s"
+	@echo "... pars/dollarWorkPage.o"
+	@echo "... pars/dollarWorkPage.i"
+	@echo "... pars/dollarWorkPage.s"
 	@echo "... pars/error_call.o"
 	@echo "... pars/error_call.i"
 	@echo "... pars/error_call.s"
-	@echo "... pars/ft_isalnum.o"
-	@echo "... pars/ft_isalnum.i"
-	@echo "... pars/ft_isalnum.s"
-	@echo "... pars/ft_split.o"
-	@echo "... pars/ft_split.i"
-	@echo "... pars/ft_split.s"
-	@echo "... pars/ft_strchr.o"
-	@echo "... pars/ft_strchr.i"
-	@echo "... pars/ft_strchr.s"
-	@echo "... pars/ft_strdup.o"
-	@echo "... pars/ft_strdup.i"
-	@echo "... pars/ft_strdup.s"
-	@echo "... pars/ft_strjoin.o"
-	@echo "... pars/ft_strjoin.i"
-	@echo "... pars/ft_strjoin.s"
-	@echo "... pars/ft_strlcat.o"
-	@echo "... pars/ft_strlcat.i"
-	@echo "... pars/ft_strlcat.s"
-	@echo "... pars/ft_strlcpy.o"
-	@echo "... pars/ft_strlcpy.i"
-	@echo "... pars/ft_strlcpy.s"
-	@echo "... pars/ft_strlen.o"
-	@echo "... pars/ft_strlen.i"
-	@echo "... pars/ft_strlen.s"
-	@echo "... pars/ft_strncmp.o"
-	@echo "... pars/ft_strncmp.i"
-	@echo "... pars/ft_strncmp.s"
-	@echo "... pars/ft_strnstr.o"
-	@echo "... pars/ft_strnstr.i"
-	@echo "... pars/ft_strnstr.s"
-	@echo "... pars/ft_substr.o"
-	@echo "... pars/ft_substr.i"
-	@echo "... pars/ft_substr.s"
+	@echo "... pars/exec.o"
+	@echo "... pars/exec.i"
+	@echo "... pars/exec.s"
+	@echo "... pars/ms_libft/ft_isalnum.o"
+	@echo "... pars/ms_libft/ft_isalnum.i"
+	@echo "... pars/ms_libft/ft_isalnum.s"
+	@echo "... pars/ms_libft/ft_split.o"
+	@echo "... pars/ms_libft/ft_split.i"
+	@echo "... pars/ms_libft/ft_split.s"
+	@echo "... pars/ms_libft/ft_strchr.o"
+	@echo "... pars/ms_libft/ft_strchr.i"
+	@echo "... pars/ms_libft/ft_strchr.s"
+	@echo "... pars/ms_libft/ft_strdup.o"
+	@echo "... pars/ms_libft/ft_strdup.i"
+	@echo "... pars/ms_libft/ft_strdup.s"
+	@echo "... pars/ms_libft/ft_strjoin.o"
+	@echo "... pars/ms_libft/ft_strjoin.i"
+	@echo "... pars/ms_libft/ft_strjoin.s"
+	@echo "... pars/ms_libft/ft_strlcat.o"
+	@echo "... pars/ms_libft/ft_strlcat.i"
+	@echo "... pars/ms_libft/ft_strlcat.s"
+	@echo "... pars/ms_libft/ft_strlcpy.o"
+	@echo "... pars/ms_libft/ft_strlcpy.i"
+	@echo "... pars/ms_libft/ft_strlcpy.s"
+	@echo "... pars/ms_libft/ft_strlen.o"
+	@echo "... pars/ms_libft/ft_strlen.i"
+	@echo "... pars/ms_libft/ft_strlen.s"
+	@echo "... pars/ms_libft/ft_strncmp.o"
+	@echo "... pars/ms_libft/ft_strncmp.i"
+	@echo "... pars/ms_libft/ft_strncmp.s"
+	@echo "... pars/ms_libft/ft_strnstr.o"
+	@echo "... pars/ms_libft/ft_strnstr.i"
+	@echo "... pars/ms_libft/ft_strnstr.s"
+	@echo "... pars/ms_libft/ft_substr.o"
+	@echo "... pars/ms_libft/ft_substr.i"
+	@echo "... pars/ms_libft/ft_substr.s"
+	@echo "... pars/preUsers.o"
+	@echo "... pars/preUsers.i"
+	@echo "... pars/preUsers.s"
+	@echo "... pars/quotWorkPage.o"
+	@echo "... pars/quotWorkPage.i"
+	@echo "... pars/quotWorkPage.s"
+	@echo "... pars/redirWorkPage.o"
+	@echo "... pars/redirWorkPage.i"
+	@echo "... pars/redirWorkPage.s"
+	@echo "... pars/servFns.o"
+	@echo "... pars/servFns.i"
+	@echo "... pars/servFns.s"
 .PHONY : help
 
 

@@ -1,4 +1,4 @@
-#include "mslib.h"
+#include "../mslib.h"
 
 char	*ft_strchrMS(const char *s, int c)
 {

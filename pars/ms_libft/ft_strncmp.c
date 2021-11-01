@@ -1,4 +1,4 @@
-#include "mslib.h"
+#include "../mslib.h"
 
 int	ft_strcmpMS(const char *s1, const char *s2)
 {
