@@ -9,12 +9,21 @@ void exefnc(char **line, t_gnrl **gen)
 		if (*line == NULL)
 			error_call("exit\n");
 		add_history(*line);
+//		line = initLine(line);
 		if (first_fnc(line, gen, 0) == 1)
 			printf("there are errors\n");
 		else
 			logica(gen);
 	}
 }
+
+//char	*initLine(char *line)
+//{
+//	char	*tmp;
+//
+//	tmp = ft_strdupMS(line);
+//	return (tmp);
+//}
 
 void	exitCtrlD(void)
 {

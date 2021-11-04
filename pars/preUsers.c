@@ -5,7 +5,7 @@ char	*preUseFncDollar(char *line, int *i, char **env)
 	char	*tmp;
 
 	tmp = fnc_dollar(line, i, env);
-	free (line);
+//	free (line);
 	return (tmp);
 }
 
@@ -14,7 +14,7 @@ char	*preUseFncDQuot(char *line, int *i, char **env, t_gnrl **gen)
 	char	*tmp;
 
 	tmp = fnc_dquot(line, i, env, gen);
-	free (line);
+//	free (line);
 	return (tmp);
 }
 
@@ -23,7 +23,7 @@ char	*preUseFncQuot(char *line, int *i, t_gnrl **gen)
 	char	*tmp;
 
 	tmp = fnc_quot(line, i, gen);
-	free (line);
+//	free (line);
 	return (tmp);
 }
 
@@ -32,7 +32,7 @@ char	*preUseStrJoin(char *str1, char *str2)
 	char *tmp;
 
 	tmp = ft_strjoinMS(str1, str2);
-	free (str1);
+//	free (str1);
 	return (tmp);
 }
 
