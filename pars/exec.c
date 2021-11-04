@@ -2,9 +2,6 @@
 
 void exefnc(char **line, t_gnrl **gen)
 {
-//	struct sigaction sa;
-//
-//	sa.sa
 	while (1)
 	{
 		(*gen)->errors = 0;
@@ -12,11 +9,10 @@ void exefnc(char **line, t_gnrl **gen)
 		if (*line == NULL)
 			error_call("exit\n");
 		add_history(*line);
-		if (first_fnc(line, (*gen)->env, gen, 0) == 1)
+		if (first_fnc(line, gen, 0) == 1)
 			printf("there are errors\n");
 		else
 			logica(gen);
-//		signal(SIGINT, signalQuitMS(1));
 	}
 }
 
@@ -37,7 +33,7 @@ void	ctrl_c_hook(int sgn)
 	(void)sgn;
 }
 
-int	first_fnc(char **line, char **env, t_gnrl **gen, int i)
+int	first_fnc(char **line, t_gnrl **gen, int i)
 {
 	(*gen)->cmd = ft_lstnewMS();
 	while (line[0][i])
@@ -47,11 +43,11 @@ int	first_fnc(char **line, char **env, t_gnrl **gen, int i)
 		else if (line[0][i] == '\\')
 			line[0] = fnc_bslsh(line[0], &i, gen);
 		else if (line[0][i] == '\"')
-			line[0] = preUseFncDQuot(line[0], &i, env, gen);
+			line[0] = preUseFncDQuot(line[0], &i, (*gen)->env, gen);
 		else if (line[0][i] == '$')
-			line[0] = preUseFncDollar(line[0], &i, env);
+			line[0] = preUseFncDollar(line[0], &i, (*gen)->env);
 		else if (line[0][i] == '>' || line[0][i] == '<')
-			line[0] = preUseFncRedir(line[0], &i, gen);
+			line[0] = preUseFncRedir(line, &i, gen);
 		else if (line[0][i] == '|')
 			line[0] = preUseFncPipe(line[0], &i, &(*gen)->cmd);
 		else

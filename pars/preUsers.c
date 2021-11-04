@@ -36,19 +36,19 @@ char	*preUseStrJoin(char *str1, char *str2)
 	return (tmp);
 }
 
-char *preUseFncRedir(char *line, int *i, t_gnrl **gen)
+char *preUseFncRedir(char **line, int *i, t_gnrl **gen)
 {
 	char	*tmp;
 
-	tmp = ft_strdup(line);
+	tmp = ft_strdup(line[0]);
 	if (tmp[*i] == '>' && tmp[*i + 1] == '>')
-		tmp = fnc_redir(tmp, i, gen, 1);
+		tmp = fnc_redir(&tmp, i, gen, 1);
 	if (tmp[*i] == '>')
-		tmp = fnc_redir(tmp, i, gen, 2);
+		tmp = fnc_redir(&tmp, i, gen, 2);
 	if (tmp[*i] == '<' && tmp[*i + 1] == '<')
-		tmp = fnc_redir(tmp, i, gen, 3);
+		tmp = fnc_redir(&tmp, i, gen, 3);
 	if (tmp[*i] == '<')
-		tmp = fnc_redir(tmp, i, gen, 4);
-	free (line); // задекоментить, когда будет изменяться лайн (удаляться символы редиров)
+		tmp = fnc_redir(&tmp, i, gen, 4);
+//	free (line); // задекоментить, когда будет изменяться лайн (удаляться символы редиров)
 	return (tmp);
 }

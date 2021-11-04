@@ -1,32 +1,72 @@
 #include "mslib.h"
 
-char *fnc_redir(char *line, int *i, t_gnrl **gen, int ident)
+char *fnc_redir(char **line, int *i, t_gnrl **gen, int ident)
 {
 	int nameLen;
 	char *nameFile;
 
-	nameLen = *i;
-	while (ft_isalnumMS(line[nameLen]) == 0) // пропускаем символы, которые не могут входить в нейминг
-		nameLen++;
-	line = strCutStr(line, *i, nameLen);
-	nameLen = *i;
-	while (line[nameLen] && line[nameLen] != ' ') // пропускаем символы, которые не могут входить в нейминг
-		nameLen++;
-	nameFile = ft_substr(line, *i, nameLen - *i);// берём имя
-	while (line[nameLen] && line[nameLen] == ' ') // пропускаем лишние пробелы
+	nameFile = nameForRedir(line, &nameLen, i, gen);
+	while (line[0][nameLen] && line[0][nameLen] == ' ') // пропускаем лишние пробелы
 		nameLen++;
 	if (ident == 1)
-		fncRedirWrite(line, gen, nameFile);
+		fncRedirWrite(line[0], gen, nameFile);
 	else if (ident == 2)
-		fncRedirReWrite(line, gen, nameFile);
+		fncRedirReWrite(line[0], gen, nameFile);
 	else if (ident == 3)
 		fncRedirHeredoc(gen, nameFile);
 	else if (ident == 4)
-		fncRedirOpen(line, gen, nameFile);
+		fncRedirOpen(line[0], gen, nameFile);
 	free (nameFile);
-	line = strCutStr(line, *i, nameLen);
-	return (line);
+	line[0] = strCutStr(line[0], *i, nameLen);
+	return (line[0]);
 }
+
+char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen)
+{
+	char	*fileName;
+
+	*nameLen = *i;
+	while ((line[0][*nameLen]) && (ft_isalnumMS(line[0][*nameLen]) == 0)) // пропускаем символы, которые не могут входить в нейминг
+		*nameLen += 1;
+	line[0] = strCutStr(*line, *i, *nameLen);
+//	*nameLen = *i;
+//	*i = *nameLen;
+	while ((line[0][*nameLen]) && (line[0][*nameLen] != '|' || line[0][*nameLen] != '>' || line[0][*nameLen] != '<')) // пропускаем символы, которые не могут входить в нейминг
+		{
+		if (line[0][*nameLen] == '\'')
+			line[0] = preUseFncQuot(line[0], nameLen, gen);
+		else if (line[0][*nameLen] == '\\')
+			line[0] = fnc_bslsh(line[0], nameLen, gen);
+		else if (line[0][*nameLen] == '\"')
+			line[0] = preUseFncDQuot(line[0], nameLen, (*gen)->env, gen);
+		else if (line[0][*nameLen] == '$')
+			line[0] = preUseFncDollar(line[0], nameLen, (*gen)->env);
+		*nameLen += 1;
+		//		printf("%c\n", line[0][*nameLen]);
+		}
+	fileName = ft_substr(line[0], *i, *nameLen - *i);// берём имя
+	return (fileName);
+}
+
+//char	*ifName(char **line, int *i, t_gnrl **gen)
+//{
+//
+//	if (line[0][*i] == '\'')
+//		line[0] = preUseFncQuot(line[0], i, gen);
+//	else if (line[0][*i] == '\\')
+//		line[0] = fnc_bslsh(line[0], i, gen);
+//	else if (line[0][*i] == '\"')
+//		line[0] = preUseFncDQuot(line[0], i, (*gen)->env, gen);
+//	else if (line[0][*i] == '$')
+//		line[0] = preUseFncDollar(line[0], i, (*gen)->env);
+//	else if (line[0][*i] == '>' || line[0][*i] == '<')
+//		line[0] = preUseFncRedir(line[0], i, gen);
+//	else if (line[0][*i] == '|')
+//		line[0] = preUseFncPipe(line[0], i, &(*gen)->cmd);
+//	else
+//		*i += 1;
+//	return (*line);
+//}
 
 void	fncRedirOpen(char *line, t_gnrl **gen, char *nameFile) //доработать
 {

@@ -31,7 +31,7 @@ typedef struct s_gnrl
 }	t_gnrl;
 
 void	exefnc(char **line, t_gnrl **gen);
-int		first_fnc(char **line, char **env, t_gnrl **gen, int i);
+int		first_fnc(char **line, t_gnrl **gen, int i);
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine);
 
 char	**ft_splitMS(char const *s, char c);
@@ -61,7 +61,7 @@ int		ft_strcmpMS(const char *s1, const char *s2);
 void	genInit(t_gnrl **gen);
 char	*fncCutTbl(char *str);
 
-char	*preUseFncRedir(char *line, int *i, t_gnrl **gen);
+char	*preUseFncRedir(char **line, int *i, t_gnrl **gen);
 char	*preUseStrJoin(char *str1, char *str2);
 char	*preUseFncQuot(char *line, int *i, t_gnrl **gen);
 char	*preUseFncDQuot(char *line, int *i, char **env, t_gnrl **gen);
@@ -73,7 +73,7 @@ char	*strCutStr(char *inStr, int startOfCut, int endOfCut);
 char	**envPrisv(char **envp);
 void	butilsProv(t_cmnd **command);
 
-char	*fnc_redir(char *line, int *i, t_gnrl **gen, int ident);
+char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident);
 void	fncRedirOpen(char *line, t_gnrl **gen, char *nameFile);
 void	fncRedirReWrite(char *line, t_gnrl **gen, char *nameFile);
 void	fncRedirWrite(char *line, t_gnrl **gen, char *nameFile);
@@ -88,11 +88,13 @@ void	unsetBuilt(t_list *ptr, t_gnrl *zik);
 
 void	fncMonitor(t_cmnd *cmd);
 
-int		check_for_pipes(char const *line);
+//int		check_for_pipes(char const *line);
 char	*preUseFncPipe(char *line, int *whereIsPipe, t_cmnd **commandLine);
-void	*signalQuitMS(int get);
-void	exitCtrlD(void);
+//void	*signalQuitMS(int get);
+//void	exitCtrlD(void);
 void	ctrl_c_hook(int sgn);
 void    rl_replace_line(const char *buffer, int val);
+char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen);
+char	*ifName(char **line, int *i, t_gnrl **gen);
 
 #endif
