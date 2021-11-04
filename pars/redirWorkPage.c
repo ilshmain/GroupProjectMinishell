@@ -33,20 +33,21 @@ char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen)
 	while ((line[0][*nameLen]) && (ft_isalnumMS(line[0][*nameLen]) == 0)) // пропускаем символы, которые не могут входить в нейминг
 		*nameLen += 1;
 	line[0] = strCutStr(*line, *i, *nameLen);
-//	*nameLen = *i;
-//	*i = *nameLen;
-	while ((line[0][*nameLen]) && (line[0][*nameLen] != '|' || line[0][*nameLen] != '>' || line[0][*nameLen] != '<')) // пропускаем символы, которые не могут входить в нейминг
+	*nameLen = *i;
+	while ((line[0][*nameLen])) // пропускаем символы, которые не могут входить в нейминг
 		{
 		if (line[0][*nameLen] == '\'')
 			line[0] = preUseFncQuot(line[0], nameLen, gen);
 		else if (line[0][*nameLen] == '\\')
 			line[0] = fnc_bslsh(line[0], nameLen, gen);
 		else if (line[0][*nameLen] == '\"')
-			line[0] = preUseFncDQuot(*line, nameLen, (*gen)->env, gen);
+			line[0] = preUseFncDQuot(line, nameLen, (*gen)->env, gen);
 		else if (line[0][*nameLen] == '$')
 			line[0] = preUseFncDollar(line[0], nameLen, (*gen)->env);
+		else if (line[0][*nameLen] == '|' || line[0][*nameLen] == '<' ||
+				line[0][*nameLen] == '>' || line[0][*nameLen] == ' ')
+			break;
 		*nameLen += 1;
-		//		printf("%c\n", line[0][*nameLen]);
 		}
 	fileName = ft_substr(line[0], *i, *nameLen - *i);// берём имя
 	return (fileName);
@@ -142,12 +143,39 @@ void	fncRedirReWrite(char *line, t_cmnd **cmd, char *nameFile)
 void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
 {
 	int 	i;
+	char	**tmp;
 
 	i = 0;
-	if ((*cmd)->heredoc)
-		while ((*cmd)->heredoc[i++]);
-	else
-		(*cmd)->heredoc = malloc(sizeof (char**));
-	(*cmd)->heredoc[i] = malloc(sizeof (char) * ft_strlenMS(hereDoc));
-	(*cmd)->heredoc[i] = ft_strdup(hereDoc);
+	tmp = malloc(sizeof (char **) * (dualArrayLen((*cmd)->heredoc) + ft_strlenMS(hereDoc)));
+	while ((*cmd)->heredoc && (*cmd)->heredoc[i] != NULL)
+	{
+		tmp[i] = ft_strdup((*cmd)->heredoc[i]);
+		free ((*cmd)->heredoc[i]);
+		i++;
+	}
+	tmp[i] = ft_strdup(hereDoc);
+	free ((*cmd)->heredoc);
+	(*cmd)->heredoc = tmp;
+}
+
+int	dualArrayLen(char **array)
+{
+	int	i;
+	int	j;
+	int	len;
+
+	if (array == NULL)
+		return (0);
+	i = 0;
+	j = 0;
+	len = 0;
+	while (array[i])
+	{
+		j = 0;
+		while (array[i][j])
+			j++;
+		len += j;
+		i++;
+	}
+	return (len);
 }

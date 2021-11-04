@@ -97,5 +97,6 @@ void    rl_replace_line(const char *buffer, int val);
 char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen);
 //char	*ifName(char **line, int *i, t_gnrl **gen);
 char	*initLine(char *line);
+int		dualArrayLen(char **array);
 
 #endif

@@ -39,13 +39,15 @@ void	fncMonitor(t_cmnd *cmd)
 		printf("fd_write: %d\n", tmp->fd_write);
 		printf("fd_reWrite: %d\n", tmp->fd_reWrite);
 		if (tmp->heredoc != NULL)
-			while (1)
-			{
-				printf("heredoc[%d]: %s\n", j, tmp->heredoc[j]);
-				j++;
-				if (tmp->heredoc[j] == NULL)
-					break;
-			}
+		while (1)
+		{
+			printf("heredoc[%d]: %s\n", j, tmp->heredoc[j]);
+			j++;
+			if (tmp->heredoc[j] == NULL)
+				break;
+		}
+		else
+			printf("heredoc is missing");
 		if (tmp->nextList == NULL) {
 			printf("\nlast list\n\n");
 			break;

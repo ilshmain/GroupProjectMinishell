@@ -17,12 +17,13 @@
     <list default="true" id="fd60c9d3-2da8-4598-8b27-9c8c919dcfda" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/exec.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/exec.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/preUsers.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/preUsers.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/checkMinishell" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/checkMinishell" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pars/exec.c" beforeDir="false" afterPath="$PROJECT_DIR$/pars/exec.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/file2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hehhportife" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pars/mslib.h" beforeDir="false" afterPath="$PROJECT_DIR$/pars/mslib.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pars/preUsers.c" beforeDir="false" afterPath="$PROJECT_DIR$/pars/preUsers.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pars/redirWorkPage.c" beforeDir="false" afterPath="$PROJECT_DIR$/pars/redirWorkPage.c" afterDir="false" />
@@ -86,14 +87,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="checkMinishell" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkMinishell" TARGET_NAME="checkMinishell" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkMinishell" RUN_TARGET_NAME="checkMinishell">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="checkMinishell" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkMinishell" TARGET_NAME="checkMinishell" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkMinishell" RUN_TARGET_NAME="checkMinishell">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -161,7 +162,10 @@
       <workItem from="1635854271104" duration="1622000" />
       <workItem from="1635856078075" duration="1835000" />
       <workItem from="1636005684351" duration="1658000" />
-      <workItem from="1636007494790" duration="1000" />
+      <workItem from="1636007494790" duration="1801000" />
+      <workItem from="1636009321707" duration="1500000" />
+      <workItem from="1636011547710" duration="1791000" />
+      <workItem from="1636013355925" duration="1101000" />
     </task>
     <servers />
   </component>
@@ -211,14 +215,39 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/pars/redirWorkPage.c</url>
+          <line>43</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>17</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/pars/preUsers.c</url>
+          <line>15</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/pars/exec.c</url>
-          <line>11</line>
-          <option name="timeStamp" value="3" />
+          <line>74</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/pars/redirWorkPage.c</url>
-          <line>40</line>
-          <option name="timeStamp" value="4" />
+          <line>18</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/pars/redirWorkPage.c</url>
+          <line>11</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/pars/redirWorkPage.c</url>
+          <line>142</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

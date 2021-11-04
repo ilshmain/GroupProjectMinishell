@@ -43,11 +43,11 @@ char *preUseFncRedir(char **line, int *i, t_gnrl **gen)
 	tmp = ft_strdup(line[0]);
 	if (tmp[*i] == '>' && tmp[*i + 1] == '>')
 		tmp = fnc_redir(&tmp, i, gen, 1);
-	if (tmp[*i] == '>')
+	else if (tmp[*i] == '>')
 		tmp = fnc_redir(&tmp, i, gen, 2);
-	if (tmp[*i] == '<' && tmp[*i + 1] == '<')
+	else if (tmp[*i] == '<' && tmp[*i + 1] == '<')
 		tmp = fnc_redir(&tmp, i, gen, 3);
-	if (tmp[*i] == '<')
+	else if (tmp[*i] == '<')
 		tmp = fnc_redir(&tmp, i, gen, 4);
 //	free (line); // задекоментить, когда будет изменяться лайн (удаляться символы редиров)
 	return (tmp);
