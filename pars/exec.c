@@ -9,7 +9,7 @@ void exefnc(char **line, t_gnrl **gen)
 		if (*line == NULL)
 			error_call("exit\n");
 		add_history(*line);
-//		line = initLine(line);
+//		*line = initLine(*line);
 		if (first_fnc(line, gen, 0) == 1)
 			printf("there are errors\n");
 		else
@@ -17,13 +17,13 @@ void exefnc(char **line, t_gnrl **gen)
 	}
 }
 
-//char	*initLine(char *line)
-//{
-//	char	*tmp;
-//
-//	tmp = ft_strdupMS(line);
-//	return (tmp);
-//}
+char	*initLine(char *line)
+{
+	char	*tmp;
+
+	tmp = ft_strdupMS(line);
+	return (tmp);
+}
 
 void	exitCtrlD(void)
 {
@@ -52,7 +52,7 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 		else if (line[0][i] == '\\')
 			line[0] = fnc_bslsh(line[0], &i, gen);
 		else if (line[0][i] == '\"')
-			line[0] = preUseFncDQuot(line[0], &i, (*gen)->env, gen);
+			line[0] = preUseFncDQuot(line, &i, (*gen)->env, gen);
 		else if (line[0][i] == '$')
 			line[0] = preUseFncDollar(line[0], &i, (*gen)->env);
 		else if (line[0][i] == '>' || line[0][i] == '<')
@@ -77,6 +77,8 @@ char	*preUseFncPipe(char *line, int *whereIsPipe, t_cmnd **commandLine)
 	char	*tmp;
 	t_cmnd	*tmpCommandline;
 
+	if (line[*whereIsPipe] == '|')
+		(*commandLine)->flg_pipe = 1;
 	tmpCommandline = *commandLine;
 	if (tmpCommandline->nextList != NULL)
 		while (tmpCommandline->nextList != NULL)
@@ -92,6 +94,8 @@ char	*preUseFncPipe(char *line, int *whereIsPipe, t_cmnd **commandLine)
 	butilsProv(&tmpCommandline);
 	free(tmp);
 	tmp = ft_substrMS(line, *whereIsPipe + 1, ft_strlenMS(line) - *whereIsPipe);
+	if (tmp && ft_strcmpMS(tmp, "") != 0)
+		tmpCommandline->nextList = ft_lstnewMS();
 	*whereIsPipe = 0;
 	free(line);
 	return (tmp);

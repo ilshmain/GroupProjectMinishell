@@ -64,7 +64,7 @@ char	*fncCutTbl(char *str);
 char	*preUseFncRedir(char **line, int *i, t_gnrl **gen);
 char	*preUseStrJoin(char *str1, char *str2);
 char	*preUseFncQuot(char *line, int *i, t_gnrl **gen);
-char	*preUseFncDQuot(char *line, int *i, char **env, t_gnrl **gen);
+char	*preUseFncDQuot(char **line, int *i, char **env, t_gnrl **gen);
 char	*preUseFncDollar(char *line, int *i, char **env);
 
 void	ft_putstr_fdMS(char *s, int fd);
@@ -74,10 +74,10 @@ char	**envPrisv(char **envp);
 void	butilsProv(t_cmnd **command);
 
 char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident);
-void	fncRedirOpen(char *line, t_gnrl **gen, char *nameFile);
-void	fncRedirReWrite(char *line, t_gnrl **gen, char *nameFile);
-void	fncRedirWrite(char *line, t_gnrl **gen, char *nameFile);
-void	fncRedirHeredoc(t_gnrl **gen, char *hereDoc);
+void	fncRedirOpen(char *line, t_cmnd **cmd, char *nameFile);
+void	fncRedirReWrite(char *line, t_cmnd **cmd, char *nameFile);
+void	fncRedirWrite(char *line, t_cmnd **cmd, char *nameFile);
+void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc);
 
 int		logica(t_gnrl **zik);
 

@@ -2,20 +2,24 @@
 
 char *fnc_redir(char **line, int *i, t_gnrl **gen, int ident)
 {
-	int nameLen;
-	char *nameFile;
+	int		nameLen;
+	char	*nameFile;
+	t_cmnd	*tmpCmd;
 
+	tmpCmd = (*gen)->cmd;
+	while (tmpCmd->nextList != NULL)
+		tmpCmd = tmpCmd->nextList;
 	nameFile = nameForRedir(line, &nameLen, i, gen);
 	while (line[0][nameLen] && line[0][nameLen] == ' ') // пропускаем лишние пробелы
 		nameLen++;
 	if (ident == 1)
-		fncRedirWrite(line[0], gen, nameFile);
+		fncRedirWrite(line[0], &tmpCmd, nameFile);
 	else if (ident == 2)
-		fncRedirReWrite(line[0], gen, nameFile);
+		fncRedirReWrite(line[0], &tmpCmd, nameFile);
 	else if (ident == 3)
-		fncRedirHeredoc(gen, nameFile);
+		fncRedirHeredoc(&tmpCmd, nameFile);
 	else if (ident == 4)
-		fncRedirOpen(line[0], gen, nameFile);
+		fncRedirOpen(line[0], &tmpCmd, nameFile);
 	free (nameFile);
 	line[0] = strCutStr(line[0], *i, nameLen);
 	return (line[0]);
@@ -38,7 +42,7 @@ char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen)
 		else if (line[0][*nameLen] == '\\')
 			line[0] = fnc_bslsh(line[0], nameLen, gen);
 		else if (line[0][*nameLen] == '\"')
-			line[0] = preUseFncDQuot(line[0], nameLen, (*gen)->env, gen);
+			line[0] = preUseFncDQuot(*line, nameLen, (*gen)->env, gen);
 		else if (line[0][*nameLen] == '$')
 			line[0] = preUseFncDollar(line[0], nameLen, (*gen)->env);
 		*nameLen += 1;
@@ -68,81 +72,82 @@ char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen)
 //	return (*line);
 //}
 
-void	fncRedirOpen(char *line, t_gnrl **gen, char *nameFile) //доработать
+void	fncRedirOpen(char *line, t_cmnd **cmd, char *nameFile) //доработать
 {
 	int	fd;
 
-	if ((*gen)->cmd->fd_open)
+	if ((*cmd)->fd_open)
 	{
-		close((*gen)->cmd->fd_open);
-		(*gen)->cmd->fd_open = 0;
+		close((*cmd)->fd_open);
+		(*cmd)->fd_open = 0;
 	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_RDONLY); // открываем на чтение
 	if (fd == -1)
 	{
-		(*gen)->errors = 1;
+		(*cmd)->err = 1;
 		return ;
 	}
-	(*gen)->cmd->fd_open = fd; // записываем дескриптор
+	(*cmd)->fd_open = fd; // записываем дескриптор
 }
 
-void	fncRedirWrite(char *line, t_gnrl **gen, char *nameFile)
+void	fncRedirWrite(char *line, t_cmnd **cmd, char *nameFile)
 {
 	int fd;
 
-	if ((*gen)->cmd->fd_write)
+	if ((*cmd)->fd_write)
 	{
-		close((*gen)->cmd->fd_write);
-		(*gen)->cmd->fd_write = 0;
+		close((*cmd)->fd_write);
+		(*cmd)->fd_write = 0;
 	}
-	if ((*gen)->cmd->fd_reWrite)
+	if ((*cmd)->fd_reWrite)
 	{
-		close((*gen)->cmd->fd_reWrite);
-		(*gen)->cmd->fd_reWrite = 0;
+		close((*cmd)->fd_reWrite);
+		(*cmd)->fd_reWrite = 0;
 	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_CREAT); // открываем на дозапись
 	if (fd == -1)
 	{
-		(*gen)->errors = 1;
+		(*cmd)->err = 1;
 		return ;
 	}
-	(*gen)->cmd->fd_write = fd; // записываем дескриптор
+	(*cmd)->fd_write = fd; // записываем дескриптор
 }
 
-void	fncRedirReWrite(char *line, t_gnrl **gen, char *nameFile)
+void	fncRedirReWrite(char *line, t_cmnd **cmd, char *nameFile)
 {
-	int fd;
+	int 	fd;
+	t_cmnd	tmpCmd;
 
-	if ((*gen)->cmd->fd_write)
+	if ((*cmd)->fd_write)
 	{
-		close((*gen)->cmd->fd_write);
-		(*gen)->cmd->fd_write = 0;
+		close((*cmd)->fd_write);
+		(*cmd)->fd_write = 0;
 	}
-	if ((*gen)->cmd->fd_reWrite)
+	if ((*cmd)->fd_reWrite)
 	{
-		close((*gen)->cmd->fd_reWrite);
-		(*gen)->cmd->fd_reWrite = 0;
+		close((*cmd)->fd_reWrite);
+		(*cmd)->fd_reWrite = 0;
 	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_TRUNC); // открываем на перезапись
 	if (fd == -1) //если файла не существует, создаём
 		fd = open(nameFile, O_CREAT);
 	if (fd == -1)
 	{
-		(*gen)->errors = 1;//ОШИППППКИ)
+		(*cmd)->err = 1;//ОШИППППКИ)
 		return ;
 	}
-	(*gen)->cmd->fd_reWrite = fd; // записываем дескриптор
+	(*cmd)->fd_reWrite = fd; // записываем дескриптор
 }
 
-void	fncRedirHeredoc(t_gnrl **gen, char *hereDoc)
+void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
 {
 	int 	i;
 
 	i = 0;
-	if ((*gen)->cmd->heredoc)
-		while ((*gen)->cmd->heredoc[i++]);
+	if ((*cmd)->heredoc)
+		while ((*cmd)->heredoc[i++]);
 	else
-		(*gen)->cmd->heredoc = malloc(sizeof (char**));
-	(*gen)->cmd->heredoc[i] = malloc(sizeof (char) * ft_strlenMS(hereDoc));
-	(*gen)->cmd->heredoc[i] = ft_strdup(hereDoc);
+		(*cmd)->heredoc = malloc(sizeof (char**));
+	(*cmd)->heredoc[i] = malloc(sizeof (char) * ft_strlenMS(hereDoc));
+	(*cmd)->heredoc[i] = ft_strdup(hereDoc);
 }

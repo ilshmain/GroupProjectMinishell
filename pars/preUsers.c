@@ -5,15 +5,15 @@ char	*preUseFncDollar(char *line, int *i, char **env)
 	char	*tmp;
 
 	tmp = fnc_dollar(line, i, env);
-//	free (line);
+	free (line);
 	return (tmp);
 }
 
-char	*preUseFncDQuot(char *line, int *i, char **env, t_gnrl **gen)
+char	*preUseFncDQuot(char **line, int *i, char **env, t_gnrl **gen)
 {
 	char	*tmp;
 
-	tmp = fnc_dquot(line, i, env, gen);
+	tmp = fnc_dquot(*line, i, env, gen);
 //	free (line);
 	return (tmp);
 }
