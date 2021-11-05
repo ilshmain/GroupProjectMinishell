@@ -70,9 +70,9 @@ char	**envPrisv(char **envp);
 void	butilsProv(t_cmnd **command);
 
 char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident);
-void	fncRedirOpen(char *line, t_cmnd **cmd, char *nameFile);
-void	fncRedirReWrite(char *line, t_cmnd **cmd, char *nameFile);
-void	fncRedirWrite(char *line, t_cmnd **cmd, char *nameFile);
+void	fncRedirOpen(t_cmnd **cmd, char *nameFile);
+void	fncRedirReWrite(t_cmnd **cmd, char *nameFile);
+void	fncRedirWrite(t_cmnd **cmd, char *nameFile);
 void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc);
 
 int		logica(t_gnrl **zik);

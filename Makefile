@@ -31,13 +31,15 @@ HEADERS			=	-I./include/ -I.source/Libft/
 
 CC				=	gcc
 
+BRWRINST		=	brew reinstall readline
+
 RM				=	rm -rfv
 
 CFLAGS			=	-Wall -Wextra -Werror
 
 LIBS			=	./source/Libft/libft.a
 RDL				= 	-lreadline
-RDL_MAC			= 	-L/Users/$(USER)/.brew/Cellar/readline/8.1/lib/
+RDL_MAC			= 	-L/Users/$(USER)/.brew/Cellar/readline/8.1.1/lib/
 
 
 all:			$(NAME)
@@ -47,6 +49,7 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS) ./include/minishell.h ./include/structs_minishell.h ./source/Libft/libft.h
 				cd ./source/Libft/ && $(MAKE)
+				$(BRWRINST)
 				$(CC) $(CFLAGS) $(LIBS) $(HEADERS) $(RDL_MAC) $(RDL) $(OBJS) -o $(NAME)
 
 clean:

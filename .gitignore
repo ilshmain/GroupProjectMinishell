@@ -52,9 +52,9 @@ Mkfile.old
 dkms.conf
 
 
-.idea/
-.vscode/
-cmake-build-debug
+/.idea/
+/.vscode/
+/cmake-build-debug/
 tester_100
 CMakeLists.txt
 *.code-workspace
@@ -69,4 +69,3 @@ checker
 # .out?
 .o
 # .o?
-.vscode

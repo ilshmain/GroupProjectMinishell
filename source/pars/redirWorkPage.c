@@ -13,13 +13,13 @@ char *fnc_redir(char **line, int *i, t_gnrl **gen, int ident)
 	while (line[0][nameLen] && line[0][nameLen] == ' ') // пропускаем лишние пробелы
 		nameLen++;
 	if (ident == 1)
-		fncRedirWrite(line[0], &tmpCmd, nameFile);
+		fncRedirWrite(&tmpCmd, nameFile);
 	else if (ident == 2)
-		fncRedirReWrite(line[0], &tmpCmd, nameFile);
+		fncRedirReWrite(&tmpCmd, nameFile);
 	else if (ident == 3)
 		fncRedirHeredoc(&tmpCmd, nameFile);
 	else if (ident == 4)
-		fncRedirOpen(line[0], &tmpCmd, nameFile);
+		fncRedirOpen(&tmpCmd, nameFile);
 	free (nameFile);
 	line[0] = strCutStr(line[0], *i, nameLen);
 	return (line[0]);
@@ -53,7 +53,7 @@ char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen)
 	return (fileName);
 }
 
-void	fncRedirOpen(char *line, t_cmnd **cmd, char *nameFile) //доработать
+void	fncRedirOpen(t_cmnd **cmd, char *nameFile) //доработать
 {
 	int	fd;
 
@@ -71,7 +71,7 @@ void	fncRedirOpen(char *line, t_cmnd **cmd, char *nameFile) //доработат
 	(*cmd)->fd_open = fd; // записываем дескриптор
 }
 
-void	fncRedirWrite(char *line, t_cmnd **cmd, char *nameFile)
+void	fncRedirWrite(t_cmnd **cmd, char *nameFile)
 {
 	int fd;
 
@@ -94,10 +94,9 @@ void	fncRedirWrite(char *line, t_cmnd **cmd, char *nameFile)
 	(*cmd)->fd_write = fd; // записываем дескриптор
 }
 
-void	fncRedirReWrite(char *line, t_cmnd **cmd, char *nameFile)
+void	fncRedirReWrite(t_cmnd **cmd, char *nameFile)
 {
 	int 	fd;
-	t_cmnd	tmpCmd;
 
 	if ((*cmd)->fd_write)
 	{
