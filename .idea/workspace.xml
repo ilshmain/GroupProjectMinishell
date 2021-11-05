@@ -16,17 +16,170 @@
   <component name="ChangeListManager">
     <list default="true" id="fd60c9d3-2da8-4598-8b27-9c8c919dcfda" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/.vscode/c_cpp_properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/.vscode/c_cpp_properties.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_atoi.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_atoi.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_bzero.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_bzero.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_calloc.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_calloc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_isalnum.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_isalnum.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_isalpha.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_isalpha.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_isascii.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_isascii.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_isdigit.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_isdigit.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_isprint.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_isprint.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_itoa.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_itoa.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_lstadd_back.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_lstadd_back.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_lstadd_front.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_lstadd_front.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_lstlast.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_lstlast.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_lstnew.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_lstnew.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_lstsize.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_lstsize.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_memccpy.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_memccpy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_memchr.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_memchr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_memcmp.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_memcmp.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_memcpy.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_memcpy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_memmove.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_memmove.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_memset.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_memset.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_putchar_fd.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_putchar_fd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_putendl_fd.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_putendl_fd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_putnbr_fd.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_putnbr_fd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_putstr_fd.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_putstr_fd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_split.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_split.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strchr.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strchr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strdup.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strdup.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strjoin.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strjoin.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strlcat.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strlcat.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strlcpy.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strlcpy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strlen.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strlen.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strmapi.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strmapi.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strncmp.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strncmp.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strnstr.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strnstr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strrchr.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strrchr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_strtrim.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_strtrim.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_substr.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_substr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_tolower.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_tolower.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/ft_toupper.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/ft_toupper.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libft/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/Libft/libft.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/builts/bash.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/builts/bash.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builts/cd.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/builts/cd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builts/echo.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/builts/echo.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builts/env.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/builts/env.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builts/export.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/builts/export.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builts/pwd.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/builts/pwd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builts/unset.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/builts/unset.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builts/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/builts/utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/preUsers.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/preUsers.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_atoi.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_bzero.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_calloc.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_isalnum.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_isalpha.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_isascii.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_isdigit.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_isprint.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_itoa.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_lstadd_back.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_lstadd_front.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_lstlast.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_lstnew.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_lstsize.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_memccpy.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_memchr.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_memcmp.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_memcpy.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_memmove.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_memset.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_putchar_fd.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_putendl_fd.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_putnbr_fd.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_putstr_fd.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_split.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strchr.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strdup.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strjoin.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strlcat.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strlcpy.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strlen.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strmapi.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strncmp.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strnstr.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strrchr.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_strtrim.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_substr.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_tolower.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/Libft/ft_toupper.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/builts/bash.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/builts/cd.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/builts/echo.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/builts/env.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/builts/export.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/builts/pwd.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/builts/unset.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/builts/utils.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/logic.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/main.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/bslshWorkPage.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/dollarWorkPage.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/error_call.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/exec.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_isalnum.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_split.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strchr.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strdup.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strjoin.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcat.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlcpy.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strlen.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strncmp.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_strnstr.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/ms_libft/ft_substr.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/preUsers.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/quotWorkPage.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/redirWorkPage.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkMinishell.dir/pars/servFns.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/checkMinishell" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/checkMinishell" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/file2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/hehhportife" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pars/mslib.h" beforeDir="false" afterPath="$PROJECT_DIR$/pars/mslib.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pars/preUsers.c" beforeDir="false" afterPath="$PROJECT_DIR$/pars/preUsers.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pars/redirWorkPage.c" beforeDir="false" afterPath="$PROJECT_DIR$/pars/redirWorkPage.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/checkMinishell.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/checkMinishell.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/minishell.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/minishell.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/logica/logic.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/bslshWorkPage.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/bslshWorkPage.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/dollarWorkPage.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/dollarWorkPage.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/error_call.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/error_call.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/exec.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/exec.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_isalnum.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_isalnum.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_split.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_split.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_strchr.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_strchr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_strdup.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_strdup.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_strjoin.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_strjoin.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_strlcat.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_strlcat.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_strlcpy.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_strlcpy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_strlen.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_strlen.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_strncmp.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_strncmp.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_strnstr.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_strnstr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/ms_libft/ft_substr.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/ms_libft/ft_substr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/mslib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/preUsers.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/preUsers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/quotWorkPage.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/quotWorkPage.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/redirWorkPage.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/redirWorkPage.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pars/servFns.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/pars/servFns.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,22 +194,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/pars/redirWorkPage.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Libft/ft_split.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pars/ms_libft/ft_strlcpy.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pars/servFns.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/main.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pars/ms_libft/ft_isalnum.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Libft/ft_isalnum.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Libft/ft_isdigit.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pars/exec.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pars/mslib.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pars/ms_libft/ft_substr.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Libft/ft_isalpha.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pars/ms_libft/ft_strlen.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Libft/ft_strlen.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pars/preUsers.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Libft/ft_strdup.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/Libft/ft_strdup.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/pars/ms_libft/ft_isalnum.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/Libft/ft_isalnum.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/pars/ms_libft/ft_strlcpy.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/Libft/ft_isdigit.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/Libft/ft_strlen.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/pars/ms_libft/ft_substr.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/Libft/ft_split.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/pars/servFns.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/pars/redirWorkPage.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/pars/preUsers.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/pars/exec.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/main.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/Libft/ft_isalpha.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/source/pars/ms_libft/ft_strlen.c" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zjMzca5ZLZh56l7BcPSZXEFi9v" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -83,18 +235,26 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/include" />
+      <recent name="$PROJECT_DIR$/source/logica" />
+      <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$/pars/ms_libft" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="checkMinishell" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkMinishell" TARGET_NAME="checkMinishell" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkMinishell" RUN_TARGET_NAME="checkMinishell">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -166,6 +326,9 @@
       <workItem from="1636009321707" duration="1500000" />
       <workItem from="1636011547710" duration="1791000" />
       <workItem from="1636013355925" duration="1101000" />
+      <workItem from="1636041480103" duration="443000" />
+      <workItem from="1636090083924" duration="183000" />
+      <workItem from="1636114889058" duration="7854000" />
     </task>
     <servers />
   </component>
@@ -215,39 +378,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/pars/redirWorkPage.c</url>
+          <url>file://$PROJECT_DIR$/source/pars/redirWorkPage.c</url>
           <line>43</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>17</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/pars/preUsers.c</url>
+          <url>file://$PROJECT_DIR$/source/pars/preUsers.c</url>
           <line>15</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/pars/exec.c</url>
+          <url>file://$PROJECT_DIR$/source/pars/exec.c</url>
           <line>74</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/pars/redirWorkPage.c</url>
-          <line>18</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/pars/redirWorkPage.c</url>
-          <line>11</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/pars/redirWorkPage.c</url>
+          <url>file://$PROJECT_DIR$/source/pars/redirWorkPage.c</url>
           <line>142</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/source/main.c</url>
+          <line>2</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
