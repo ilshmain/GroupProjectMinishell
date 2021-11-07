@@ -1,12 +1,24 @@
 #include "../../include/minishell.h"
 
+int size_heredoc(char **argv)
+{
+	int i;
+	i = 0;
+
+	while (argv[i])
+		i++;
+	return (i - 1);
+}
+
 void	have_here_doc(t_map *st, char **argv, t_cmnd *cmd)
 {
 	int		i;
+	int		len;
 	char	*buf;
 
 	buf = NULL;
 	i = 0;
+	len = size_heredoc(argv);
 	while (argv[i])
 	{
 		while (ft_strcmp(buf, argv[i]))
@@ -16,8 +28,11 @@ void	have_here_doc(t_map *st, char **argv, t_cmnd *cmd)
 			{
 				if (get_next_line(0, &buf) && ft_strncmp(buf, argv[i], ft_strlen(argv[i])))
 				{
-					write(st[st->i].fd[1], buf, ft_strlen(buf));
-					write(st[st->i].fd[1], "\n", 1);
+					if (len == i)
+					{
+						write(st[st->i].fd[1], buf, ft_strlen(buf));
+						write(st[st->i].fd[1], "\n", 1);
+					}
 				}
 				free(buf);
 			}
@@ -87,7 +102,6 @@ int	work_with_pipe(t_gnrl **zik)
 	create_pipe(st);
 	while (st->i < st->argc)
 	{
-//		write(1, "zzz", 5);
 		st->flag = 0;
 		check_argc(st, (*zik)->cmd);
 		many_command(st, (*zik)->env, (*zik)->cmd->heredoc, zik);

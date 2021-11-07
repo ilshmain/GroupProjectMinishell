@@ -36,8 +36,16 @@ void	pid_parent(t_map *st, char **envp, t_gnrl **zik)
 	dup2(st[st->i - 1].fd[0], 0);
 	if (((*zik)->cmd->fd_write != 0) || ((*zik)->cmd->fd_reWrite != 0))
 	{
-		if (dup2(st->file2, 1) < 0)
-			ft_perror("Errror open file2");
+		if ((*zik)->cmd->fd_write != 0)
+		{
+			if (dup2((*zik)->cmd->fd_write, 1) < 0)
+				ft_perror("Errror open file2");
+		}
+		else
+		{
+			if (dup2((*zik)->cmd->fd_reWrite, 1) < 0)
+				ft_perror("Errror open file2");
+		}
 	}
 	close(st[st->i - 1].fd[0]);
 	close(st[st->i - 1].fd[1]);
@@ -51,7 +59,6 @@ void	pid_children(t_map *st, char **envp, t_gnrl **zik)
 
 	i = 0;
 	k = 0;
-//	write(1, "slovo", 5);
 	if (st->i != 0)
 	{
 		close(st[st->i - 1].fd[1]);

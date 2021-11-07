@@ -10,14 +10,10 @@ void exefnc(char **line, t_gnrl **gen)
 			error_call("exit\n");
 		add_history(*line);
 //		*line = initLine(*line);
-//		write(1, "zzz", 3);
 		if (first_fnc(line, gen, 0) == 1)
 			printf("there are errors\n");
 		else
-		{
-			write(1, "zik", 3);
 			logica(gen);
-		}
 	}
 }
 

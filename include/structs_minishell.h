@@ -9,8 +9,6 @@ typedef struct st_pam
 	int		i;
 	int		argc;
 	int		fd[2];
-	int		file1;
-	int		file2;
 	int		flag;
 }	t_map;
 
