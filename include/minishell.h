@@ -48,7 +48,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *p1, const char *p2, size_t n);
 void	pars_envp(char **envp, char	**first_argv, int i, int k);
-void	pid_parent(t_map *st, char **envp, t_gnrl **zik);
+//void	pid_parent(t_map *st, char **envp, t_gnrl **zik);
 void	pid_children(t_map *st, char **envp, t_gnrl **zik);
 void	create_pipe(t_map *st);
 void	ft_perror(char *str);

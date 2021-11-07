@@ -26,32 +26,6 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 	}
 }
 
-void	pid_parent(t_map *st, char **envp, t_gnrl **zik)
-{
-	int	i;
-	int	k;
-
-	i = 0;
-	k = 0;
-	dup2(st[st->i - 1].fd[0], 0);
-	if (((*zik)->cmd->fd_write != 0) || ((*zik)->cmd->fd_reWrite != 0))
-	{
-		if ((*zik)->cmd->fd_write != 0)
-		{
-			if (dup2((*zik)->cmd->fd_write, 1) < 0)
-				ft_perror("Errror open file2");
-		}
-		else
-		{
-			if (dup2((*zik)->cmd->fd_reWrite, 1) < 0)
-				ft_perror("Errror open file2");
-		}
-	}
-	close(st[st->i - 1].fd[0]);
-	close(st[st->i - 1].fd[1]);
-	pars_envp(envp, (*zik)->cmd->command_array, i, k);
-}
-
 void	pid_children(t_map *st, char **envp, t_gnrl **zik)
 {
 	int	i;
@@ -61,13 +35,17 @@ void	pid_children(t_map *st, char **envp, t_gnrl **zik)
 	k = 0;
 	if (st->i != 0)
 	{
-		close(st[st->i - 1].fd[1]);
-		if (dup2(st[st->i - 1].fd[0], 0) < 0)
+		close(st[0].fd[1]);
+		if (dup2(st[0].fd[0], 0) < 0)
 			ft_perror("Error pid_children");
-		close(st[st->i - 1].fd[0]);
+		close(st[0].fd[0]);
+		pars_envp(envp, (*zik)->cmd->command_array, i, k);
 	}
-	if (dup2(st[st->i].fd[1], 1) < 0)
-		ft_perror("Error pid_children");
+	if (st->i != 1)
+	{
+		if (dup2(st[st->i].fd[1], 1) < 0)
+			ft_perror("Error pid_children");
+	}
 	close(st[st->i].fd[0]);
 	close(st[st->i].fd[1]);
 	pars_envp(envp, (*zik)->cmd->command_array, i, k);

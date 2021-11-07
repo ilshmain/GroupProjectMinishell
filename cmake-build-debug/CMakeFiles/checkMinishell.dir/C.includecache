@@ -44,7 +44,7 @@ stdlib.h
 unistd.h
 -
 
-/Users/fmint/shell/source/work_pipe/pipex_bonus_utils.c
+/Users/fmint/shell/source/pars/exec.c
 ../../include/minishell.h
 /Users/fmint/shell/include/minishell.h
 

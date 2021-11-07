@@ -4,6 +4,13 @@
 # include <stdlib.h>
 # include "../source/Libft/libft.h"
 
+
+typedef struct sta_pam
+{
+	int		i;
+}	tama_map;
+
+
 typedef struct st_pam
 {
 	int		i;

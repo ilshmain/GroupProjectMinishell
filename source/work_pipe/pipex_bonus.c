@@ -100,6 +100,7 @@ int	work_with_pipe(t_gnrl **zik)
 	st->i = 0;
 	st->argc = len - 1;
 	create_pipe(st);
+	st->argc  = st->argc + 1;
 	while (st->i < st->argc)
 	{
 		st->flag = 0;
@@ -108,7 +109,6 @@ int	work_with_pipe(t_gnrl **zik)
 		st->i++;
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
-	pid_parent(st, (*zik)->env, zik);
 	free(st);
 	return (0);
 }
