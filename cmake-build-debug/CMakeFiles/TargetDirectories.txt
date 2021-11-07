@@ -1,3 +1,0 @@
-/Users/fmint/Osnova/checkMinishell/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/fmint/Osnova/checkMinishell/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/fmint/Osnova/checkMinishell/cmake-build-debug/CMakeFiles/checkMinishell.dir
