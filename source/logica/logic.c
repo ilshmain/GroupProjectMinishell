@@ -26,4 +26,6 @@ int logica(t_gnrl **zik)
 {
 	work_with_pipe(zik);
 	return (1);
+
+	//proverka kak rabotaet merge
 }
