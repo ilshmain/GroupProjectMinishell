@@ -68,4 +68,9 @@ checker
 .out
 # .out?
 .o
+<<<<<<< HEAD
 # .o?
+=======
+# .o?
+minishell
+>>>>>>> logic
