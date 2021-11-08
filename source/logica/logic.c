@@ -24,12 +24,6 @@ void	builtFunc(t_gnrl *zik, t_list *ptr)
 
 int logica(t_gnrl **zik)
 {
-	while ((*zik)->cmd->nextList)
-	{
-		if ((*zik)->cmd->flg_pipe == 1)
-			builtFunc((*zik), (*zik)->ptr);
-		(*zik)->cmd = (*zik)->cmd->nextList;
-	}
-	builtFunc((*zik), (*zik)->ptr);
+	work_with_pipe(zik);
 	return (1);
 }
