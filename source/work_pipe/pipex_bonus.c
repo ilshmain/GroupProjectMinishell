@@ -109,6 +109,7 @@ int	work_with_pipe(t_gnrl **zik)
 		st->i++;
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
+	dup2(1, 0);
 	free(st);
 	return (0);
 }
