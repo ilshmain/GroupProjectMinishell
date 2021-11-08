@@ -7,7 +7,11 @@ void exefnc(char **line, t_gnrl **gen)
 		(*gen)->errors = 0;
 		*line = readline("minishell$ ");
 		if (*line == NULL)
+<<<<<<< HEAD
 			error_call("exit\n");
+=======
+			error_call("kuku exit\n");
+>>>>>>> logic
 		add_history(*line);
 //		*line = initLine(*line);
 		if (first_fnc(line, gen, 0) == 1)
@@ -27,7 +31,11 @@ char	*initLine(char *line)
 
 void	exitCtrlD(void)
 {
+<<<<<<< HEAD
 	printf("exit");
+=======
+	printf("zzz exit");
+>>>>>>> logic
 	exit(0);
 }
 

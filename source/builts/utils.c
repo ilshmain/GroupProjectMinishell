@@ -1,6 +1,10 @@
 #include "../../include/minishell.h"
 
+<<<<<<< HEAD
 void	ft_perror(char *str)
+=======
+void	ft_perror_shell(char *str)
+>>>>>>> logic
 {
 	perror(str);
 	return ;
