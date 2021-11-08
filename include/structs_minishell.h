@@ -13,6 +13,7 @@ typedef struct s_cmnd
 	int				fd_reWrite;
 	char 			**heredoc;
 	int				err;
+	char			*errContext;
 	struct s_cmnd	*nextList;
 }	t_cmnd;
 
@@ -22,6 +23,7 @@ typedef struct s_gnrl
 	t_cmnd	*cmd;
 	int		errors;
 	char	**env;
+	int		historyLog;
 }	t_gnrl;
 
 #endif

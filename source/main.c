@@ -38,6 +38,7 @@ void	fncMonitor(t_cmnd *cmd)
 		printf("fd_open: %d\n", tmp->fd_open);
 		printf("fd_write: %d\n", tmp->fd_write);
 		printf("fd_reWrite: %d\n", tmp->fd_reWrite);
+		printf("err: %d\n", tmp->err);
 		if (tmp->heredoc != NULL)
 		while (1)
 		{
@@ -57,42 +58,5 @@ void	fncMonitor(t_cmnd *cmd)
 	}
 }
 
-//char	*fncCutTbl(char *str)
-//{
-//	int		startOfStr;
-//	int		endOfStr;
-//	char	*tmp;
-//
-//	startOfStr = 0;
-//	while (str[startOfStr] && ft_isalnum(str[startOfStr]) == 0)
-//		startOfStr++;
-//	endOfStr = (int)ft_strlenMS(str);
-//	while (endOfStr > startOfStr && ft_isalnum(str[endOfStr - 1]) == 0)
-//		endOfStr--;
-//	tmp = ft_substr(str, startOfStr, endOfStr - startOfStr);
-//	free (str);
-//	return (tmp);
-//}
-
-//int	ft_double_vlm(char *str, char key)
-//{
-//	int i;
-//	int	qt;
-//
-//	i = 0;
-//	qt = 0;
-//	while (str[i])
-//	{
-//		if (str[i] == key && qt == 0)
-//			qt++;
-//		else if (str[i] == key && qt == 1)
-//			qt--;
-//		i++;
-//	}
-//	if (qt == 0)
-//		return (0);
-//	else
-//		return (1);
-//}
 
 

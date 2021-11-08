@@ -66,6 +66,7 @@ void	fncRedirOpen(t_cmnd **cmd, char *nameFile) //доработать
 	if (fd == -1)
 	{
 		(*cmd)->err = 1;
+		(*cmd)->errContext = ft_strjoinMS(nameFile, ": file does not exist or access is denied");
 		return ;
 	}
 	(*cmd)->fd_open = fd; // записываем дескриптор
@@ -85,10 +86,11 @@ void	fncRedirWrite(t_cmnd **cmd, char *nameFile)
 		close((*cmd)->fd_reWrite);
 		(*cmd)->fd_reWrite = 0;
 	}//если дескриптора не было, если был, то надо закрыть
-	fd = open(nameFile, O_CREAT); // открываем на дозапись
+	fd = open(nameFile, O_WRONLY | O_CREAT | O_APPEND); // открываем на дозапись
 	if (fd == -1)
 	{
 		(*cmd)->err = 1;
+		(*cmd)->errContext = ft_strjoinMS(nameFile, ": file does not exist or access is denied");
 		return ;
 	}
 	(*cmd)->fd_write = fd; // записываем дескриптор
@@ -108,12 +110,11 @@ void	fncRedirReWrite(t_cmnd **cmd, char *nameFile)
 		close((*cmd)->fd_reWrite);
 		(*cmd)->fd_reWrite = 0;
 	}//если дескриптора не было, если был, то надо закрыть
-	fd = open(nameFile, O_TRUNC); // открываем на перезапись
-	if (fd == -1) //если файла не существует, создаём
-		fd = open(nameFile, O_CREAT);
+	fd = open(nameFile, O_RDWR | O_CREAT | O_TRUNC); // открываем на перезапись
 	if (fd == -1)
 	{
 		(*cmd)->err = 1;//ОШИППППКИ)
+		(*cmd)->errContext = ft_strjoinMS(nameFile, ": Permission denied");
 		return ;
 	}
 	(*cmd)->fd_reWrite = fd; // записываем дескриптор
@@ -155,11 +156,14 @@ int	dualArrayLen(char **array)
 	len = 0;
 	while (array[i])
 	{
+		printf("%s\n", array[i]);
 		j = 0;
 		while (array[i][j])
 			j++;
 		len += j;
 		i++;
+		if (array[i] == NULL)
+			break;
 	}
 	return (len);
 }

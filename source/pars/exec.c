@@ -9,27 +9,92 @@ void exefnc(char **line, t_gnrl **gen)
 		if (*line == NULL)
 			error_call("exit\n");
 		add_history(*line);
-//		*line = initLine(*line);
-		if (first_fnc(line, gen, 0) == 1)
-			printf("there are errors\n");
-		else
+		getHistoryLog(*line, (*gen));
+		*line = initLine(*line);
+		first_fnc(line, gen, 0);
+		(*gen)->cmd = preLogicWork(&(*gen)->cmd);
+		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
+			fncMonitor((*gen)->cmd);
+		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
 			logica(gen);
 	}
+}
+
+t_cmnd	*preLogicWork(t_cmnd **cmd)
+{
+	t_cmnd	*tmp;
+	t_cmnd	*tmp2;
+
+	tmp = *cmd;
+	tmp2 = *cmd;
+	if (tmp->nextList != NULL)
+		while (tmp->nextList != NULL)
+		{
+			pLWinWhile(&tmp, &tmp2);
+		}
+	else if (tmp->nextList == NULL && tmp->err == 1)
+	{
+		printf("%s\n", tmp->errContext);
+		return (NULL);
+	}
+	return ((*cmd));
+}
+
+void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2)
+{
+	if ((*tmp)->err == 1)
+	{
+		if ((*tmp)->nextList)
+			(*tmp2)->nextList = (*tmp)->nextList;
+		else
+			(*tmp2)->nextList = NULL;
+		printf("%s\n", (*tmp)->errContext);
+		free (*tmp);
+		(*tmp) = (*tmp2)->nextList;
+	}
+	else
+	{
+		*tmp2 = *tmp;
+		*tmp = (*tmp)->nextList;
+	}
+}
+
+void	getHistoryLog(char *line, t_gnrl *gen)
+{
+	char *nameFile;
+
+	if (getenv("SHLVL"))
+	{
+		nameFile = ft_strjoinMS(".history_log_lvl_", getenv("SHLVL"));
+		nameFile = preUseStrJoin(nameFile, ".txt");
+	}
+	else
+		nameFile = ft_strjoin(".history_log_lvl_", ".txt");
+	if (line && line[0] != '\0')
+	{
+		gen->historyLog = open(nameFile, O_WRONLY | O_CREAT | O_APPEND,
+								  0644);
+		ft_putstr_fd(line, gen->historyLog);
+		ft_putstr_fd("\n", gen->historyLog);
+		close(gen->historyLog);
+	}
+	free(nameFile);
 }
 
 char	*initLine(char *line)
 {
 	char	*tmp;
 
-	tmp = ft_strdupMS(line);
+	tmp = ft_strdup(line);
+	free(line);
 	return (tmp);
 }
 
-void	exitCtrlD(void)
-{
-	printf("exit");
-	exit(0);
-}
+//void	exitCtrlD(void)
+//{
+//	printf("exit");
+//	exit(0);
+//}
 
 void	ctrl_c_hook(int sgn)
 {
@@ -62,11 +127,9 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 		else
 			i++;
 	}
-	if ((*gen)->errors == 0)
-	{
+	if ((*gen)->errors != 1)
 		preUseFncPipe(line[0], &i, &(*gen)->cmd);
-//		fncMonitor((*gen)->cmd);
-	}
+//	fncMonitor((*gen)->cmd);
 	if ((*gen)->cmd == NULL)
 		(*gen)->errors = 1;
 	return ((*gen)->errors);
@@ -100,50 +163,4 @@ char	*preUseFncPipe(char *line, int *whereIsPipe, t_cmnd **commandLine)
 	free(line);
 	return (tmp);
 }
-
-// ДОБАВЛЕНЫ ЧЕКЕРЫ НА НАЛИЧИЕ ПАЙПОВ
-//int	check_for_pipes(char const *line)
-//{
-//	int	i;
-//
-//	i = 0;
-//	while (line[i])
-//	{
-//		if (line[i] == '|')
-//			return (1);
-//		i++;
-//	}
-//	return (0);
-//}
-
-//t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine)
-//{
-//	int i;
-//	int k;
-//
-//	i = 0;
-//	while (line[i])
-//	{
-//		if (line[i] == '|')
-//			break;
-//		else if (line[i] == '<' || line[i] == '>')
-//			preUseFncRedir();
-//		i++;
-//	}
-//	k = i;
-//	if (line[k] == '|' && line[k + 1] != '\0')
-//	{
-//		while (line[k] == ' ' || line[k] == '|')
-//			k++;
-//		commandLine->nextList = fnc_pars(&line[k], 0, ft_lstnewMS());
-//		commandLine->flg_pipe = 1;
-//		line = ft_substrMS(line, 0, i);
-//	}
-//	else
-	//	commandLine->err = 1;
-//	commandLine->command_array = ft_split(line, ' ');
-//	butilsProv(&commandLine);
-//	fncMonitor(commandLine);
-//	return (commandLine);
-//}
 
