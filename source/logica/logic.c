@@ -57,3 +57,5 @@ int logica(t_gnrl **zik)
 //	zik->cmd->nextList->nextList->nextList->nextList = NULL;
 //	logica(&zik);
 //}
+
+// for check
