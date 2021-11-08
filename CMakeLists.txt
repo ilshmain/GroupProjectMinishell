@@ -10,7 +10,10 @@ include_directories(source/Libft/libft.a)
 FILE(GLOB SRC
         "source/logica/logic.c"
         "source/builts/*.c"
-        "source/work_pipe/*.c")
+        "source/work_pipe/*.c"
+        "source/*.c"
+        "source/pars/*.c"
+        "source/pars/ms_libft/*.c")
 
 add_executable(checkMinishell ${SRC})
 target_link_libraries (checkMinishell /Users/fmint/shell/source/Libft/libft.a)
