@@ -22,13 +22,8 @@ cmake_minimum_required(VERSION 3.20)
 
 project(checkMinishell C)
 
-<<<<<<< HEAD
-set(CMAKE_C_FLAGS "-L/Users/hportife/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
-#set(CMAKE_C_FLAGS "-L/Users/fmint/.brew/Cellar/readline/8.1/lib/ -lreadline")
-=======
 #set(CMAKE_C_FLAGS "-L/Users/hportife/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
 set(CMAKE_C_FLAGS "-L/Users/fmint/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
->>>>>>> logic
 
 set(CMAKE_C_STANDARD 99)
 
@@ -43,8 +38,6 @@ set(BUILTS_FILES
         source/builts/utils.c
         include/minishell.h
         include/structs_minishell.h)
-<<<<<<< HEAD
-=======
 
 set(PIPE_FILES
         source/work_pipe/get_next_line.c
@@ -52,7 +45,6 @@ set(PIPE_FILES
         source/work_pipe/pipex_bonus.c
         source/work_pipe/pipex_bonus_utils.c
         source/work_pipe/pipex_bonus_utils1.c)
->>>>>>> logic
 
 set(SOURCE_FILES
         source/Libft/ft_strtrim.c source/Libft/ft_strjoin.c source/Libft/ft_substr.c
@@ -85,8 +77,4 @@ set(PARS_FILES
         source/logica/logic.c
         source/main.c source/pars/preUsers.c source/pars/quotWorkPage.c source/pars/dollarWorkPage.c source/pars/redirWorkPage.c source/pars/servFns.c source/pars/exec.c source/pars/bslshWorkPage.c)
 
-<<<<<<< HEAD
-add_executable(checkMinishell ${BUILTS_FILES} ${SOURCE_FILES} ${PARS_FILES} )
-=======
 add_executable(checkMinishell ${BUILTS_FILES} ${SOURCE_FILES} ${PARS_FILES} ${PIPE_FILES})
->>>>>>> logic
