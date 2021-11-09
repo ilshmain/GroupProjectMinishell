@@ -27,7 +27,7 @@ void	have_here_doc(t_map *st, char **argv, t_cmnd *cmd)
 	exit (0);
 }
 
-void	CheckHeredocFdread(t_map *st, t_cmnd *cmd)
+void	CheckHeredocAndFdread(t_map *st, t_cmnd *cmd)
 {
 	if (cmd->heredoc != 0)
 		st->flag = 1;
@@ -47,7 +47,7 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 		ft_perror("Error pid(fork)");
 	if (pid == 0)
 	{
-		CheckHeredocFdread(st, (*zik)->cmd);
+		CheckHeredocAndFdread(st, (*zik)->cmd);
 		if (st->flag == 1)
 			have_here_doc(st, argv, (*zik)->cmd);
 		pid_children(st, envp, zik);
@@ -56,14 +56,14 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 	else
 	{
 		wait(NULL);
-		close((st[st->i].fd[1]));
-		if (st->i)
-			close(st[st->i - 1].fd[0]);
+//		close((st[st->i].fd[1]));
+//		if (st->i)
+//			close(st[st->i - 1].fd[0]);
 	}
 	return (0);
 }
 
-int ft_sum_pipe(t_cmnd *cmd, t_map *st)
+int ft_sum_pipe(t_cmnd *cmd)
 {
 	int i = 0;
 	while (cmd)
@@ -71,28 +71,26 @@ int ft_sum_pipe(t_cmnd *cmd, t_map *st)
 		i++;
 		cmd = cmd->nextList;
 	}
-	st->sum_lst = i;
-	if (i > 1)
-		create_pipe(st, i);
 	return (i);
 }
 
 int	work_with_pipe(t_gnrl **zik)
 {
-	int sum_lst;
+	int len;
 	t_map	*st;
 
-	sum_lst = ft_sum_pipe((*zik)->cmd, st);
-	st = malloc(sizeof(t_map) * sum_lst);
+	len = ft_sum_pipe((*zik)->cmd);
+	st = malloc(sizeof(t_map) * (len - 1));
 	st->i = 0;
+	create_pipe(st, len, (*zik)->cmd->heredoc);
 	while ((*zik)->cmd)
 	{
 		st->flag = 0;
 		many_command(st, (*zik)->env, (*zik)->cmd->heredoc, zik);
-		(*zik)->cmd = (*zik)->cmd->nextList;
 		st->i++;
+		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
-	pid_parent(st, (*zik)->env, zik);
 	free(st);
 	return (0);
+	//necn
 }
