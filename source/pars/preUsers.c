@@ -49,6 +49,6 @@ char *preUseFncRedir(char **line, int *i, t_gnrl **gen)
 		tmp = fnc_redir(&tmp, i, gen, 3);
 	else if (tmp[*i] == '<')
 		tmp = fnc_redir(&tmp, i, gen, 4);
-	free (*line); // задекоментить, когда будет изменяться лайн (удаляться символы редиров)
+	free (*line);
 	return (tmp);
 }

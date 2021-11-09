@@ -131,7 +131,10 @@ void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
 		close((*cmd)->fd_open);
 		(*cmd)->fd_open = 0;
 	}
-	tmp = malloc(sizeof (char **) * (dualArrayLen((*cmd)->heredoc) + ft_strlenMS(hereDoc)));
+	if ((*cmd)->heredoc)
+		tmp = malloc(sizeof (char **) * (dualArrayLen((*cmd)->heredoc) + ft_strlenMS(hereDoc)));
+	else
+		tmp = malloc(sizeof (char **) * (ft_strlenMS(hereDoc)));
 	while ((*cmd)->heredoc && (*cmd)->heredoc[i] != NULL)
 	{
 		tmp[i] = ft_strdup((*cmd)->heredoc[i]);
@@ -156,14 +159,11 @@ int	dualArrayLen(char **array)
 	len = 0;
 	while (array[i])
 	{
-		printf("%s\n", array[i]);
 		j = 0;
 		while (array[i][j])
 			j++;
 		len += j;
 		i++;
-		if (array[i] == NULL)
-			break;
 	}
 	return (len);
 }
