@@ -20,9 +20,9 @@ t_cmnd	*ft_lstnewMS(void)
 	tmp->command_array = NULL;
 	tmp->flg_butil = 0;
 	tmp->flg_pipe = 0;
-	tmp->fd_reWrite = 0;
-	tmp->fd_write = 0;
-	tmp->fd_open = 0;
+	tmp->fd_reWrite = -2;
+	tmp->fd_write = -2;
+	tmp->fd_open = -2;
 	tmp->heredoc = NULL;
 	tmp->err = 0;
 	tmp->nextList = NULL;
