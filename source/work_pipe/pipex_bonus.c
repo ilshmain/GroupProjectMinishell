@@ -47,7 +47,7 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 		ft_perror("Error pid(fork)");
 	if (pid == 0)
 	{
-		CheckHeredocAndFdread(st, (*zik)->cmd);
+//		CheckHeredocAndFdread(st, (*zik)->cmd);
 		if (st->flag == 1)
 			have_here_doc(st, argv, (*zik)->cmd);
 		pid_children(st, envp, zik);
@@ -56,9 +56,13 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 	else
 	{
 		wait(NULL);
-//		close((st[st->i].fd[1]));
-//		if (st->i)
-//			close(st[st->i - 1].fd[0]);
+		close((st[st->i].fd[1]));
+		if (st->i)
+		{
+			close(st[st->i - 1].fd[1]);
+			close(st[st->i - 1].fd[0]);
+		}
+
 	}
 	return (0);
 }
@@ -69,6 +73,8 @@ int ft_sum_pipe(t_cmnd *cmd)
 	while (cmd)
 	{
 		i++;
+		if (cmd->heredoc != 0 && cmd->fd_open == 0)
+			i++;
 		cmd = cmd->nextList;
 	}
 	return (i);
