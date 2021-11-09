@@ -1,6 +1,6 @@
 #include "../../include/minishell.h"
 
-void	ft_perror(char *str)
+void	ft_perror_shell(char *str)
 {
 	perror(str);
 	return ;

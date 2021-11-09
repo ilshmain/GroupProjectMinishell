@@ -7,7 +7,7 @@ void exefnc(char **line, t_gnrl **gen)
 		(*gen)->errors = 0;
 		*line = readline("minishell$ ");
 		if (*line == NULL)
-			error_call("exit\n");
+			error_call("kuku exit\n");
 		add_history(*line);
 		getHistoryLog(*line, (*gen));
 		*line = initLine(*line);
@@ -90,11 +90,19 @@ char	*initLine(char *line)
 	return (tmp);
 }
 
+<<<<<<< HEAD
 //void	exitCtrlD(void)
 //{
 //	printf("exit");
 //	exit(0);
 //}
+=======
+void	exitCtrlD(void)
+{
+	printf("zzz exit");
+	exit(0);
+}
+>>>>>>> 13fb6d5d9a2fb209cbc662352fe8d4f55cfc9ba6
 
 void	ctrl_c_hook(int sgn)
 {

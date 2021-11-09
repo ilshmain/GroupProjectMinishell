@@ -2,6 +2,22 @@
 # define STRUCTS_MINISHELL_H
 
 # include <stdlib.h>
+# include "../source/Libft/libft.h"
+
+
+typedef struct sta_pam
+{
+	int		i;
+}	tama_map;
+
+
+typedef struct st_pam
+{
+	int		i;
+	int		argc;
+	int		fd[2];
+	int		flag;
+}	t_map;
 
 typedef struct s_cmnd
 {
@@ -19,6 +35,7 @@ typedef struct s_cmnd
 
 typedef struct s_gnrl
 {
+	t_map	*pipe;
 	t_list  *ptr;
 	t_cmnd	*cmd;
 	int		errors;

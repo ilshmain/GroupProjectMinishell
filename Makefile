@@ -18,12 +18,17 @@ SRCS			=	./source/main.c \
 					./source/pars/quotWorkPage.c \
 					./source/pars/redirWorkPage.c \
 					./source/pars/servFns.c \
-					./source/pars/ms_libft/ft_isalnum.c  ./source/pars/ms_libft/ft_strchr.c\
-					./source/pars/ms_libft/ft_split.c 	 ./source/pars/ms_libft/ft_strdup.c\
-					./source/pars/ms_libft/ft_strjoin.c  ./source/pars/ms_libft/ft_strlcat.c\
-					./source/pars/ms_libft/ft_strlcpy.c  ./source/pars/ms_libft/ft_strlen.c\
-					./source/pars/ms_libft/ft_strncmp.c  ./source/pars/ms_libft/ft_strnstr.c\
-					./source/pars/ms_libft/ft_substr.c\
+					./source/pars/ms_libft/ft_isalnum.c  ./source/pars/ms_libft/ft_strchr.c \
+					./source/pars/ms_libft/ft_split.c 	 ./source/pars/ms_libft/ft_strdup.c \
+					./source/pars/ms_libft/ft_strjoin.c  ./source/pars/ms_libft/ft_strlcat.c \
+					./source/pars/ms_libft/ft_strlcpy.c  ./source/pars/ms_libft/ft_strlen.c \
+					./source/pars/ms_libft/ft_strncmp.c  ./source/pars/ms_libft/ft_strnstr.c \
+					./source/pars/ms_libft/ft_substr.c \
+					./source/work_pipe/get_next_line.c \
+					./source/work_pipe/get_next_line_utils.c \
+					./source/work_pipe/pipex_bonus.c \
+					./source/work_pipe/pipex_bonus_utils.c \
+					./source/work_pipe/pipex_bonus_utils1.c \
 
 OBJS			=	$(SRCS:.c=.o)
 
@@ -31,7 +36,7 @@ HEADERS			=	-I./include/ -I.source/Libft/
 
 CC				=	gcc
 
-BRWRINST		=	brew reinstall readline
+#BRWRINST		=	brew reinstall readline
 
 RM				=	rm -rfv
 
@@ -49,7 +54,7 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS) ./include/minishell.h ./include/structs_minishell.h ./source/Libft/libft.h
 				cd ./source/Libft/ && $(MAKE)
-				$(BRWRINST)
+				#$(BRWRINST)
 				$(CC) $(CFLAGS) $(LIBS) $(HEADERS) $(RDL_MAC) $(RDL) $(OBJS) -o $(NAME)
 
 clean:
