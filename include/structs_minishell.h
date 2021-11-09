@@ -7,7 +7,7 @@
 typedef struct st_pam
 {
 	int		i;
-	int		argc;
+	int		sum_lst;
 	int		fd[2];
 	int		file1;
 	int		file2;

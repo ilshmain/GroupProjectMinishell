@@ -27,6 +27,17 @@ void	have_here_doc(t_map *st, char **argv, t_cmnd *cmd)
 	exit (0);
 }
 
+void	CheckHeredocFdread(t_map *st, t_cmnd *cmd)
+{
+	if (cmd->heredoc != 0)
+		st->flag = 1;
+	if (cmd->fd_open != 0)
+	{
+		if (dup2(cmd->fd_open, 0) < 0)
+			ft_perror("Couldn't write to the pipe");
+	}
+}
+
 int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 {
 	int 	pid;
@@ -36,6 +47,7 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 		ft_perror("Error pid(fork)");
 	if (pid == 0)
 	{
+		CheckHeredocFdread(st, (*zik)->cmd);
 		if (st->flag == 1)
 			have_here_doc(st, argv, (*zik)->cmd);
 		pid_children(st, envp, zik);
@@ -51,18 +63,7 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 	return (0);
 }
 
-void	check_argc(t_map *st, t_cmnd *cmd)
-{
-	if (cmd->heredoc != 0)
-		st->flag = 1;
-	if (cmd->fd_open != 0)
-	{
-		if (dup2(cmd->fd_open, 0) < 0)
-			ft_perror("Couldn't write to the pipe");
-	}
-}
-
-int ft_sum_pipe(t_cmnd *cmd)
+int ft_sum_pipe(t_cmnd *cmd, t_map *st)
 {
 	int i = 0;
 	while (cmd)
@@ -70,29 +71,26 @@ int ft_sum_pipe(t_cmnd *cmd)
 		i++;
 		cmd = cmd->nextList;
 	}
-	if (i == 1)
-		return (2);
+	st->sum_lst = i;
+	if (i > 1)
+		create_pipe(st, i);
 	return (i);
 }
 
 int	work_with_pipe(t_gnrl **zik)
 {
-	int len;
+	int sum_lst;
 	t_map	*st;
 
-	len = ft_sum_pipe((*zik)->cmd);
-	st = malloc(sizeof(t_map) * (len - 1));
+	sum_lst = ft_sum_pipe((*zik)->cmd, st);
+	st = malloc(sizeof(t_map) * sum_lst);
 	st->i = 0;
-	st->argc = len - 1;
-	create_pipe(st);
-	while (st->i < st->argc)
+	while ((*zik)->cmd)
 	{
-//		write(1, "zzz", 5);
 		st->flag = 0;
-		check_argc(st, (*zik)->cmd);
 		many_command(st, (*zik)->env, (*zik)->cmd->heredoc, zik);
-		st->i++;
 		(*zik)->cmd = (*zik)->cmd->nextList;
+		st->i++;
 	}
 	pid_parent(st, (*zik)->env, zik);
 	free(st);

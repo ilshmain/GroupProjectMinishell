@@ -6,12 +6,12 @@ void	ft_perror(char *str)
 	exit (0);
 }
 
-void	create_pipe(t_map *st)
+void	create_pipe(t_map *st, int sum_list)
 {
 	int	i;
 
 	i = 0;
-	while (i < st->argc)
+	while (i < sum_list - 1)
 	{
 		if (pipe(st[i].fd) == -1)
 			ft_perror("Error pipe");

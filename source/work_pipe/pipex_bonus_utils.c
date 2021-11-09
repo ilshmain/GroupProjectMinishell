@@ -51,7 +51,6 @@ void	pid_children(t_map *st, char **envp, t_gnrl **zik)
 
 	i = 0;
 	k = 0;
-//	write(1, "slovo", 5);
 	if (st->i != 0)
 	{
 		close(st[st->i - 1].fd[1]);
