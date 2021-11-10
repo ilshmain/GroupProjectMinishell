@@ -76,15 +76,15 @@ void	fncRedirWrite(t_cmnd **cmd, char *nameFile)
 {
 	int fd;
 
-	if ((*cmd)->fd_write)
+	if ((*cmd)->fd_write > 0)
 	{
 		close((*cmd)->fd_write);
-		(*cmd)->fd_write = 0;
+		(*cmd)->fd_write = -2;
 	}
-	if ((*cmd)->fd_reWrite)
+	if ((*cmd)->fd_reWrite > 0)
 	{
 		close((*cmd)->fd_reWrite);
-		(*cmd)->fd_reWrite = 0;
+		(*cmd)->fd_reWrite = -2;
 	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_WRONLY | O_CREAT | O_APPEND); // открываем на дозапись
 	if (fd == -1)
@@ -100,15 +100,15 @@ void	fncRedirReWrite(t_cmnd **cmd, char *nameFile)
 {
 	int 	fd;
 
-	if ((*cmd)->fd_write)
+	if ((*cmd)->fd_write > 0)
 	{
 		close((*cmd)->fd_write);
-		(*cmd)->fd_write = 0;
+		(*cmd)->fd_write = -2;
 	}
-	if ((*cmd)->fd_reWrite)
+	if ((*cmd)->fd_reWrite > 0)
 	{
 		close((*cmd)->fd_reWrite);
-		(*cmd)->fd_reWrite = 0;
+		(*cmd)->fd_reWrite = -2;
 	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_RDWR | O_CREAT | O_TRUNC); // открываем на перезапись
 	if (fd == -1)
@@ -126,10 +126,10 @@ void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
 	char	**tmp;
 
 	i = 0;
-	if ((*cmd)->fd_open != 0)
+	if ((*cmd)->fd_open > 0)
 	{
 		close((*cmd)->fd_open);
-		(*cmd)->fd_open = 0;
+		(*cmd)->fd_open = -2;
 	}
 	if ((*cmd)->heredoc)
 		tmp = malloc(sizeof (char **) * (dualArrayLen((*cmd)->heredoc) + ft_strlenMS(hereDoc)));

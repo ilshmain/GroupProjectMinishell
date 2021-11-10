@@ -13,8 +13,8 @@ void exefnc(char **line, t_gnrl **gen)
 		*line = initLine(*line);
 		first_fnc(line, gen, 0);
 		(*gen)->cmd = preLogicWork(&(*gen)->cmd);
-		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
-			fncMonitor((*gen)->cmd);
+		// if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
+		// 	fncMonitor((*gen)->cmd);
 		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
 			logica(gen);
 	}
