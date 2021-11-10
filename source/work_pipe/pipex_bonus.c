@@ -62,7 +62,6 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 			close(st[st->i - 1].fd[1]);
 			close(st[st->i - 1].fd[0]);
 		}
-
 	}
 	return (0);
 }
@@ -97,6 +96,7 @@ int	work_with_pipe(t_gnrl **zik)
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
 	free(st);
+	dup2(1, 0);
 	return (0);
 	//necn
 }
