@@ -42,31 +42,7 @@ void	have_here_doc(t_map *st, char **argv, t_cmnd *cmd)
 	exit (0);
 }
 
-int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
-{
-	int 	pid;
-
-	pid = fork();
-	if (pid == -1)
-		ft_perror("Error pid(fork)");
-	if (pid == 0)
-	{
-		if (st->flag == 1)
-			have_here_doc(st, argv, (*zik)->cmd);
-		pid_children(st, envp, zik);
-		return (3);
-	}
-	else
-	{
-		wait(NULL);
-		close((st[st->i].fd[1]));
-		if (st->i)
-			close(st[st->i - 1].fd[0]);
-	}
-	return (0);
-}
-
-void	check_argc(t_map *st, t_cmnd *cmd)
+void	CheckHeredocAndFdread(t_map *st, t_cmnd *cmd)
 {
 	if (cmd->heredoc != 0)
 		st->flag = 1;
@@ -77,16 +53,44 @@ void	check_argc(t_map *st, t_cmnd *cmd)
 	}
 }
 
+int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
+{
+	int 	pid;
+
+	pid = fork();
+	if (pid == -1)
+		ft_perror("Error pid(fork)");
+	if (pid == 0)
+	{
+//		CheckHeredocAndFdread(st, (*zik)->cmd);
+		if (st->flag == 1)
+			have_here_doc(st, argv, (*zik)->cmd);
+		pid_children(st, envp, zik);
+		return (3);
+	}
+	else
+	{
+		wait(NULL);
+		close((st[st->i].fd[1]));
+		if (st->i)
+		{
+			close(st[st->i - 1].fd[1]);
+			close(st[st->i - 1].fd[0]);
+		}
+	}
+	return (0);
+}
+
 int ft_sum_pipe(t_cmnd *cmd)
 {
 	int i = 0;
 	while (cmd)
 	{
 		i++;
+		if (cmd->heredoc != 0 && cmd->fd_open == 0)
+			i++;
 		cmd = cmd->nextList;
 	}
-	if (i == 1)
-		return (2);
 	return (i);
 }
 
@@ -98,18 +102,16 @@ int	work_with_pipe(t_gnrl **zik)
 	len = ft_sum_pipe((*zik)->cmd);
 	st = malloc(sizeof(t_map) * (len - 1));
 	st->i = 0;
-	st->argc = len - 1;
-	create_pipe(st);
-	st->argc  = st->argc + 1;
-	while (st->i < st->argc)
+	create_pipe(st, len, (*zik)->cmd->heredoc);
+	while ((*zik)->cmd)
 	{
 		st->flag = 0;
-		check_argc(st, (*zik)->cmd);
 		many_command(st, (*zik)->env, (*zik)->cmd->heredoc, zik);
 		st->i++;
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
-	dup2(1, 0);
 	free(st);
+	dup2(1, 0);
 	return (0);
+	//necn
 }

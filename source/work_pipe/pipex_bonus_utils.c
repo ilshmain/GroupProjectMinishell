@@ -33,20 +33,22 @@ void	pid_children(t_map *st, char **envp, t_gnrl **zik)
 
 	i = 0;
 	k = 0;
-	if (st->i != 0)
+	if (st->sum_lst != 1)
 	{
-		close(st[0].fd[1]);
-		if (dup2(st[0].fd[0], 0) < 0)
-			ft_perror("Error pid_children");
-		close(st[0].fd[0]);
-		pars_envp(envp, (*zik)->cmd->command_array, i, k);
+		if (st->i != 0)
+		{
+			close(st[st->i - 1].fd[1]);
+			if (dup2(st[st->i - 1].fd[0], 0) < 0)
+				ft_perror("Error pid_children");
+			close(st[st->i - 1].fd[0]);
+		}
+		if (st->i + 1 != st->sum_lst)
+		{
+			if (dup2(st[st->i].fd[1], 1) < 0)
+				ft_perror("Error pid_children");
+			close(st[st->i].fd[0]);
+			close(st[st->i].fd[1]);
+		}
 	}
-	if (st->i != 1)
-	{
-		if (dup2(st[st->i].fd[1], 1) < 0)
-			ft_perror("Error pid_children");
-	}
-	close(st[st->i].fd[0]);
-	close(st[st->i].fd[1]);
 	pars_envp(envp, (*zik)->cmd->command_array, i, k);
 }

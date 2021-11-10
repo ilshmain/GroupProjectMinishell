@@ -55,7 +55,10 @@ dkms.conf
 /.idea/
 /.vscode/
 /cmake-build-debug/
+<<<<<<< HEAD
 cmake-build-debug/
+=======
+>>>>>>> dop_logic
 tester_100
 CMakeLists.txt
 *.code-workspace
@@ -70,8 +73,14 @@ checker
 # .out?
 .o
 <<<<<<< HEAD
+<<<<<<< HEAD
 # .o?
 =======
 # .o?
 minishell
 >>>>>>> logic
+=======
+# .o?
+# .o?
+minishell
+>>>>>>> dop_logic

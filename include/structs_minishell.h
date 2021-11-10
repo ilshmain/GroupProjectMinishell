@@ -14,7 +14,7 @@ typedef struct sta_pam
 typedef struct st_pam
 {
 	int		i;
-	int		argc;
+	int		sum_lst;
 	int		fd[2];
 	int		flag;
 }	t_map;

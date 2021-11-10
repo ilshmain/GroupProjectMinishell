@@ -90,19 +90,12 @@ char	*initLine(char *line)
 	return (tmp);
 }
 
-<<<<<<< HEAD
-//void	exitCtrlD(void)
-//{
-//	printf("exit");
-//	exit(0);
-//}
-=======
+
 void	exitCtrlD(void)
 {
-	printf("zzz exit");
+	printf("exit");
 	exit(0);
 }
->>>>>>> 13fb6d5d9a2fb209cbc662352fe8d4f55cfc9ba6
 
 void	ctrl_c_hook(int sgn)
 {
