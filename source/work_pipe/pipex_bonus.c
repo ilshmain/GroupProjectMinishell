@@ -1,5 +1,17 @@
 #include "../../include/minishell.h"
 
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	if (!s1)
+		return (1);
+	while (*s1 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
+
 int size_heredoc(char **argv)
 {
 	int i;
@@ -71,14 +83,12 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 	else
 	{
 		wait(NULL);
-		if (st[st->i].fd[0] != 0 || st[st->i].fd[1] != 0)
+//		printf("%d\n", st[st->i].fd[1]);
+		close((st[st->i].fd[1]));
+		if (st->i)
 		{
-			close((st[st->i].fd[1]));
-			if (st->i)
-			{
-				close(st[st->i - 1].fd[1]);
-				close(st[st->i - 1].fd[0]);
-			}
+			close(st[st->i - 1].fd[1]);
+			close(st[st->i - 1].fd[0]);
 		}
 	}
 	return (0);
@@ -87,7 +97,7 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 int ft_sum_pipe(t_cmnd *cmd)
 {
 	int i = 0;
-	while (cmd)
+	while (cmd != NULL)
 	{
 		i++;
 		cmd = cmd->nextList;
@@ -111,6 +121,5 @@ int	work_with_pipe(t_gnrl **zik)
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
 	free(st);
-//	dup2(1, 0);
 	return (0);
 }

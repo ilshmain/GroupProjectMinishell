@@ -19,11 +19,9 @@ void	create_pipe(t_map *st, int len)
 		{
 			if (pipe(st[i].fd) == -1)
 				ft_perror("Error pipe");
+//			printf("%d\n", st[i].fd[0]);
+//			printf("%d\n", st[i].fd[1]);
 			i++;
 		}
 	}
-//	if (st[st->i].fd[0] == 0 && st[st->i].fd[1] == 0)
-//		printf("hello");
-//	else
-//		printf("kuku");
 }
