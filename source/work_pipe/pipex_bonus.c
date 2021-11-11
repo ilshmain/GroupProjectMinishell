@@ -56,12 +56,17 @@ void	have_here_doc(t_map *st, char **argv, t_cmnd *cmd)
 
 void	CheckHeredocAndFdread(t_map *st, t_cmnd *cmd)
 {
+	int i;
+//	char *str;
+
 	if (cmd->heredoc != 0)
 		st->flag = 1;
-	if (cmd->fd_open != 0)
+	if (cmd->fd_open > 0)
 	{
-		if (dup2(cmd->fd_open, 0) < 0)
+		if ((i = dup2(cmd->fd_open, 0)) < 0)
 			ft_perror("Couldn't write to the pipe");
+//		str = ft_itoa(i);
+//		write(1, str, ft_strlen(str));
 	}
 }
 
@@ -71,10 +76,10 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 
 	pid = fork();
 	if (pid == -1)
-		ft_perror("Error pid(fork)");
+		ft_perror("Error pid(fork)+");
 	if (pid == 0)
 	{
-//		CheckHeredocAndFdread(st, (*zik)->cmd);
+		CheckHeredocAndFdread(st, (*zik)->cmd);
 		if (st->flag == 1)
 			have_here_doc(st, argv, (*zik)->cmd);
 		pid_children(st, envp, zik);
@@ -83,7 +88,6 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 	else
 	{
 		wait(NULL);
-//		printf("%d\n", st[st->i].fd[1]);
 		close((st[st->i].fd[1]));
 		if (st->i)
 		{

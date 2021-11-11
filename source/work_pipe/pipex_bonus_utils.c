@@ -31,8 +31,16 @@ void	pid_children(t_map *st, char **envp, t_gnrl **zik)
 	if (st->i != 0)
 	{
 		close(st[st->i - 1].fd[1]);
-		if (dup2(st[st->i - 1].fd[0], 0) < 0)
-			ft_perror("Error pid_children");
+		if ((*zik)->cmd->fd_open > 0)
+		{
+			if ((dup2((*zik)->cmd->fd_open, 0)) < 0)
+				ft_perror("Couldn't write to the pipe");
+		}
+		else
+		{
+			if (dup2(st[st->i - 1].fd[0], 0) < 0)
+				ft_perror("Error pid_children");
+		}
 		close(st[st->i - 1].fd[0]);
 	}
 	if (st->i + 1 != st->sum_lst)
