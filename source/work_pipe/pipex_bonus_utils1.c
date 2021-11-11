@@ -6,13 +6,14 @@ void	ft_perror(char *str)
 	exit (0);
 }
 
-void	create_pipe(t_map *st, int len, char **heredoc)
+void	create_pipe(t_map *st, int len)
 {
 	int	i;
 
 	i = 0;
+	st->i = 0;
 	st->sum_lst = len;
-	if (st->sum_lst > 1 || heredoc != 0)
+	if (st->sum_lst > 1)
 	{
 		while (i < len - 1)
 		{
@@ -21,4 +22,8 @@ void	create_pipe(t_map *st, int len, char **heredoc)
 			i++;
 		}
 	}
+//	if (st[st->i].fd[0] == 0 && st[st->i].fd[1] == 0)
+//		printf("hello");
+//	else
+//		printf("kuku");
 }

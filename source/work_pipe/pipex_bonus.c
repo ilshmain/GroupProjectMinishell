@@ -71,11 +71,14 @@ int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
 	else
 	{
 		wait(NULL);
-		close((st[st->i].fd[1]));
-		if (st->i)
+		if (st[st->i].fd[0] != 0 || st[st->i].fd[1] != 0)
 		{
-			close(st[st->i - 1].fd[1]);
-			close(st[st->i - 1].fd[0]);
+			close((st[st->i].fd[1]));
+			if (st->i)
+			{
+				close(st[st->i - 1].fd[1]);
+				close(st[st->i - 1].fd[0]);
+			}
 		}
 	}
 	return (0);
@@ -87,8 +90,6 @@ int ft_sum_pipe(t_cmnd *cmd)
 	while (cmd)
 	{
 		i++;
-		if (cmd->heredoc != 0 && cmd->fd_open == 0)
-			i++;
 		cmd = cmd->nextList;
 	}
 	return (i);
@@ -100,9 +101,8 @@ int	work_with_pipe(t_gnrl **zik)
 	t_map	*st;
 
 	len = ft_sum_pipe((*zik)->cmd);
-	st = malloc(sizeof(t_map) * (len - 1));
-	st->i = 0;
-	create_pipe(st, len, (*zik)->cmd->heredoc);
+	st = malloc(sizeof(t_map) * len);
+	create_pipe(st, len);
 	while ((*zik)->cmd)
 	{
 		st->flag = 0;
@@ -111,7 +111,6 @@ int	work_with_pipe(t_gnrl **zik)
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
 	free(st);
-	dup2(1, 0);
+//	dup2(1, 0);
 	return (0);
-	//necn
 }
