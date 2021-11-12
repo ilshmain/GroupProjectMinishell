@@ -12,90 +12,124 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
-int size_heredoc(char **argv)
+//int size_heredoc(char **argv)
+//{
+//	int i;
+//	i = 0;
+//
+//	while (argv[i])
+//		i++;
+//	return (i - 1);
+//}
+
+//void	have_here_doc(t_map *st, char **argv, t_cmnd *cmd)
+//{
+//	int		i;
+//	int		len;
+//	char	*buf;
+//
+//	buf = NULL;
+//	i = 0;
+//	len = size_heredoc(argv);
+//	while (argv[i])
+//	{
+//		while (ft_strcmp(buf, argv[i]))
+//		{
+//			write(1, "heredoc> ", 9);
+//			if (cmd->fd_open == 0)
+//			{
+//				if (get_next_line(0, &buf) && ft_strncmp(buf, argv[i], ft_strlen(argv[i])))
+//				{
+//					if (len == i)
+//					{
+//						write(st[st->i].fd[1], buf, ft_strlen(buf));
+//						write(st[st->i].fd[1], "\n", 1);
+//					}
+//				}
+//				free(buf);
+//			}
+//		}
+//		i++;
+//	}
+//	exit (0);
+//}
+
+int	Dup(t_cmnd *cmd)
 {
-	int i;
-	i = 0;
-
-	while (argv[i])
-		i++;
-	return (i - 1);
-}
-
-void	have_here_doc(t_map *st, char **argv, t_cmnd *cmd)
-{
-	int		i;
-	int		len;
-	char	*buf;
-
-	buf = NULL;
-	i = 0;
-	len = size_heredoc(argv);
-	while (argv[i])
+	if (cmd->in != STDIN_FILENO)
 	{
-		while (ft_strcmp(buf, argv[i]))
-		{
-			write(1, "heredoc> ", 9);
-			if (cmd->fd_open == 0)
-			{
-				if (get_next_line(0, &buf) && ft_strncmp(buf, argv[i], ft_strlen(argv[i])))
-				{
-					if (len == i)
-					{
-						write(st[st->i].fd[1], buf, ft_strlen(buf));
-						write(st[st->i].fd[1], "\n", 1);
-					}
-				}
-				free(buf);
-			}
-		}
-		i++;
+		if (dup2(cmd->in, STDIN_FILENO) < 0)
+			return (1);
+		close(cmd->in);
 	}
-	exit (0);
-}
-
-void	CheckHeredocAndFdread(t_map *st, t_cmnd *cmd)
-{
-	int i;
-//	char *str;
-
-	if (cmd->heredoc != 0)
-		st->flag = 1;
-	if (cmd->fd_open > 0)
+	if (cmd->out != STDOUT_FILENO)
 	{
-		if ((i = dup2(cmd->fd_open, 0)) < 0)
-			ft_perror("Couldn't write to the pipe");
-//		str = ft_itoa(i);
-//		write(1, str, ft_strlen(str));
-	}
-}
-
-int	many_command(t_map *st, char **envp, char **argv, t_gnrl **zik)
-{
-	int 	pid;
-
-	pid = fork();
-	if (pid == -1)
-		ft_perror("Error pid(fork)+");
-	if (pid == 0)
-	{
-		CheckHeredocAndFdread(st, (*zik)->cmd);
-		if (st->flag == 1)
-			have_here_doc(st, argv, (*zik)->cmd);
-		pid_children(st, envp, zik);
-		return (3);
-	}
-	else
-	{
-		wait(NULL);
-		close((st[st->i].fd[1]));
-		if (st->i)
-		{
-			close(st[st->i - 1].fd[1]);
-			close(st[st->i - 1].fd[0]);
-		}
+		if (dup2(cmd->out, STDOUT_FILENO) < 0)
+			return (1);
+		close(cmd->out);
 	}
 	return (0);
+}
+
+int CheckRedirRead(t_cmnd *cmd)
+{
+	while (cmd)
+	{
+		if (cmd->fd_open > 0)
+			cmd->in = cmd->fd_open;
+		cmd = cmd->nextList;
+	}
+	return (1);
+}
+
+int CheckRedirWrite(t_cmnd *cmd)
+{
+	while (cmd)
+	{
+		if (cmd->fd_write > 0)
+			cmd->out = cmd->fd_write;
+		cmd = cmd->nextList;
+	}
+}
+
+int CheckRedirRewrite(t_cmnd *cmd)
+{
+	while (cmd)
+	{
+		if (cmd->fd_reWrite > 0)
+			cmd->out = cmd->fd_reWrite;
+		cmd = cmd->nextList;
+	}
+}
+
+int	CheckRedirect(t_cmnd *cmd)
+{
+	while (cmd)
+	{
+		if (cmd->fd_open > 0)
+			CheckRedirRead(cmd);
+//		if (cmd->heredoc != NULL)
+//			CheckRedirHeredoc(cmd);
+		if (cmd->fd_write > 0)
+			CheckRedirWrite(cmd);
+		if (cmd->fd_reWrite > 0)
+			CheckRedirRewrite(cmd);
+		cmd = cmd->nextList;
+	}
+	return (1);
+}
+
+int	many_command(char **envp, t_gnrl **zik, t_cmnd *start)
+{
+	(*zik)->cmd->pid = fork();
+	if ((*zik)->cmd->pid == -1)
+		ft_perror("Error pid(fork)+");
+	if ((*zik)->cmd->pid == 0)
+	{
+		CheckRedirect((*zik)->cmd);
+		Dup((*zik)->cmd);
+		pid_children(envp, zik, start);
+	}
 }
 
 int ft_sum_pipe(t_cmnd *cmd)
@@ -104,6 +138,10 @@ int ft_sum_pipe(t_cmnd *cmd)
 	while (cmd != NULL)
 	{
 		i++;
+		cmd->in = STDIN_FILENO;
+		cmd->out = STDOUT_FILENO;
+		cmd->fd[0] = 0;
+		cmd->fd[1] = 0;
 		cmd = cmd->nextList;
 	}
 	return (i);
@@ -111,19 +149,27 @@ int ft_sum_pipe(t_cmnd *cmd)
 
 int	work_with_pipe(t_gnrl **zik)
 {
+	t_cmnd *start;
 	int len;
-	t_map	*st;
 
+	start = (*zik)->cmd;
 	len = ft_sum_pipe((*zik)->cmd);
-	st = malloc(sizeof(t_map) * len);
-	create_pipe(st, len);
-	while ((*zik)->cmd)
+	create_pipe((*zik)->cmd);
+	while (len--)
 	{
-		st->flag = 0;
-		many_command(st, (*zik)->env, (*zik)->cmd->heredoc, zik);
-		st->i++;
+		many_command((*zik)->env, zik, start);
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
-	free(st);
+	while (start->nextList)
+	{
+		close(start->fd[0]);
+		close(start->fd[1]);
+		start = start->nextList;
+	}
+//	while ((*zik)->cmd)
+//	{
+		wait(NULL);
+//		(*zik)->cmd = (*zik)->cmd->nextList;
+//	}
 	return (0);
 }

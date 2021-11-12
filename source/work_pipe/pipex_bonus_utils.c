@@ -26,32 +26,13 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 	}
 }
 
-void	pid_children(t_map *st, char **envp, t_gnrl **zik)
+void	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
 {
-	if (st->i != 0)
+	while (start->nextList)
 	{
-		close(st[st->i - 1].fd[1]);
-		if ((*zik)->cmd->fd_open > 0)
-		{
-			if ((dup2((*zik)->cmd->fd_open, 0)) < 0)
-				ft_perror("Couldn't write to the pipe");
-		}
-		else
-		{
-			if (dup2(st[st->i - 1].fd[0], 0) < 0)
-				ft_perror("Error pid_children");
-		}
-		close(st[st->i - 1].fd[0]);
-	}
-	if (st->i + 1 != st->sum_lst)
-	{
-		if (dup2(st[st->i].fd[1], 1) < 0)
-			ft_perror("Error pid_children");
-	}
-	if (st->i == 0)
-	{
-		close(st[st->i].fd[0]);
-		close(st[st->i].fd[1]);
+		close(start->fd[0]);
+		close(start->fd[1]);
+		start = start->nextList;
 	}
 	pars_envp(envp, (*zik)->cmd->command_array, 0, 0);
 }
