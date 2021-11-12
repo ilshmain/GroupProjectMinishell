@@ -94,7 +94,7 @@ int ft_sum_pipe(t_cmnd *cmd)
 	return (i);
 }
 
-int	work_with_pipe(t_gnrl **zik)
+int		work_with_pipe(t_gnrl **zik)
 {
 	int len;
 	t_map	*st;

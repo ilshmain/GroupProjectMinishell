@@ -46,7 +46,7 @@ t_list	*ft_lstlast(t_list *lst);
 
 //PIPE prototype*****************************
 
-int	work_with_pipe(t_gnrl **zik);
+int		work_with_pipe(t_gnrl **zik);
 
 
 char	*ft_strdup(const char *s1);

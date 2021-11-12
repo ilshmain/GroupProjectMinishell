@@ -25,34 +25,6 @@ char *fnc_redir(char **line, int *i, t_gnrl **gen, int ident)
 	return (line[0]);
 }
 
-char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen)
-{
-	char	*fileName;
-
-	*nameLen = *i;
-	while ((line[0][*nameLen]) && (ft_isalnumMS(line[0][*nameLen]) == 0)) // пропускаем символы, которые не могут входить в нейминг
-		*nameLen += 1;
-	line[0] = strCutStr(*line, *i, *nameLen);
-	*nameLen = *i;
-	while ((line[0][*nameLen])) // пропускаем символы, которые не могут входить в нейминг
-		{
-		if (line[0][*nameLen] == '\'')
-			line[0] = preUseFncQuot(line[0], nameLen, gen);
-		else if (line[0][*nameLen] == '\\')
-			line[0] = fnc_bslsh(line[0], nameLen, gen);
-		else if (line[0][*nameLen] == '\"')
-			line[0] = preUseFncDQuot(line, nameLen, (*gen)->env, gen);
-		else if (line[0][*nameLen] == '$')
-			line[0] = preUseFncDollar(line[0], nameLen, (*gen)->env);
-		else if (line[0][*nameLen] == '|' || line[0][*nameLen] == '<' ||
-		line[0][*nameLen] == '>' || line[0][*nameLen] == ' ')
-			break;
-		*nameLen += 1;
-		}
-	fileName = ft_substr(line[0], *i, *nameLen - *i);// берём имя
-	return (fileName);
-}
-
 void	fncRedirOpen(t_cmnd **cmd, char *nameFile) //доработать
 {
 	int	fd;
@@ -76,17 +48,17 @@ void	fncRedirWrite(t_cmnd **cmd, char *nameFile)
 {
 	int fd;
 
-	if ((*cmd)->fd_write)
+	if ((*cmd)->fd_write > 0)
 	{
 		close((*cmd)->fd_write);
 		(*cmd)->fd_write = 0;
 	}
-	if ((*cmd)->fd_reWrite)
+	if ((*cmd)->fd_reWrite > 0)
 	{
 		close((*cmd)->fd_reWrite);
 		(*cmd)->fd_reWrite = 0;
 	}//если дескриптора не было, если был, то надо закрыть
-	fd = open(nameFile, O_WRONLY | O_CREAT | O_APPEND); // открываем на дозапись
+	fd = open(nameFile, O_WRONLY | O_CREAT | O_APPEND, 0777); // открываем на дозапись
 	if (fd == -1)
 	{
 		(*cmd)->err = 1;
@@ -100,17 +72,17 @@ void	fncRedirReWrite(t_cmnd **cmd, char *nameFile)
 {
 	int 	fd;
 
-	if ((*cmd)->fd_write)
+	if ((*cmd)->fd_write > 0)
 	{
 		close((*cmd)->fd_write);
 		(*cmd)->fd_write = 0;
 	}
-	if ((*cmd)->fd_reWrite)
+	if ((*cmd)->fd_reWrite > 0)
 	{
 		close((*cmd)->fd_reWrite);
 		(*cmd)->fd_reWrite = 0;
 	}//если дескриптора не было, если был, то надо закрыть
-	fd = open(nameFile, O_RDWR | O_CREAT | O_TRUNC); // открываем на перезапись
+	fd = open(nameFile, O_RDWR | O_CREAT | O_TRUNC, 0777); // открываем на перезапись
 	if (fd == -1)
 	{
 		(*cmd)->err = 1;//ОШИППППКИ)
@@ -129,7 +101,7 @@ void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
 	if ((*cmd)->fd_open != 0)
 	{
 		close((*cmd)->fd_open);
-		(*cmd)->fd_open = 0;
+		(*cmd)->fd_open = -2;
 	}
 	if ((*cmd)->heredoc)
 		tmp = malloc(sizeof (char **) * (dualArrayLen((*cmd)->heredoc) + ft_strlenMS(hereDoc)));
@@ -144,26 +116,4 @@ void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
 	tmp[i] = ft_strdup(hereDoc);
 	free ((*cmd)->heredoc);
 	(*cmd)->heredoc = tmp;
-}
-
-int	dualArrayLen(char **array)
-{
-	int	i;
-	int	j;
-	int	len;
-
-	if (array == NULL)
-		return (0);
-	i = 0;
-	j = 0;
-	len = 0;
-	while (array[i])
-	{
-		j = 0;
-		while (array[i][j])
-			j++;
-		len += j;
-		i++;
-	}
-	return (len);
 }

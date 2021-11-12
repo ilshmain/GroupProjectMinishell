@@ -7,14 +7,14 @@ void exefnc(char **line, t_gnrl **gen)
 		(*gen)->errors = 0;
 		*line = readline("minishell$ ");
 		if (*line == NULL)
-			error_call("kuku exit\n");
+			error_call("exit\n");
 		add_history(*line);
 		getHistoryLog(*line, (*gen));
 		*line = initLine(*line);
 		first_fnc(line, gen, 0);
 		(*gen)->cmd = preLogicWork(&(*gen)->cmd);
-		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
-			fncMonitor((*gen)->cmd);
+//		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
+//			fncMonitor((*gen)->cmd);
 		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
 			logica(gen);
 	}
@@ -29,34 +29,13 @@ t_cmnd	*preLogicWork(t_cmnd **cmd)
 	tmp2 = *cmd;
 	if (tmp->nextList != NULL)
 		while (tmp->nextList != NULL)
-		{
 			pLWinWhile(&tmp, &tmp2);
-		}
 	else if (tmp->nextList == NULL && tmp->err == 1)
 	{
 		printf("%s\n", tmp->errContext);
 		return (NULL);
 	}
 	return ((*cmd));
-}
-
-void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2)
-{
-	if ((*tmp)->err == 1)
-	{
-		if ((*tmp)->nextList)
-			(*tmp2)->nextList = (*tmp)->nextList;
-		else
-			(*tmp2)->nextList = NULL;
-		printf("%s\n", (*tmp)->errContext);
-		free (*tmp);
-		(*tmp) = (*tmp2)->nextList;
-	}
-	else
-	{
-		*tmp2 = *tmp;
-		*tmp = (*tmp)->nextList;
-	}
 }
 
 void	getHistoryLog(char *line, t_gnrl *gen)
@@ -79,33 +58,6 @@ void	getHistoryLog(char *line, t_gnrl *gen)
 		close(gen->historyLog);
 	}
 	free(nameFile);
-}
-
-char	*initLine(char *line)
-{
-	char	*tmp;
-
-	tmp = ft_strdup(line);
-	free(line);
-	return (tmp);
-}
-
-
-void	exitCtrlD(void)
-{
-	printf("exit");
-	exit(0);
-}
-
-void	ctrl_c_hook(int sgn)
-{
-	rl_on_new_line();
-	rl_redisplay();
-	printf("  \n");
-	rl_on_new_line();
-	rl_replace_line("", 0);
-	rl_redisplay();
-	(void)sgn;
 }
 
 int	first_fnc(char **line, t_gnrl **gen, int i)
