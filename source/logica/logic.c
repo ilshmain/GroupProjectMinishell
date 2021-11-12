@@ -37,14 +37,15 @@ int main(int ac, char **av, char **env)
 
 	// первый лист команды
 	zik->cmd->command_array = ft_split("ls", ' ');
-	zik->cmd->fd_write = open(av[2], O_WRONLY | O_CREAT | O_APPEND, 0777);
+//	zik->cmd->fd_write = open(av[2], O_WRONLY | O_CREAT | O_APPEND, 0777);
+	zik->cmd->nextList = NULL;
 
-	// второй лист команды
-	zik->cmd->nextList = malloc(sizeof(t_cmnd) * 20);
-	zik->cmd->nextList->command_array = ft_split("cat -e", ' ');
-	zik->cmd->nextList->fd_open = open(av[1], O_RDONLY);
-	zik->cmd->nextList->fd_reWrite = open(av[3], O_WRONLY | O_CREAT | O_TRUNC, 0777);
-	zik->cmd->nextList->nextList = NULL;
+//	// второй лист команды
+//	zik->cmd->nextList = malloc(sizeof(t_cmnd) * 20);
+//	zik->cmd->nextList->command_array = ft_split("cat -e", ' ');
+//	zik->cmd->nextList->fd_open = open(av[1], O_RDONLY);
+//	zik->cmd->nextList->fd_reWrite = open(av[3], O_WRONLY | O_CREAT | O_TRUNC, 0777);
+//	zik->cmd->nextList->nextList = NULL;
 //
 //	// третий лист команды
 //	zik->cmd->nextList->nextList = malloc(sizeof(t_cmnd) * 10);

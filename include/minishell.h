@@ -65,6 +65,8 @@ void	pid_children(char **envp, t_gnrl **zik, t_cmnd *start);
 void	create_pipe(t_cmnd *cmd);
 void	ft_perror(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
+int		CheckRedirect(t_cmnd *cmd);
+int		Dup(t_cmnd *cmd);
 //********************************************
 
 
