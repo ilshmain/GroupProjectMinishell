@@ -9,7 +9,7 @@ set(CMAKE_C_STANDARD 99)
 include_directories(source/Libft/libft.a)
 FILE(GLOB SRC
         "source/logica/logic.c"
-#        "source/builts/*.c"
+        "source/builts/*.c"
         "source/work_pipe/*.c"
 #        "source/*.c"
 #        "source/pars/*.c"
