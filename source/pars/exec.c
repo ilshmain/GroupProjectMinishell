@@ -11,12 +11,14 @@ void exefnc(char **line, t_gnrl **gen)
 		add_history(*line);
 		getHistoryLog(*line, (*gen));
 		*line = initLine(*line);
-		first_fnc(line, gen, 0);
-		(*gen)->cmd = preLogicWork(&(*gen)->cmd);
-//		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
-//			fncMonitor((*gen)->cmd);
+		if (first_fnc(line, gen, 0) == 0)
+		{
+			(*gen)->cmd = preLogicWork(&(*gen)->cmd);
 		if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
-			logica(gen);
+			fncMonitor((*gen)->cmd);
+			if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
+				logica(gen);
+		}
 	}
 }
 
@@ -63,6 +65,8 @@ void	getHistoryLog(char *line, t_gnrl *gen)
 int	first_fnc(char **line, t_gnrl **gen, int i)
 {
 	(*gen)->cmd = ft_lstnewMS();
+	if (ft_strcmpMS(*line, "") == 0)
+		return (1);
 	while (line[0][i])
 	{
 		if (line[0][i] == '\'')

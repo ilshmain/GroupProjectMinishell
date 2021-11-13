@@ -1,0 +1,6 @@
+touch kek
+ls
+ls
+echo heh
+echo heh
+ls
