@@ -96,10 +96,10 @@ int	work_with_pipe(t_gnrl **zik)
 		close(start->fd[1]);
 		start = start->nextList;
 	}
-	while ((*zik)->cmd)
-	{
+//	while ((*zik)->cmd)
+//	{
 		wait(NULL);
-		(*zik)->cmd = (*zik)->cmd->nextList;
-	}
+//		(*zik)->cmd = (*zik)->cmd->nextList;
+//	}
 	return (0);
 }

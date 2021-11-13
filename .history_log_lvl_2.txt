@@ -27,3 +27,8 @@ pwd
 pwd | cat -e
 pwd | cat -e | cat -e 
 pwd
+pwd
+pwd
+pwd
+ls
+ls | cat -e
