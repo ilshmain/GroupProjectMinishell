@@ -11,9 +11,9 @@ FILE(GLOB SRC
         "source/logica/logic.c"
         "source/builts/*.c"
         "source/work_pipe/*.c"
-#        "source/*.c"
-#        "source/pars/*.c"
-#        "source/pars/ms_libft/*.c"
+        "source/*.c"
+        "source/pars/*.c"
+        "source/pars/ms_libft/*.c"
         )
 
 add_executable(checkMinishell ${SRC})
