@@ -4,3 +4,15 @@ ls
 echo heh
 echo heh
 ls
+ls
+ls
+ls
+ls
+pwd
+qq
+pwd
+pwd
+pwd
+pwd
+ls
+pwd

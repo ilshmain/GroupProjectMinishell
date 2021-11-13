@@ -24,16 +24,11 @@ char	*ft_strrchrchange(const char *s, int c)
 
 int	pwdBuilt(char **envp)
 {
-	int		i;
-	char	*pwd;
+	(void)envp;
+	char	pwd[1000];
 
-	i = 0;
-	while (envp[i])
-	{
-		if (ft_strncmp(envp[i], "PWD=", 4) == 0)
-			pwd = ft_strrchrchange(envp[i], '=');
-		i++;
-	}
+	getcwd(pwd, 1000);
 	write(STDOUT_FILENO, &pwd, ft_strlen(pwd));
+	write(1, "\n", 1);
 	return (1);
 }
