@@ -1,6 +1,6 @@
 #include "../../include/minishell.h"
 
-void	echoBuilt(t_gnrl *zik)
+int	echoBuilt(t_gnrl *zik)
 {
 	if (ft_strcmp(zik->cmd->command_array[1], "-") == 0)
 		printf("%s\n", zik->cmd->command_array[2]);
@@ -8,4 +8,5 @@ void	echoBuilt(t_gnrl *zik)
 		printf("%s", zik->cmd->command_array[2]);
 	else
 		printf("%s\n", zik->cmd->command_array[1]);
+	return (1);
 }

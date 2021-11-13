@@ -20,7 +20,7 @@ char	*useWay(t_list *ptr, char *comand)
 	return (NewWay);
 }
 
-void	cdBuilt(t_list *ptr, t_gnrl *zik)
+int	cdBuilt(t_list *ptr, t_gnrl *zik)
 {
 	int		i;
 	char	*wayToChange;
@@ -45,5 +45,6 @@ void	cdBuilt(t_list *ptr, t_gnrl *zik)
 			ptr->str = ft_strjoin("OLDPWD=", wayToChange);
 		ptr = ptr->next;
 	}
+	return (1);
 }
 //**************************************

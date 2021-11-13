@@ -2,7 +2,7 @@
 
 // bash BUILT*****************************
 
-void	levelUpBash(t_list *ptr)
+int	levelUpBash(t_list *ptr)
 {
 	char	*buf;
 	int		i;
@@ -18,5 +18,6 @@ void	levelUpBash(t_list *ptr)
 		}
 		ptr = ptr->next;
 	}
+	return (1);
 }
 //**************************************

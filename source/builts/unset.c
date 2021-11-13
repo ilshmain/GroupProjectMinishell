@@ -18,7 +18,7 @@ void	unsetEnv(t_list *ptr, char *str)
 	}
 }
 
-void	unsetBuilt(t_list *ptr, t_gnrl *zik)
+int	unsetBuilt(t_list *ptr, t_gnrl *zik)
 {
 	int	i;
 
@@ -31,6 +31,7 @@ void	unsetBuilt(t_list *ptr, t_gnrl *zik)
 		while (zik->cmd->command_array[++i])
 			unsetEnv(ptr, zik->cmd->command_array[i]);
 	}
+	return (1);
 }
 
 //*****************************************

@@ -21,10 +21,16 @@ char	*change_ft_strrchr(const char *s, int c);
 //********************************************
 
 //BUILT prototype*****************************
-void	levelUpBash(t_list *ptr);
-void	initialEnv(char **envp, t_list **ptr, int i);
-void	printEnvBuilt(t_list *ptr);
-void	pwdBuilt();
+int		levelUpBash(t_list *ptr);
+int		initialEnv(char **envp, t_list **ptr, int i);
+int		printEnvBuilt(t_list *ptr);
+int		pwdBuilt(char **env);
+int		cdBuilt(t_list *ptr, t_gnrl *zik);
+int		echoBuilt(t_gnrl *zik);
+int		exportBuilt(t_list *ptr, t_gnrl *zik);
+int		unsetBuilt(t_list *ptr, t_gnrl *zik);
+void		builtFunc(t_gnrl *zik, t_list *ptr);
+int		logica(t_gnrl **zik);
 //********************************************
 
 void	fncMonitor(t_cmnd *cmd);
@@ -48,7 +54,6 @@ t_list	*ft_lstlast(t_list *lst);
 
 int	work_with_pipe(t_gnrl **zik);
 
-
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strcpy(char *dst, const char *src);
@@ -63,7 +68,7 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k);
 //void	pid_parent(t_map *st, char **envp, t_gnrl **zik);
 void	pid_children(char **envp, t_gnrl **zik, t_cmnd *start);
 void	create_pipe(t_cmnd *cmd);
-int		ft_perror(char *str);
+void	ft_perror(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
 int		CheckRedirect(t_cmnd *cmd);
 int		Dup(t_cmnd *cmd);
@@ -116,13 +121,6 @@ void	fncRedirOpen(t_cmnd **cmd, char *nameFile);
 void	fncRedirReWrite(t_cmnd **cmd, char *nameFile);
 void	fncRedirWrite(t_cmnd **cmd, char *nameFile);
 void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc);
-
-int		logica(t_gnrl **zik);
-
-void	cdBuilt(t_list *ptr, t_gnrl *zik);
-void	echoBuilt(t_gnrl *zik);
-void	exportBuilt(t_list *ptr, t_gnrl *zik);
-void	unsetBuilt(t_list *ptr, t_gnrl *zik);
 
 void	fncMonitor(t_cmnd *cmd);
 

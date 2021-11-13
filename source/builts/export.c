@@ -76,7 +76,7 @@ void	addExport(t_list **ptr, char *str)
 	ft_lstadd_back(ptr, tmp);
 }
 
-void	exportBuilt(t_list *ptr, t_gnrl *zik)
+int	exportBuilt(t_list *ptr, t_gnrl *zik)
 {
 	int		i;
 	t_list	*sortMas;
@@ -95,5 +95,6 @@ void	exportBuilt(t_list *ptr, t_gnrl *zik)
 			i++;
 		}
 	}
+	return (1);
 }
 //**************************************
