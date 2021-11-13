@@ -26,7 +26,7 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 	}
 }
 
-void	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
+int	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
 {
 	while (start->nextList)
 	{
@@ -34,7 +34,8 @@ void	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
 		close(start->fd[1]);
 		start = start->nextList;
 	}
-	if (builtFunc((*zik), (*zik)->ptr) == 1)
-		return ;
+	if ((builtFunc((*zik), (*zik)->ptr) == 1) && ((*zik)->cmd->fork == 1))
+		exit (0);
 	pars_envp(envp, (*zik)->cmd->command_array, 0, 0);
+	return (1);
 }

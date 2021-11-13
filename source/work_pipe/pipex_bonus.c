@@ -45,18 +45,13 @@
 int	many_command(char **envp, t_gnrl **zik, t_cmnd *start)
 {
 	(*zik)->cmd->pid = fork();
+	(*zik)->cmd->fork = 1;
 	if ((*zik)->cmd->pid == -1)
 		ft_perror("Error pid(fork)+");
 	if ((*zik)->cmd->pid == 0)
 	{
 		CheckRedirect((*zik)->cmd);
 		Dup((*zik)->cmd);
-		if (!(*zik)->cmd->nextList)
-		{
-			if (builtFunc((*zik), (*zik)->ptr) == 0)
-				pars_envp(envp, (*zik)->cmd->command_array, 0, 0);
-			return (1);
-		}
 		pid_children(envp, zik, start);
 	}
 	return (1);
@@ -84,6 +79,11 @@ int	work_with_pipe(t_gnrl **zik)
 
 	start = (*zik)->cmd;
 	len = ft_sum_pipe((*zik)->cmd);
+	if (!(*zik)->cmd->nextList && (*zik)->cmd->heredoc == NULL)
+	{
+		if (builtFunc((*zik), (*zik)->ptr) == 1)
+			return (1);
+	}
 	create_pipe((*zik)->cmd);
 	while (len--)
 	{

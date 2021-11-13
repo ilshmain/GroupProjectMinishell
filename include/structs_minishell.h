@@ -27,6 +27,7 @@ typedef struct s_cmnd
 	int				in;
 	int				out;
 	int 			pid;
+	int 			fork;
 	struct s_cmnd	*nextList;
 }	t_cmnd;
 
