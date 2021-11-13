@@ -1,9 +1,9 @@
 #include "../../include/minishell.h"
 
-int	ft_perror(char *str)
+void	ft_perror(char *str)
 {
 	perror(str);
-	return (1);
+	exit (0);
 }
 
 void	create_pipe(t_cmnd *cmd)

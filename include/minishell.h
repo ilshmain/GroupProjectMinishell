@@ -29,7 +29,7 @@ int		cdBuilt(t_list *ptr, t_gnrl *zik);
 int		echoBuilt(t_gnrl *zik);
 int		exportBuilt(t_list *ptr, t_gnrl *zik);
 int		unsetBuilt(t_list *ptr, t_gnrl *zik);
-void		builtFunc(t_gnrl *zik, t_list *ptr);
+int 	builtFunc(t_gnrl *zik, t_list *ptr);
 int		logica(t_gnrl **zik);
 //********************************************
 

@@ -34,5 +34,7 @@ void	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
 		close(start->fd[1]);
 		start = start->nextList;
 	}
+	if (builtFunc((*zik), (*zik)->ptr) == 1)
+		return ;
 	pars_envp(envp, (*zik)->cmd->command_array, 0, 0);
 }
