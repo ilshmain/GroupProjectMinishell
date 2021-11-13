@@ -17,7 +17,7 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 				i = 0;
 				out[k] = ft_strjoin(out[k], "/");
 				out[k] = ft_strjoin(out[k], first_argv[0]);
-				execve(out[k], first_argv, NULL);
+				execve(out[k], first_argv, envp);
 				k++;
 			}
 			ft_perror("Wrong command");

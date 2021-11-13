@@ -59,6 +59,7 @@ int	many_command(char **envp, t_gnrl **zik, t_cmnd *start)
 		}
 		pid_children(envp, zik, start);
 	}
+	return (1);
 }
 
 int ft_sum_pipe(t_cmnd *cmd)

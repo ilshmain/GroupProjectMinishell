@@ -17,7 +17,8 @@ SRCS			=	./source/main.c \
 					./source/pars/preUsers.c \
 					./source/pars/quotWorkPage.c \
 					./source/pars/redirWorkPage.c \
-					./source/pars/servFns.c \
+					./source/pars/servFnc.c \
+					./source/pars/servFncII.c \
 					./source/pars/ms_libft/ft_isalnum.c  ./source/pars/ms_libft/ft_strchr.c \
 					./source/pars/ms_libft/ft_split.c 	 ./source/pars/ms_libft/ft_strdup.c \
 					./source/pars/ms_libft/ft_strjoin.c  ./source/pars/ms_libft/ft_strlcat.c \
