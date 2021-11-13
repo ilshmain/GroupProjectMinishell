@@ -16,3 +16,14 @@ pwd
 pwd
 ls
 pwd
+pwd
+pwd | cat -e
+ ea-e
+pwd | cat -e | cat -e
+echo kek
+ls
+ls | cat -e
+pwd
+pwd | cat -e
+pwd | cat -e | cat -e 
+pwd

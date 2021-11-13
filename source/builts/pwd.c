@@ -1,34 +1,38 @@
 #include "../../include/minishell.h"
 
-char	*ft_strrchrchange(const char *s, int c)
+void	*ms_malloc_x(size_t size)
 {
-	int	k;
-	int	a;
+	void	*ptr;
 
-	k = 0;
-	a = 0;
-	while (s[a])
-		a++;
-	while (k < a + 1)
+	ptr = malloc(size);
+	if (!ptr)
 	{
-		if (s[k] == (char)c)
-		{
-			while (s[k] != s[a])
-				a--;
-			return ((char *)s + (a + 1));
-		}
-		k++;
+		perror("minishell");
+		exit(EXIT_FAILURE);
 	}
-	return (0);
+	return (ptr);
 }
 
 int	pwdBuilt(char **envp)
 {
 	(void)envp;
-	char	pwd[1000];
+	char	*pwd;
+	int		i;
 
-	getcwd(pwd, 1000);
-	write(STDOUT_FILENO, &pwd, ft_strlen(pwd));
-	write(1, "\n", 1);
-	return (1);
+	pwd = ms_malloc_x(sizeof(*pwd) * 2048);
+	i = -1;
+	while (++i < 2048)
+		pwd[i] = 0;
+	if (getcwd(pwd, 2048))
+	{
+		ft_putendl_fd(pwd, STDOUT_FILENO);
+		free(pwd);
+		return (0);
+	}
+	else
+	{
+		ft_putendl_fd("strerror(errno)", STDERR_FILENO);
+		free(pwd);
+		return (1);
+	}
 }
