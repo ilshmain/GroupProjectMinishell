@@ -1,17 +1,5 @@
 #include "../../include/minishell.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	if (!s1)
-		return (1);
-	while (*s1 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
-}
-
 //int size_heredoc(char **argv)
 //{
 //	int i;
@@ -54,8 +42,6 @@ int	ft_strcmp(const char *s1, const char *s2)
 //	exit (0);
 //}
 
-
-
 int	many_command(char **envp, t_gnrl **zik, t_cmnd *start)
 {
 	(*zik)->cmd->pid = fork();
@@ -67,7 +53,8 @@ int	many_command(char **envp, t_gnrl **zik, t_cmnd *start)
 		Dup((*zik)->cmd);
 		if (!(*zik)->cmd->nextList)
 		{
-			pars_envp(envp, (*zik)->cmd->command_array, 0, 0);
+			if (builtFunc((*zik), (*zik)->ptr) == 0)
+				pars_envp(envp, (*zik)->cmd->command_array, 0, 0);
 			return (1);
 		}
 		pid_children(envp, zik, start);
@@ -108,10 +95,10 @@ int	work_with_pipe(t_gnrl **zik)
 		close(start->fd[1]);
 		start = start->nextList;
 	}
-//	while ((*zik)->cmd)
-//	{
+	while ((*zik)->cmd)
+	{
 		wait(NULL);
-//		(*zik)->cmd = (*zik)->cmd->nextList;
-//	}
+		(*zik)->cmd = (*zik)->cmd->nextList;
+	}
 	return (0);
 }

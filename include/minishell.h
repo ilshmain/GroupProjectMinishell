@@ -21,10 +21,16 @@ char	*change_ft_strrchr(const char *s, int c);
 //********************************************
 
 //BUILT prototype*****************************
-void	levelUpBash(t_list *ptr);
-void	initialEnv(char **envp, t_list **ptr, int i);
-void	printEnvBuilt(t_list *ptr);
-void	pwdBuilt();
+int		levelUpBash(t_list *ptr);
+int		initialEnv(char **envp, t_list **ptr, int i);
+int		printEnvBuilt(t_list *ptr);
+int		pwdBuilt(char **env);
+int		cdBuilt(t_list *ptr, t_gnrl *zik);
+int		echoBuilt(t_gnrl *zik);
+int		exportBuilt(t_list *ptr, t_gnrl *zik);
+int		unsetBuilt(t_list *ptr, t_gnrl *zik);
+int		builtFunc(t_gnrl *zik, t_list *ptr);
+int		logica(t_gnrl **zik);
 //********************************************
 
 void	fncMonitor(t_cmnd *cmd);
@@ -116,13 +122,6 @@ void	fncRedirOpen(t_cmnd **cmd, char *nameFile);
 void	fncRedirReWrite(t_cmnd **cmd, char *nameFile);
 void	fncRedirWrite(t_cmnd **cmd, char *nameFile);
 void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc);
-
-int		logica(t_gnrl **zik);
-
-void	cdBuilt(t_list *ptr, t_gnrl *zik);
-void	echoBuilt(t_gnrl *zik);
-void	exportBuilt(t_list *ptr, t_gnrl *zik);
-void	unsetBuilt(t_list *ptr, t_gnrl *zik);
 
 void	fncMonitor(t_cmnd *cmd);
 

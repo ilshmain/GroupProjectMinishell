@@ -1,7 +1,7 @@
 #include "../../include/minishell.h"
 
 //ENV BUILT
-void	printEnvBuilt(t_list *ptr)
+int	printEnvBuilt(t_list *ptr)
 {
 	while (ptr)
 	{
@@ -9,9 +9,10 @@ void	printEnvBuilt(t_list *ptr)
 			printf("%s\n", ptr->str);
 		ptr = ptr->next;
 	}
+	return (1);
 }
 
-void	initialEnv(char **envp, t_list **ptr, int i)
+int	initialEnv(char **envp, t_list **ptr, int i)
 {
 	t_list	*tmp;
 
@@ -26,5 +27,6 @@ void	initialEnv(char **envp, t_list **ptr, int i)
 		ft_lstadd_back(ptr, tmp);
 		i++;
 	}
+	return (1);
 }
 //**************************************
