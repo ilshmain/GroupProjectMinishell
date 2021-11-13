@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 project(checkMinishell C)
 
-set(CMAKE_C_FLAGS "-L/Users/hportife/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
-#set(CMAKE_C_FLAGS "-L/Users/fmint/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
+#set(CMAKE_C_FLAGS "-L/Users/hportife/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
+set(CMAKE_C_FLAGS "-L/Users/fmint/.brew/Cellar/readline/8.1.1/lib/ -lreadline")
 
 set(CMAKE_C_STANDARD 99)
 
@@ -16,4 +16,4 @@ FILE(GLOB SRC
         "source/pars/ms_libft/*.c")
 
 add_executable(checkMinishell ${SRC})
-target_link_libraries (checkMinishell /Users/hportife/hportife/mshell/source/Libft/libft.a)
+target_link_libraries (checkMinishell /Users/fmint/shell/source/Libft/libft.a)

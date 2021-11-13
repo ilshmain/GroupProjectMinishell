@@ -1,24 +1,19 @@
 #include "../../include/minishell.h"
 
-void	ft_perror(char *str)
+int	ft_perror(char *str)
 {
 	perror(str);
-	exit (0);
+	return (1);
 }
 
-void	create_pipe(t_map *st, int len, char **heredoc)
+void	create_pipe(t_cmnd *cmd)
 {
-	int	i;
-
-	i = 0;
-	st->sum_lst = len;
-	if (st->sum_lst > 1 || heredoc != 0)
+	while (cmd->nextList)
 	{
-		while (i < len - 1)
-		{
-			if (pipe(st[i].fd) == -1)
-				ft_perror("Error pipe");
-			i++;
-		}
+		if (pipe(cmd->fd) < 0)
+			ft_perror("Error pipe");
+		cmd->out = cmd->fd[1];
+		cmd->nextList->in = cmd->fd[0];
+		cmd = cmd->nextList;
 	}
 }

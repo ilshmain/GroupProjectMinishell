@@ -46,7 +46,7 @@ t_list	*ft_lstlast(t_list *lst);
 
 //PIPE prototype*****************************
 
-int		work_with_pipe(t_gnrl **zik);
+int	work_with_pipe(t_gnrl **zik);
 
 
 char	*ft_strdup(const char *s1);
@@ -61,10 +61,12 @@ size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *p1, const char *p2, size_t n);
 void	pars_envp(char **envp, char	**first_argv, int i, int k);
 //void	pid_parent(t_map *st, char **envp, t_gnrl **zik);
-void	pid_children(t_map *st, char **envp, t_gnrl **zik);
-void	create_pipe(t_map *st, int len, char **heredoc);
-void	ft_perror(char *str);
+void	pid_children(char **envp, t_gnrl **zik, t_cmnd *start);
+void	create_pipe(t_cmnd *cmd);
+int		ft_perror(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
+int		CheckRedirect(t_cmnd *cmd);
+int		Dup(t_cmnd *cmd);
 //********************************************
 
 

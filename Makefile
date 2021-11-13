@@ -30,6 +30,7 @@ SRCS			=	./source/main.c \
 					./source/work_pipe/pipex_bonus.c \
 					./source/work_pipe/pipex_bonus_utils.c \
 					./source/work_pipe/pipex_bonus_utils1.c \
+					./source/work_pipe/redirects.c \
 
 OBJS			=	$(SRCS:.c=.o)
 

@@ -10,15 +10,6 @@ typedef struct sta_pam
 	int		i;
 }	tama_map;
 
-
-typedef struct st_pam
-{
-	int		i;
-	int		sum_lst;
-	int		fd[2];
-	int		flag;
-}	t_map;
-
 typedef struct s_cmnd
 {
 	char			**command_array;
@@ -30,12 +21,17 @@ typedef struct s_cmnd
 	char 			**heredoc;
 	int				err;
 	char			*errContext;
+
+
+	int				fd[2];
+	int				in;
+	int				out;
+	int 			pid;
 	struct s_cmnd	*nextList;
 }	t_cmnd;
 
 typedef struct s_gnrl
 {
-	t_map	*pipe;
 	t_list  *ptr;
 	t_cmnd	*cmd;
 	int		errors;
