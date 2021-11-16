@@ -26,8 +26,41 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 	}
 }
 
+int len_lst(t_list *lst)
+{
+	int i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
+}
+
+char **env(t_list *lst)
+{
+	char	**new_env;
+	int		len;
+	int		i;
+
+	i = 0;
+	len = len_lst(lst);
+	new_env = malloc(sizeof(char **) * len);
+	while (lst)
+	{
+		new_env[i] = lst->str;
+		lst = lst->next;
+		i++;
+	}
+	return (new_env);
+}
+
 int	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
 {
+	(void)envp;
+	char **new_env;
+
+	new_env = env((*zik)->ptr);
 	while (start->nextList)
 	{
 		close(start->fd[0]);
@@ -36,6 +69,6 @@ int	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
 	}
 	if ((builtFunc((*zik), (*zik)->ptr) == 1) && ((*zik)->cmd->fork == 1))
 		exit (0);
-	pars_envp(envp, (*zik)->cmd->command_array, 0, 0);
+	pars_envp(new_env, (*zik)->cmd->command_array, 0, 0);
 	return (1);
 }
