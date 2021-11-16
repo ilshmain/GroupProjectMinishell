@@ -72,6 +72,24 @@ int ft_sum_pipe(t_cmnd *cmd)
 	return (i);
 }
 
+void	wait_proceses(t_cmnd *start)
+{
+	t_cmnd *cmd;
+
+	cmd = start;
+	while (start->nextList)
+	{
+		close(start->fd[0]);
+		close(start->fd[1]);
+		start = start->nextList;
+	}
+	while (cmd)
+	{
+		waitpid(cmd->pid, NULL, 0);
+		cmd = cmd->nextList;
+	}
+}
+
 int	work_with_pipe(t_gnrl **zik)
 {
 	t_cmnd *start;
@@ -90,16 +108,6 @@ int	work_with_pipe(t_gnrl **zik)
 		many_command((*zik)->env, zik, start);
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
-	while (start->nextList)
-	{
-		close(start->fd[0]);
-		close(start->fd[1]);
-		start = start->nextList;
-	}
-//	while ((*zik)->cmd)
-//	{
-		wait(NULL);
-//		(*zik)->cmd = (*zik)->cmd->nextList;
-//	}
+	wait_proceses(start);
 	return (0);
 }

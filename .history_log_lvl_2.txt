@@ -69,3 +69,10 @@ pwd | cat -e
 pwd
 ls | cat -e
 ls | cat -e | cat -e
+ls
+ls | cat -e
+ls
+ls | cat -e
+ls
+ls | cat -e
+pwd
