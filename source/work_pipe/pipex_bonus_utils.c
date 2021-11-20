@@ -1,5 +1,25 @@
 #include "../../include/minishell.h"
 
+char *name(char **env)
+{
+	char	*str;
+	int 	i;
+
+	i = 0;
+
+	str = NULL;
+	while (env[i])
+	{
+		if (ft_strncmp("_=/Users", env[i], 8) == 0)
+		{
+			str = change_ft_strrchr(env[i], '=');
+			return (str);
+		}
+		i++;
+	}
+	return (str);
+}
+
 void	pars_envp(char **envp, char	**first_argv, int i, int k)
 {
 	char	**out;
@@ -7,6 +27,12 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 
 	while (envp[i])
 	{
+		if (ft_strcmp("./minishell", first_argv[0]) == 0)
+		{
+			execve(name(envp), first_argv, envp);
+			ft_perror("Not executable file");
+		}
+
 		search_PATH = ft_strnstr(envp[i], "PATH=", 5);
 		if (search_PATH)
 		{

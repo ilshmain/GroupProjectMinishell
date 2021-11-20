@@ -21,7 +21,7 @@ char	*change_ft_strrchr(const char *s, int c);
 //********************************************
 
 //BUILT prototype*****************************
-int		levelUpBash(t_list *ptr);
+char	*levelUpDown(char *str, int flag_up_down);
 int		initialEnv(char **envp, t_list **ptr, int i);
 int		printEnvBuilt(t_list *ptr);
 int		pwdBuilt(char **env);
@@ -31,6 +31,7 @@ int		exportBuilt(t_list *ptr, t_gnrl *zik);
 int		unsetBuilt(t_list *ptr, t_gnrl *zik);
 int 	builtFunc(t_gnrl *zik, t_list *ptr);
 int		logica(t_gnrl **zik);
+int 	size_heredoc(char **argv);
 //********************************************
 
 void	fncMonitor(t_cmnd *cmd);

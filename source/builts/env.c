@@ -22,7 +22,7 @@ int	initialEnv(char **envp, t_list **ptr, int i)
 		if (ft_strncmp(envp[i], "OLDPWD", 6) == 0)
 			envp[i] = "OLDPWD=";
 		if (ft_strncmp("SHLVL=", envp[i], 6) == 0)
-			envp[i] = "SHLVL=2";
+			envp[i] = levelUpDown(envp[i], 1);
 		tmp = ft_lstnew(envp[i]);
 		ft_lstadd_back(ptr, tmp);
 		i++;

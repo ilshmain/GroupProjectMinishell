@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include "../source/Libft/libft.h"
 
+int exit_code;
 
 typedef struct sta_pam
 {
