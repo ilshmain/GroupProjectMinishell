@@ -36,9 +36,11 @@ int		unsetBuilt(t_list *ptr, t_gnrl *zik);
 int 	builtFunc(t_gnrl *zik, t_list *ptr);
 int		logica(t_gnrl **zik);
 int 	size_heredoc(char **argv);
-int		exit_built(int code, t_gnrl	**zik);
+int		exit_built(char	**str, t_list **ptr);
 int 	checking_validity_string(char *str);
 void 	print_error_func(char *str1, char *str2);
+int		size_two_poineter_mas(char **argv);
+char 	**env(t_list *lst);
 //********************************************
 
 void	fncMonitor(t_cmnd *cmd);
