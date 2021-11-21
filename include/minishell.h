@@ -28,7 +28,7 @@ char	*change_ft_strrchr(const char *s, int c);
 char	*levelUpDown(char *str, int flag_up_down);
 int		initialEnv(char **envp, t_list **ptr, int i);
 int		printEnvBuilt(t_list *ptr);
-int		pwdBuilt(char **env);
+int		pwdBuilt();
 int		cdBuilt(t_list *ptr, t_gnrl *zik);
 int		echoBuilt(t_gnrl *zik);
 int		exportBuilt(t_list *ptr, t_gnrl *zik);
@@ -37,6 +37,8 @@ int 	builtFunc(t_gnrl *zik, t_list *ptr);
 int		logica(t_gnrl **zik);
 int 	size_heredoc(char **argv);
 int		exit_built(int code, t_gnrl	**zik);
+int 	checking_validity_string(char *str);
+void 	print_error_func(char *str1, char *str2);
 //********************************************
 
 void	fncMonitor(t_cmnd *cmd);

@@ -116,3 +116,17 @@ export 23
 export 123
 export 123123
 export 123123 fdgfd 
+cd bfdg
+unset
+env
+export QQQQQQ=
+env
+unset QQQQQQ=
+export AAAA=
+env
+uset AAAA
+unset AAAA
+env
+export AAAA=
+export AAAA=
+unset AAAA=

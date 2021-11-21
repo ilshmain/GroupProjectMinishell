@@ -76,26 +76,10 @@ void	addExport(t_list **ptr, char *str)
 	ft_lstadd_back(ptr, tmp);
 }
 
-int checking_validity_string(char *str)
-{
-	int i;
-
-	i = 0;
-
-	while (str[i])
-	{
-		if (ft_isalpha(str[i]) == 0)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 int	exportBuilt(t_list *ptr, t_gnrl *zik)
 {
 	int		i;
 	t_list	*sortMas;
-	char	*print_error;
 
 	i = 0;
 	exit_code = 0;
@@ -109,15 +93,7 @@ int	exportBuilt(t_list *ptr, t_gnrl *zik)
 		while (zik->cmd->command_array[i])
 		{
 			if (checking_validity_string(zik->cmd->command_array[i]) == 1)
-			{
-				exit_code = 1;
-				print_error = ft_strjoin("export: ", zik->cmd->command_array[i]);
-				ft_putstr_fd(print_error, STDOUT_FILENO);
-				ft_putstr_fd(": not a valid identifier", STDOUT_FILENO);
-				ft_putstr_fd("\n", STDOUT_FILENO);
-				free(print_error);
-				print_error = NULL;
-			}
+				print_error_func("export: ", zik->cmd->command_array[i]);
 			if (ft_strchr(zik->cmd->command_array[i], '=') != 0)
 				addExport(&ptr, zik->cmd->command_array[i]);
 			i++;

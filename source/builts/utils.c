@@ -1,10 +1,35 @@
 #include "../../include/minishell.h"
 
-void	ft_perror_shell(char *str)
+// unset and export BUILT*****************************
+int checking_validity_string(char *str)
 {
-	perror(str);
-	return ;
+	int i;
+
+	i = 0;
+
+	while (str[i])
+	{
+		if (ft_isalpha(str[i]) == 0)
+			return (1);
+		i++;
+	}
+	return (0);
 }
+
+void print_error_func(char *str1, char *str2)
+{
+	char *print_error;
+
+	exit_code = 1;
+	print_error = ft_strjoin(str1, str2);
+	ft_putstr_fd(print_error, STDOUT_FILENO);
+	ft_putstr_fd(": not a valid identifier", STDOUT_FILENO);
+	ft_putstr_fd("\n", STDOUT_FILENO);
+	free(print_error);
+	print_error = NULL;
+}
+
+//****************************************************
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
