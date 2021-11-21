@@ -90,3 +90,21 @@ echo
 echo dffdff
 echo -n sdfsfsdfsdf
 echo
+export
+export
+env
+export sdfsd sdf sdf sdf sdf sd s
+env
+export QQQQ WWWWW
+env
+export
+export QQQQQ
+export
+export QQQQQ=
+export
+export BBBBBBBBBBB
+export
+export BBBBBBBBBBB=
+export
+env
+echo $QQQQQ

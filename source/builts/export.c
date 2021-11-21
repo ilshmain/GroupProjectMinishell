@@ -91,7 +91,8 @@ int	exportBuilt(t_list *ptr, t_gnrl *zik)
 		i = 1;
 		while (zik->cmd->command_array[i])
 		{
-			addExport(&ptr, zik->cmd->command_array[i]);
+			if (ft_strchr(zik->cmd->command_array[i], '=') != 0)
+				addExport(&ptr, zik->cmd->command_array[i]);
 			i++;
 		}
 	}
