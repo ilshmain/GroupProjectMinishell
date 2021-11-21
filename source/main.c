@@ -6,6 +6,7 @@ int main(int argc, char const *argv[], char **envp) {
 	char	*line;
 	t_gnrl	*gen;
 
+	exit_code = 0;
 	gen = malloc(sizeof (t_gnrl));
 	gen->env = envPrisv(envp);
 	initialEnv(envp, &gen->ptr, 0);

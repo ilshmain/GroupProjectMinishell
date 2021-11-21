@@ -46,7 +46,7 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 				execve(out[k], first_argv, envp);
 				k++;
 			}
-			ft_perror("Wrong command");
+			ft_perror("command not found");
 		}
 		i++;
 	}

@@ -18,6 +18,8 @@ int	builtFunc(t_gnrl *zik, t_list *ptr)
 		i = exportBuilt(ptr, zik);
 	if (ft_strcmp(zik->cmd->command_array[0], "unset") == 0)
 		i = unsetBuilt(ptr, zik);
+	if (ft_strcmp(zik->cmd->command_array[0], "exit") == 0)
+		i = exit_built(exit_code, &zik);
 	return (i);
 //	printEnvBuilt(ptr);
 }

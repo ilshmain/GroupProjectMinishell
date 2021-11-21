@@ -1,0 +1,56 @@
+qwweweqw
+qqqq
+qweq
+echo $?
+ls
+echo $?
+qq
+<1
+cd zaza
+pwd
+ls
+cd source/
+env
+ls
+cd eeee
+cd qqqq
+pwd | cat -e
+echo kuku | cat -e
+cd .. | cat -e
+pwd
+unset PWD | cat -e
+pwd
+env
+export
+export b=13
+export
+export a=23
+export
+cd dqwewqeqwe
+ls
+mkdir test
+cd test/
+pwd
+ls
+cd ..
+cd ..
+mkdir test
+cd test/
+cd ..
+ls
+cd test/
+cd test/
+mkdir test
+cd test/
+mkdir test
+cd test/
+ls
+mkdir test
+cd test/
+mkdir test
+cd test
+pwd
+mkdir test
+cd test
+pwd
+cd ..

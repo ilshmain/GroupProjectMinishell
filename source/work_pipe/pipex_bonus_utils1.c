@@ -1,5 +1,11 @@
 #include "../../include/minishell.h"
 
+void	ft_perror_2(char *str, int code)
+{
+	perror(str);
+	exit (code);
+}
+
 void	ft_perror(char *str)
 {
 	perror(str);

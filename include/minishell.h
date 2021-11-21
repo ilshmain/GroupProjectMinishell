@@ -11,8 +11,12 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <signal.h>
+# include <string.h>
+# include <errno.h>
 # include "./structs_minishell.h"
 # include "../source/Libft/libft.h"
+
+void	ft_perror_2(char *str, int code);
 
 //utils prototype*****************************
 void	ft_perror_shell(char *str);
@@ -32,6 +36,7 @@ int		unsetBuilt(t_list *ptr, t_gnrl *zik);
 int 	builtFunc(t_gnrl *zik, t_list *ptr);
 int		logica(t_gnrl **zik);
 int 	size_heredoc(char **argv);
+int		exit_built(int code, t_gnrl	**zik);
 //********************************************
 
 void	fncMonitor(t_cmnd *cmd);
