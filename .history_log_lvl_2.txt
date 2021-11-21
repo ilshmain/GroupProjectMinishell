@@ -108,3 +108,11 @@ export BBBBBBBBBBB=
 export
 env
 echo $QQQQQ
+cd safdsf
+export 123123
+export QQQQQ
+export 12sdfsd
+export 23
+export 123
+export 123123
+export 123123 fdgfd 

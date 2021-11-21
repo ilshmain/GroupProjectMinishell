@@ -52,7 +52,7 @@ int	cdBuilt(t_list *ptr, t_gnrl *zik)
 	{
 		exit_code = 1;
 		print_error = ft_strjoin("cd: ", zik->cmd->command_array[1]);
-//		ft_perror(print_error);
+		ft_perror_2(print_error);
 	}
 	else
 		exit_code = 0;

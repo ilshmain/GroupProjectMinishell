@@ -16,7 +16,7 @@
 # include "./structs_minishell.h"
 # include "../source/Libft/libft.h"
 
-void	ft_perror_2(char *str, int code);
+void	ft_perror_2(char *str);
 
 //utils prototype*****************************
 void	ft_perror_shell(char *str);

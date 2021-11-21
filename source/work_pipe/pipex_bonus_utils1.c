@@ -1,9 +1,9 @@
 #include "../../include/minishell.h"
 
-void	ft_perror_2(char *str, int code)
+void	ft_perror_2(char *str)
 {
 	perror(str);
-	exit (code);
+	free(str);
 }
 
 void	ft_perror(char *str)
