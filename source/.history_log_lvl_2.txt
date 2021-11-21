@@ -1,2 +1,8 @@
 ls
 cd ..
+cd -
+echo -
+echo
+ecjo -kuku
+echo -kuku
+echo - kuku

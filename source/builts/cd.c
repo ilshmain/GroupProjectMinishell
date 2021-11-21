@@ -1,6 +1,8 @@
 #include "../../include/minishell.h"
 
 // cd BUILT*****************************
+//char *cd_error()
+
 char	*useWay(t_list *ptr, char *comand)
 {
 	int		i;
@@ -25,6 +27,7 @@ int	cdBuilt(t_list *ptr, t_gnrl *zik)
 	int		i;
 	char	*wayToChange;
 	char	*wayAfterChange;
+	char	*print_error;
 
 	i = 0;
 	while (zik->cmd->command_array[i])
@@ -35,11 +38,22 @@ int	cdBuilt(t_list *ptr, t_gnrl *zik)
 	if (i == 1)
 		chdir(useWay(ptr, "HOME="));
 	else if (ft_strcmp(zik->cmd->command_array[1], "-") == 0)
-		chdir(useWay(ptr, "OLDPWD="));
+	{
+		exit_code = chdir(useWay(ptr, "OLDPWD="));
+		if (exit_code == -1)
+		{
+			exit_code = 1;
+			ft_putstr_fd("cd: OLDPWD not set\n", STDOUT_FILENO);
+		}
+	}
 	else
 		exit_code = chdir(zik->cmd->command_array[1]);
 	if (exit_code == -1)
-		ft_perror("cd");
+	{
+		exit_code = 1;
+		print_error = ft_strjoin("cd: ", zik->cmd->command_array[1]);
+//		ft_perror(print_error);
+	}
 	else
 		exit_code = 0;
 	wayAfterChange = getcwd(NULL, 1000);
@@ -49,8 +63,6 @@ int	cdBuilt(t_list *ptr, t_gnrl *zik)
 			ptr->str = ft_strjoin("PWD=", wayAfterChange);
 		if (ft_strncmp(ptr->str, "OLDPWD=", 7) == 0)
 			ptr->str = ft_strjoin("OLDPWD=", wayToChange);
-//		printf("wayAfterChange %s\n", wayAfterChange);
-//		printf("wayToChange %s\n", wayToChange);
 		ptr = ptr->next;
 	}
 	return (1);

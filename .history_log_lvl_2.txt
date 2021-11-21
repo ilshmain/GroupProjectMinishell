@@ -54,3 +54,39 @@ mkdir test
 cd test
 pwd
 cd ..
+pwd
+env
+cd - adsds
+pwd
+cd -
+cd -
+cd -
+cd source/
+pwd
+env
+cd sdfdfgfgf dfg
+cd source/
+pwd
+cd source/
+echo
+echo -
+echo
+echo -
+echo
+echo -
+echo
+echo -n
+echo -
+echo -dffd
+ sfsdf
+echo -dffd
+echo $USER $USER $USER
+echo
+echo -n
+echo sdfsdfsdf 
+echo -n sfdsdfdsfsdfsdfdsfsdfsdfs
+echo sdfsdfds
+echo
+echo dffdff
+echo -n sdfsfsdfsdf
+echo
