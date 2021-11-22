@@ -116,7 +116,7 @@ int	if_echo(t_cmnd **cmd_line, char **line, int *w_i_p)
 	int		i;
 
 	i = 0;
-	(*cmd_line)->command_array = malloc(sizeof (char**));
+	(*cmd_line)->command_array = malloc(sizeof (char*) * 3);
 	*line = cut_spaces(*line);
 	while(line[0][i] != ' ')
 		i++;
@@ -127,14 +127,13 @@ int	if_echo(t_cmnd **cmd_line, char **line, int *w_i_p)
 		return (1);
 	free(tmp);
 	*line = ft_substrMS(*line, i + 1, *w_i_p - i + 1);
-	if (*line[0] == '-' && *line[1] == 'n')
+	if (line[0][0] == '-' && line[0][1] == 'n' && line[0][2] == ' ')
 	{
-		(*cmd_line)->command_array[1] = ft_substrMS(*line, 0, 2);
-		(*cmd_line)->command_array[2] = ft_substrMS(*line, 2, *w_i_p - i + 3);
+		(*cmd_line)->command_array[1] = ft_substrMS(line[0], 0, 2);
+		(*cmd_line)->command_array[2] = ft_substrMS(line[0], 3, *w_i_p - i + 3);
 	}
 	else
-		(*cmd_line)->command_array[1] = ft_substrMS(*line, 0, *w_i_p);
-	printf("%s\n", (*cmd_line)->command_array[1]);
+		(*cmd_line)->command_array[1] = ft_substrMS(line[0], 0, *w_i_p);
 	free (*line);
 	return (0);
 }

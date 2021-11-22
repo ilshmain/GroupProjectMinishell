@@ -131,3 +131,18 @@ export AAAA=
 export AAAA=
 unset AAAA=
 echo heh | cat lol
+"echo test     \    test"
+echo test tout ; exit
+"echo test      tout"
+echo test tout
+echo test tout ; exit
+echo test tout ; exit
+echo -n test tout
+echo -n test tout
+echo -n test tout
+echo -n test tout
+echo -n test tout
+echo -n test tout
+echo -n test tout
+echo -n test tout
+echo -n test tout
