@@ -158,12 +158,12 @@ char	*cut_spaces(char *line)
 
 void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line, int *w_i_p, char *line)
 {
-	if (line[*w_i_p] == '|')
-		(*command_line)->flg_pipe = 1;
 	(*tmp_command_line) = *command_line;
 	if ((*tmp_command_line)->nextList != NULL)
 		while ((*tmp_command_line)->nextList != NULL)
 			(*tmp_command_line) = (*tmp_command_line)->nextList;
+	if (line[*w_i_p] == '|')
+		(*tmp_command_line)->flg_pipe = 1;
 	if ((*tmp_command_line)->command_array != NULL)
 	{
 		(*tmp_command_line)->nextList = ft_lstnewMS();
