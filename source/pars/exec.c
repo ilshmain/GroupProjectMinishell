@@ -80,44 +80,95 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 		else if (line[0][i] == '>' || line[0][i] == '<')
 			line[0] = preUseFncRedir(line, &i, gen);
 		else if (line[0][i] == '|')
-			line[0] = preUseFncPipe(line[0], &i, &(*gen)->cmd);
+			line[0] = pre_use_fnc_pipe(line[0], &i, &(*gen)->cmd);
 		else
 			i++;
 	}
 	if ((*gen)->errors != 1)
-		preUseFncPipe(line[0], &i, &(*gen)->cmd);
+		pre_use_fnc_pipe(line[0], &i, &(*gen)->cmd);
 //	fncMonitor((*gen)->cmd);
 	if ((*gen)->cmd == NULL)
 		(*gen)->errors = 1;
 	return ((*gen)->errors);
 }
 
-char	*preUseFncPipe(char *line, int *whereIsPipe, t_cmnd **commandLine)
+char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_cmnd **command_line)
 {
 	char	*tmp;
-	t_cmnd	*tmpCommandline;
+	t_cmnd	*tmp_command_line;
 
-	if (line[*whereIsPipe] == '|')
-		(*commandLine)->flg_pipe = 1;
-	tmpCommandline = *commandLine;
-	if (tmpCommandline->nextList != NULL)
-		while (tmpCommandline->nextList != NULL)
-			tmpCommandline = tmpCommandline->nextList;
-	if (tmpCommandline->command_array != NULL)
-	{
-		tmpCommandline->nextList = ft_lstnewMS();
-		tmpCommandline->flg_pipe = 1;
-		tmpCommandline = tmpCommandline->nextList;
-	}
-	tmp = ft_substrMS(line, 0, *whereIsPipe);
-	tmpCommandline->command_array = ft_split(tmp, ' ');
-	butilsProv(&tmpCommandline);
-	free(tmp);
-	tmp = ft_substrMS(line, *whereIsPipe + 1, ft_strlenMS(line) - *whereIsPipe);
+	if_pipe(command_line, &tmp_command_line, where_is_pipe, line);
+	tmp = ft_substrMS(line, 0, *where_is_pipe);
+	if (if_echo(&tmp_command_line, &tmp, where_is_pipe))
+		tmp_command_line->command_array = ft_split(tmp, ' ');
+	butilsProv(&tmp_command_line);
+	tmp = ft_substrMS(line, *where_is_pipe + 1, ft_strlenMS(line) - *where_is_pipe);
 	if (tmp && ft_strcmpMS(tmp, "") != 0)
-		tmpCommandline->nextList = ft_lstnewMS();
-	*whereIsPipe = 0;
+		tmp_command_line->nextList = ft_lstnewMS();
+	*where_is_pipe = 0;
 	free(line);
 	return (tmp);
 }
 
+int	if_echo(t_cmnd **cmd_line, char **line, int *w_i_p)
+{
+	char	*tmp;
+	int		i;
+
+	i = 0;
+	(*cmd_line)->command_array = malloc(sizeof (char**));
+	*line = cut_spaces(*line);
+	while(line[0][i] != ' ')
+		i++;
+	tmp = ft_substrMS(*line, 0, i);
+	if (ft_strcmpMS(tmp, "echo") == 0)
+		(*cmd_line)->command_array[0] = ft_strdupMS(tmp);
+	else
+		return (1);
+	free(tmp);
+	*line = ft_substrMS(*line, i + 1, *w_i_p - i + 1);
+	if (*line[0] == '-' && *line[1] == 'n')
+	{
+		(*cmd_line)->command_array[1] = ft_substrMS(*line, 0, 2);
+		(*cmd_line)->command_array[2] = ft_substrMS(*line, 2, *w_i_p - i + 3);
+	}
+	else
+		(*cmd_line)->command_array[1] = ft_substrMS(*line, 0, *w_i_p);
+	printf("%s\n", (*cmd_line)->command_array[1]);
+	free (*line);
+	return (0);
+}
+
+char	*cut_spaces(char *line)
+{
+	int 	i;
+	char	*tmp;
+
+	i = 0;
+	while (line[i] == ' ')
+		i++;
+	tmp = ft_substrMS(line, i, ft_strlen(line) - i);
+	i = ft_strlenMS(tmp) - 1;
+	while (tmp[i] == ' ')
+		i--;
+	free(line);
+	line = ft_substrMS(tmp, 0, i + 1);
+	free(tmp);
+	return (line);
+}
+
+void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line, int *w_i_p, char *line)
+{
+	if (line[*w_i_p] == '|')
+		(*command_line)->flg_pipe = 1;
+	(*tmp_command_line) = *command_line;
+	if ((*tmp_command_line)->nextList != NULL)
+		while ((*tmp_command_line)->nextList != NULL)
+			(*tmp_command_line) = (*tmp_command_line)->nextList;
+	if ((*tmp_command_line)->command_array != NULL)
+	{
+		(*tmp_command_line)->nextList = ft_lstnewMS();
+		(*tmp_command_line)->flg_pipe = 1;
+		(*tmp_command_line) = (*tmp_command_line)->nextList;
+	}
+}

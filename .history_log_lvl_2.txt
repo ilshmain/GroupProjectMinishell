@@ -130,3 +130,4 @@ env
 export AAAA=
 export AAAA=
 unset AAAA=
+echo heh | cat lol

@@ -134,7 +134,7 @@ void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc);
 
 void	fncMonitor(t_cmnd *cmd);
 
-char	*preUseFncPipe(char *line, int *whereIsPipe, t_cmnd **commandLine);
+char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_cmnd **command_line);
 void	ctrl_c_hook(int sgn);
 void    rl_replace_line(const char *buffer, int val);
 char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen);
@@ -143,5 +143,8 @@ int		dualArrayLen(char **array);
 void	getHistoryLog(char *line, t_gnrl *gen);
 t_cmnd	*preLogicWork(t_cmnd **cmd);
 void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2);
+void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line, int *w_i_p, char *line);
+int		if_echo(t_cmnd **cmd_line, char **line, int *w_i_p);
+char	*cut_spaces(char *line);
 
 #endif
