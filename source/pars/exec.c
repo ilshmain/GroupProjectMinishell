@@ -118,7 +118,7 @@ int	if_echo(t_cmnd **cmd_line, char **line, int *w_i_p)
 	i = 0;
 	(*cmd_line)->command_array = malloc(sizeof (char*) * 3);
 	*line = cut_spaces(*line);
-	while(line[0][i] != ' ')
+	while(line[0][i] && line[0][i] != ' ')
 		i++;
 	tmp = ft_substrMS(*line, 0, i);
 	if (ft_strcmpMS(tmp, "echo") == 0)
