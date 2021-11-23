@@ -32,8 +32,10 @@ int ft_sum_pipe(t_cmnd *cmd)
 
 void	wait_proceses(t_cmnd *start)
 {
-	t_cmnd *cmd;
+	t_cmnd	*cmd;
+	int 	status;
 
+	status = 0;
 	cmd = start;
 	while (start->nextList)
 	{
@@ -43,7 +45,12 @@ void	wait_proceses(t_cmnd *start)
 	}
 	while (cmd)
 	{
-		waitpid(cmd->pid, NULL, 0);
+		waitpid(cmd->pid, &status, 0);
+		exit_code = WEXITSTATUS(status);
+		if (!exit_code && WIFSIGNALED(status))
+		{
+			exit_code = 128 + WTERMSIG(status);
+		}
 		cmd = cmd->nextList;
 	}
 }
