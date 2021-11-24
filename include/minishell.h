@@ -146,5 +146,6 @@ void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2);
 void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line, int *w_i_p, char *line);
 int		if_echo(t_cmnd **cmd_line, char **line, int *w_i_p);
 char	*cut_spaces(char *line);
+char 	*ret_for_dollar_what(char **line, int j);
 
 #endif

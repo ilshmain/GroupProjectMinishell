@@ -39,7 +39,7 @@ int	initialEnv(char **envp, t_list **ptr, int i)
 	while (envp[i])
 	{
 		if (ft_strncmp(envp[i], "OLDPWD", 6) == 0)
-			envp[i] = "OLDPWD=";
+			envp[i] = ft_strdup("OLDPWD=");
 		if (ft_strncmp("SHLVL=", envp[i], 6) == 0)
 			envp[i] = levelUpDown(envp[i], 1);
 		tmp = ft_lstnew(envp[i]);

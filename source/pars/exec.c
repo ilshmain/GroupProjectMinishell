@@ -134,7 +134,8 @@ int	if_echo(t_cmnd **cmd_line, char **line, int *w_i_p)
 	}
 	else
 		(*cmd_line)->command_array[1] = ft_substrMS(line[0], 0, *w_i_p);
-//	free (*line);
+//	if (*line != NULL || ft_strcmpMS(*line, "\0") != 0)
+//		free (*line);
 	return (0);
 }
 

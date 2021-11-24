@@ -17,8 +17,10 @@ char	*fnc_dollar(char *line, int *i, char **env)
 	while (line[++(*i)])
 		if (!ifKeyForFnsDollar(line[*i]))
 			break ;
-	if (*i == j + 1)
+	if (*i == j + 1 && line[*i] != '?')
 		return (line);
+	else if (*i == j + 1 && line[*i] == '?')
+		return (ret_for_dollar_what(&line, j));
 	tmp2 = dollarAssigment(line, i, j, env);
 	tmp = ft_substrMS(line, 0, j);
 	if (tmp != NULL && tmp2 != NULL)
@@ -32,6 +34,16 @@ char	*fnc_dollar(char *line, int *i, char **env)
 	}
 	if (tmp2 != NULL)
 		free(tmp2);
+	return (tmp);
+}
+
+char *ret_for_dollar_what(char **line, int j)
+{
+	char *tmp;
+
+	tmp = ft_substrMS(*line, 0, ft_strlenMS(*line) - (ft_strlenMS(*line) - j));
+	tmp = preUseStrJoin(tmp, ft_itoa(exit_code));
+//	free(*line);
 	return (tmp);
 }
 
