@@ -7,7 +7,8 @@ t_list	*ft_lstnew(char *str)
 	tmp = (t_list *)malloc(sizeof(t_list));
 	if (!tmp)
 		return (NULL);
-	tmp->str = str;
+	tmp->str = ft_strdup(str);
+	free(str);
 	tmp->next = NULL;
 	return (tmp);
 }

@@ -25,7 +25,7 @@ char	*change_ft_strrchr(const char *s, int c);
 //********************************************
 
 //BUILT prototype*****************************
-char	*levelUpDown(char *str, int flag_up_down);
+char	*levelUpDown(char *str);
 int		initialEnv(char **envp, t_list **ptr, int i);
 int		printEnvBuilt(t_list *ptr);
 int		pwdBuilt();

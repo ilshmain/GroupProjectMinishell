@@ -9,12 +9,13 @@ char	*useWay(t_list *ptr, char *comand)
 	char	*NewWay;
 
 	NewWay = NULL;
-	i = ft_strlen(comand);
+	i = (int)ft_strlen(comand);
 	while (ptr)
 	{
 		if ((ft_strncmp(ptr->str, comand, i) == 0))
 		{
 			NewWay = change_ft_strrchr(ptr->str, '=');
+			ft_putstr_fd(NewWay, 1);
 			break ;
 		}
 		ptr = ptr->next;
