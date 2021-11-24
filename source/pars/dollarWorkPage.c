@@ -2,7 +2,7 @@
 
 int	ifKeyForFnsDollar(char c)
 {
-	if (c == '_' || ft_isalnumMS(c))
+	if (c == '_' || ft_isalnumMS(c) || c == '?')
 		return (1);
 	return (0);
 }
@@ -17,9 +17,9 @@ char	*fnc_dollar(char *line, int *i, char **env)
 	while (line[++(*i)])
 		if (!ifKeyForFnsDollar(line[*i]))
 			break ;
-	if (*i == j + 1 && line[*i] != '?')
+	if (*i == j + 1)
 		return (line);
-	else if (*i == j + 1 && line[*i] == '?')
+	if (line[j + 1] == '?' && (line [j + 2] == ' ' || line [j + 2] == '\0'))
 		return (ret_for_dollar_what(&line, j));
 	tmp2 = dollarAssigment(line, i, j, env);
 	tmp = ft_substrMS(line, 0, j);

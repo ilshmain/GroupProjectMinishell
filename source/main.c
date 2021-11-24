@@ -8,8 +8,8 @@ int main(int argc, char const *argv[], char **envp) {
 
 	exit_code = 0;
 	gen = malloc(sizeof (t_gnrl));
-	gen->env = envPrisv(envp);
 	initialEnv(envp, &gen->ptr, 0);
+	gen->env = env(gen->ptr);
 	signal(SIGQUIT, SIG_IGN);
 	signal(SIGINT, &ctrl_c_hook);
 	exefnc(&line, &gen);

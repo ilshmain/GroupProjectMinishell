@@ -86,7 +86,7 @@ int		Dup(t_cmnd *cmd);
 
 
 //**********************************************************************************************************************
-void	exefnc(char **line, t_gnrl **gen);
+_Noreturn void	exefnc(char **line, t_gnrl **gen);
 int		first_fnc(char **line, t_gnrl **gen, int i);
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine);
 

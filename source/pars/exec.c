@@ -1,6 +1,6 @@
 #include "../../include/minishell.h"
 
-void exefnc(char **line, t_gnrl **gen)
+_Noreturn void exefnc(char **line, t_gnrl **gen)
 {
 	while (1)
 	{
@@ -134,8 +134,8 @@ int	if_echo(t_cmnd **cmd_line, char **line, int *w_i_p)
 	}
 	else
 		(*cmd_line)->command_array[1] = ft_substrMS(line[0], 0, *w_i_p);
-//	if (*line != NULL || ft_strcmpMS(*line, "\0") != 0)
-//		free (*line);
+	if (*line != NULL && *line[0] != '\0')
+		free (*line);
 	return (0);
 }
 
