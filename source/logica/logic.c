@@ -25,10 +25,52 @@ int	builtFunc(t_gnrl *zik, t_list *ptr)
 //	printEnvBuilt(ptr);
 }
 
+void	free_command_array(char **envp)
+{
+	int i;
+
+	i = 0;
+	if (envp)
+	{
+		while (envp[i])
+		{
+			free(envp[i]);
+			i++;
+		}
+	}
+}
+
+void	ft_lstdelone(t_cmnd *lst)
+{
+	if (lst)
+	{
+		free_command_array(lst->command_array);
+		free_command_array(lst->heredoc);
+		free(lst->errContext);
+	}
+	free(lst);
+	lst = NULL;
+}
+
+void	lstclear(t_cmnd **lst)
+{
+	t_cmnd 	*new;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		new = (*lst)->nextList;
+		ft_lstdelone(*lst);
+		(*lst) = new;
+	}
+}
+
 // *****************************************
 
 int logica(t_gnrl **zik)
 {
 	work_with_pipe(zik);
+//	lstclear(&(*zik)->cmd);
 	return (1);
 }

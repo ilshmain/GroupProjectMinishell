@@ -15,7 +15,6 @@ int	echoBuilt(t_gnrl *zik)
 {
 	int i;
 
-	exit_code = 0;
 	i = size_two_poineter_mas(zik->cmd->command_array);
 	if (i == 1)
 		ft_putstr_fd("\n", STDOUT_FILENO);
@@ -31,5 +30,6 @@ int	echoBuilt(t_gnrl *zik)
 		ft_putstr_fd(zik->cmd->command_array[1], STDOUT_FILENO);
 		ft_putstr_fd("\n", STDOUT_FILENO);
 	}
+	exit_code = 0;
 	return (1);
 }

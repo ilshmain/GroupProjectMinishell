@@ -12,7 +12,7 @@ char *name(char **env)
 	{
 		if (ft_strncmp("_=/Users", env[i], 8) == 0)
 		{
-			str = change_ft_strrchr(env[i], '=');
+			str = ft_strdup(change_ft_strrchr(env[i], '='));
 			return (str);
 		}
 		i++;
@@ -24,15 +24,18 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 {
 	char	**out;
 	char	*search_PATH;
+	char 	*path;
+	char 	*new_out;
 
 	while (envp[i])
 	{
 		if (ft_strcmp("./minishell", first_argv[0]) == 0)
 		{
-			execve(name(envp), first_argv, envp);
-			ft_perror("Not executable file");
+			path = name(envp);
+			execve(path, first_argv, envp);
+			free(path);
+			ft_putstr_fd("Not executable file", STDERR_FILENO);
 		}
-
 		search_PATH = ft_strnstr(envp[i], "PATH=", 5);
 		if (search_PATH)
 		{
@@ -41,12 +44,17 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 			while (out[k])
 			{
 				i = 0;
-				out[k] = ft_strjoin(out[k], "/");
-				out[k] = ft_strjoin(out[k], first_argv[0]);
+				new_out = ft_strjoin(out[k], "/");
+				out[k] = ft_strjoin(new_out, first_argv[0]);
+				free(new_out);
 				execve(out[k], first_argv, envp);
+				free(out[k]);
 				k++;
 			}
-			ft_perror("command not found");
+			ft_putstr_fd("minishell$: ", STDERR_FILENO);
+			ft_putstr_fd(first_argv[0], STDERR_FILENO);
+			ft_putstr_fd(": command not found\n", STDERR_FILENO);
+			exit (127);
 		}
 		i++;
 	}
