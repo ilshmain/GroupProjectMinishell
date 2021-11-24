@@ -3,20 +3,19 @@
 //ENV BUILT
 
 
-char	*levelUpDown(char *str, int flag_up_down)
+char	*levelUpDown(char *str)
 {
 	char	*lvl;
 	char	*buf;
+	char 	*itoa_value;
 	int		i;
 
 	lvl = NULL;
 	buf = change_ft_strrchr(str, '=');
 	i = ft_atoi(buf);
-	if (flag_up_down == 1)
-		i++;
-	else
-		i--;
-	lvl = ft_strjoin("SHLVL=", ft_itoa(i));
+	itoa_value = ft_itoa(++i);
+	lvl = ft_strjoin("SHLVL=", itoa_value);
+	free(itoa_value);
 	return (lvl);
 }
 
@@ -34,15 +33,18 @@ int	printEnvBuilt(t_list *ptr)
 int	initialEnv(char **envp, t_list **ptr, int i)
 {
 	t_list	*tmp;
+	char 	*str;
 
 	*ptr = NULL;
 	while (envp[i])
 	{
 		if (ft_strncmp(envp[i], "OLDPWD", 6) == 0)
-			envp[i] = ft_strdup("OLDPWD=");
-		if (ft_strncmp("SHLVL=", envp[i], 6) == 0)
-			envp[i] = levelUpDown(envp[i], 1);
-		tmp = ft_lstnew(envp[i]);
+			str = ft_strdup("OLDPWD=");
+		else if (ft_strncmp("SHLVL=", envp[i], 6) == 0)
+			str = levelUpDown(envp[i]);
+		else
+			str = ft_strdup(envp[i]);
+		tmp = ft_lstnew(str);
 		ft_lstadd_back(ptr, tmp);
 		i++;
 	}

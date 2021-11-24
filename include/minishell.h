@@ -16,8 +16,6 @@
 # include "./structs_minishell.h"
 # include "../source/Libft/libft.h"
 
-void	ft_perror_2(char *str);
-
 //utils prototype*****************************
 void	ft_perror_shell(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -25,7 +23,7 @@ char	*change_ft_strrchr(const char *s, int c);
 //********************************************
 
 //BUILT prototype*****************************
-char	*levelUpDown(char *str, int flag_up_down);
+char	*levelUpDown(char *str);
 int		initialEnv(char **envp, t_list **ptr, int i);
 int		printEnvBuilt(t_list *ptr);
 int		pwdBuilt();

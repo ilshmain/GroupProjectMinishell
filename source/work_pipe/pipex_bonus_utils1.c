@@ -1,11 +1,5 @@
 #include "../../include/minishell.h"
 
-void	ft_perror_2(char *str)
-{
-	perror(str);
-	free(str);
-}
-
 void	ft_perror(char *str)
 {
 	perror(str);
