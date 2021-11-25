@@ -1,13 +1,13 @@
 NAME			= 	minishell
 
 SRCS			=	./source/main.c \
-					./source/builts/lvl.c \
 					./source/builts/cd.c \
 					./source/builts/echo.c \
 					./source/builts/env.c \
 					./source/builts/export.c \
 					./source/builts/pwd.c \
 					./source/builts/exit.c \
+					./source/builts/export_utils.c \
 					./source/builts/unset.c \
 					./source/builts/utils.c \
 					./source/logica/logic.c \
