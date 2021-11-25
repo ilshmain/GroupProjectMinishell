@@ -1,10 +1,19 @@
 #include "../../include/minishell.h"
 
 // Export Built
+
+void	addExport(t_list **ptr, char *str)
+{
+	t_list	*tmp;
+	tmp = ft_lstnew(str);
+	ft_lstadd_back(ptr, tmp);
+}
+
+
 int 	dopSortirovka(t_list **list)
 {
 	char	*str;
-	t_list	*tmp;
+	char	*tmp;
 	t_list	*lst;
 	int		flag;
 
@@ -12,15 +21,16 @@ int 	dopSortirovka(t_list **list)
 	lst = *list;
 	while ((lst->next != NULL) && (lst->next))
 	{
-		tmp = ft_lstnew((lst->next)->str);
-		if (ft_strcmp(lst->str, tmp->str) > 0)
+		if (ft_strcmp(lst->str, (lst->next)->str) > 0)
 		{
-			str = malloc(sizeof (char *));
-			if (!str)
-				return 0;
-			str = lst->str;
-			lst->str = tmp->str;
-			(lst->next)->str = str;
+			tmp = ft_strdup((lst->next)->str);
+			str = ft_strdup(lst->str);
+			free(lst->str);
+			free((lst->next)->str);
+			lst->str = ft_strdup(tmp);
+			(lst->next)->str = ft_strdup(str);
+			free(str);
+			free(tmp);
 			flag--;
 		}
 		lst = lst->next;
@@ -37,26 +47,26 @@ void	sortAlphabet(t_list **sortMas)
 	{
 		lst = *sortMas;
 		flag = dopSortirovka(&lst);
-		lst = lst->next;
 		if (flag == 1)
 			break;
 	}
 }
 
-void	printExport(t_list *ptr, t_list **sortMas)
+void	ft_lstdel(t_list *lst)
 {
-	t_list *tmp;
+	if (lst)
+		free(lst->str);
+	free(lst);
+	lst = NULL;
+}
 
-	*sortMas = NULL;
-	while(ptr)
-	{
-		tmp = ft_lstnew(ptr->str);
-		ft_lstadd_back(sortMas, tmp);
-		ptr = ptr->next;
-	}
-	sortAlphabet(sortMas);
+void 	printSortmas(t_list **sortMas)
+{
+	t_list 	*new;
+
 	while (*sortMas)
 	{
+		new = (*sortMas)->next;
 		if (ft_strncmp("_=", (*sortMas)->str, 2) != 0)
 		{
 			if (ft_strcmp("OLDPWD=", (*sortMas)->str) == 0)
@@ -64,16 +74,26 @@ void	printExport(t_list *ptr, t_list **sortMas)
 			else
 				printf("declare -x %s\n", (*sortMas)->str);
 		}
-
-		*sortMas = (*sortMas)->next;
+		ft_lstdel(*sortMas);
+		*sortMas = new;
 	}
 }
 
-void	addExport(t_list **ptr, char *str)
+void	printExport(t_list *ptr, t_list **sortMas)
 {
 	t_list	*tmp;
-	tmp = ft_lstnew(str);
-	ft_lstadd_back(ptr, tmp);
+	char	*dop_str;
+
+	*sortMas = NULL;
+	while(ptr)
+	{
+		dop_str = ft_strdup(ptr->str);
+		tmp = ft_lstnew(dop_str);
+		ft_lstadd_back(sortMas, tmp);
+		ptr = ptr->next;
+	}
+	sortAlphabet(sortMas);
+	printSortmas(&(*sortMas));
 }
 
 int	exportBuilt(t_list *ptr, t_gnrl *zik)
@@ -93,7 +113,7 @@ int	exportBuilt(t_list *ptr, t_gnrl *zik)
 		while (zik->cmd->command_array[i])
 		{
 			if (checking_validity_string(zik->cmd->command_array[i]) == 1)
-				print_error_func("export: ", zik->cmd->command_array[i]);
+				print_error_func("minishell$: export: ", zik->cmd->command_array[i]);
 			if (ft_strchr(zik->cmd->command_array[i], '=') != 0)
 				addExport(&ptr, zik->cmd->command_array[i]);
 			i++;

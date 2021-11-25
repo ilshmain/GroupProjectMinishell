@@ -4,12 +4,15 @@ int main(int argc, char const *argv[], char **envp) {
 	(void)argc;
 	(void)argv;
 	char	*line;
+	char 	**per;
 	t_gnrl	*gen;
 
 	exit_code = 0;
 	gen = malloc(sizeof (t_gnrl));
 	initialEnv(envp, &gen->ptr, 0);
-	gen->env = env(gen->ptr);
+	per = env(gen->ptr);
+	gen->env = per;
+	free(per);
 	signal(SIGQUIT, SIG_IGN);
 	signal(SIGINT, &ctrl_c_hook);
 	exefnc(&line, &gen);

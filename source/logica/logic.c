@@ -3,6 +3,7 @@
 // builtFunc********************************
 int	builtFunc(t_gnrl *zik, t_list *ptr)
 {
+	char 	**per;
 	int 	i;
 
 	i = 0;
@@ -20,9 +21,10 @@ int	builtFunc(t_gnrl *zik, t_list *ptr)
 		i = unsetBuilt(ptr, zik);
 	if (ft_strcmp(zik->cmd->command_array[0], "exit") == 0)
 		i = exit_built(zik->cmd->command_array, &zik->ptr);
-	zik->env = env(zik->ptr);
+	per = env(zik->ptr);
+	zik->env = per;
+	free(per);
 	return (i);
-//	printEnvBuilt(ptr);
 }
 
 void	free_command_array(char **envp)

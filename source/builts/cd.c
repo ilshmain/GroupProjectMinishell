@@ -83,6 +83,8 @@ int	cdBuilt(t_list *ptr, t_gnrl *zik)
 		exit_code = 0;
 	wayAfterChange = getcwd(NULL, 1024);
 	change_str_value(ptr, wayAfterChange, wayToChange);
+	free(wayToChange);
+	free(wayAfterChange);
 	return (1);
 }
 //**************************************
