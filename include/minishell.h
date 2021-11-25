@@ -145,5 +145,6 @@ void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line, int *w_i_p, char 
 int		if_echo(t_cmnd **cmd_line, char **line, int *w_i_p);
 char	*cut_spaces(char *line);
 char 	*ret_for_dollar_what(char **line, int j);
+char	*pre_use_substr(char *s, unsigned int start, size_t len);
 
 #endif

@@ -34,11 +34,23 @@ void	free_command_array(char **envp)
 	i = 0;
 	if (envp)
 	{
-		while (envp[i])
+//		if (ft_strcmp(envp[0], "echo") != 0)
+	while (envp[i] && envp[i][0] != '\0')
 		{
 			free(envp[i]);
 			i++;
 		}
+//		else if (envp[1])
+//		{
+//			if (ft_strcmp(envp[1], "-n") == 0)
+//				while (i < 3)
+//					free(envp[i++]);
+//			else
+//				while (i < 2)
+//					free(envp[i++]);
+//		}
+//		else
+//			free(envp[0]);
 	}
 }
 
@@ -73,6 +85,6 @@ void	lstclear(t_cmnd **lst)
 int logica(t_gnrl **zik)
 {
 	work_with_pipe(zik);
-//	lstclear(&(*zik)->cmd);
+	lstclear(&(*zik)->cmd);
 	return (1);
 }

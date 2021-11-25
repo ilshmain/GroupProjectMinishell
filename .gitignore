@@ -55,6 +55,7 @@ dkms.conf
 /.idea/
 /.vscode/
 /cmake-build-debug/
+/.gradle/
 tester_100
 CMakeLists.txt
 *.code-workspace
