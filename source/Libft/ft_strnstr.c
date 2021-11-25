@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmint <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 18:53:36 by fmint             #+#    #+#             */
+/*   Updated: 2021/11/25 18:53:38 by fmint            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strnstr (const char *dst, const char *src, size_t len)
+char	*ft_strnstr(const char *dst, const char *src, size_t len)
 {
 	size_t	k;
 	size_t	p;
