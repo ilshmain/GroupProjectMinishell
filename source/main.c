@@ -9,7 +9,7 @@ int main(int argc, char const *argv[], char **envp) {
 
 	exit_code = 0;
 	gen = malloc(sizeof (t_gnrl));
-	initialEnv(envp, &gen->ptr, 0);
+	initial_env(envp, &gen->ptr, 0);
 	per = env(gen->ptr);
 	gen->env = per;
 	free(per);

@@ -124,7 +124,7 @@ int	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
 		close(start->fd[1]);
 		start = start->nextList;
 	}
-	if ((builtFunc((*zik), (*zik)->ptr) == 1) && ((*zik)->cmd->fork == 1))
+	if ((built_func((*zik), (*zik)->ptr) == 1) && ((*zik)->cmd->fork == 1))
 		exit (0);
 	pars_envp(new_env, (*zik)->cmd->command_array, 0, 0);
 	return (1);

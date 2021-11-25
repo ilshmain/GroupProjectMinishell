@@ -64,7 +64,7 @@ int	work_with_pipe(t_gnrl **zik)
 	len = ft_sum_pipe((*zik)->cmd);
 	if (!(*zik)->cmd->nextList && (*zik)->cmd->heredoc == NULL)
 	{
-		if (builtFunc((*zik), (*zik)->ptr) == 1)
+		if (built_func((*zik), (*zik)->ptr) == 1)
 			return (1);
 	}
 	create_pipe((*zik)->cmd);

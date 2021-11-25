@@ -1,26 +1,26 @@
 #include "../../include/minishell.h"
 
 // cd BUILT*****************************
-char	*useWay(t_list *ptr, char *comand)
+char	*use_way(t_list *ptr, char *comand)
 {
 	int		i;
-	char	*NewWay;
+	char	*new_way;
 
-	NewWay = NULL;
+	new_way = NULL;
 	i = (int)ft_strlen(comand);
 	while (ptr)
 	{
 		if ((ft_strncmp(ptr->str, comand, i) == 0))
 		{
-			NewWay = change_ft_strrchr(ptr->str, '=');
+			new_way = change_ft_strrchr(ptr->str, '=');
 			break ;
 		}
 		ptr = ptr->next;
 	}
-	return (NewWay);
+	return (new_way);
 }
 
-void change_str_value(t_list *ptr, char *wayAfterChange, char *wayToChange)
+void	change_str_value(t_list *ptr, char *wayAfterChange, char *wayToChange)
 {
 	while (ptr)
 	{
@@ -38,9 +38,9 @@ void change_str_value(t_list *ptr, char *wayAfterChange, char *wayToChange)
 	}
 }
 
-void Oldpwd_Way(t_list *ptr)
+void	oldpwd_way(t_list *ptr)
 {
-	exit_code = chdir(useWay(ptr, "OLDPWD="));
+	exit_code = chdir(use_way(ptr, "OLDPWD="));
 	if (exit_code == -1)
 	{
 		exit_code = 1;
@@ -48,7 +48,7 @@ void Oldpwd_Way(t_list *ptr)
 	}
 }
 
-void Other_Way(t_gnrl *zik)
+void	other_way(t_gnrl *zik)
 {
 	exit_code = 1;
 	ft_putstr_fd("minishell$ cd: ", STDERR_FILENO);
@@ -56,35 +56,31 @@ void Other_Way(t_gnrl *zik)
 	ft_putstr_fd(": No such file or directory\n", STDERR_FILENO);
 }
 
-int	cdBuilt(t_list *ptr, t_gnrl *zik)
+int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 {
-	int		i;
-	char	*wayToChange;
-	char	*wayAfterChange;
+	char	*way_to_change;
+	char	*way_after_change;
 
-	i = 0;
-	while (zik->cmd->command_array[i])
-		i++;
-	wayToChange = getcwd(NULL, 1024);
-	if (wayToChange == NULL)
-		wayToChange = useWay(ptr, "PWD=");
+	while (zik->cmd->command_array[i++])
+	way_to_change = getcwd(NULL, 1024);
+	if (way_to_change == NULL)
+		way_to_change = use_way(ptr, "PWD=");
 	if (i == 1)
-		exit_code = chdir(useWay(ptr, "HOME="));
+		exit_code = chdir(use_way(ptr, "HOME="));
 	else if (ft_strcmp(zik->cmd->command_array[1], "-") == 0)
-		Oldpwd_Way(ptr);
+		oldpwd_way(ptr);
 	else
 		exit_code = chdir(zik->cmd->command_array[1]);
 	if (exit_code == -1)
 	{
-		Other_Way(zik);
+		other_way(zik);
 		return (1);
 	}
 	else
 		exit_code = 0;
-	wayAfterChange = getcwd(NULL, 1024);
-	change_str_value(ptr, wayAfterChange, wayToChange);
-	free(wayToChange);
-	free(wayAfterChange);
+	way_after_change = getcwd(NULL, 1024);
+	change_str_value(ptr, way_after_change, way_to_change);
+	free(way_after_change);
 	return (1);
 }
 //**************************************

@@ -1,13 +1,11 @@
 #include "../../include/minishell.h"
 
 //ENV BUILT
-
-
-char	*levelUpDown(char *str)
+char	*level_up_down(char *str)
 {
 	char	*lvl;
 	char	*buf;
-	char 	*itoa_value;
+	char	*itoa_value;
 	int		i;
 
 	lvl = NULL;
@@ -19,7 +17,7 @@ char	*levelUpDown(char *str)
 	return (lvl);
 }
 
-int	printEnvBuilt(t_list *ptr)
+int	print_env_built(t_list *ptr)
 {
 	while (ptr)
 	{
@@ -30,10 +28,10 @@ int	printEnvBuilt(t_list *ptr)
 	return (1);
 }
 
-int	initialEnv(char **envp, t_list **ptr, int i)
+int	initial_env(char **envp, t_list **ptr, int i)
 {
 	t_list	*tmp;
-	char 	*str;
+	char	*str;
 
 	*ptr = NULL;
 	while (envp[i])
@@ -41,7 +39,7 @@ int	initialEnv(char **envp, t_list **ptr, int i)
 		if (ft_strncmp(envp[i], "OLDPWD", 6) == 0)
 			str = ft_strdup("OLDPWD=");
 		else if (ft_strncmp("SHLVL=", envp[i], 6) == 0)
-			str = levelUpDown(envp[i]);
+			str = level_up_down(envp[i]);
 		else
 			str = ft_strdup(envp[i]);
 		tmp = ft_lstnew(str);

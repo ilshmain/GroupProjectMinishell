@@ -23,15 +23,15 @@ char	*change_ft_strrchr(const char *s, int c);
 //********************************************
 
 //BUILT prototype*****************************
-char	*levelUpDown(char *str);
-int		initialEnv(char **envp, t_list **ptr, int i);
-int		printEnvBuilt(t_list *ptr);
-int		pwdBuilt();
-int		cdBuilt(t_list *ptr, t_gnrl *zik);
-int		echoBuilt(t_gnrl *zik);
-int		exportBuilt(t_list *ptr, t_gnrl *zik);
-int		unsetBuilt(t_list *ptr, t_gnrl *zik);
-int 	builtFunc(t_gnrl *zik, t_list *ptr);
+char	*level_up_down(char *str);
+int		initial_env(char **envp, t_list **ptr, int i);
+int		print_env_built(t_list *ptr);
+int		pwd_built();
+int		cd_built(t_list *ptr, t_gnrl *zik, int i);
+int		echo_built(t_gnrl *zik);
+int		export_built(t_list *ptr, t_gnrl *zik);
+int		unset_built(t_list *ptr, t_gnrl *zik);
+int 	built_func(t_gnrl *zik, t_list *ptr);
 int		logica(t_gnrl **zik);
 int 	size_heredoc(char **argv);
 int		exit_built(char	**str, t_list **ptr);
@@ -39,6 +39,9 @@ int 	checking_validity_string(char *str);
 void 	print_error_func(char *str1, char *str2);
 int		size_two_poineter_mas(char **argv);
 char 	**env(t_list *lst);
+
+void	ft_lstdel(t_list *lst);
+void	add_export(t_list **ptr, char *str);
 //********************************************
 
 void	fncMonitor(t_cmnd *cmd);

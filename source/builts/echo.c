@@ -1,19 +1,18 @@
 #include "../../include/minishell.h"
 
-int size_two_poineter_mas(char **argv)
+int	size_two_poineter_mas(char **argv)
 {
-	int i;
-	i = 0;
+	int	i;
 
+	i = 0;
 	while (argv[i])
 		i++;
 	return (i);
 }
 
-
-int	echoBuilt(t_gnrl *zik)
+int	echo_built(t_gnrl *zik)
 {
-	int i;
+	int	i;
 
 	i = size_two_poineter_mas(zik->cmd->command_array);
 	if (i == 1)

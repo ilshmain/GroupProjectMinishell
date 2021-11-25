@@ -1,16 +1,7 @@
 #include "../../include/minishell.h"
 
 // Export Built
-
-void	addExport(t_list **ptr, char *str)
-{
-	t_list	*tmp;
-	tmp = ft_lstnew(str);
-	ft_lstadd_back(ptr, tmp);
-}
-
-
-int 	dopSortirovka(t_list **list)
+int	dop_sortirovka(t_list **list)
 {
 	char	*str;
 	char	*tmp;
@@ -38,31 +29,23 @@ int 	dopSortirovka(t_list **list)
 	return (flag);
 }
 
-void	sortAlphabet(t_list **sortMas)
+void	sort_alphabet(t_list **sortMas)
 {
-	t_list *lst;
-	int 	flag;
+	t_list	*lst;
+	int		flag;
 
 	while (1)
 	{
 		lst = *sortMas;
-		flag = dopSortirovka(&lst);
+		flag = dop_sortirovka(&lst);
 		if (flag == 1)
-			break;
+			break ;
 	}
 }
 
-void	ft_lstdel(t_list *lst)
+void	print_sortmas(t_list **sortMas)
 {
-	if (lst)
-		free(lst->str);
-	free(lst);
-	lst = NULL;
-}
-
-void 	printSortmas(t_list **sortMas)
-{
-	t_list 	*new;
+	t_list	*new;
 
 	while (*sortMas)
 	{
@@ -79,43 +62,46 @@ void 	printSortmas(t_list **sortMas)
 	}
 }
 
-void	printExport(t_list *ptr, t_list **sortMas)
+void	print_export(t_list *ptr, t_list **sortMas)
 {
 	t_list	*tmp;
 	char	*dop_str;
 
 	*sortMas = NULL;
-	while(ptr)
+	while (ptr)
 	{
 		dop_str = ft_strdup(ptr->str);
 		tmp = ft_lstnew(dop_str);
 		ft_lstadd_back(sortMas, tmp);
 		ptr = ptr->next;
 	}
-	sortAlphabet(sortMas);
-	printSortmas(&(*sortMas));
+	sort_alphabet(sortMas);
+	print_sortmas(&(*sortMas));
 }
 
-int	exportBuilt(t_list *ptr, t_gnrl *zik)
+int	export_built(t_list *ptr, t_gnrl *zik)
 {
 	int		i;
-	t_list	*sortMas;
+	t_list	*sort_mas;
 
 	i = 0;
 	exit_code = 0;
 	while (zik->cmd->command_array[i])
 		i++;
 	if (i == 1)
-		printExport(ptr, &sortMas);
+		print_export(ptr, &sort_mas);
 	else
 	{
 		i = 1;
 		while (zik->cmd->command_array[i])
 		{
 			if (checking_validity_string(zik->cmd->command_array[i]) == 1)
-				print_error_func("minishell$: export: ", zik->cmd->command_array[i]);
+			{
+				print_error_func("minishell$: export: ", \
+					zik->cmd->command_array[i]);
+			}
 			if (ft_strchr(zik->cmd->command_array[i], '=') != 0)
-				addExport(&ptr, zik->cmd->command_array[i]);
+				add_export(&ptr, zik->cmd->command_array[i]);
 			i++;
 		}
 	}

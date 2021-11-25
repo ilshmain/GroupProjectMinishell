@@ -1,12 +1,11 @@
 #include "../../include/minishell.h"
 
 // unset and export BUILT*****************************
-int checking_validity_string(char *str)
+int	checking_validity_string(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	while (str[i])
 	{
 		if (ft_isalpha(str[i]) == 0)
@@ -16,9 +15,9 @@ int checking_validity_string(char *str)
 	return (0);
 }
 
-void print_error_func(char *str1, char *str2)
+void	print_error_func(char *str1, char *str2)
 {
-	char *print_error;
+	char	*print_error;
 
 	exit_code = 1;
 	print_error = ft_strjoin(str1, str2);

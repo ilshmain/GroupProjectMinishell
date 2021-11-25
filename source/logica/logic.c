@@ -1,24 +1,24 @@
 #include "../../include/minishell.h"
 
 // builtFunc********************************
-int	builtFunc(t_gnrl *zik, t_list *ptr)
+int	built_func(t_gnrl *zik, t_list *ptr)
 {
-	char 	**per;
-	int 	i;
+	char	**per;
+	int		i;
 
 	i = 0;
 	if (ft_strcmp(zik->cmd->command_array[0], "cd") == 0)
-		i = cdBuilt(ptr, zik);
+		i = cd_built(ptr, zik, 0);
 	if (ft_strcmp(zik->cmd->command_array[0], "pwd") == 0)
-		i = pwdBuilt();
+		i = pwd_built();
 	if (ft_strcmp(zik->cmd->command_array[0], "echo") == 0)
-		i = echoBuilt(zik);
+		i = echo_built(zik);
 	if (ft_strcmp(zik->cmd->command_array[0], "env") == 0)
-		i = printEnvBuilt(ptr);
+		i = print_env_built(ptr);
 	if (ft_strcmp(zik->cmd->command_array[0], "export") == 0)
-		i = exportBuilt(ptr, zik);
+		i = export_built(ptr, zik);
 	if (ft_strcmp(zik->cmd->command_array[0], "unset") == 0)
-		i = unsetBuilt(ptr, zik);
+		i = unset_built(ptr, zik);
 	if (ft_strcmp(zik->cmd->command_array[0], "exit") == 0)
 		i = exit_built(zik->cmd->command_array, &zik->ptr);
 	per = env(zik->ptr);
@@ -85,6 +85,6 @@ void	lstclear(t_cmnd **lst)
 int logica(t_gnrl **zik)
 {
 	work_with_pipe(zik);
-	lstclear(&(*zik)->cmd);
+//	lstclear(&(*zik)->cmd);
 	return (1);
 }

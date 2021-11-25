@@ -1,17 +1,16 @@
 #include "../../include/minishell.h"
 
-void levelUpDown2(t_list *ptr)
+void	level_up_down2(t_list *ptr)
 {
 	char	*lvl;
 	char	*buf;
 	int		i;
 
 	lvl = NULL;
-
 	while (ptr)
 	{
 		if (ft_strncmp("SHLVL=", ptr->str, 6) == 0)
-			break;
+			break ;
 		ptr = ptr->next;
 	}
 	buf = change_ft_strrchr(ptr->str, '=');
@@ -50,7 +49,7 @@ int	ms_msg(t_list *ptr, char *argv1, char *str)
 	ft_putstr_fd("\n", STDERR_FILENO);
 	if (argv1 != NULL)
 	{
-		levelUpDown2(ptr);
+		level_up_down2(ptr);
 		exit_code = 255;
 		exit(255);
 	}
@@ -88,15 +87,14 @@ static unsigned char	ms_atoi_char(t_list *ptr, char *str)
 	return (convert * negative);
 }
 
-
-int		exit_built(char	**str, t_list **ptr)
+int	exit_built(char	**str, t_list **ptr)
 {
-	int i;
+	int	i;
 
 	i = size_two_poineter_mas(str);
 	if (i == 1)
 	{
-		levelUpDown2((*ptr));
+		level_up_down2(*ptr);
 		exit (exit_code);
 	}
 	if (ms_isdigit_str(str[1]))
@@ -106,7 +104,7 @@ int		exit_built(char	**str, t_list **ptr)
 	if (i == 2)
 	{
 		exit_code = ms_atoi_char((*ptr), str[1]);
-		levelUpDown2((*ptr));
+		level_up_down2(*ptr);
 		exit(exit_code);
 	}
 	return (0);

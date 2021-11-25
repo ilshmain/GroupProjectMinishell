@@ -2,15 +2,17 @@
 
 // unset BUILT*****************************
 
-void	unsetEnv(t_list *ptr, char *str)
+void	unset_env(t_list *ptr, char *str)
 {
-	t_list *tmp;
+	t_list	*tmp;
+
 	while (ptr->next != NULL)
 	{
 		if (ft_strncmp(ptr->next->str, str, ft_strlen(str)) == 0)
 		{
 			tmp = ptr->next;
 			ptr->next = ptr->next->next;
+			free (tmp->str);
 			free (tmp);
 			break ;
 		}
@@ -18,7 +20,7 @@ void	unsetEnv(t_list *ptr, char *str)
 	}
 }
 
-int	unsetBuilt(t_list *ptr, t_gnrl *zik)
+int	unset_built(t_list *ptr, t_gnrl *zik)
 {
 	int		i;
 
@@ -35,7 +37,7 @@ int	unsetBuilt(t_list *ptr, t_gnrl *zik)
 				print_error_func("unset: ", zik->cmd->command_array[i]);
 			if (ft_strchr(zik->cmd->command_array[i], '=') != 0)
 				print_error_func("unset: ", zik->cmd->command_array[i]);
-			unsetEnv(ptr, zik->cmd->command_array[i]);
+			unset_env(ptr, zik->cmd->command_array[i]);
 			i++;
 		}
 	}
