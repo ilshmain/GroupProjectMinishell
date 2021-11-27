@@ -16,6 +16,7 @@ void	level_up_down2(t_list *ptr)
 {
 	char	*lvl;
 	char	*buf;
+	char 	*itoa_value;
 	int		i;
 
 	lvl = NULL;
@@ -25,11 +26,16 @@ void	level_up_down2(t_list *ptr)
 			break ;
 		ptr = ptr->next;
 	}
+	if (ptr == NULL)
+		return;
 	buf = change_ft_strrchr(ptr->str, '=');
+	free(ptr->str);
 	i = ft_atoi(buf);
-	i--;
-	lvl = ft_strjoin("SHLVL=", ft_itoa(i));
-	ptr->str = lvl;
+	itoa_value = ft_itoa(--i);
+	lvl = ft_strjoin("SHLVL=", itoa_value);
+	ptr->str = ft_strdup(lvl);
+	free(itoa_value);
+	free(lvl);
 }
 
 int	ms_isdigit_str(char *str)

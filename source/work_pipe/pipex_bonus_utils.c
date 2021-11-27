@@ -102,13 +102,14 @@ char **env(t_list *lst)
 
 	i = 0;
 	len = len_lst(lst);
-	new_env = malloc(sizeof(char **) * len);
+	new_env = malloc(sizeof(char *) * (len + 1));
 	while (lst)
 	{
-		new_env[i] = lst->str;
+		new_env[i] = ft_strdup(lst->str);
 		lst = lst->next;
 		i++;
 	}
+	new_env[i] = NULL;
 	return (new_env);
 }
 
