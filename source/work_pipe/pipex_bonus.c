@@ -10,7 +10,7 @@ int	many_command(char **envp, t_gnrl **zik, t_cmnd *start)
 	{
 		CheckRedirect((*zik)->cmd);
 		Dup((*zik)->cmd);
-		pid_children(envp, zik, start);
+		pid_children(zik, start);
 	}
 	return (1);
 }

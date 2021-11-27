@@ -113,12 +113,8 @@ char **env(t_list *lst)
 	return (new_env);
 }
 
-int	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
+int	pid_children(t_gnrl **zik, t_cmnd *start)
 {
-	(void)envp;
-	char 	**new_env;
-
-	new_env = env((*zik)->ptr);
 	while (start->nextList)
 	{
 		close(start->fd[0]);
@@ -127,7 +123,7 @@ int	pid_children(char **envp, t_gnrl **zik, t_cmnd *start)
 	}
 	if ((built_func((*zik), (*zik)->ptr) == 1) && ((*zik)->cmd->fork == 1))
 		exit (0);
-	pars_envp(new_env, (*zik)->cmd->command_array, 0, 0);
+	pars_envp((*zik)->env, (*zik)->cmd->command_array, 0, 0);
 	return (1);
 }
 

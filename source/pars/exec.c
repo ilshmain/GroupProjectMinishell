@@ -1,9 +1,24 @@
 #include "../../include/minishell.h"
 
+char **clear_envp(char **envp)
+{
+	int i;
+
+	i = 0;
+	while (envp[i])
+	{
+		free(envp[i]);
+		i++;
+	}
+	free(envp);
+	return (NULL);
+}
+
 _Noreturn void exefnc(char **line, t_gnrl **gen)
 {
 	while (1)
 	{
+		(*gen)->env = env((*gen)->ptr);
 		(*gen)->errors = 0;
 		*line = readline("minishell$ ");
 		if (*line == NULL)
@@ -19,6 +34,7 @@ _Noreturn void exefnc(char **line, t_gnrl **gen)
 			if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
 				logica(gen);
 		}
+		(*gen)->env = clear_envp((*gen)->env);
 	}
 }
 
