@@ -65,9 +65,12 @@ void	print_sortmas(t_list **sortMas)
 		if (ft_strncmp("_=", (*sortMas)->str, 2) != 0)
 		{
 			if (ft_strcmp("OLDPWD=", (*sortMas)->str) == 0)
-				printf("declare -x OLDPWD\n");
+				ft_putstr_fd("declare -x OLDPWD\n", STDOUT_FILENO);
 			else
-				printf("declare -x %s\n", (*sortMas)->str);
+			{
+				ft_putstr_fd("declare -x ", STDOUT_FILENO);
+				ft_putendl_fd((*sortMas)->str, STDOUT_FILENO);
+			}
 		}
 		ft_lstdel(*sortMas);
 		*sortMas = new;

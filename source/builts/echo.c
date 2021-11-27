@@ -37,10 +37,7 @@ int	echo_built(t_gnrl *zik)
 			ft_putstr_fd(zik->cmd->command_array[2], STDOUT_FILENO);
 	}
 	else
-	{
-		ft_putstr_fd(zik->cmd->command_array[1], STDOUT_FILENO);
-		ft_putstr_fd("\n", STDOUT_FILENO);
-	}
+		ft_putendl_fd(zik->cmd->command_array[1], STDOUT_FILENO);
 	exit_code = 0;
 	return (1);
 }

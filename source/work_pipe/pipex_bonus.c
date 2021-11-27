@@ -1,6 +1,6 @@
 #include "../../include/minishell.h"
 
-int	many_command(char **envp, t_gnrl **zik, t_cmnd *start)
+int	many_command(t_gnrl **zik, t_cmnd *start)
 {
 	(*zik)->cmd->pid = fork();
 	(*zik)->cmd->fork = 1;
@@ -70,7 +70,7 @@ int	work_with_pipe(t_gnrl **zik)
 	create_pipe((*zik)->cmd);
 	while (len--)
 	{
-		many_command((*zik)->env, zik, start);
+		many_command(zik, start);
 		(*zik)->cmd = (*zik)->cmd->nextList;
 	}
 	wait_proceses(start);

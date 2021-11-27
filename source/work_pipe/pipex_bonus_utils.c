@@ -126,13 +126,3 @@ int	pid_children(t_gnrl **zik, t_cmnd *start)
 	pars_envp((*zik)->env, (*zik)->cmd->command_array, 0, 0);
 	return (1);
 }
-
-//int main(int argc, char **argv, char **envp) {
-//	(void) argc;
-//	(void) argv;
-//	char **qwe;
-//
-//	qwe = ft_split("ls", ' ');
-//	pars_envp(envp, qwe, 0, 0);
-//	return (1);
-//}

@@ -34,7 +34,7 @@ int	print_env_built(t_list *ptr)
 	while (ptr)
 	{
 		if (ft_strcmp("OLDPWD=", ptr->str) != 0)
-			printf("%s\n", ptr->str);
+			ft_putendl_fd(ptr->str, STDOUT_FILENO);
 		ptr = ptr->next;
 	}
 	return (1);
