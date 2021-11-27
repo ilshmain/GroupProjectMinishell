@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex_bonus.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmint <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/27 20:00:08 by fmint             #+#    #+#             */
+/*   Updated: 2021/11/27 20:00:11 by fmint            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/minishell.h"
 
 int	many_command(t_gnrl **zik, t_cmnd *start)
@@ -15,9 +27,11 @@ int	many_command(t_gnrl **zik, t_cmnd *start)
 	return (1);
 }
 
-int ft_sum_pipe(t_cmnd *cmd)
+int	ft_sum_pipe(t_cmnd *cmd)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (cmd != NULL)
 	{
 		i++;
@@ -33,7 +47,7 @@ int ft_sum_pipe(t_cmnd *cmd)
 void	wait_proceses(t_cmnd *start)
 {
 	t_cmnd	*cmd;
-	int 	status;
+	int		status;
 
 	status = 0;
 	cmd = start;
@@ -57,8 +71,8 @@ void	wait_proceses(t_cmnd *start)
 
 int	work_with_pipe(t_gnrl **zik)
 {
-	t_cmnd *start;
-	int len;
+	t_cmnd	*start;
+	int		len;
 
 	start = (*zik)->cmd;
 	len = ft_sum_pipe((*zik)->cmd);

@@ -1,12 +1,11 @@
 #include "../../include/minishell.h"
 
-char *name(char **env)
+char	*name(char **env)
 {
 	char	*str;
-	int 	i;
+	int		i;
 
 	i = 0;
-
 	str = NULL;
 	while (env[i])
 	{
@@ -20,9 +19,9 @@ char *name(char **env)
 	return (str);
 }
 
-void shell_name(char **envp, char **first_argv)
+void	shell_name(char **envp, char **first_argv)
 {
-	char 	*path;
+	char	*path;
 
 	path = name(envp);
 	execve(path, first_argv, envp);
@@ -30,11 +29,11 @@ void shell_name(char **envp, char **first_argv)
 	ft_putstr_fd("Not executable file", STDERR_FILENO);
 }
 
-char **Path(char **envp, int i)
+char	**Path(char **envp, int i)
 {
-	char 	**out;
+	char	**out;
 	char	*search_PATH;
-	char 	*new_out;
+	char	*new_out;
 
 	out = NULL;
 	while (envp[i])
@@ -45,7 +44,7 @@ char **Path(char **envp, int i)
 			search_PATH = ft_strrchr(search_PATH, '=');
 			out = ft_split(search_PATH, ':');
 			i = 0;
-			break;
+			break ;
 		}
 		i++;
 	}
@@ -68,7 +67,7 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 	if (ft_strcmp("./minishell", first_argv[0]) == 0)
 		shell_name(envp, first_argv);
 	new_out = Path(envp, i);
-	while(new_out[k])
+	while (new_out[k])
 	{
 		out = ft_strjoin(new_out[k], first_argv[0]);
 		free(new_out[k]);
@@ -83,9 +82,11 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 	exit (127);
 }
 
-int len_lst(t_list *lst)
+int	len_lst(t_list *lst)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (lst != NULL)
 	{
 		i++;
@@ -94,7 +95,7 @@ int len_lst(t_list *lst)
 	return (i);
 }
 
-char **env(t_list *lst)
+char	**env(t_list *lst)
 {
 	char	**new_env;
 	int		len;
