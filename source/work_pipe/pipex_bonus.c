@@ -44,6 +44,20 @@ int	ft_sum_pipe(t_cmnd *cmd)
 	return (i);
 }
 
+void  close_read_and_write(t_cmnd *start)
+{
+	while (start)
+	{
+		if (start->fd_open > 0)
+			close(start->fd_open);
+		if (start->fd_write > 0)
+			close(start->fd_write);
+		if (start->fd_reWrite > 0)
+			close(start->fd_reWrite);
+		start = start->nextList;
+	}
+}
+
 void	wait_proceses(t_cmnd *start)
 {
 	t_cmnd	*cmd;
@@ -51,6 +65,7 @@ void	wait_proceses(t_cmnd *start)
 
 	status = 0;
 	cmd = start;
+	close_read_and_write(cmd);
 	while (start->nextList)
 	{
 		close(start->fd[0]);

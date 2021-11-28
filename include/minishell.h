@@ -148,5 +148,6 @@ int		if_echo(t_cmnd **cmd_line, char **line, int *w_i_p);
 char	*cut_spaces(char *line);
 char 	*ret_for_dollar_what(char **line, int j);
 char	*pre_use_substr(char *s, unsigned int start, size_t len);
+int		ie_pt(char **line, int *i, char **tmp);
 
 #endif

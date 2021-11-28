@@ -30,24 +30,22 @@ void	free_command_array(char **envp)
 	i = 0;
 	if (envp)
 	{
-//		if (ft_strcmp(envp[0], "echo") != 0)
-	while (envp[i] && envp[i][0] != '\0')
-		{
-			free(envp[i]);
-			i++;
-		}
-//		else if (envp[1])
-//		{
-//			if (ft_strcmp(envp[1], "-n") == 0)
-//				while (i < 3)
-//					free(envp[i++]);
-//			else
-//				while (i < 2)
-//					free(envp[i++]);
-//		}
-//		else
-//			free(envp[0]);
+		if (ft_strcmp(envp[0], "echo") != 0)
+			while (envp[i] && envp[i][0] != '\0')
+			{
+				free(envp[i]);
+				i++;
+			}
+		else if (envp[1] && ft_strcmp(envp[1], "-n") == 0)
+			while (i < 3 && envp[i])
+				free(envp[i++]);
+		else if (envp[1] && ft_strcmp(envp[1], "") != 0)
+			while (i < 2)
+				free(envp[i++]);
+		else
+			free(envp[0]);
 	}
+		free(envp);
 }
 
 void	ft_lstdelone(t_cmnd *lst)
@@ -56,7 +54,8 @@ void	ft_lstdelone(t_cmnd *lst)
 	{
 		free_command_array(lst->command_array);
 		free_command_array(lst->heredoc);
-		free(lst->errContext);
+		if (lst->errContext)
+			free(lst->errContext);
 	}
 	free(lst);
 	lst = NULL;
@@ -81,6 +80,6 @@ void	lstclear(t_cmnd **lst)
 int logica(t_gnrl **zik)
 {
 	work_with_pipe(zik);
-//	lstclear(&(*zik)->cmd);
+	lstclear(&(*zik)->cmd);
 	return (1);
 }
