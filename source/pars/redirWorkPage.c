@@ -7,8 +7,8 @@ char *fnc_redir(char **line, int *i, t_gnrl **gen, int ident)
 	t_cmnd	*tmpCmd;
 
 	tmpCmd = (*gen)->cmd;
-	while (tmpCmd->nextList != NULL)
-		tmpCmd = tmpCmd->nextList;
+	while (tmpCmd->next_list != NULL)
+		tmpCmd = tmpCmd->next_list;
 	nameFile = nameForRedir(line, &nameLen, i, gen);
 	while (line[0][nameLen] && line[0][nameLen] == ' ') // пропускаем лишние пробелы
 		nameLen++;
@@ -53,10 +53,10 @@ void	fncRedirWrite(t_cmnd **cmd, char *nameFile)
 		close((*cmd)->fd_write);
 		(*cmd)->fd_write = 0;
 	}
-	if ((*cmd)->fd_reWrite > 0)
+	if ((*cmd)->fd_re_write > 0)
 	{
-		close((*cmd)->fd_reWrite);
-		(*cmd)->fd_reWrite = 0;
+		close((*cmd)->fd_re_write);
+		(*cmd)->fd_re_write = 0;
 	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_WRONLY | O_CREAT | O_APPEND, 0777); // открываем на дозапись
 	if (fd == -1)
@@ -77,10 +77,10 @@ void	fncRedirReWrite(t_cmnd **cmd, char *nameFile)
 		close((*cmd)->fd_write);
 		(*cmd)->fd_write = 0;
 	}
-	if ((*cmd)->fd_reWrite > 0)
+	if ((*cmd)->fd_re_write > 0)
 	{
-		close((*cmd)->fd_reWrite);
-		(*cmd)->fd_reWrite = 0;
+		close((*cmd)->fd_re_write);
+		(*cmd)->fd_re_write = 0;
 	}//если дескриптора не было, если был, то надо закрыть
 	fd = open(nameFile, O_RDWR | O_CREAT | O_TRUNC, 0777); // открываем на перезапись
 	if (fd == -1)
@@ -89,7 +89,7 @@ void	fncRedirReWrite(t_cmnd **cmd, char *nameFile)
 		printf("%s: Permission denied\n", nameFile);
 		return ;
 	}
-	(*cmd)->fd_reWrite = fd; // записываем дескриптор
+	(*cmd)->fd_re_write = fd; // записываем дескриптор
 }
 
 void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
@@ -104,7 +104,7 @@ void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
 		(*cmd)->fd_open = -2;
 	}
 	if ((*cmd)->heredoc)
-		tmp = malloc(sizeof (char **) * (dualArrayLen((*cmd)->heredoc) + ft_strlenMS(hereDoc)));
+		tmp = malloc(sizeof (char **) * (dual_array_len((*cmd)->heredoc) + ft_strlenMS(hereDoc)));
 	else
 		tmp = malloc(sizeof (char **) * (ft_strlenMS(hereDoc)));
 	while ((*cmd)->heredoc && (*cmd)->heredoc[i] != NULL)

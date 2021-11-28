@@ -42,10 +42,10 @@ t_cmnd	*preLogicWork(t_cmnd **cmd)
 
 	tmp = *cmd;
 	tmp2 = *cmd;
-	if (tmp->nextList != NULL)
-		while (tmp->nextList != NULL)
+	if (tmp->next_list != NULL)
+		while (tmp->next_list != NULL)
 			pLWinWhile(&tmp, &tmp2);
-		else if (tmp->nextList == NULL && tmp->err == 1)
+		else if (tmp->next_list == NULL && tmp->err == 1)
 			return (NULL);
 	return ((*cmd));
 }
@@ -88,14 +88,14 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_cmnd **command_line)
 	if (line[*where_is_pipe] == '|')
 		(*command_line)->flg_pipe = 1;
 	tmp_command_line = *command_line;
-	if (tmp_command_line->nextList != NULL)
-		while (tmp_command_line->nextList != NULL)
-			tmp_command_line = tmp_command_line->nextList;
+	if (tmp_command_line->next_list != NULL)
+		while (tmp_command_line->next_list != NULL)
+			tmp_command_line = tmp_command_line->next_list;
 	if (tmp_command_line->command_array != NULL)
 	{
-		tmp_command_line->nextList = ft_lstnewMS();
+		tmp_command_line->next_list = ft_lstnewMS();
 		tmp_command_line->flg_pipe = 1;
-		tmp_command_line = tmp_command_line->nextList;
+		tmp_command_line = tmp_command_line->next_list;
 	}
 	tmp = ft_substrMS(line, 0, *where_is_pipe);
 	tmp_command_line->command_array = ft_split(tmp, ' ');
@@ -103,7 +103,7 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_cmnd **command_line)
 	free(tmp);
 	tmp = ft_substrMS(line, *where_is_pipe + 1, ft_strlenMS(line) - *where_is_pipe);
 	if (tmp && ft_strcmpMS(tmp, "") != 0)
-		tmp_command_line->nextList = ft_lstnewMS();
+		tmp_command_line->next_list = ft_lstnewMS();
 	*where_is_pipe = 0;
 	free(line);
 	return (tmp);
@@ -121,16 +121,16 @@ char	*pre_use_substr(char *s, unsigned int start, size_t len)
 void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line, int *w_i_p, char *line)
 {
 	(*tmp_command_line) = *command_line;
-	if ((*tmp_command_line)->nextList != NULL)
-		while ((*tmp_command_line)->nextList != NULL)
-			(*tmp_command_line) = (*tmp_command_line)->nextList;
+	if ((*tmp_command_line)->next_list != NULL)
+		while ((*tmp_command_line)->next_list != NULL)
+			(*tmp_command_line) = (*tmp_command_line)->next_list;
 		if (line[*w_i_p] == '|')
 			(*tmp_command_line)->flg_pipe = 1;
 		if ((*tmp_command_line)->command_array != NULL)
 		{
-			(*tmp_command_line)->nextList = ft_lstnewMS();
+			(*tmp_command_line)->next_list = ft_lstnewMS();
 			(*tmp_command_line)->flg_pipe = 1;
-			(*tmp_command_line) = (*tmp_command_line)->nextList;
+			(*tmp_command_line) = (*tmp_command_line)->next_list;
 		}
 }
 

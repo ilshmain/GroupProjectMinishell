@@ -4,17 +4,17 @@ void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2)
 {
 	if ((*tmp)->err == 1)
 	{
-		if ((*tmp)->nextList)
-			(*tmp2)->nextList = (*tmp)->nextList;
+		if ((*tmp)->next_list)
+			(*tmp2)->next_list = (*tmp)->next_list;
 		else
-			(*tmp2)->nextList = NULL;
+			(*tmp2)->next_list = NULL;
 		free (*tmp);
-		(*tmp) = (*tmp2)->nextList;
+		(*tmp) = (*tmp2)->next_list;
 	}
 	else
 	{
 		*tmp2 = *tmp;
-		*tmp = (*tmp)->nextList;
+		*tmp = (*tmp)->next_list;
 	}
 }
 
@@ -38,7 +38,7 @@ void	ctrl_c_hook(int sgn)
 	(void)sgn;
 }
 
-int	dualArrayLen(char **array)
+int	dual_array_len(char **array)
 {
 	int	i;
 	int	j;

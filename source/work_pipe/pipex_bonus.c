@@ -39,7 +39,7 @@ int	ft_sum_pipe(t_cmnd *cmd)
 		cmd->out = STDOUT_FILENO;
 		cmd->fd[0] = 0;
 		cmd->fd[1] = 0;
-		cmd = cmd->nextList;
+		cmd = cmd->next_list;
 	}
 	return (i);
 }
@@ -52,9 +52,9 @@ void  close_read_and_write(t_cmnd *start)
 			close(start->fd_open);
 		if (start->fd_write > 0)
 			close(start->fd_write);
-		if (start->fd_reWrite > 0)
-			close(start->fd_reWrite);
-		start = start->nextList;
+		if (start->fd_re_write > 0)
+			close(start->fd_re_write);
+		start = start->next_list;
 	}
 }
 
@@ -66,11 +66,11 @@ void	wait_proceses(t_cmnd *start)
 	status = 0;
 	cmd = start;
 	close_read_and_write(cmd);
-	while (start->nextList)
+	while (start->next_list)
 	{
 		close(start->fd[0]);
 		close(start->fd[1]);
-		start = start->nextList;
+		start = start->next_list;
 	}
 	while (cmd)
 	{
@@ -80,7 +80,7 @@ void	wait_proceses(t_cmnd *start)
 		{
 			exit_code = 128 + WTERMSIG(status);
 		}
-		cmd = cmd->nextList;
+		cmd = cmd->next_list;
 	}
 }
 
@@ -91,7 +91,7 @@ int	work_with_pipe(t_gnrl **zik)
 
 	start = (*zik)->cmd;
 	len = ft_sum_pipe((*zik)->cmd);
-	if (!(*zik)->cmd->nextList && (*zik)->cmd->heredoc == NULL && ((*zik)->cmd->fd_write < 0) && ((*zik)->cmd->fd_reWrite < 0))
+	if (!(*zik)->cmd->next_list && (*zik)->cmd->heredoc == NULL && ((*zik)->cmd->fd_write < 0) && ((*zik)->cmd->fd_re_write < 0))
 	{
 		if (built_func((*zik), (*zik)->ptr) == 1)
 			return (1);
@@ -100,7 +100,7 @@ int	work_with_pipe(t_gnrl **zik)
 	while (len--)
 	{
 		many_command(zik, start);
-		(*zik)->cmd = (*zik)->cmd->nextList;
+		(*zik)->cmd = (*zik)->cmd->next_list;
 	}
 	wait_proceses(start);
 	return (0);

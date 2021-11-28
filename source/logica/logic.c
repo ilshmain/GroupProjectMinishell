@@ -69,7 +69,7 @@ void	lstclear(t_cmnd **lst)
 		return ;
 	while (*lst)
 	{
-		new = (*lst)->nextList;
+		new = (*lst)->next_list;
 		ft_lstdelone(*lst);
 		(*lst) = new;
 	}

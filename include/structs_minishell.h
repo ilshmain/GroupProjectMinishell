@@ -18,7 +18,7 @@ typedef struct s_cmnd
 	int				flg_pipe;
 	int				fd_open;
 	int				fd_write;
-	int				fd_reWrite;
+	int				fd_re_write;
 	char 			**heredoc;
 	int				err;
 //	char			*errContext;
@@ -29,7 +29,7 @@ typedef struct s_cmnd
 	int				out;
 	int 			pid;
 	int 			fork;
-	struct s_cmnd	*nextList;
+	struct s_cmnd	*next_list;
 }	t_cmnd;
 
 typedef struct s_gnrl
@@ -38,7 +38,7 @@ typedef struct s_gnrl
 	t_cmnd	*cmd;
 	int		errors;
 	char	**env;
-	int		historyLog;
+//	int		historyLog;
 }	t_gnrl;
 
 #endif

@@ -116,11 +116,11 @@ char	**env(t_list *lst)
 
 int	pid_children(t_gnrl **zik, t_cmnd *start)
 {
-	while (start->nextList)
+	while (start->next_list)
 	{
 		close(start->fd[0]);
 		close(start->fd[1]);
-		start = start->nextList;
+		start = start->next_list;
 	}
 	if ((built_func((*zik), (*zik)->ptr) == 1) && ((*zik)->cmd->fork == 1))
 		exit (0);
