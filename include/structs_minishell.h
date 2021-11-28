@@ -21,7 +21,7 @@ typedef struct s_cmnd
 	int				fd_reWrite;
 	char 			**heredoc;
 	int				err;
-	char			*errContext;
+//	char			*errContext;
 
 
 	int				fd[2];

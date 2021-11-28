@@ -46,11 +46,8 @@ t_cmnd	*preLogicWork(t_cmnd **cmd)
 		while (tmp->nextList != NULL)
 			pLWinWhile(&tmp, &tmp2);
 		else if (tmp->nextList == NULL && tmp->err == 1)
-		{
-			printf("%s\n", tmp->errContext);
 			return (NULL);
-		}
-		return ((*cmd));
+	return ((*cmd));
 }
 
 int	first_fnc(char **line, t_gnrl **gen, int i)

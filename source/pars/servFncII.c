@@ -8,7 +8,6 @@ void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2)
 			(*tmp2)->nextList = (*tmp)->nextList;
 		else
 			(*tmp2)->nextList = NULL;
-		printf("%s\n", (*tmp)->errContext);
 		free (*tmp);
 		(*tmp) = (*tmp2)->nextList;
 	}

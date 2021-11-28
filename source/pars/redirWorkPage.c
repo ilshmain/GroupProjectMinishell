@@ -38,7 +38,7 @@ void	fncRedirOpen(t_cmnd **cmd, char *nameFile) //доработать
 	if (fd == -1)
 	{
 		(*cmd)->err = 1;
-		(*cmd)->errContext = ft_strjoinMS(nameFile, ": file does not exist or access is denied");
+		printf("%s: file does not exist or access is denied\n", nameFile);
 		return ;
 	}
 	(*cmd)->fd_open = fd; // записываем дескриптор
@@ -62,7 +62,7 @@ void	fncRedirWrite(t_cmnd **cmd, char *nameFile)
 	if (fd == -1)
 	{
 		(*cmd)->err = 1;
-		(*cmd)->errContext = ft_strjoinMS(nameFile, ": file does not exist or access is denied");
+		printf("%s: file does not exist or access is denied\n", nameFile);
 		return ;
 	}
 	(*cmd)->fd_write = fd; // записываем дескриптор
@@ -86,7 +86,7 @@ void	fncRedirReWrite(t_cmnd **cmd, char *nameFile)
 	if (fd == -1)
 	{
 		(*cmd)->err = 1;//ОШИППППКИ)
-		(*cmd)->errContext = ft_strjoinMS(nameFile, ": Permission denied");
+		printf("%s: Permission denied\n", nameFile);
 		return ;
 	}
 	(*cmd)->fd_reWrite = fd; // записываем дескриптор

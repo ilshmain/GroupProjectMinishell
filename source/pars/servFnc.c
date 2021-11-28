@@ -38,12 +38,9 @@ char *strCutStr(char *inStr, int startOfCut, int endOfCut)
 	tmp1 = ft_substrMS(inStr, endOfCut, ft_strlen(inStr));
 	free (inStr);
 	inStr = preUseStrJoin(tmp, tmp1);
+	if (tmp1)
+		free(tmp1);
 	return (inStr);
-}
-
-char	**envPrisv(char **envp)
-{
-	return (envp);
 }
 
 void	butilsProv(t_cmnd **command)

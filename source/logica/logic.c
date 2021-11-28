@@ -54,8 +54,8 @@ void	ft_lstdelone(t_cmnd *lst)
 	{
 		free_command_array(lst->command_array);
 		free_command_array(lst->heredoc);
-		if (lst->errContext)
-			free(lst->errContext);
+//		if (lst->errContext)
+//			free(lst->errContext);
 	}
 	free(lst);
 	lst = NULL;

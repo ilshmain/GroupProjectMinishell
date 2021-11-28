@@ -91,7 +91,7 @@ int	work_with_pipe(t_gnrl **zik)
 
 	start = (*zik)->cmd;
 	len = ft_sum_pipe((*zik)->cmd);
-	if (!(*zik)->cmd->nextList && (*zik)->cmd->heredoc == NULL)
+	if (!(*zik)->cmd->nextList && (*zik)->cmd->heredoc == NULL && ((*zik)->cmd->fd_write < 0) && ((*zik)->cmd->fd_reWrite < 0))
 	{
 		if (built_func((*zik), (*zik)->ptr) == 1)
 			return (1);
