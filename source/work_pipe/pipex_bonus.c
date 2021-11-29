@@ -20,8 +20,8 @@ int	many_command(t_gnrl **zik, t_cmnd *start)
 		ft_perror("Error pid(fork)+");
 	if ((*zik)->cmd->pid == 0)
 	{
-		CheckRedirect((*zik)->cmd);
-		Dup((*zik)->cmd);
+		check_redirect((*zik)->cmd);
+		dup_relize((*zik)->cmd);
 		pid_children(zik, start);
 	}
 	return (1);

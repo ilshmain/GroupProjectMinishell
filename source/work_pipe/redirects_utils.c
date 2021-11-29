@@ -39,7 +39,7 @@ void Heredoc(char **argv, t_cmnd *cmd)
 	exit (0);
 }
 
-void	CheckHeredoc(char **argv, t_cmnd *cmd)
+void	check_heredoc(char **argv, t_cmnd *cmd)
 {
 	int	fd[2];
 	int pid;
@@ -61,7 +61,7 @@ void	CheckHeredoc(char **argv, t_cmnd *cmd)
 	}
 }
 
-int	Dup(t_cmnd *cmd)
+int	dup_relize(t_cmnd *cmd)
 {
 	if (cmd->in != STDIN_FILENO)
 	{

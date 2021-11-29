@@ -24,7 +24,7 @@ char	*change_ft_strrchr(const char *s, int c);
 
 //BUILT prototype*****************************
 char	*level_up_down(char *str);
-void	CheckHeredoc(char **argv, t_cmnd *cmd);
+void	check_heredoc(char **argv, t_cmnd *cmd);
 int		initial_env(char **envp, t_list **ptr, int i);
 int		print_env_built(t_list *ptr);
 int		pwd_built();
@@ -81,8 +81,8 @@ int		pid_children(t_gnrl **zik, t_cmnd *start);
 void	create_pipe(t_cmnd *cmd);
 void	ft_perror(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
-int		CheckRedirect(t_cmnd *cmd);
-int		Dup(t_cmnd *cmd);
+int		check_redirect(t_cmnd *cmd);
+int		dup_relize(t_cmnd *cmd);
 //********************************************
 
 

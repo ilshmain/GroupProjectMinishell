@@ -33,12 +33,12 @@ int CheckRedirRewrite(t_cmnd *cmd)
 	return (1);
 }
 
-int	CheckRedirect(t_cmnd *cmd)
+int	check_redirect(t_cmnd *cmd)
 {
 	while (cmd)
 	{
 		if (cmd->heredoc != NULL)
-			CheckHeredoc(cmd->heredoc, cmd);
+			check_heredoc(cmd->heredoc, cmd);
 		if (cmd->fd_open > 0)
 			CheckRedirRead(cmd);
 		if (cmd->fd_write > 0)
