@@ -29,6 +29,8 @@ SRCS			=	./source/main.c \
 					./source/work_pipe/get_next_line.c \
 					./source/work_pipe/get_next_line_utils.c \
 					./source/work_pipe/pipex_bonus.c \
+					./source/work_pipe/path.c \
+					./source/work_pipe/redirects_utils.c \
 					./source/work_pipe/pipex_bonus_utils.c \
 					./source/work_pipe/pipex_bonus_utils1.c \
 					./source/work_pipe/redirects.c \

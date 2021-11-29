@@ -44,7 +44,7 @@ int	ft_sum_pipe(t_cmnd *cmd)
 	return (i);
 }
 
-void  close_read_and_write(t_cmnd *start)
+void	close_read_and_write(t_cmnd *start)
 {
 	while (start)
 	{
@@ -91,7 +91,8 @@ int	work_with_pipe(t_gnrl **zik)
 
 	start = (*zik)->cmd;
 	len = ft_sum_pipe((*zik)->cmd);
-	if (!(*zik)->cmd->next_list && (*zik)->cmd->heredoc == NULL && ((*zik)->cmd->fd_write < 0) && ((*zik)->cmd->fd_re_write < 0))
+	if (!(*zik)->cmd->next_list && (*zik)->cmd->heredoc == NULL && \
+		((*zik)->cmd->fd_write < 0) && ((*zik)->cmd->fd_re_write < 0))
 	{
 		if (built_func((*zik), (*zik)->ptr) == 1)
 			return (1);

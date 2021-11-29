@@ -24,6 +24,7 @@ char	*change_ft_strrchr(const char *s, int c);
 
 //BUILT prototype*****************************
 char	*level_up_down(char *str);
+void	CheckHeredoc(char **argv, t_cmnd *cmd);
 int		initial_env(char **envp, t_list **ptr, int i);
 int		print_env_built(t_list *ptr);
 int		pwd_built();
