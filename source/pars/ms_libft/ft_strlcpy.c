@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hportife <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 14:02:51 by hportife          #+#    #+#             */
+/*   Updated: 2021/11/29 14:02:53 by hportife         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../include/minishell.h"
 
-size_t	ft_strlcpyMS(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy_ms(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 

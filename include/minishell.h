@@ -59,11 +59,11 @@ void	add_export(t_list **ptr, char *str);
 
 void	fncMonitor(t_cmnd *cmd);
 
-char	*preUseFncPipe(char *line, int *whereIsPipe, t_cmnd **commandLine);
+char	*pre_use_fnc_pipe(char *line, int *whereIsPipe, t_cmnd **commandLine);
 void	ctrl_c_hook(int sgn);
 void	rl_replace_line(const char *buffer, int val);
-char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen);
-char	*initLine(char *line);
+char	*name_for_redir(char **line, int *nameLen, int *i, t_gnrl **gen);
+char	*init_line(char *line);
 int		dual_array_len(char **array);
 
 //KOSTYL prototype*****************************
@@ -98,66 +98,64 @@ void	exefnc(char **line, t_gnrl **gen);
 int		first_fnc(char **line, t_gnrl **gen, int i);
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine);
 
-char	**ft_splitMS(char const *s, char c);
-size_t	ft_strlcatMS(char *dst, const char *src, size_t size);
-size_t	ft_strlcpyMS(char *dst, const char *src, size_t size);
-size_t	ft_strlenMS(const char *str);
-char	*ft_strchrMS(const char *s, int c);
-char	*ft_strjoinMS(char const *s1, char const *s2);
+char	**ft_split_ms(char const *s, char c);
+size_t	ft_strlcat_ms(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy_ms(char *dst, const char *src, size_t size);
+size_t	ft_strlen_ms(const char *str);
+char	*ft_strchr_ms(const char *s, int c);
+char	*ft_strjoin_ms(char const *s1, char const *s2);
 void	error_call(char *message);
 
-char	*ft_substrMS(char const *s, unsigned int start, size_t len);
-char	*ft_strdupMS(const char *s1);
+char	*ft_substr_ms(char const *s, unsigned int start, size_t len);
+char	*ft_strdup_ms(const char *s1);
 
 char	*fnc_quot(char *line, int *i, t_gnrl **gen);
 char	*fnc_dquot(char *line, int *i, char **env, t_gnrl **gen);
-char	*unionForQuotStr(char *line, int *i, int j);
+char	*union_for_quot_str(char *line, int *i, int j);
 
 char	*fnc_bslsh(char *line, int *i, t_gnrl **gen);
 
 char	*fnc_dollar(char *line, int *i, char **env);
-char	*dollarAssigment(char *line, int *i, int j, char **env);
+char	*dollar_assigment(char *line, int *i, int j, char **env);
 
-int		ft_isalnumMS(int c);
-char	*ft_strnstrMS(const char *str1, const char *str2, size_t len);
-int		ft_strcmpMS(const char *s1, const char *s2);
+int		ft_isalnum_ms(int c);
+char	*ft_strnstr_ms(const char *str1, const char *str2, size_t len);
+int		ft_strcmp_ms(const char *s1, const char *s2);
 
-char	*preUseFncRedir(char **line, int *i, t_gnrl **gen);
-char	*preUseStrJoin(char *str1, char *str2);
-char	*preUseFncQuot(char *line, int *i, t_gnrl **gen);
-char	*preUseFncDQuot(char **line, int *i, char **env, t_gnrl **gen);
-char	*preUseFncDollar(char *line, int *i, char **env);
+char	*pre_use_fnc_redir(char **line, int *i, t_gnrl **gen);
+char	*pre_use_str_join(char *str1, char *str2);
+char	*pre_use_fnc_quot(char *line, int *i, t_gnrl **gen);
+char	*pre_use_fnc_dquot(char **line, int *i, char **env, t_gnrl **gen);
+char	*pre_use_fnc_dollar(char *line, int *i, char **env);
 
-void	ft_putstr_fdMS(char *s, int fd);
-t_cmnd	*ft_lstnewMS(void);
-char	*strCutStr(char *inStr, int startOfCut, int endOfCut);
+void	ft_putstr_fd_ms(char *s, int fd);
+t_cmnd	*ft_lstnew_ms(void);
+char	*str_cut_str(char *inStr, int startOfCut, int endOfCut);
 char	**envPrisv(char **envp);
-void	butilsProv(t_cmnd **command);
+void	butils_prov(t_cmnd **command);
 
 char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident);
-void	fncRedirOpen(t_cmnd **cmd, char *nameFile);
-void	fncRedirReWrite(t_cmnd **cmd, char *nameFile);
-void	fncRedirWrite(t_cmnd **cmd, char *nameFile);
-void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc);
-
-void	fncMonitor(t_cmnd *cmd);
+void	fnc_redir_open(t_cmnd **cmd, char *nameFile);
+void	fnc_redir_re_write(t_cmnd **cmd, char *nameFile);
+void	fnc_redir_write(t_cmnd **cmd, char *nameFile);
+void	fnc_redir_heredoc(t_cmnd **cmd, char *hereDoc);
 
 char	*pre_use_fnc_pipe(char *line, int *where_is_pipe,
 			t_cmnd **command_line);
 void	ctrl_c_hook(int sgn);
 void	rl_replace_line(const char *buffer, int val);
-char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen);
-char	*initLine(char *line);
-int		dualArrayLen(char **array);
-void	getHistoryLog(char *line, t_gnrl *gen);
-t_cmnd	*preLogicWork(t_cmnd **cmd);
-void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2);
+char	*name_for_redir(char **line, int *nameLen, int *i, t_gnrl **gen);
+char	*init_line(char *line);
+int		dual_array_len(char **array);
+t_cmnd	*pre_logic_work(t_cmnd **cmd);
+void	plw_in_while(t_cmnd **tmp, t_cmnd **tmp2);
 void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line,
 			int *w_i_p, char *line);
 int		if_echo(t_cmnd **cmd_line, char **line, int *w_i_p);
 char	*cut_spaces(char *line);
 char	*ret_for_dollar_what(char **line, int j);
 char	*pre_use_substr(char *s, unsigned int start, size_t len);
-int		ie_pt(char **line, int *i, char **tmp);
+void	pu_fnc_pipe_safe_page(char *line, int *where_is_pipe,
+			t_cmnd **tmp_command_line, t_cmnd **command_line);
 
 #endif

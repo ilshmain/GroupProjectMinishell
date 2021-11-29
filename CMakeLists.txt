@@ -15,6 +15,6 @@ FILE(GLOB SRC
         "source/pars/*.c"
         "source/pars/ms_libft/*.c")
 
-add_executable(checkMinishell ${SRC})
+add_executable(checkMinishell ${SRC} source/pars/safePage.c)
 #target_link_libraries (checkMinishell /Users/fmint/shell/source/Libft/libft.a)
 target_link_libraries (checkMinishell /Users/hportife/hportife/mshell/source/Libft/libft.a)

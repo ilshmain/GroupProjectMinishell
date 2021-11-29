@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hportife <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 14:03:30 by hportife          #+#    #+#             */
+/*   Updated: 2021/11/29 14:03:31 by hportife         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../include/minishell.h"
 
-char	*ft_substrMS(char const *s, unsigned int start, size_t len)
+char	*ft_substr_ms(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -8,12 +20,12 @@ char	*ft_substrMS(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	if (start > ft_strlenMS(s))
-		return (ft_strdupMS(""));
-	if ((start + len) < ft_strlenMS(s))
+	if (start > ft_strlen_ms(s))
+		return (ft_strdup_ms(""));
+	if ((start + len) < ft_strlen_ms(s))
 		res = (char *)malloc(sizeof(*s) * len + 1);
 	else
-		res = (char *)malloc(sizeof(*s) * ft_strlenMS(s) - start + 1);
+		res = (char *)malloc(sizeof(*s) * ft_strlen_ms(s) - start + 1);
 	if (res == NULL)
 		return (NULL);
 	i = 0;

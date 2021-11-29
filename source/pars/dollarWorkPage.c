@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dollarWorkPage.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hportife <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 13:58:33 by hportife          #+#    #+#             */
+/*   Updated: 2021/11/29 13:58:34 by hportife         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/minishell.h"
 
-int	ifKeyForFnsDollar(char c)
+int	if_key_for_fns_dollar(char c)
 {
-	if (c == '_' || ft_isalnumMS(c) || c == '?')
+	if (c == '_' || ft_isalnum_ms(c) || c == '?')
 		return (1);
 	return (0);
 }
@@ -14,64 +26,63 @@ char	*fnc_dollar(char *line, int *i, char **env)
 	char	*tmp2;
 
 	j = *i;
-	while (line[++(*i)])
-		if (!ifKeyForFnsDollar(line[*i]))
-			break ;
+	while (line[*i] && if_key_for_fns_dollar(line[*i]))
+		(*i)++;
 	if (*i == j + 1)
 		return (line);
 	if (line[j + 1] == '?' && (line [j + 2] == ' ' || line [j + 2] == '\0'))
 		return (ret_for_dollar_what(&line, j));
-	tmp2 = dollarAssigment(line, i, j, env);
-	tmp = ft_substrMS(line, 0, j);
+	tmp2 = dollar_assigment(line, i, j, env);
+	tmp = ft_substr_ms(line, 0, j);
 	if (tmp != NULL && tmp2 != NULL)
-		tmp = preUseStrJoin(tmp, tmp2);
+		tmp = pre_use_str_join(tmp, tmp2);
 	free(tmp2);
 	tmp2 = NULL;
 	if (line[*i] != '\0')
 	{
-		tmp2 = ft_strdupMS(line + *i);
-		tmp = preUseStrJoin(tmp, tmp2);
+		tmp2 = ft_strdup_ms(line + *i);
+		tmp = pre_use_str_join(tmp, tmp2);
 	}
 	if (tmp2 != NULL)
 		free(tmp2);
 	return (tmp);
 }
 
-char *ret_for_dollar_what(char **line, int j)
+char	*ret_for_dollar_what(char **line, int j)
 {
-	char *tmp;
+	char	*tmp;
 
-	tmp = ft_substrMS(*line, 0, ft_strlenMS(*line) - (ft_strlenMS(*line) - j));
-	tmp = preUseStrJoin(tmp, ft_itoa(exit_code));
-//	free(*line);
+	tmp = ft_substr_ms(*line, 0, ft_strlen_ms(*line)
+			- (ft_strlen_ms(*line) - j));
+	tmp = pre_use_str_join(tmp, ft_itoa(exit_code));
 	return (tmp);
 }
 
-char	*dollarAssigment(char *line, int *i, int j, char **env)
+char	*dollar_assigment(char *line, int *i, int j, char **env)
 {
 	char	*tmp;
 	char	*tmp2;
 	int		z;
 	int		k;
 
-	tmp = ft_substrMS(line, j + 1, *i - j - 1);
+	tmp = ft_substr_ms(line, j + 1, *i - j - 1);
 	z = -1;
 	k = 0;
 	while (env[++z])
 	{
-		if (ft_strnstrMS(env[z], tmp, ft_strlenMS(tmp)))
+		if (ft_strnstr_ms(env[z], tmp, ft_strlen_ms(tmp)))
 		{
 			k = 0;
 			while (env[z][k] && env[z][k] != '=')
 				k++;
-			tmp2 = ft_substrMS(env[z], 0, k);
-			if (ft_strcmpMS(tmp, tmp2) == 0)
+			tmp2 = ft_substr_ms(env[z], 0, k);
+			if (ft_strcmp_ms(tmp, tmp2) == 0)
 				break ;
 		}
 	}
 	if (tmp2 != NULL)
 		free (tmp2);
-	tmp2 = ft_substrMS(env[z], k + 1, ft_strlenMS(env[z]) - k);
+	tmp2 = ft_substr_ms(env[z], k + 1, ft_strlen_ms(env[z]) - k);
 	free (tmp);
 	return (tmp2);
 }

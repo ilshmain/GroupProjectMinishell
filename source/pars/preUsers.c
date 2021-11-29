@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   preUsers.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hportife <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 13:58:57 by hportife          #+#    #+#             */
+/*   Updated: 2021/11/29 13:59:00 by hportife         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/minishell.h"
 
-char	*preUseFncDollar(char *line, int *i, char **env)
+char	*pre_use_fnc_dollar(char *line, int *i, char **env)
 {
 	char	*tmp;
 
@@ -9,7 +21,7 @@ char	*preUseFncDollar(char *line, int *i, char **env)
 	return (tmp);
 }
 
-char	*preUseFncDQuot(char **line, int *i, char **env, t_gnrl **gen)
+char	*pre_use_fnc_dquot(char **line, int *i, char **env, t_gnrl **gen)
 {
 	char	*tmp;
 
@@ -18,7 +30,7 @@ char	*preUseFncDQuot(char **line, int *i, char **env, t_gnrl **gen)
 	return (tmp);
 }
 
-char	*preUseFncQuot(char *line, int *i, t_gnrl **gen)
+char	*pre_use_fnc_quot(char *line, int *i, t_gnrl **gen)
 {
 	char	*tmp;
 
@@ -27,16 +39,16 @@ char	*preUseFncQuot(char *line, int *i, t_gnrl **gen)
 	return (tmp);
 }
 
-char	*preUseStrJoin(char *str1, char *str2)
+char	*pre_use_str_join(char *str1, char *str2)
 {
-	char *tmp;
+	char	*tmp;
 
-	tmp = ft_strjoinMS(str1, str2);
+	tmp = ft_strjoin_ms(str1, str2);
 	free (str1);
 	return (tmp);
 }
 
-char *preUseFncRedir(char **line, int *i, t_gnrl **gen)
+char	*pre_use_fnc_redir(char **line, int *i, t_gnrl **gen)
 {
 	char	*tmp;
 

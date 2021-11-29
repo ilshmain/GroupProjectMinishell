@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hportife <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 13:57:09 by hportife          #+#    #+#             */
+/*   Updated: 2021/11/29 13:57:12 by hportife         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/minishell.h"
 
 int	main(int argc, char const *argv[], char **envp)
 {
-	(void)argc;
-	(void)argv;
 	char	*line;
 	t_gnrl	*gen;
 
+	(void)argc;
+	(void)argv;
 	exit_code = 0;
 	gen = malloc(sizeof (t_gnrl));
 	initial_env(envp, &gen->ptr, 0);
@@ -57,6 +69,3 @@ int	main(int argc, char const *argv[], char **envp)
 //		tmp = tmp->nextList;
 //	}
 //}
-
-
-

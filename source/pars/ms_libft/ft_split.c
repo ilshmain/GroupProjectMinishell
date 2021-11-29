@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hportife <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 14:00:16 by hportife          #+#    #+#             */
+/*   Updated: 2021/11/29 14:00:28 by hportife         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../include/minishell.h"
 
 static char	**mem_clean(char **res)
@@ -14,7 +26,7 @@ static char	**mem_clean(char **res)
 	return (NULL);
 }
 
-static int 	quant_str(char const *s, char sepr)
+static int	quant_str(char const *s, char sepr)
 {
 	unsigned int	i;
 	unsigned int	keychar;
@@ -37,7 +49,7 @@ static int 	quant_str(char const *s, char sepr)
 	return (keychar);
 }
 
-static int 	len_str(char const *s, unsigned int *beg, char sepr)
+static int	len_str(char const *s, unsigned int *beg, char sepr)
 {
 	int	len;
 
@@ -58,7 +70,7 @@ static int 	len_str(char const *s, unsigned int *beg, char sepr)
 	return (0);
 }
 
-char	**ft_splitMS(char const *s, char c)
+char	**ft_split_ms(char const *s, char c)
 {
 	char			**res;
 	unsigned int	i;
@@ -80,7 +92,7 @@ char	**ft_splitMS(char const *s, char c)
 		res[i] = (char *)malloc(sizeof(char) * (lens + 1));
 		if (!res[i])
 			return (mem_clean(res));
-		ft_strlcpyMS(res[i], &s[beg - lens], lens + 1);
+		ft_strlcpy_ms(res[i], &s[beg - lens], lens + 1);
 		i++;
 	}
 	res[i] = 0;

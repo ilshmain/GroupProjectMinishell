@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   servFncII.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hportife <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 13:59:43 by hportife          #+#    #+#             */
+/*   Updated: 2021/11/29 13:59:44 by hportife         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/minishell.h"
 
-void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2)
+void	plw_in_while(t_cmnd **tmp, t_cmnd **tmp2)
 {
 	if ((*tmp)->err == 1)
 	{
@@ -18,7 +30,7 @@ void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2)
 	}
 }
 
-char	*initLine(char *line)
+char	*init_line(char *line)
 {
 	char	*tmp;
 
@@ -50,30 +62,30 @@ int	dual_array_len(char **array)
 	return (i);
 }
 
-char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen)
+char	*name_for_redir(char **line, int *name_len, int *i, t_gnrl **gen)
 {
-	char	*fileName;
+	char	*file_name;
 
-	*nameLen = *i;
-	while ((line[0][*nameLen]) && (ft_isalnumMS(line[0][*nameLen]) == 0)) // пропускаем символы, которые не могут входить в нейминг
-		*nameLen += 1;
-	line[0] = strCutStr(*line, *i, *nameLen);
-	*nameLen = *i;
-	while ((line[0][*nameLen])) // пропускаем символы, которые не могут входить в нейминг
+	*name_len = *i;
+	while ((line[0][*name_len]) && (ft_isalnum_ms(line[0][*name_len]) == 0))
+		*name_len += 1;
+	line[0] = str_cut_str(*line, *i, *name_len);
+	*name_len = *i;
+	while ((line[0][*name_len]))
 	{
-		if (line[0][*nameLen] == '\'')
-			line[0] = preUseFncQuot(line[0], nameLen, gen);
-		else if (line[0][*nameLen] == '\\')
-			line[0] = fnc_bslsh(line[0], nameLen, gen);
-		else if (line[0][*nameLen] == '\"')
-			line[0] = preUseFncDQuot(line, nameLen, (*gen)->env, gen);
-		else if (line[0][*nameLen] == '$')
-			line[0] = preUseFncDollar(line[0], nameLen, (*gen)->env);
-		else if (line[0][*nameLen] == '|' || line[0][*nameLen] == '<' ||
-				 line[0][*nameLen] == '>' || line[0][*nameLen] == ' ')
-			break;
-		*nameLen += 1;
+		if (line[0][*name_len] == '\'')
+			line[0] = pre_use_fnc_quot(line[0], name_len, gen);
+		else if (line[0][*name_len] == '\\')
+			line[0] = fnc_bslsh(line[0], name_len, gen);
+		else if (line[0][*name_len] == '\"')
+			line[0] = pre_use_fnc_dquot(line, name_len, (*gen)->env, gen);
+		else if (line[0][*name_len] == '$')
+			line[0] = pre_use_fnc_dollar(line[0], name_len, (*gen)->env);
+		else if (line[0][*name_len] == '|' || line[0][*name_len] == '<' ||
+				line[0][*name_len] == '>' || line[0][*name_len] == ' ')
+			break ;
+		*name_len += 1;
 	}
-	fileName = ft_substr(line[0], *i, *nameLen - *i);// берём имя
-	return (fileName);
+	file_name = ft_substr(line[0], *i, *name_len - *i);
+	return (file_name);
 }
