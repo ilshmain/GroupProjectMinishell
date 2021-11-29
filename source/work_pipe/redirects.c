@@ -23,7 +23,7 @@ void Heredoc(char **argv, t_cmnd *cmd)
 	{
 		while (ft_strcmp(buf, argv[i]))
 		{
-			write(1, "> ", 9);
+			write(1, "> ", 2);
 			if (get_next_line(0, &buf) && ft_strncmp(buf, argv[i], ft_strlen(argv[i])))
 			{
 				if (len == i)

@@ -83,3 +83,37 @@ int logica(t_gnrl **zik)
 	lstclear(&(*zik)->cmd);
 	return (1);
 }
+
+//int main(int ac, char **av, char **env)
+//{
+//	(void)ac;
+//	(void)av;
+//
+//	t_gnrl *zik = malloc(sizeof(zik) * 10);// выделяем память под структуры
+//	zik->ptr = malloc(sizeof(t_list *) * 10);// выделяем память под структуры
+//	zik->cmd = malloc(sizeof(t_cmnd *) * 10);// выделяем память под структуры
+//	zik->env = env; // записываем енв
+//
+//	// первый лист команды
+//	zik->cmd->command_array = ft_split("cat -e", ' ');
+//	zik->cmd->heredoc = ft_split("stop", ' ');
+//
+//	zik->cmd->fd_write = -2;
+//	zik->cmd->fd_write = -2;
+//	zik->cmd->fd_open = -2;
+//
+//	// второй лист команды
+//	zik->cmd->next_list = malloc(sizeof(t_cmnd) * 10);
+//	zik->cmd->next_list->command_array = ft_split("cat -e", ' ');
+//	zik->cmd->next_list->next_list = NULL;
+//
+////	// третий лист команды
+////	zik->cmd->next_list->next_list = malloc(sizeof(t_cmnd) * 10);
+////	zik->cmd->next_list->next_list->command_array = ft_split("wc", ' ');
+////
+////	// четвертый лист команды
+////	zik->cmd->next_list->next_list->next_list = malloc(sizeof(t_cmnd) * 1);
+////	zik->cmd->next_list->next_list->next_list->command_array = ft_split("cat -e", ' ');
+////	zik->cmd->next_list->next_list->next_list->next_list = NULL;
+//	logica(&zik);
+//}
