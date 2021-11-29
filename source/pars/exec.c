@@ -14,7 +14,7 @@ char **clear_envp(char **envp)
 	return (NULL);
 }
 
-_Noreturn void exefnc(char **line, t_gnrl **gen)
+void exefnc(char **line, t_gnrl **gen)
 {
 	while (1)
 	{

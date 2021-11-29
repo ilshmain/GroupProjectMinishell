@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hportife <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 13:49:30 by hportife          #+#    #+#             */
+/*   Updated: 2021/11/29 13:49:34 by hportife         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MINISHELL_H
 # define MINISHELL_H
 # define BUFFER_SIZE 1
@@ -27,19 +39,19 @@ char	*level_up_down(char *str);
 void	check_heredoc(char **argv, t_cmnd *cmd);
 int		initial_env(char **envp, t_list **ptr, int i);
 int		print_env_built(t_list *ptr);
-int		pwd_built();
+int		pwd_built(void);
 int		cd_built(t_list *ptr, t_gnrl *zik, int i);
 int		echo_built(t_gnrl *zik);
 int		export_built(t_list *ptr, t_gnrl *zik);
 int		unset_built(t_list *ptr, t_gnrl *zik);
-int 	built_func(t_gnrl *zik, t_list *ptr);
+int		built_func(t_gnrl *zik, t_list *ptr);
 int		logica(t_gnrl **zik);
-int 	size_heredoc(char **argv);
+int		size_heredoc(char **argv);
 int		exit_built(char	**str, t_list **ptr);
-int 	checking_validity_string(char *str);
-void 	print_error_func(char *str1, char *str2);
+int		checking_validity_string(char *str);
+void	print_error_func(char *str1, char *str2);
 int		size_two_poineter_mas(char **argv);
-char 	**env(t_list *lst);
+char	**env(t_list *lst);
 
 void	ft_lstdel(t_list *lst);
 void	add_export(t_list **ptr, char *str);
@@ -47,14 +59,10 @@ void	add_export(t_list **ptr, char *str);
 
 void	fncMonitor(t_cmnd *cmd);
 
-//int	check_for_pipes(char const *line);
 char	*preUseFncPipe(char *line, int *whereIsPipe, t_cmnd **commandLine);
-//void	*signalQuitMS(int get);
-//void	exitCtrlD(void);
 void	ctrl_c_hook(int sgn);
-void    rl_replace_line(const char *buffer, int val);
+void	rl_replace_line(const char *buffer, int val);
 char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen);
-//char	*ifName(char **line, int *i, t_gnrl **gen);
 char	*initLine(char *line);
 int		dual_array_len(char **array);
 
@@ -64,7 +72,7 @@ t_list	*ft_lstlast(t_list *lst);
 
 //PIPE prototype*****************************
 
-int	work_with_pipe(t_gnrl **zik);
+int		work_with_pipe(t_gnrl **zik);
 
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
@@ -85,9 +93,8 @@ int		check_redirect(t_cmnd *cmd);
 int		dup_relize(t_cmnd *cmd);
 //********************************************
 
-
-//**********************************************************************************************************************
-_Noreturn void	exefnc(char **line, t_gnrl **gen);
+//**********************************************
+void	exefnc(char **line, t_gnrl **gen);
 int		first_fnc(char **line, t_gnrl **gen, int i);
 t_cmnd	*fnc_pars(char *line, int beginOfLine, t_cmnd *commandLine);
 
@@ -106,7 +113,7 @@ char	*fnc_quot(char *line, int *i, t_gnrl **gen);
 char	*fnc_dquot(char *line, int *i, char **env, t_gnrl **gen);
 char	*unionForQuotStr(char *line, int *i, int j);
 
-char	*fnc_bslsh(char *line, int *i,t_gnrl **gen);
+char	*fnc_bslsh(char *line, int *i, t_gnrl **gen);
 
 char	*fnc_dollar(char *line, int *i, char **env);
 char	*dollarAssigment(char *line, int *i, int j, char **env);
@@ -135,19 +142,21 @@ void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc);
 
 void	fncMonitor(t_cmnd *cmd);
 
-char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_cmnd **command_line);
+char	*pre_use_fnc_pipe(char *line, int *where_is_pipe,
+			t_cmnd **command_line);
 void	ctrl_c_hook(int sgn);
-void    rl_replace_line(const char *buffer, int val);
+void	rl_replace_line(const char *buffer, int val);
 char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen);
 char	*initLine(char *line);
 int		dualArrayLen(char **array);
 void	getHistoryLog(char *line, t_gnrl *gen);
 t_cmnd	*preLogicWork(t_cmnd **cmd);
 void	pLWinWhile(t_cmnd **tmp, t_cmnd **tmp2);
-void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line, int *w_i_p, char *line);
+void	if_pipe(t_cmnd **command_line, t_cmnd **tmp_command_line,
+			int *w_i_p, char *line);
 int		if_echo(t_cmnd **cmd_line, char **line, int *w_i_p);
 char	*cut_spaces(char *line);
-char 	*ret_for_dollar_what(char **line, int j);
+char	*ret_for_dollar_what(char **line, int j);
 char	*pre_use_substr(char *s, unsigned int start, size_t len);
 int		ie_pt(char **line, int *i, char **tmp);
 
