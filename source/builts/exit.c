@@ -16,7 +16,7 @@ void	level_up_down2(t_list *ptr)
 {
 	char	*lvl;
 	char	*buf;
-	char 	*itoa_value;
+	char	*itoa_value;
 	int		i;
 
 	lvl = NULL;
@@ -27,7 +27,7 @@ void	level_up_down2(t_list *ptr)
 		ptr = ptr->next;
 	}
 	if (ptr == NULL)
-		return;
+		return ;
 	buf = change_ft_strrchr(ptr->str, '=');
 	free(ptr->str);
 	i = ft_atoi(buf);

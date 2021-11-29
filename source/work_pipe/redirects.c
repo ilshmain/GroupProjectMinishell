@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   redirects.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmint <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 17:18:33 by fmint             #+#    #+#             */
+/*   Updated: 2021/11/29 17:18:35 by fmint            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/minishell.h"
 
-int CheckRedirRead(t_cmnd *cmd)
+int	check_redir_read(t_cmnd *cmd)
 {
 	while (cmd)
 	{
@@ -11,7 +23,7 @@ int CheckRedirRead(t_cmnd *cmd)
 	return (1);
 }
 
-int CheckRedirWrite(t_cmnd *cmd)
+int	check_redir_write(t_cmnd *cmd)
 {
 	while (cmd)
 	{
@@ -22,7 +34,7 @@ int CheckRedirWrite(t_cmnd *cmd)
 	return (1);
 }
 
-int CheckRedirRewrite(t_cmnd *cmd)
+int	check_redir_rewrite(t_cmnd *cmd)
 {
 	while (cmd)
 	{
@@ -40,11 +52,11 @@ int	check_redirect(t_cmnd *cmd)
 		if (cmd->heredoc != NULL)
 			check_heredoc(cmd->heredoc, cmd);
 		if (cmd->fd_open > 0)
-			CheckRedirRead(cmd);
+			check_redir_read(cmd);
 		if (cmd->fd_write > 0)
-			CheckRedirWrite(cmd);
+			check_redir_write(cmd);
 		if (cmd->fd_re_write > 0)
-			CheckRedirRewrite(cmd);
+			check_redir_rewrite(cmd);
 		cmd = cmd->next_list;
 	}
 	return (1);

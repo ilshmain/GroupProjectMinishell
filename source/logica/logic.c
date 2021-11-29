@@ -95,8 +95,9 @@ int logica(t_gnrl **zik)
 //	zik->env = env; // записываем енв
 //
 //	// первый лист команды
-//	zik->cmd->command_array = ft_split("cat -e", ' ');
-//	zik->cmd->heredoc = ft_split("stop", ' ');
+//	zik->cmd->command_array = ft_split("ls", ' ');
+////	zik->cmd->heredoc = ft_split("stop", ' ');
+//	zik->cmd->heredoc = NULL;
 //
 //	zik->cmd->fd_write = -2;
 //	zik->cmd->fd_write = -2;

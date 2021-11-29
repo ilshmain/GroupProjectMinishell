@@ -22,31 +22,33 @@ int	size_two_poineter_mas(char **argv)
 	return (i);
 }
 
-void	line_break(t_gnrl *zik, int i, int k)
+int check_line_break(t_gnrl *zik, int i)
 {
-	if (i == 2)
-		ft_putstr_fd("", STDOUT_FILENO);
-	else
+	int	k;
+
+	while (zik->cmd->command_array[i])
 	{
-		while (ft_strcmp(zik->cmd->command_array[k], "-n") == 0)
-			k++;
-		if (k == i)
-			ft_putstr_fd("", STDOUT_FILENO);
-		else
+		k = 0;
+		if (zik->cmd->command_array[i][k] == '-' && zik->cmd->command_array[1][k + 1] == 'n')
 		{
-			while (zik->cmd->command_array[k + 1])
+			k = 1;
+			while (zik->cmd->command_array[i][k])
 			{
-				ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
-				ft_putstr_fd(" ", STDOUT_FILENO);
+				if (zik->cmd->command_array[i][k] != 'n')
+					return (i);
 				k++;
 			}
-			ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
 		}
+		else
+			return (i);
+		i++;
 	}
+	return (i);
 }
 
 int	echo_built(t_gnrl *zik)
 {
+	int line_break;
 	int	i;
 	int	k;
 
@@ -54,17 +56,35 @@ int	echo_built(t_gnrl *zik)
 	i = size_two_poineter_mas(zik->cmd->command_array);
 	if (i == 1)
 		ft_putstr_fd("\n", STDOUT_FILENO);
-	else if (ft_strcmp(zik->cmd->command_array[1], "-n") == 0)
-		line_break(zik, i, k);
 	else
 	{
-		while (zik->cmd->command_array[k])
+		line_break = check_line_break(zik, 1);
+		if (line_break == 1)
 		{
-			ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
-			ft_putstr_fd(" ", STDOUT_FILENO);
-			k++;
+			while (zik->cmd->command_array[k])
+			{
+				ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
+				ft_putstr_fd(" ", STDOUT_FILENO);
+				k++;
+			}
+			ft_putstr_fd("\n", STDOUT_FILENO);
 		}
-		ft_putstr_fd("\n", STDOUT_FILENO);
+		else
+		{
+			k = line_break;
+			if (i == k)
+				ft_putstr_fd("", STDOUT_FILENO);
+			else
+			{
+				while (zik->cmd->command_array[k + 1])
+				{
+					ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
+					ft_putstr_fd(" ", STDOUT_FILENO);
+					k++;
+				}
+				ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
+			}
+		}
 	}
 	exit_code = 0;
 	return (1);

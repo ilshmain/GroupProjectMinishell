@@ -1,6 +1,7 @@
 NAME			= 	minishell
 
-SRCS			=	./source/main.c \
+SRCS			=	./source/pars/safePage.c \
+					./source/main.c \
 					./source/builts/cd.c \
 					./source/builts/echo.c \
 					./source/builts/env.c \
@@ -27,14 +28,12 @@ SRCS			=	./source/main.c \
 					./source/pars/ms_libft/ft_strncmp.c  ./source/pars/ms_libft/ft_strnstr.c \
 					./source/pars/ms_libft/ft_substr.c \
 					./source/work_pipe/get_next_line.c \
-					./source/work_pipe/get_next_line_utils.c \
 					./source/work_pipe/pipex_bonus.c \
 					./source/work_pipe/path.c \
 					./source/work_pipe/redirects_utils.c \
 					./source/work_pipe/pipex_bonus_utils.c \
 					./source/work_pipe/pipex_bonus_utils1.c \
 					./source/work_pipe/redirects.c \
-					./source/pars/safePage.c \
 
 OBJS			=	$(SRCS:.c=.o)
 

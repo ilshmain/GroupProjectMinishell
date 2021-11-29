@@ -12,64 +12,66 @@
 
 #include "../../include/minishell.h"
 
-char	*checkostatok(char **line, char **ostatok)
+static int	get_line(int read_byte, char **read_line, char **line)
 {
-	char	*reminder;
+	char	*temp;
 
-	reminder = NULL;
-	if (*ostatok)
+	if (read_byte == 0 && *read_line == 0)
 	{
-		reminder = ft_strchr(*ostatok, '\n');
-		if (reminder)
-		{
-			*reminder = '\0';
-			*line = ft_strdup(*ostatok);
-			ft_strcpy(*ostatok, ++reminder);
-		}
-		else
-		{
-			*line = ft_strdup(*ostatok);
-			free(*ostatok);
-			*ostatok = NULL;
-		}
+		*line = ft_strdup("");
+		return (0);
+	}
+	else if (ft_strchr(*read_line, '\n'))
+	{
+		*line = ft_substr(*read_line, 0, ft_strchr(*read_line, '\n') \
+														- *read_line);
+		temp = ft_strdup(*read_line + (ft_strlen(*line) + 1));
+		if (!temp)
+			return (-1);
+		free(*read_line);
+		*read_line = temp;
 	}
 	else
-		*line = ft_strdup("");
-	return (reminder);
+	{
+		*line = ft_strdup(*read_line);
+		free(*read_line);
+		*read_line = NULL;
+		return (0);
+	}
+	return (1);
 }
 
-int	proverka(int fd, char **line, char *buf)
+static int	read_buffer(int fd, char *buffer, char **read_line, char **line)
 {
-	int			i;
-	char		*simv_kontsa_stroki;
-	static char	*ostatok;
+	char	*temp;
+	int		read_byte;
 
-	i = 1;
-	simv_kontsa_stroki = checkostatok(line, &ostatok);
-	while (!simv_kontsa_stroki && i > 0)
+	read_byte = read(fd, buffer, BUFFER_SIZE);
+	while (read_byte)
 	{
-		i = read(fd, buf, BUFFER_SIZE);
-		buf[i] = '\0';
-		simv_kontsa_stroki = ft_strchr(buf, '\n');
-		if (simv_kontsa_stroki)
-		{
-			*simv_kontsa_stroki = '\0';
-			ostatok = ft_strdup(++simv_kontsa_stroki);
-		}
-		*line = ft_strjoin(*line, buf);
+		buffer[read_byte] = '\0';
+		if (!read_line[fd])
+			read_line[fd] = ft_strdup("");
+		temp = ft_strjoin(read_line[fd], buffer);
+		if (!temp)
+			return (-1);
+		free(read_line[fd]);
+		read_line[fd] = temp;
+		if (ft_strchr(read_line[fd], '\n'))
+			break ;
+		read_byte = read(fd, buffer, BUFFER_SIZE);
 	}
-	free(buf);
-	return (i && ostatok);
+	if (read_byte < 0)
+		return (-1);
+	return (get_line(read_byte, &read_line[fd], line));
 }
 
 int	get_next_line(int fd, char **line)
 {
-	char		*buf;
+	char			buffer[BUFFER_SIZE + 1];
+	static char		*read_line[1024];
 
-	if (read(fd, NULL, 0) < 0 || !line || BUFFER_SIZE <= 0)
+	if (fd < 0 || !line || BUFFER_SIZE < 1 || (read(fd, 0, 0) < 0))
 		return (-1);
-	buf = malloc(BUFFER_SIZE + 1);
-	if (!buf)
-		return (-1);
-	return (proverka(fd, line, buf));
+	return (read_buffer(fd, buffer, &read_line[fd], line));
 }

@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   redirects_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmint <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 17:18:23 by fmint             #+#    #+#             */
+/*   Updated: 2021/11/29 17:18:26 by fmint            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/minishell.h"
 
-int size_heredoc(char **argv)
+int	size_heredoc(char **argv)
 {
-	int i;
-	i = 0;
+	int	i;
 
+	i = 0;
 	while (argv[i])
 		i++;
 	return (i - 1);
 }
 
-void Heredoc(char **argv, t_cmnd *cmd)
+void	heredoc(char **argv, t_cmnd *cmd)
 {
 	int		i;
 	int		len;
@@ -24,13 +36,11 @@ void Heredoc(char **argv, t_cmnd *cmd)
 		while (ft_strcmp(buf, argv[i]))
 		{
 			write(1, "> ", 2);
-			if (get_next_line(0, &buf) && ft_strncmp(buf, argv[i], ft_strlen(argv[i])))
+			if (get_next_line(0, &buf) && \
+				ft_strncmp(buf, argv[i], ft_strlen(argv[i])))
 			{
 				if (len == i)
-				{
-					write(cmd->out, buf, ft_strlen(buf));
-					write(cmd->out, "\n", 1);
-				}
+					ft_putendl_fd(buf, cmd->out);
 			}
 			free(buf);
 		}
@@ -42,7 +52,7 @@ void Heredoc(char **argv, t_cmnd *cmd)
 void	check_heredoc(char **argv, t_cmnd *cmd)
 {
 	int	fd[2];
-	int pid;
+	int	pid;
 
 	if (pipe(fd) < 0)
 		ft_perror("Error pipe");
@@ -51,7 +61,7 @@ void	check_heredoc(char **argv, t_cmnd *cmd)
 	{
 		close(fd[0]);
 		cmd->out = fd[1];
-		Heredoc(argv, cmd);
+		heredoc(argv, cmd);
 	}
 	else
 	{
