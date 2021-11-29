@@ -104,9 +104,9 @@ void	fncRedirHeredoc(t_cmnd **cmd, char *hereDoc)
 		(*cmd)->fd_open = -2;
 	}
 	if ((*cmd)->heredoc)
-		tmp = malloc(sizeof (char **) * (dual_array_len((*cmd)->heredoc) + ft_strlenMS(hereDoc)));
+		tmp = (char **)malloc((sizeof (char *)) * (dual_array_len((*cmd)->heredoc)));
 	else
-		tmp = malloc(sizeof (char **) * (ft_strlenMS(hereDoc)));
+		tmp = (char **)malloc((sizeof (char *)) * 1);
 	while ((*cmd)->heredoc && (*cmd)->heredoc[i] != NULL)
 	{
 		tmp[i] = ft_strdup((*cmd)->heredoc[i]);

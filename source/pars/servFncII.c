@@ -41,23 +41,13 @@ void	ctrl_c_hook(int sgn)
 int	dual_array_len(char **array)
 {
 	int	i;
-	int	j;
-	int	len;
 
 	if (array == NULL)
 		return (0);
 	i = 0;
-	j = 0;
-	len = 0;
 	while (array[i])
-	{
-		j = 0;
-		while (array[i][j])
-			j++;
-		len += j;
 		i++;
-	}
-	return (len);
+	return (i);
 }
 
 char	*nameForRedir(char **line, int *nameLen, int *i, t_gnrl **gen)
