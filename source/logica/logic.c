@@ -11,7 +11,7 @@ int	built_func(t_gnrl *zik, t_list *ptr)
 	if (ft_strcmp(zik->cmd->command_array[0], "pwd") == 0)
 		i = pwd_built();
 	if (ft_strcmp(zik->cmd->command_array[0], "echo") == 0)
-		i = echo_built(zik);
+		i = echo_built(zik, 0, 1);
 	if (ft_strcmp(zik->cmd->command_array[0], "env") == 0)
 		i = print_env_built(ptr);
 	if (ft_strcmp(zik->cmd->command_array[0], "export") == 0)

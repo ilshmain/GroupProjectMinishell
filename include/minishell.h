@@ -41,7 +41,7 @@ int		initial_env(char **envp, t_list **ptr, int i);
 int		print_env_built(t_list *ptr);
 int		pwd_built(void);
 int		cd_built(t_list *ptr, t_gnrl *zik, int i);
-int		echo_built(t_gnrl *zik);
+int		echo_built(t_gnrl *zik, int i, int k);
 int		export_built(t_list *ptr, t_gnrl *zik);
 int		unset_built(t_list *ptr, t_gnrl *zik);
 int		built_func(t_gnrl *zik, t_list *ptr);

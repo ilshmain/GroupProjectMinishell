@@ -46,13 +46,10 @@ int check_line_break(t_gnrl *zik, int i)
 	return (i);
 }
 
-int	echo_built(t_gnrl *zik)
+int	echo_built(t_gnrl *zik, int i, int k)
 {
 	int line_break;
-	int	i;
-	int	k;
 
-	k = 1;
 	i = size_two_poineter_mas(zik->cmd->command_array);
 	if (i == 1)
 		ft_putstr_fd("\n", STDOUT_FILENO);
