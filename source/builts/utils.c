@@ -18,6 +18,10 @@ int	checking_validity_string(char *str)
 	int	i;
 
 	i = 0;
+	while (str[i] == '=')
+		i++;
+	if (i == (int)ft_strlen(str))
+		return (-1);
 	while (str[i])
 	{
 		if (ft_isalpha(str[i]) == 0)
