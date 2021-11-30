@@ -61,7 +61,8 @@ int	echo_built(t_gnrl *zik, int i, int k)
 			while (zik->cmd->command_array[k])
 			{
 				ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
-				ft_putstr_fd(" ", STDOUT_FILENO);
+				if (zik->cmd->command_array[k + 1])
+					ft_putstr_fd(" ", STDOUT_FILENO);
 				k++;
 			}
 			ft_putstr_fd("\n", STDOUT_FILENO);
