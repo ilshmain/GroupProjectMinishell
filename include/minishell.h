@@ -35,6 +35,7 @@ char	*change_ft_strrchr(const char *s, int c);
 //********************************************
 
 //BUILT prototype*****************************
+char	**clear_envp(char **envp);
 char	*level_up_down(char *str);
 void	check_heredoc(char **argv, t_cmnd *cmd);
 int		initial_env(char **envp, t_list **ptr, int i);

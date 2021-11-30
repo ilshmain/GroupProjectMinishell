@@ -20,6 +20,9 @@ int	built_func(t_gnrl *zik, t_list *ptr)
 		i = unset_built(ptr, zik);
 	if (ft_strcmp(zik->cmd->command_array[0], "exit") == 0)
 		i = exit_built(zik->cmd->command_array, &zik->ptr);
+	zik->env = clear_envp(zik->env);
+	zik->env = env((zik->ptr));
+
 	return (i);
 }
 
@@ -80,7 +83,7 @@ void	lstclear(t_cmnd **lst)
 int logica(t_gnrl **zik)
 {
 	work_with_pipe(zik);
-	lstclear(&(*zik)->cmd);
+//	lstclear(&(*zik)->cmd);
 	return (1);
 }
 

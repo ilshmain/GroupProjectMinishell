@@ -73,7 +73,7 @@ int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 	char	*way_to_change;
 	char	*way_after_change;
 
-	while (zik->cmd->command_array[i++])
+	while (zik->cmd->command_array[i++]);
 	way_to_change = getcwd(NULL, 1024);
 	if (way_to_change == NULL)
 		way_to_change = use_way(ptr, "PWD=");
@@ -92,6 +92,7 @@ int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 		exit_code = 0;
 	way_after_change = getcwd(NULL, 1024);
 	change_str_value(ptr, way_after_change, way_to_change);
+	free(way_to_change);
 	free(way_after_change);
 	return (1);
 }
