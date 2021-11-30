@@ -44,6 +44,7 @@ void	heredoc(char **argv, t_cmnd *cmd)
 			}
 			free(buf);
 		}
+		free(argv[i]);
 		i++;
 	}
 	exit (0);

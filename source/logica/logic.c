@@ -23,14 +23,14 @@ int	built_func(t_gnrl *zik, t_list *ptr)
 	return (i);
 }
 
-void	free_command_array(char **envp)
+void	free_command_array(char **envp, int ident)
 {
 	int i;
 
 	i = 0;
 	if (envp)
 	{
-		if (ft_strcmp(envp[0], "echo") != 0)
+		if ((ft_strcmp(envp[0], "echo") != 0) || ident == 1)
 			while (envp[i] && envp[i][0] != '\0')
 			{
 				free(envp[i]);
@@ -52,10 +52,8 @@ void	ft_lstdelone(t_cmnd *lst)
 {
 	if (lst)
 	{
-		free_command_array(lst->command_array);
-		free_command_array(lst->heredoc);
-//		if (lst->errContext)
-//			free(lst->errContext);
+		free_command_array(lst->command_array, 0);
+		free_command_array(lst->heredoc, 1);
 	}
 	free(lst);
 	lst = NULL;

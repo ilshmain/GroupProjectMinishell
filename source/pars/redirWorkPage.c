@@ -129,5 +129,4 @@ void	fnc_redir_heredoc(t_cmnd **cmd, char *here_doc)
 	tmp[i] = ft_strdup(here_doc);
 	free ((*cmd)->heredoc);
 	(*cmd)->heredoc = tmp;
-//	for (int l = 0; (*cmd)->heredoc[l]; l++) { printf("%s\n", (*cmd)->heredoc[i]); }
 }
