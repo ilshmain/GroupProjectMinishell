@@ -44,8 +44,8 @@ void	free_command_array(char **envp, int ident)
 				free(envp[i++]);
 		else
 			free(envp[0]);
-	}
 		free(envp);
+	}
 }
 
 void	ft_lstdelone(t_cmnd *lst)
