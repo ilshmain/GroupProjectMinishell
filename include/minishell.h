@@ -158,5 +158,6 @@ char	*ret_for_dollar_what(char **line, int j);
 char	*pre_use_substr(char *s, unsigned int start, size_t len);
 void	pu_fnc_pipe_safe_page(char *line, int *where_is_pipe,
 			t_cmnd **tmp_command_line, t_cmnd **command_line);
+char	*our_getenv(char *key, char **env);
 
 #endif
