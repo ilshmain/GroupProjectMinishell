@@ -22,12 +22,17 @@ int	checking_validity_string(char *str)
 		i++;
 	if (i == (int)ft_strlen(str))
 		return (-1);
-	while (str[i])
+	if (ft_isalpha(str[i]) != 0)
 	{
-		if (ft_isalpha(str[i]) == 0)
-			return (1);
-		i++;
+		while (str[i])
+		{
+			if (ft_isalpha(str[i]) == 0 && ft_isdigit(str[i]) == 0)
+				return (1);
+			i++;
+		}
 	}
+	else
+		return (-1);
 	return (0);
 }
 
