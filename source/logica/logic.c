@@ -79,8 +79,11 @@ void	lstclear(t_cmnd **lst)
 
 int logica(t_gnrl **zik)
 {
+	t_cmnd	*cmd;
+
+	cmd = (*zik)->cmd;
 	work_with_pipe(zik);
-	lstclear(&(*zik)->cmd);
+	lstclear(&cmd);
 	return (1);
 }
 
