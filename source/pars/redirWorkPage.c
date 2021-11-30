@@ -29,7 +29,7 @@ char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident)
 	else if (ident == 2)
 		fnc_redir_re_write(&tmp_cmd, name_file);
 	else if (ident == 3)
-		fnc_redir_heredoc(&tmp_cmd, name_file);
+		fnc_redir_heredoc(&(*gen)->cmd, name_file);
 	else if (ident == 4)
 		fnc_redir_open(&tmp_cmd, name_file);
 	free (name_file);
@@ -117,10 +117,10 @@ void	fnc_redir_heredoc(t_cmnd **cmd, char *here_doc)
 	}
 	if ((*cmd)->heredoc)
 		tmp = (char **)malloc((sizeof (char *))
-				* (dual_array_len((*cmd)->heredoc)));
+				* (dual_array_len((*cmd)->heredoc) + 1));
 	else
 		tmp = (char **)malloc((sizeof (char *)) * 1);
-	while ((*cmd)->heredoc && (*cmd)->heredoc[i] != NULL)
+	while (tmp[i] && (*cmd)->heredoc && (*cmd)->heredoc[i] != NULL)
 	{
 		tmp[i] = ft_strdup((*cmd)->heredoc[i]);
 		free ((*cmd)->heredoc[i]);
@@ -129,4 +129,5 @@ void	fnc_redir_heredoc(t_cmnd **cmd, char *here_doc)
 	tmp[i] = ft_strdup(here_doc);
 	free ((*cmd)->heredoc);
 	(*cmd)->heredoc = tmp;
+//	for (int l = 0; (*cmd)->heredoc[l]; l++) { printf("%s\n", (*cmd)->heredoc[i]); }
 }

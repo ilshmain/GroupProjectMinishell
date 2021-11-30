@@ -64,10 +64,20 @@ char	*dollar_assigment(char *line, int *i, int *j, char **env)
 	char	*tmp2;
 
 	tmp2 = NULL;
-	(void)env;
+//	(void)env;
 	tmp = ft_substr_ms(line, *j + 1, *i - *j - 1);
+
 	tmp2 = getenv(tmp);
+	for(int l = 0; env[l]; l++)
+		printf("||%s||\n", env[l]);
 	*j = *i - ft_strlen_ms(tmp) + ft_strlen_ms(tmp2);
 	free (tmp);
 	return (tmp2);
 }
+
+//char	*our_getenv(char *key, char **env)
+//{
+//	int	i;
+//
+//	i = 0;
+//}
