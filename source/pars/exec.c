@@ -25,6 +25,11 @@ char	**clear_envp(char **envp)
 	free(envp);
 	return (NULL);
 }
+//echo $321
+//echo ' """" '
+//echo " '''''' "
+//echo """"""""""              :""
+//echo '"""""""""",         wtf     :""'
 
 void	exefnc(char **line, t_gnrl **gen)
 {
@@ -79,7 +84,7 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 			line[0] = pre_use_fnc_dollar(line[0], &i, (*gen)->env);
 		else if (line[0][i] == '>' || line[0][i] == '<')
 			line[0] = pre_use_fnc_redir(line, &i, gen);
-		else if (line[0][i] == '|')
+		else if (line[0][i] == '|' || line[0][i] == ';')
 			line[0] = pre_use_fnc_pipe(line[0], &i, &(*gen)->cmd);
 		else
 			i++;

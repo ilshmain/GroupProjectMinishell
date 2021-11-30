@@ -110,13 +110,13 @@ char	*ft_substr_ms(char const *s, unsigned int start, size_t len);
 char	*ft_strdup_ms(const char *s1);
 
 char	*fnc_quot(char *line, int *i, t_gnrl **gen);
-char	*fnc_dquot(char *line, int *i, char **env, t_gnrl **gen);
+char	*fnc_dquot(char **line, int *i, char **env, t_gnrl **gen);
 char	*union_for_quot_str(char *line, int *i, int j);
 
 char	*fnc_bslsh(char *line, int *i, t_gnrl **gen);
 
 char	*fnc_dollar(char *line, int *i, char **env);
-char	*dollar_assigment(char *line, int *i, int j, char **env);
+char	*dollar_assigment(char *line, int *i, int *j, char **env);
 
 int		ft_isalnum_ms(int c);
 char	*ft_strnstr_ms(const char *str1, const char *str2, size_t len);

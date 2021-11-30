@@ -31,24 +31,24 @@ char	*fnc_quot(char *line, int *i, t_gnrl **gen)
 	return (union_for_quot_str(line, i, j));
 }
 
-char	*fnc_dquot(char *line, int *i, char **env, t_gnrl **gen)
+char	*fnc_dquot(char **line, int *i, char **env, t_gnrl **gen)
 {
 	int	j;
 
 	j = *i;
-	while (line[++*i])
+	while (line[0][++*i])
 	{
-		if (line[*i] == '\\' && (line[*i + 1] == '\"' || line[*i + 1] == '$'
-				|| line[*i + 1] == '\\'))
-			line = fnc_bslsh(line, i, gen);
-		if (line[*i] == '$')
-			line = pre_use_fnc_dollar(line, i, env);
-		if (line[*i] == '\"')
+		if (line[0][*i] == '\\' && (line[0][*i + 1] == '\"' || line[0][*i + 1] == '$'
+				|| line[0][*i + 1] == '\\'))
+			line[0] = fnc_bslsh(line[0], i, gen);
+		if (line[0][*i] == '$')
+			line[0] = pre_use_fnc_dollar(line[0], i, env);
+		if (line[0][*i] == '\"')
 			break ;
 	}
-	if (line[*i] == '\0')
+	if (line[0][*i] == '\0')
 		(*gen)->errors = 1;
-	return (union_for_quot_str(line, i, j));
+	return (union_for_quot_str(line[0], i, j));
 }
 
 char	*union_for_quot_str(char *line, int *i, int j)
