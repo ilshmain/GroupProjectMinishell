@@ -29,13 +29,11 @@ char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident)
 	else if (ident == 2)
 		fnc_redir_re_write(&tmp_cmd, name_file);
 	else if (ident == 3)
-		tmp_cmd->heredoc = fnc_redir_heredoc(&tmp_cmd, name_file);
+		fnc_redir_heredoc(&(*gen)->heredoc_struct, &name_file, &(*gen)->cmd->fd_open);
 	else if (ident == 4)
 		fnc_redir_open(&tmp_cmd, name_file);
-	for (int j = 0; tmp_cmd->heredoc[j]; ++j) {
-		printf("|%s|\n", tmp_cmd->heredoc[j]);
-	}
-	free (name_file);
+	if (name_file)
+		free (name_file);
 	line[0] = str_cut_str(line[0], *i, name_len);
 	return (line[0]);
 }
@@ -107,33 +105,30 @@ void	fnc_redir_re_write(t_cmnd **cmd, char *nameFile)
 	(*cmd)->fd_re_write = fd;
 }
 
-char	**fnc_redir_heredoc(t_cmnd **cmd, char *here_doc)
+int	fd_closer(int fd)
 {
-	int		i;
-	char	**tmp;
+	if (fd != -2)
+	{
+		close(fd);
+		fd = -2;
+	}
+	return (fd);
+}
 
-	i = 0;
-	if ((*cmd)->fd_open != -2)
+void	fnc_redir_heredoc(t_list **heredoc_struct, char **add_heredoc, int *fd_in_work)
+{
+	t_list	*tmp;
+
+	if (!*heredoc_struct)
 	{
-		close((*cmd)->fd_open);
-		(*cmd)->fd_open = -2;
+		(*heredoc_struct) = ft_lstnew(*add_heredoc);
+		*add_heredoc = NULL;
 	}
-	tmp = (char **)malloc(sizeof (char *)
-			* (dual_array_len((*cmd)->heredoc) + 1));
-	while ((*cmd)->heredoc != NULL && (*cmd)->heredoc[i] != NULL)
-	{
-		tmp[i] = ft_strdup_ms((*cmd)->heredoc[i]);
-		i++;
-	}
-	tmp[i] = ft_strdup_ms(here_doc);
-	tmp[i + 1] = NULL;
-	int j = 0;
-	while (j < dual_array_len((*cmd)->heredoc))
-	{
-		free((*cmd)->heredoc[j]);
-		j++;
-	}
-	if ((*cmd)->heredoc)
-		free((*cmd)->heredoc);
-	return (tmp);
+	tmp = (*heredoc_struct);
+	*fd_in_work = fd_closer(*fd_in_work);
+	while (tmp && tmp->next)
+		tmp = tmp->next;
+	if (*add_heredoc)
+		ft_lstadd_back(&tmp, ft_lstnew(*add_heredoc));
+	*add_heredoc = NULL;
 }

@@ -45,10 +45,14 @@ void	exefnc(char **line, t_gnrl **gen)
 		if (first_fnc(line, gen, 0) == 0)
 		{
 			(*gen)->cmd = pre_logic_work(&(*gen)->cmd);
+			if ((*gen)->heredoc_struct)
+				(*gen)->cmd->heredoc = env((*gen)->heredoc_struct);
 			if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
 				logica(gen);
 		}
 		(*gen)->env = clear_envp((*gen)->env);
+//		if ((*gen)->heredoc_struct)
+//			clear_envp((*gen)->heredoc_struct);
 	}
 }
 

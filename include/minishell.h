@@ -139,7 +139,7 @@ char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident);
 void	fnc_redir_open(t_cmnd **cmd, char *nameFile);
 void	fnc_redir_re_write(t_cmnd **cmd, char *nameFile);
 void	fnc_redir_write(t_cmnd **cmd, char *nameFile);
-char	**fnc_redir_heredoc(t_cmnd **cmd, char *hereDoc);
+void	fnc_redir_heredoc(t_list **heredoc_struct, char **add_heredoc, int *fd_in_work);
 
 char	*pre_use_fnc_pipe(char *line, int *where_is_pipe,
 			t_cmnd **command_line);
@@ -159,5 +159,6 @@ char	*pre_use_substr(char *s, unsigned int start, size_t len);
 void	pu_fnc_pipe_safe_page(char *line, int *where_is_pipe,
 			t_cmnd **tmp_command_line, t_cmnd **command_line);
 char	*our_getenv(char *key, char **env);
+int		fd_closer(int fd);
 
 #endif

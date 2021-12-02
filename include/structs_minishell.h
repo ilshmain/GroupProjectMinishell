@@ -48,6 +48,7 @@ typedef struct s_gnrl
 	t_cmnd	*cmd;
 	int		errors;
 	char	**env;
+	t_list	*heredoc_struct;
 }	t_gnrl;
 
 #endif

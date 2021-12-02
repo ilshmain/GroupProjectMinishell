@@ -35,8 +35,8 @@ t_cmnd	*ft_lstnew_ms(void)
 	tmp->fd_re_write = -2;
 	tmp->fd_write = -2;
 	tmp->fd_open = -2;
-	tmp->heredoc = NULL;
 	tmp->err = 0;
+	tmp->heredoc = NULL;
 	tmp->next_list = NULL;
 	return (tmp);
 }

@@ -21,6 +21,7 @@ int	main(int argc, char const *argv[], char **envp)
 	(void)argv;
 	exit_code = 0;
 	gen = malloc(sizeof (t_gnrl));
+	gen->heredoc_struct = NULL;
 	initial_env(envp, &gen->ptr, 0);
 	signal(SIGQUIT, SIG_IGN);
 	signal(SIGINT, &ctrl_c_hook);
