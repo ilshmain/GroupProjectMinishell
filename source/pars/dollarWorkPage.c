@@ -66,6 +66,8 @@ char	*dollar_assigment(char *line, int *i, int *j, char **env)
 	tmp2 = NULL;
 	tmp = ft_substr_ms(line, *j + 1, *i - *j - 1);
 	tmp2 = our_getenv(tmp, env);
+	if (ft_isdigit(tmp[0]) == 1 && tmp2 == NULL)
+		tmp2 = ft_substr(tmp, 1, ft_strlen_ms(tmp) - 1);
 	*j = *i - ft_strlen_ms(tmp) + ft_strlen_ms(tmp2);
 	free (tmp);
 	return (tmp2);

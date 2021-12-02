@@ -51,7 +51,6 @@ void	exefnc(char **line, t_gnrl **gen)
 				logica(gen);
 		}
 		(*gen)->env = clear_envp((*gen)->env);
-//		(*gen)->cmd->heredoc = clear_envp((*gen)->cmd->heredoc);
 		if ((*gen)->heredoc_struct)
 			clear_hrd(&(*gen)->heredoc_struct);
 	}
