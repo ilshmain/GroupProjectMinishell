@@ -139,7 +139,7 @@ char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident);
 void	fnc_redir_open(t_cmnd **cmd, char *nameFile);
 void	fnc_redir_re_write(t_cmnd **cmd, char *nameFile);
 void	fnc_redir_write(t_cmnd **cmd, char *nameFile);
-void	fnc_redir_heredoc(t_cmnd **cmd, char *hereDoc);
+char	**fnc_redir_heredoc(t_cmnd **cmd, char *hereDoc);
 
 char	*pre_use_fnc_pipe(char *line, int *where_is_pipe,
 			t_cmnd **command_line);

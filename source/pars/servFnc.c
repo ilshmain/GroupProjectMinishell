@@ -50,7 +50,7 @@ char	*str_cut_str(char *inStr, int startOfCut, int endOfCut)
 	tmp1 = ft_substr_ms(inStr, endOfCut, ft_strlen(inStr));
 	free (inStr);
 	inStr = pre_use_str_join(tmp, tmp1);
-	if (tmp1)
+	if (tmp1 && ft_strcmp_ms(tmp1, "") != 0)
 		free(tmp1);
 	return (inStr);
 }
