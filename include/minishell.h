@@ -160,5 +160,6 @@ void	pu_fnc_pipe_safe_page(char *line, int *where_is_pipe,
 			t_cmnd **tmp_command_line, t_cmnd **command_line);
 char	*our_getenv(char *key, char **env);
 int		fd_closer(int fd);
+void	clear_hrd(t_list **strct);
 
 #endif
