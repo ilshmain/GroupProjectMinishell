@@ -45,6 +45,7 @@ void	free_command_array(char **envp, int ident)
 		else
 			free(envp[0]);
 		free(envp);
+		envp = NULL;
 	}
 }
 
