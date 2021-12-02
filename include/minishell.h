@@ -141,8 +141,7 @@ void	fnc_redir_re_write(t_cmnd **cmd, char *nameFile);
 void	fnc_redir_write(t_cmnd **cmd, char *nameFile);
 void	fnc_redir_heredoc(t_list **heredoc_struct, char **add_heredoc, int *fd_in_work);
 
-char	*pre_use_fnc_pipe(char *line, int *where_is_pipe,
-			t_cmnd **command_line);
+char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen);
 void	ctrl_c_hook(int sgn);
 void	rl_replace_line(const char *buffer, int val);
 char	*name_for_redir(char **line, int *nameLen, int *i, t_gnrl **gen);

@@ -45,14 +45,14 @@ void	exefnc(char **line, t_gnrl **gen)
 		if (first_fnc(line, gen, 0) == 0)
 		{
 			(*gen)->cmd = pre_logic_work(&(*gen)->cmd);
-			if ((*gen)->heredoc_struct)
-				(*gen)->cmd->heredoc = env((*gen)->heredoc_struct);
+			// if ((*gen)->heredoc_struct)
+			// 	(*gen)->cmd->heredoc = env((*gen)->heredoc_struct);
 			if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
 				logica(gen);
 		}
 		(*gen)->env = clear_envp((*gen)->env);
-		if ((*gen)->heredoc_struct)
-			clear_hrd(&(*gen)->heredoc_struct);
+		// if ((*gen)->heredoc_struct)
+		// 	clear_hrd(&(*gen)->heredoc_struct);
 	}
 }
 
@@ -124,16 +124,21 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 	return ((*gen)->errors);
 }
 
-char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_cmnd **command_line)
+char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 {
 	char	*tmp;
 	t_cmnd	*tmp_command_line;
 
-	if_pipe(command_line, &tmp_command_line, where_is_pipe, line);
-	pu_fnc_pipe_safe_page(line, where_is_pipe, &tmp_command_line, command_line);
+	if_pipe((*gen)->command_line, &tmp_command_line, where_is_pipe, line);//
+	pu_fnc_pipe_safe_page(line, where_is_pipe, &tmp_command_line, (*gen)->command_line);//
 	tmp = ft_substr_ms(line, 0, *where_is_pipe);
 	tmp_command_line->command_array = ft_split(tmp, ' ');
 	butils_prov(&tmp_command_line);
+	if ((*gen)->heredoc_struct)//
+	{//
+		tmp_command_line->heredoc = env((*gen)->heredoc_struct);
+		clear_hrd(&(*gen)->heredoc_struct);
+	}//
 	free(tmp);
 	tmp = ft_substr_ms(line, *where_is_pipe + 1,
 			ft_strlen_ms(line) - *where_is_pipe);
