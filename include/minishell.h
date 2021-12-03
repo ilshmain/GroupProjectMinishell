@@ -60,7 +60,7 @@ void	add_export(t_list **ptr, char *str);
 
 void	fncMonitor(t_cmnd *cmd);
 
-char	*pre_use_fnc_pipe(char *line, int *whereIsPipe, t_cmnd **commandLine);
+//char	*pre_use_fnc_pipe(char *line, int *whereIsPipe, t_cmnd **commandLine);
 void	ctrl_c_hook(int sgn);
 void	rl_replace_line(const char *buffer, int val);
 char	*name_for_redir(char **line, int *nameLen, int *i, t_gnrl **gen);
@@ -160,5 +160,10 @@ void	pu_fnc_pipe_safe_page(char *line, int *where_is_pipe,
 char	*our_getenv(char *key, char **env);
 int		fd_closer(int fd);
 void	clear_hrd(t_list **strct);
+int		comparison_first_word(char *str, char delimiter, char *compr_word);
+int		get_qt_str(char *str, char sym);
+char	**fake_split(char *str, char sym);
+void	ffnc_in_cycle(char **line, int *i, t_gnrl **gen);
+char	*space_cut_for_ffnc(char **line, int *i);
 
 #endif

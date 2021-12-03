@@ -25,11 +25,7 @@ char	**clear_envp(char **envp)
 	free(envp);
 	return (NULL);
 }
-//echo $321
-//echo ' """" '
-//echo " '''''' "
 //echo """"""""""              :""
-//echo '"""""""""",         wtf     :""'
 
 void	exefnc(char **line, t_gnrl **gen)
 {
@@ -102,26 +98,45 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 		return (1);
 	while (line[0][i])
 	{
-		if (line[0][i] == '\'')
-			line[0] = pre_use_fnc_quot(line[0], &i, gen);
-		else if (line[0][i] == '\\')
-			line[0] = fnc_bslsh(line[0], &i, gen);
-		else if (line[0][i] == '\"')
-			line[0] = pre_use_fnc_dquot(line, &i, (*gen)->env, gen);
-		else if (line[0][i] == '$')
-			line[0] = pre_use_fnc_dollar(line[0], &i, (*gen)->env);
-		else if (line[0][i] == '>' || line[0][i] == '<')
-			line[0] = pre_use_fnc_redir(line, &i, gen);
-		else if (line[0][i] == '|' || line[0][i] == ';')
-			line[0] = pre_use_fnc_pipe(line[0], &i, &(*gen)->cmd);
-		else
-			i++;
+		ffnc_in_cycle(line, &i, gen);
 	}
 	if ((*gen)->errors != 1)
-		pre_use_fnc_pipe(line[0], &i, &(*gen)->cmd);
+		pre_use_fnc_pipe(line[0], &i, &(*gen));
 	if ((*gen)->cmd == NULL)
 		(*gen)->errors = 1;
+	for (int j = 0; (*gen)->cmd->command_array[j]; ++j) {
+		printf("%s\n", (*gen)->cmd->command_array[j]);
+	}
 	return ((*gen)->errors);
+}
+
+void ffnc_in_cycle(char **line, int *i, t_gnrl **gen)
+{
+	if (line[0][*i] == '\'')
+		line[0] = pre_use_fnc_quot(line[0], i, gen);
+	else if (line[0][*i] == '\\')
+		line[0] = fnc_bslsh(line[0], i, gen);
+	else if (line[0][*i] == '\"')
+		line[0] = pre_use_fnc_dquot(line, i, (*gen)->env, gen);
+	else if (line[0][*i] == '$')
+		line[0] = pre_use_fnc_dollar(line[0], i, (*gen)->env);
+	else if (line[0][*i] == '>' || line[0][*i] == '<')
+		line[0] = pre_use_fnc_redir(line, i, gen);
+	else if (line[0][*i] == '|' || line[0][*i] == ';')
+		line[0] = pre_use_fnc_pipe(line[0], i, &(*gen));
+	else if (line[0][*i] == ' ' && line[0][(*i) + 1] == ' ')
+		line[0] = space_cut_for_ffnc(line, i);
+	else
+		(*i)++;
+}
+
+char	*space_cut_for_ffnc(char **line, int *i)
+{
+	char	*tmp;
+
+	tmp = pre_use_str_join(ft_substr(line[0], 0, *i), &line[0][*i + 2]);
+	free(*line);
+	return (tmp);
 }
 
 char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
@@ -129,10 +144,13 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 	char	*tmp;
 	t_cmnd	*tmp_command_line;
 
-	if_pipe((*gen)->command_line, &tmp_command_line, where_is_pipe, line);//
-	pu_fnc_pipe_safe_page(line, where_is_pipe, &tmp_command_line, (*gen)->command_line);//
+	if_pipe(&(*gen)->cmd, &tmp_command_line, where_is_pipe, line);//
+	pu_fnc_pipe_safe_page(line, where_is_pipe, &tmp_command_line, &(*gen)->cmd);//
 	tmp = ft_substr_ms(line, 0, *where_is_pipe);
-	tmp_command_line->command_array = ft_split(tmp, ' ');
+	if (comparison_first_word(tmp, ' ', "echo"))
+		tmp_command_line->command_array = fake_split(tmp, ' ');
+	else
+		tmp_command_line->command_array = ft_split(tmp, ' ');
 	butils_prov(&tmp_command_line);
 	if ((*gen)->heredoc_struct)//
 	{//
@@ -147,4 +165,78 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 	*where_is_pipe = 0;
 	free(line);
 	return (tmp);
+}
+
+char	**fake_split(char *str, char sym)
+{
+	char	**tmp;
+	int		i;
+	int		j;
+	int		qt;
+
+	if (!str)
+		return (0);
+	i = -1;
+	j = 0;
+	qt = 0;
+	tmp = (char **)malloc(sizeof (char *) * get_qt_str(str, ' ') + 1);
+	while (str[++i])
+	{
+		if (str[i] == sym)
+		{
+			tmp[qt++] = ft_substr(str, j, i - j);
+//			printf("%s\n", tmp[qt - 1]);
+			j = i + 1;
+			while (str[i] && str[i++] == sym);
+		}
+	}
+	if (str[j] != '\0')
+		tmp[qt++] = ft_substr(str, j, i - j);
+//	printf("%s\n", tmp[qt - 1]);
+	tmp[qt] = NULL;
+	return (tmp);
+}
+
+int	get_qt_str(char *str, char sym)
+{
+	int	i;
+	int	qt;
+
+	if (!str || str[0] == '\0')
+		return (0);
+	qt = 1;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == sym)
+			while (str[i])
+			{
+				i++;
+				if (str[i] != sym && str[i] != '\0')
+				{
+					qt++;
+					break;
+				}
+			}
+		i++;
+	}
+	return (qt);
+}
+
+int	comparison_first_word(char *str, char delimiter, char *compr_word)
+{
+	char	*ret_word;
+	int		i;
+
+	i = 0;
+	while (str[i] && str[i] != delimiter)
+		i++;
+	ret_word = ft_substr(str, 0, i);
+	if (ft_strcmp(ret_word, compr_word) == 0)
+	{
+		free(ret_word);
+		return (1);
+	}
+	free(ret_word);
+	return (0);
 }
