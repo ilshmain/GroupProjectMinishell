@@ -165,5 +165,7 @@ int		get_qt_str(char *str, char sym);
 char	**fake_split(char *str, char sym);
 void	ffnc_in_cycle(char **line, int *i, t_gnrl **gen);
 char	*space_cut_for_ffnc(char **line, int *i);
+int		no_one_symbol_in_str(char *str, char sym);
+char	*get_tilda(char **line, int *i);
 
 #endif

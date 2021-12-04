@@ -43,7 +43,8 @@ void	exefnc(char **line, t_gnrl **gen)
 			(*gen)->cmd = pre_logic_work(&(*gen)->cmd);
 			// if ((*gen)->heredoc_struct)
 			// 	(*gen)->cmd->heredoc = env((*gen)->heredoc_struct);
-			if ((*gen)->errors == 0 && (*gen)->cmd != NULL)
+//			printf("cmd: cmd_a_1:%s cmd_a_2:%s\n", (*gen)->cmd->command_array[0], (*gen)->cmd->command_array[1]);
+			if ((*gen)->cmd != NULL)
 				logica(gen);
 		}
 		(*gen)->env = clear_envp((*gen)->env);
@@ -69,10 +70,8 @@ void	clear_hrd(t_list **strct)
 	free(tmp->str);
 	(*strct)->next = NULL;
 	tmp = NULL;
-//	free(tmp);
 	free((*strct));
 	*strct = NULL;
-//	free(strct);
 	strct = NULL;
 }
 
@@ -97,16 +96,14 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 	if (ft_strcmp_ms(*line, "") == 0)
 		return (1);
 	while (line[0][i])
-	{
 		ffnc_in_cycle(line, &i, gen);
-	}
 	if ((*gen)->errors != 1)
 		pre_use_fnc_pipe(line[0], &i, &(*gen));
 	if ((*gen)->cmd == NULL)
 		(*gen)->errors = 1;
-	for (int j = 0; (*gen)->cmd->command_array[j]; ++j) {
-		printf("%s\n", (*gen)->cmd->command_array[j]);
-	}
+//	for (int j = 0; (*gen)->cmd->command_array[j]; ++j) {
+//		printf("%s\n", (*gen)->cmd->command_array[j]);
+//	}
 	return ((*gen)->errors);
 }
 
@@ -122,19 +119,38 @@ void ffnc_in_cycle(char **line, int *i, t_gnrl **gen)
 		line[0] = pre_use_fnc_dollar(line[0], i, (*gen)->env);
 	else if (line[0][*i] == '>' || line[0][*i] == '<')
 		line[0] = pre_use_fnc_redir(line, i, gen);
-	else if (line[0][*i] == '|' || line[0][*i] == ';')
+	else if (line[0][*i] == '|')
 		line[0] = pre_use_fnc_pipe(line[0], i, &(*gen));
+	else if (line[0][*i] == '~' && (line[0][(*i) + 1] == ' ' || line[0][(*i) + 1] == '\0'))
+		line[0] = get_tilda(line, i);
+	else if (!no_one_symbol_in_str(&line[0][*i], ' '))
+		line[0] = ft_substr(line[0], 0, *i);
 	else if (line[0][*i] == ' ' && line[0][(*i) + 1] == ' ')
 		line[0] = space_cut_for_ffnc(line, i);
 	else
 		(*i)++;
 }
 
+char	*get_tilda(char **line, int *i)
+{
+	char	*tmp;
+	char	*tmp2;
+
+	tmp = getenv("HOME");
+	tmp2 = ft_substr_ms(line[0], 0, *i + 1);
+	tmp2 = pre_use_str_join(tmp2, tmp);
+	tmp = ft_substr_ms(line[0], (*i) + 1, ft_strlen(line[0]) - *i + 1);
+	tmp2 = pre_use_str_join(tmp2, tmp);
+	free(tmp);
+	free(*line);
+	return (tmp2);
+}
+
 char	*space_cut_for_ffnc(char **line, int *i)
 {
 	char	*tmp;
 
-	tmp = pre_use_str_join(ft_substr(line[0], 0, *i), &line[0][*i + 2]);
+	tmp = pre_use_str_join(ft_substr(line[0], 0, *i), &line[0][*i + 1]);
 	free(*line);
 	return (tmp);
 }
@@ -179,10 +195,11 @@ char	**fake_split(char *str, char sym)
 	i = -1;
 	j = 0;
 	qt = 0;
+//	printf("%s\n", str);
 	tmp = (char **)malloc(sizeof (char *) * get_qt_str(str, ' ') + 1);
 	while (str[++i])
 	{
-		if (str[i] == sym)
+		if (str[i] == sym && (str[i + 1] != '\0' || qt == 0))
 		{
 			tmp[qt++] = ft_substr(str, j, i - j);
 //			printf("%s\n", tmp[qt - 1]);
@@ -195,6 +212,17 @@ char	**fake_split(char *str, char sym)
 //	printf("%s\n", tmp[qt - 1]);
 	tmp[qt] = NULL;
 	return (tmp);
+}
+
+int	no_one_symbol_in_str(char *str, char sym)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		if (str[i++] != sym)
+			return (1);
+	return (0);
 }
 
 int	get_qt_str(char *str, char sym)
