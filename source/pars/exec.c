@@ -202,7 +202,7 @@ void	bin_dir_check(char **cmd)
 		{
 			free(cmd[0]);
 			cmd[0] = pre_use_substr(tmp, 5, ft_strlen_ms(tmp) - 5);
-			free(tmp);
+			//free(tmp);
 		}
 	}
 }
