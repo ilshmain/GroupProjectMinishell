@@ -25,7 +25,6 @@ char	**clear_envp(char **envp)
 	free(envp);
 	return (NULL);
 }
-//echo """"""""""              :""
 
 void	exefnc(char **line, t_gnrl **gen)
 {

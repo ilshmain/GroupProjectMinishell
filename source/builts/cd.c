@@ -52,12 +52,17 @@ void	change_str_value(t_list *ptr, char *wayAfterChange, char *wayToChange)
 
 void	oldpwd_way(t_list *ptr)
 {
-	exit_code = chdir(use_way(ptr, "OLDPWD="));
+	char *str;
+
+	str = ft_strdup(use_way(ptr, "OLDPWD="));
+	exit_code = chdir(str);
 	if (exit_code == -1)
 	{
 		exit_code = 1;
 		ft_putstr_fd("minishell$ cd: OLDPWD not set\n", STDERR_FILENO);
 	}
+	ft_putendl_fd(str, STDOUT_FILENO);
+	free(str);
 }
 
 int	other_way(t_gnrl *zik)
