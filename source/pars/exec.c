@@ -190,7 +190,7 @@ void	bin_dir_check(char **cmd)
 	char	*tmp;
 
 	i = 0;
-	if (cmd[0][0] == '/' && cmd[0][1] == 'b'
+	if (cmd[0] && cmd[0][0] == '/' && cmd[0][1] == 'b'
 		&& cmd[0][2] == 'i' && cmd[0][3] == 'n'
 			&& cmd[0][4] == '/')
 	{
