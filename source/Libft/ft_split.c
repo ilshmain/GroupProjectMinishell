@@ -87,6 +87,6 @@ char	**ft_split(char const *s, char c)
 		ft_strlcpy(out[per], &s[ukaz - len], len + 1);
 		per++;
 	}
-	out[per] = 0;
+	out[per] = NULL;
 	return (out);
 }
