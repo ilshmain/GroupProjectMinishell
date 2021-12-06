@@ -70,6 +70,13 @@ char	**path(char **envp, int i)
 	return (out);
 }
 
+void print_error(char *str, char *str1)
+{
+	ft_putstr_fd("minishell$: ", STDERR_FILENO);
+	ft_putstr_fd(str, STDERR_FILENO);
+	ft_putstr_fd(str1, STDERR_FILENO);
+}
+
 void	pars_envp(char **envp, char	**first_argv, int i, int k)
 {
 	char	*out;
@@ -87,8 +94,9 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 		k++;
 	}
 	free(new_out);
-	ft_putstr_fd("minishell$: ", STDERR_FILENO);
-	ft_putstr_fd(first_argv[0], STDERR_FILENO);
-	ft_putstr_fd(": command not found\n", STDERR_FILENO);
+	if (ft_strchr(first_argv[0], '/'))
+		print_error(first_argv[0], ": No such file or directory\n");
+	else
+		print_error(first_argv[0], ": command not found\n");
 	exit (127);
 }
