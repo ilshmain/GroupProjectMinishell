@@ -22,14 +22,15 @@ int	size_two_poineter_mas(char **argv)
 	return (i);
 }
 
-int check_line_break(t_gnrl *zik, int i)
+int	check_line_break(t_gnrl *zik, int i)
 {
 	int	k;
 
 	while (zik->cmd->command_array[i])
 	{
 		k = 0;
-		if (zik->cmd->command_array[i][k] == '-' && zik->cmd->command_array[1][k + 1] == 'n')
+		if (zik->cmd->command_array[i][k] == '-' && \
+				zik->cmd->command_array[1][k + 1] == 'n')
 		{
 			k = 1;
 			while (zik->cmd->command_array[i][k])
@@ -46,9 +47,25 @@ int check_line_break(t_gnrl *zik, int i)
 	return (i);
 }
 
+void	dop_func(int k, t_gnrl *zik, int i)
+{
+	if (i == k)
+		ft_putstr_fd("", STDOUT_FILENO);
+	else
+	{
+		while (zik->cmd->command_array[k + 1])
+		{
+			ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
+			ft_putstr_fd(" ", STDOUT_FILENO);
+			k++;
+		}
+		ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
+	}
+}
+
 int	echo_built(t_gnrl *zik, int i, int k)
 {
-	int line_break;
+	int	line_break;
 
 	i = size_two_poineter_mas(zik->cmd->command_array);
 	if (i == 1)
@@ -68,21 +85,7 @@ int	echo_built(t_gnrl *zik, int i, int k)
 			ft_putstr_fd("\n", STDOUT_FILENO);
 		}
 		else
-		{
-			k = line_break;
-			if (i == k)
-				ft_putstr_fd("", STDOUT_FILENO);
-			else
-			{
-				while (zik->cmd->command_array[k + 1])
-				{
-					ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
-					ft_putstr_fd(" ", STDOUT_FILENO);
-					k++;
-				}
-				ft_putstr_fd(zik->cmd->command_array[k], STDOUT_FILENO);
-			}
-		}
+			dop_func(line_break, zik, i);
 	}
 	exit_code = 0;
 	return (1);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   logic.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmint <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/06 14:13:56 by fmint             #+#    #+#             */
+/*   Updated: 2021/12/06 14:13:59 by fmint            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/minishell.h"
 
 // builtFunc********************************
@@ -25,17 +37,19 @@ int	built_func(t_gnrl *zik, t_list *ptr)
 
 void	free_command_array(char **envp, int ident)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (envp)
 	{
 		if ((ft_strcmp(envp[0], "echo") != 0) || ident == 1)
+		{
 			while (envp[i] && envp[i][0] != '\0')
 			{
 				free(envp[i]);
 				i++;
 			}
+		}
 		else if (envp[1] && ft_strcmp(envp[1], "-n") == 0)
 			while (i < 3 && envp[i])
 				free(envp[i++]);
@@ -62,7 +76,7 @@ void	ft_lstdelone(t_cmnd *lst)
 
 void	lstclear(t_cmnd **lst)
 {
-	t_cmnd 	*new;
+	t_cmnd	*new;
 
 	if (!lst)
 		return ;
@@ -76,7 +90,7 @@ void	lstclear(t_cmnd **lst)
 
 // *****************************************
 
-int logica(t_gnrl **zik)
+int	logica(t_gnrl **zik)
 {
 	t_cmnd	*cmd;
 
@@ -85,38 +99,3 @@ int logica(t_gnrl **zik)
 	lstclear(&cmd);
 	return (1);
 }
-
-//int main(int ac, char **av, char **env)
-//{
-//	(void)ac;
-//	(void)av;
-//
-//	t_gnrl *zik = malloc(sizeof(zik) * 10);// выделяем память под структуры
-//	zik->ptr = malloc(sizeof(t_list *) * 10);// выделяем память под структуры
-//	zik->cmd = malloc(sizeof(t_cmnd *) * 10);// выделяем память под структуры
-//	zik->env = env; // записываем енв
-//
-//	// первый лист команды
-//	zik->cmd->command_array = ft_split("ls", ' ');
-////	zik->cmd->heredoc = ft_split("stop", ' ');
-//	zik->cmd->heredoc = NULL;
-//
-//	zik->cmd->fd_write = -2;
-//	zik->cmd->fd_write = -2;
-//	zik->cmd->fd_open = -2;
-//
-//	// второй лист команды
-//	zik->cmd->next_list = malloc(sizeof(t_cmnd) * 10);
-//	zik->cmd->next_list->command_array = ft_split("cat -e", ' ');
-//	zik->cmd->next_list->next_list = NULL;
-//
-////	// третий лист команды
-////	zik->cmd->next_list->next_list = malloc(sizeof(t_cmnd) * 10);
-////	zik->cmd->next_list->next_list->command_array = ft_split("wc", ' ');
-////
-////	// четвертый лист команды
-////	zik->cmd->next_list->next_list->next_list = malloc(sizeof(t_cmnd) * 1);
-////	zik->cmd->next_list->next_list->next_list->command_array = ft_split("cat -e", ' ');
-////	zik->cmd->next_list->next_list->next_list->next_list = NULL;
-//	logica(&zik);
-//}

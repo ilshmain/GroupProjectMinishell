@@ -20,7 +20,6 @@ void	plw_in_while(t_cmnd **tmp, t_cmnd **tmp2)
 			(*tmp2)->next_list = (*tmp)->next_list;
 		else
 			(*tmp2)->next_list = NULL;
-//		free (*tmp);
 		(*tmp) = (*tmp2)->next_list;
 	}
 	else

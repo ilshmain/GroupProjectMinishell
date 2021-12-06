@@ -60,12 +60,13 @@ void	oldpwd_way(t_list *ptr)
 	}
 }
 
-void	other_way(t_gnrl *zik)
+int	other_way(t_gnrl *zik)
 {
 	exit_code = 1;
 	ft_putstr_fd("minishell$ cd: ", STDERR_FILENO);
 	ft_putstr_fd(zik->cmd->command_array[1], STDERR_FILENO);
 	ft_putstr_fd(": No such file or directory\n", STDERR_FILENO);
+	return (1);
 }
 
 int	cd_built(t_list *ptr, t_gnrl *zik, int i)
@@ -73,7 +74,8 @@ int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 	char	*way_to_change;
 	char	*way_after_change;
 
-	while (zik->cmd->command_array[i++]);
+	while (zik->cmd->command_array[i++])
+		;
 	way_to_change = getcwd(NULL, 1024);
 	if (way_to_change == NULL)
 		way_to_change = use_way(ptr, "PWD=");
@@ -84,10 +86,7 @@ int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 	else
 		exit_code = chdir(zik->cmd->command_array[1]);
 	if (exit_code == -1)
-	{
-		other_way(zik);
-		return (1);
-	}
+		return (other_way(zik));
 	else
 		exit_code = 0;
 	way_after_change = getcwd(NULL, 1024);

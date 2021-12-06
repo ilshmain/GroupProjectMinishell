@@ -78,6 +78,7 @@ int		work_with_pipe(t_gnrl **zik);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strcpy(char *dst, const char *src);
+void	dop_func_export(t_list *ptr, t_gnrl *zik);
 int		get_next_line(int fd, char **line);
 
 char	*ft_strrchr(const char *s, int c);

@@ -70,7 +70,7 @@ char	**path(char **envp, int i)
 	return (out);
 }
 
-void print_error(char *str, char *str1)
+void	print_error(char *str, char *str1)
 {
 	ft_putstr_fd("minishell$: ", STDERR_FILENO);
 	ft_putstr_fd(str, STDERR_FILENO);

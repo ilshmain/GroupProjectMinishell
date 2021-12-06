@@ -75,9 +75,9 @@ char	*dollar_assigment(char *line, int *i, int *j, char **env)
 
 char	*our_getenv(char *key, char **env)
 {
-	int	i;
-	int	j;
-	char *name;
+	int		i;
+	int		j;
+	char	*name;
 
 	i = 0;
 	while (env[i])

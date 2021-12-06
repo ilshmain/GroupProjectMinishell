@@ -41,15 +41,10 @@ void	exefnc(char **line, t_gnrl **gen)
 		if (first_fnc(line, gen, 0) == 0)
 		{
 			(*gen)->cmd = pre_logic_work(&(*gen)->cmd);
-			// if ((*gen)->heredoc_struct)
-			// 	(*gen)->cmd->heredoc = env((*gen)->heredoc_struct);
-//			printf("cmd: cmd_a_1:%s cmd_a_2:%s\n", (*gen)->cmd->command_array[0], (*gen)->cmd->command_array[1]);
 			if ((*gen)->cmd != NULL)
 				logica(gen);
 		}
 		(*gen)->env = clear_envp((*gen)->env);
-		// if ((*gen)->heredoc_struct)
-		// 	clear_hrd(&(*gen)->heredoc_struct);
 	}
 }
 
@@ -101,9 +96,6 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 		pre_use_fnc_pipe(line[0], &i, &(*gen));
 	if ((*gen)->cmd == NULL)
 		(*gen)->errors = 1;
-//	for (int j = 0; (*gen)->cmd->command_array[j]; ++j) {
-//		printf("%s\n", (*gen)->cmd->command_array[j]);
-//	}
 	return ((*gen)->errors);
 }
 
@@ -160,8 +152,8 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 	char	*tmp;
 	t_cmnd	*tmp_command_line;
 
-	if_pipe(&(*gen)->cmd, &tmp_command_line, where_is_pipe, line);//
-	pu_fnc_pipe_safe_page(line, where_is_pipe, &tmp_command_line, &(*gen)->cmd);//
+	if_pipe(&(*gen)->cmd, &tmp_command_line, where_is_pipe, line);
+	pu_fnc_pipe_safe_page(line, where_is_pipe, &tmp_command_line, &(*gen)->cmd);
 	tmp = ft_substr_ms(line, 0, *where_is_pipe);
 	if (comparison_first_word(tmp, ' ', "echo"))
 		tmp_command_line->command_array = fake_split(tmp, ' ');
@@ -169,11 +161,11 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 		tmp_command_line->command_array = ft_split(tmp, ' ');
 	bin_dir_check(tmp_command_line->command_array);
 	butils_prov(&tmp_command_line);
-	if ((*gen)->heredoc_struct)//
-	{//
+	if ((*gen)->heredoc_struct)
+	{
 		tmp_command_line->heredoc = env((*gen)->heredoc_struct);
 		clear_hrd(&(*gen)->heredoc_struct);
-	}//
+	}
 	free(tmp);
 	tmp = ft_substr_ms(line, *where_is_pipe + 1,
 			ft_strlen_ms(line) - *where_is_pipe);
@@ -202,7 +194,6 @@ void	bin_dir_check(char **cmd)
 		{
 			free(cmd[0]);
 			cmd[0] = pre_use_substr(tmp, 5, ft_strlen_ms(tmp) - 5);
-			//free(tmp);
 		}
 	}
 }
@@ -219,21 +210,18 @@ char	**fake_split(char *str, char sym)
 	i = -1;
 	j = 0;
 	qt = 0;
-//	printf("%s\n", str);
 	tmp = (char **)malloc(sizeof (char *) * get_qt_str(str, ' ') + 1);
 	while (str[++i])
 	{
 		if (str[i] == sym && (str[i + 1] != '\0' || qt == 0))
 		{
 			tmp[qt++] = ft_substr(str, j, i - j);
-//			printf("%s\n", tmp[qt - 1]);
 			j = i + 1;
 			while (str[i] && str[i++] == sym);
 		}
 	}
 	if (str[j] != '\0')
 		tmp[qt++] = ft_substr(str, j, i - j);
-//	printf("%s\n", tmp[qt - 1]);
 	tmp[qt] = NULL;
 	return (tmp);
 }

@@ -106,23 +106,7 @@ int	export_built(t_list *ptr, t_gnrl *zik)
 	if (i == 1)
 		print_export(ptr, &sort_mas);
 	else
-	{
-		i = 1;
-		while (zik->cmd->command_array[i])
-		{
-			if (checking_validity_string(zik->cmd->command_array[i]) != 0)
-			{
-				print_error_func("minishell$: export: ", \
-					zik->cmd->command_array[i]);
-			}
-			else
-			{
-				if (ft_strchr(zik->cmd->command_array[i], '=') != 0)
-					add_export(&ptr, zik->cmd->command_array[i]);
-			}
-			i++;
-		}
-	}
+		dop_func_export(ptr, zik);
 	return (1);
 }
 //**************************************
