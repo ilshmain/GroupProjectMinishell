@@ -167,6 +167,7 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 		tmp_command_line->command_array = fake_split(tmp, ' ');
 	else
 		tmp_command_line->command_array = ft_split(tmp, ' ');
+	bin_dir_check(tmp_command_line->command_array);
 	butils_prov(&tmp_command_line);
 	if ((*gen)->heredoc_struct)//
 	{//
@@ -181,6 +182,29 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 	*where_is_pipe = 0;
 	free(line);
 	return (tmp);
+}
+
+void	bin_dir_check(char **cmd)
+{
+	int	i;
+	char	*tmp;
+
+	i = 0;
+	if (cmd[0][0] == '/' && cmd[0][1] == 'b'
+		&& cmd[0][2] == 'i' && cmd[0][3] == 'n'
+			&& cmd[0][4] == '/')
+	{
+		i = 5;
+		while (cmd[0][i] && cmd[0][i] != ' ')
+			i++;
+		tmp = ft_substr_ms(cmd[0], 0, i);
+		if (!access(tmp, F_OK | X_OK))
+		{
+			free(cmd[0]);
+			cmd[0] = pre_use_substr(tmp, 5, ft_strlen_ms(tmp) - 5);
+			free(tmp);
+		}
+	}
 }
 
 char	**fake_split(char *str, char sym)
