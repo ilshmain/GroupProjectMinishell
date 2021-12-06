@@ -15,8 +15,10 @@
 void	add_export(t_list **ptr, char *str)
 {
 	t_list	*tmp;
+	char 	*new_str;
 
-	tmp = ft_lstnew(str);
+	new_str = ft_strdup(str);
+	tmp = ft_lstnew(new_str);
 	ft_lstadd_back(ptr, tmp);
 }
 
