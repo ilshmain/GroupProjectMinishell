@@ -24,6 +24,8 @@ int	many_command(t_gnrl **zik, t_cmnd *start)
 		dup_relize((*zik)->cmd);
 		pid_children(zik, start);
 	}
+	if ((*zik)->cmd->heredoc)
+		waitpid((*zik)->cmd->pid, NULL, 0);
 	return (1);
 }
 

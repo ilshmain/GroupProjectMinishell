@@ -47,17 +47,13 @@ int	check_redir_rewrite(t_cmnd *cmd)
 
 int	check_redirect(t_cmnd *cmd)
 {
-	while (cmd)
-	{
-		if (cmd->heredoc != NULL)
-			check_heredoc(cmd->heredoc, cmd);
-		if (cmd->fd_open > 0)
-			check_redir_read(cmd);
-		if (cmd->fd_write > 0)
-			check_redir_write(cmd);
-		if (cmd->fd_re_write > 0)
-			check_redir_rewrite(cmd);
-		cmd = cmd->next_list;
-	}
+	if (cmd->heredoc != NULL)
+		check_heredoc(cmd->heredoc, cmd);
+	if (cmd->fd_open > 0)
+		check_redir_read(cmd);
+	if (cmd->fd_write > 0)
+		check_redir_write(cmd);
+	if (cmd->fd_re_write > 0)
+		check_redir_rewrite(cmd);
 	return (1);
 }
