@@ -12,20 +12,6 @@
 
 #include "../../include/minishell.h"
 
-char	**clear_envp(char **envp)
-{
-	int	i;
-
-	i = 0;
-	while (envp[i])
-	{
-		free(envp[i]);
-		i++;
-	}
-	free(envp);
-	return (NULL);
-}
-
 void	exefnc(char **line, t_gnrl **gen)
 {
 	while (1)
@@ -43,30 +29,10 @@ void	exefnc(char **line, t_gnrl **gen)
 			if ((*gen)->cmd != NULL)
 				logica(gen);
 		}
+		else
+			lstclear(&(*gen)->cmd);
 		(*gen)->env = clear_envp((*gen)->env);
 	}
-}
-
-void	clear_hrd(t_list **strct)
-{
-	t_list	*tmp;
-
-	tmp = (*strct);
-	while (tmp->next != NULL)
-	{
-		free(tmp->str);
-		tmp->str = NULL;
-		tmp = tmp->next;
-		(*strct)->next = NULL;
-		free((*strct));
-		(*strct) = tmp;
-	}
-	free(tmp->str);
-	(*strct)->next = NULL;
-	tmp = NULL;
-	free((*strct));
-	*strct = NULL;
-	strct = NULL;
 }
 
 t_cmnd	*pre_logic_work(t_cmnd **cmd)
@@ -93,12 +59,14 @@ int	first_fnc(char **line, t_gnrl **gen, int i)
 		ffnc_in_cycle(line, &i, gen);
 	if ((*gen)->errors != 1)
 		pre_use_fnc_pipe(line[0], &i, &(*gen));
+	else
+		free(*line);
 	if ((*gen)->cmd == NULL)
 		(*gen)->errors = 1;
 	return ((*gen)->errors);
 }
 
-void ffnc_in_cycle(char **line, int *i, t_gnrl **gen)
+void	ffnc_in_cycle(char **line, int *i, t_gnrl **gen)
 {
 	if (line[0][*i] == '\'')
 		line[0] = pre_use_fnc_quot(line[0], i, gen);
@@ -112,7 +80,8 @@ void ffnc_in_cycle(char **line, int *i, t_gnrl **gen)
 		line[0] = pre_use_fnc_redir(line, i, gen);
 	else if (line[0][*i] == '|')
 		line[0] = pre_use_fnc_pipe(line[0], i, &(*gen));
-	else if (line[0][*i] == '~' && (line[0][(*i) + 1] == ' ' || line[0][(*i) + 1] == '\0'))
+	else if (line[0][*i] == '~' && (line[0][(*i) + 1] == ' '
+			|| line[0][(*i) + 1] == '\0'))
 		line[0] = get_tilda(line, i);
 	else if (!no_one_symbol_in_str(&line[0][*i], ' '))
 		line[0] = ft_substr(line[0], 0, *i);
@@ -120,30 +89,6 @@ void ffnc_in_cycle(char **line, int *i, t_gnrl **gen)
 		line[0] = space_cut_for_ffnc(line, i);
 	else
 		(*i)++;
-}
-
-char	*get_tilda(char **line, int *i)
-{
-	char	*tmp;
-	char	*tmp2;
-
-	tmp = getenv("HOME");
-	tmp2 = ft_substr_ms(line[0], 0, *i + 1);
-	tmp2 = pre_use_str_join(tmp2, tmp);
-	tmp = ft_substr_ms(line[0], (*i) + 1, ft_strlen(line[0]) - *i + 1);
-	tmp2 = pre_use_str_join(tmp2, tmp);
-	free(tmp);
-	free(*line);
-	return (tmp2);
-}
-
-char	*space_cut_for_ffnc(char **line, int *i)
-{
-	char	*tmp;
-
-	tmp = pre_use_str_join(ft_substr(line[0], 0, *i), &line[0][*i + 1]);
-	free(*line);
-	return (tmp);
 }
 
 char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
@@ -173,109 +118,4 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 	*where_is_pipe = 0;
 	free(line);
 	return (tmp);
-}
-
-void	bin_dir_check(char **cmd)
-{
-	int	i;
-	char	*tmp;
-
-	i = 0;
-	if (cmd[0] && cmd[0][0] == '/' && cmd[0][1] == 'b'
-		&& cmd[0][2] == 'i' && cmd[0][3] == 'n'
-			&& cmd[0][4] == '/')
-	{
-		i = 5;
-		while (cmd[0][i] && cmd[0][i] != ' ')
-			i++;
-		tmp = ft_substr_ms(cmd[0], 0, i);
-		if (!access(tmp, F_OK | X_OK))
-		{
-			free(cmd[0]);
-			cmd[0] = pre_use_substr(tmp, 5, ft_strlen_ms(tmp) - 5);
-		}
-	}
-}
-
-char	**fake_split(char *str, char sym)
-{
-	char	**tmp;
-	int		i;
-	int		j;
-	int		qt;
-
-	if (!str)
-		return (0);
-	i = -1;
-	j = 0;
-	qt = 0;
-	tmp = (char **)malloc(sizeof (char *) * get_qt_str(str, ' ') + 1);
-	while (str[++i])
-	{
-		if (str[i] == sym && (str[i + 1] != '\0' || qt == 0))
-		{
-			tmp[qt++] = ft_substr(str, j, i - j);
-			j = i + 1;
-			while (str[i] && str[i++] == sym);
-		}
-	}
-	if (str[j] != '\0')
-		tmp[qt++] = ft_substr(str, j, i - j);
-	tmp[qt] = NULL;
-	return (tmp);
-}
-
-int	no_one_symbol_in_str(char *str, char sym)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		if (str[i++] != sym)
-			return (1);
-	return (0);
-}
-
-int	get_qt_str(char *str, char sym)
-{
-	int	i;
-	int	qt;
-
-	if (!str || str[0] == '\0')
-		return (0);
-	qt = 1;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == sym)
-			while (str[i])
-			{
-				i++;
-				if (str[i] != sym && str[i] != '\0')
-				{
-					qt++;
-					break;
-				}
-			}
-		i++;
-	}
-	return (qt);
-}
-
-int	comparison_first_word(char *str, char delimiter, char *compr_word)
-{
-	char	*ret_word;
-	int		i;
-
-	i = 0;
-	while (str[i] && str[i] != delimiter)
-		i++;
-	ret_word = ft_substr(str, 0, i);
-	if (ft_strcmp(ret_word, compr_word) == 0)
-	{
-		free(ret_word);
-		return (1);
-	}
-	free(ret_word);
-	return (0);
 }

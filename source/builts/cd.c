@@ -52,7 +52,7 @@ void	change_str_value(t_list *ptr, char *wayAfterChange, char *wayToChange)
 
 void	oldpwd_way(t_list *ptr)
 {
-	char *str;
+	char	*str;
 
 	str = ft_strdup(use_way(ptr, "OLDPWD="));
 	exit_code = chdir(str);

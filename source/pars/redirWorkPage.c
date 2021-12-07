@@ -29,7 +29,8 @@ char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident)
 	else if (ident == 2)
 		fnc_redir_re_write(&tmp_cmd, name_file);
 	else if (ident == 3)
-		fnc_redir_heredoc(&(*gen)->heredoc_struct, &name_file, &(*gen)->cmd->fd_open);
+		fnc_redir_heredoc(&(*gen)->heredoc_struct, &name_file,
+			&(*gen)->cmd->fd_open);
 	else if (ident == 4)
 		fnc_redir_open(&tmp_cmd, name_file);
 	if (name_file)
@@ -105,17 +106,8 @@ void	fnc_redir_re_write(t_cmnd **cmd, char *nameFile)
 	(*cmd)->fd_re_write = fd;
 }
 
-int	fd_closer(int fd)
-{
-	if (fd != -2)
-	{
-		close(fd);
-		fd = -2;
-	}
-	return (fd);
-}
-
-void	fnc_redir_heredoc(t_list **heredoc_struct, char **add_heredoc, int *fd_in_work)
+void	fnc_redir_heredoc(t_list **heredoc_struct, char **add_heredoc,
+			int *fd_in_work)
 {
 	t_list	*tmp;
 

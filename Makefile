@@ -26,7 +26,7 @@ SRCS			=	./source/pars/safePage.c \
 					./source/pars/ms_libft/ft_strjoin.c  ./source/pars/ms_libft/ft_strlcat.c \
 					./source/pars/ms_libft/ft_strlcpy.c  ./source/pars/ms_libft/ft_strlen.c \
 					./source/pars/ms_libft/ft_strncmp.c  ./source/pars/ms_libft/ft_strnstr.c \
-					./source/pars/ms_libft/ft_substr.c \
+					./source/pars/ms_libft/ft_substr.c	 ./source/pars/safePageII.c ./source/pars/safePageIII.c\
 					./source/work_pipe/get_next_line.c \
 					./source/work_pipe/pipex_bonus.c \
 					./source/work_pipe/path.c \

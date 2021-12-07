@@ -72,3 +72,21 @@ void	pu_fnc_pipe_safe_page(char *line, int *where_is_pipe,
 		(*tmp_command_line) = (*tmp_command_line)->next_list;
 	}
 }
+
+int	comparison_first_word(char *str, char delimiter, char *compr_word)
+{
+	char	*ret_word;
+	int		i;
+
+	i = 0;
+	while (str[i] && str[i] != delimiter)
+		i++;
+	ret_word = ft_substr(str, 0, i);
+	if (ft_strcmp(ret_word, compr_word) == 0)
+	{
+		free(ret_word);
+		return (1);
+	}
+	free(ret_word);
+	return (0);
+}

@@ -140,7 +140,8 @@ char	*fnc_redir(char **line, int *i, t_gnrl **gen, int ident);
 void	fnc_redir_open(t_cmnd **cmd, char *nameFile);
 void	fnc_redir_re_write(t_cmnd **cmd, char *nameFile);
 void	fnc_redir_write(t_cmnd **cmd, char *nameFile);
-void	fnc_redir_heredoc(t_list **heredoc_struct, char **add_heredoc, int *fd_in_work);
+void	fnc_redir_heredoc(t_list **heredoc_struct, char **add_heredoc,
+			int *fd_in_work);
 
 char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen);
 void	ctrl_c_hook(int sgn);
@@ -169,5 +170,6 @@ char	*space_cut_for_ffnc(char **line, int *i);
 int		no_one_symbol_in_str(char *str, char sym);
 char	*get_tilda(char **line, int *i);
 void	bin_dir_check(char **cmd);
+void	lstclear(t_cmnd **lst);
 
 #endif

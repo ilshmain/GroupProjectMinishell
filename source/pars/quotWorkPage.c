@@ -38,7 +38,8 @@ char	*fnc_dquot(char **line, int *i, char **env, t_gnrl **gen)
 	j = *i;
 	while (line[0][++*i])
 	{
-		if (line[0][*i] == '\\' && (line[0][*i + 1] == '\"' || line[0][*i + 1] == '$'
+		if (line[0][*i] == '\\' && (line[0][*i + 1] == '\"'
+				|| line[0][*i + 1] == '$'
 				|| line[0][*i + 1] == '\\'))
 			line[0] = fnc_bslsh(line[0], i, gen);
 		if (line[0][*i] == '$')
