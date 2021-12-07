@@ -37,7 +37,7 @@ int	unset_built(t_list *ptr, t_gnrl *zik)
 	int		i;
 
 	i = 0;
-	exit_code = 0;
+	g_exit_code = 0;
 	while (zik->cmd->command_array[i])
 		i++;
 	if (i != 1)

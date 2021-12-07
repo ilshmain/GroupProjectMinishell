@@ -40,7 +40,7 @@ void	print_error_func(char *str1, char *str2)
 {
 	char	*print_error;
 
-	exit_code = 1;
+	g_exit_code = 1;
 	print_error = ft_strjoin(str1, str2);
 	ft_putstr_fd(print_error, STDERR_FILENO);
 	ft_putstr_fd(": not a valid identifier", STDERR_FILENO);

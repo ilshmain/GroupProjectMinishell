@@ -77,10 +77,10 @@ void	wait_proceses(t_cmnd *start)
 	while (cmd)
 	{
 		waitpid(cmd->pid, &status, 0);
-		exit_code = WEXITSTATUS(status);
-		if (!exit_code && WIFSIGNALED(status))
+		g_exit_code = WEXITSTATUS(status);
+		if (!g_exit_code && WIFSIGNALED(status))
 		{
-			exit_code = 128 + WTERMSIG(status);
+			g_exit_code = 128 + WTERMSIG(status);
 		}
 		cmd = cmd->next_list;
 	}

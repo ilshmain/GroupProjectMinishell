@@ -68,7 +68,7 @@ int	ms_msg(t_list *ptr, char *argv1, char *str)
 	if (argv1 != NULL)
 	{
 		level_up_down2(ptr);
-		exit_code = 255;
+		g_exit_code = 255;
 		exit(255);
 	}
 	else
@@ -113,7 +113,7 @@ int	exit_built(char	**str, t_list **ptr)
 	if (i == 1)
 	{
 		level_up_down2(*ptr);
-		exit (exit_code);
+		exit (g_exit_code);
 	}
 	if (ms_isdigit_str(str[1]))
 		return (ms_msg((*ptr), str[1], "numeric argument required"));
@@ -121,9 +121,9 @@ int	exit_built(char	**str, t_list **ptr)
 		return (ms_msg((*ptr), NULL, "too many arguments"));
 	if (i == 2)
 	{
-		exit_code = ms_atoi_char((*ptr), str[1]);
+		g_exit_code = ms_atoi_char((*ptr), str[1]);
 		level_up_down2(*ptr);
-		exit(exit_code);
+		exit(g_exit_code);
 	}
 	return (0);
 }

@@ -16,12 +16,7 @@
 # include <stdlib.h>
 # include "../source/Libft/libft.h"
 
-int	exit_code;
-
-typedef struct sta_pam
-{
-	int		i;
-}	tama_map;
+int	g_exit_code;
 
 typedef struct s_cmnd
 {

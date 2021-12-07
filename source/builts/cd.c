@@ -55,10 +55,10 @@ void	oldpwd_way(t_list *ptr)
 	char	*str;
 
 	str = ft_strdup(use_way(ptr, "OLDPWD="));
-	exit_code = chdir(str);
-	if (exit_code == -1)
+	g_exit_code = chdir(str);
+	if (g_exit_code == -1)
 	{
-		exit_code = 1;
+		g_exit_code = 1;
 		ft_putstr_fd("minishell$ cd: OLDPWD not set\n", STDERR_FILENO);
 	}
 	ft_putendl_fd(str, STDOUT_FILENO);
@@ -67,7 +67,7 @@ void	oldpwd_way(t_list *ptr)
 
 int	other_way(t_gnrl *zik)
 {
-	exit_code = 1;
+	g_exit_code = 1;
 	ft_putstr_fd("minishell$ cd: ", STDERR_FILENO);
 	ft_putstr_fd(zik->cmd->command_array[1], STDERR_FILENO);
 	ft_putstr_fd(": No such file or directory\n", STDERR_FILENO);
@@ -85,15 +85,15 @@ int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 	if (way_to_change == NULL)
 		way_to_change = use_way(ptr, "PWD=");
 	if (i == 1)
-		exit_code = chdir(use_way(ptr, "HOME="));
+		g_exit_code = chdir(use_way(ptr, "HOME="));
 	else if (ft_strcmp(zik->cmd->command_array[1], "-") == 0)
 		oldpwd_way(ptr);
 	else
-		exit_code = chdir(zik->cmd->command_array[1]);
-	if (exit_code == -1)
+		g_exit_code = chdir(zik->cmd->command_array[1]);
+	if (g_exit_code == -1)
 		return (other_way(zik));
 	else
-		exit_code = 0;
+		g_exit_code = 0;
 	way_after_change = getcwd(NULL, 1024);
 	change_str_value(ptr, way_after_change, way_to_change);
 	free(way_to_change);

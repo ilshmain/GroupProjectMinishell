@@ -87,6 +87,6 @@ int	echo_built(t_gnrl *zik, int i, int k)
 		else
 			dop_func(line_break, zik, i);
 	}
-	exit_code = 0;
+	g_exit_code = 0;
 	return (1);
 }

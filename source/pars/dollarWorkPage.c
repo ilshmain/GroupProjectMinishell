@@ -54,7 +54,7 @@ char	*ret_for_dollar_what(char **line, int j)
 
 	tmp = ft_substr_ms(*line, 0, ft_strlen_ms(*line)
 			- (ft_strlen_ms(*line) - j));
-	tmp = pre_use_str_join(tmp, ft_itoa(exit_code));
+	tmp = pre_use_str_join(tmp, ft_itoa(g_exit_code));
 	return (tmp);
 }
 

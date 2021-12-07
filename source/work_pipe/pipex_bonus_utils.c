@@ -53,7 +53,7 @@ int	pid_children(t_gnrl **zik, t_cmnd *start)
 		start = start->next_list;
 	}
 	if ((built_func((*zik), (*zik)->ptr) == 1) && ((*zik)->cmd->fork == 1))
-		exit (exit_code);
+		exit (g_exit_code);
 	pars_envp((*zik)->env, (*zik)->cmd->command_array, 0, 0);
 	return (1);
 }
