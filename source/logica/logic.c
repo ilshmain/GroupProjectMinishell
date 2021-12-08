@@ -19,7 +19,7 @@ int	built_func(t_gnrl *zik, t_list *ptr)
 
 	i = 0;
 	if (ft_strcmp(zik->cmd->command_array[0], "cd") == 0)
-		i = cd_built(ptr, zik, 0);
+		i = cd_built(ptr, zik, -1);
 	if (ft_strcmp(zik->cmd->command_array[0], "pwd") == 0)
 		i = pwd_built();
 	if (ft_strcmp(zik->cmd->command_array[0], "echo") == 0)
@@ -32,6 +32,8 @@ int	built_func(t_gnrl *zik, t_list *ptr)
 		i = unset_built(ptr, zik);
 	if (ft_strcmp(zik->cmd->command_array[0], "exit") == 0)
 		i = exit_built(zik->cmd->command_array, &zik->ptr);
+	clear_envp(zik->env);
+	zik->env = env(ptr);
 	return (i);
 }
 

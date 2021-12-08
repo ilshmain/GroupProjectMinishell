@@ -79,7 +79,7 @@ int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 	char	*way_to_change;
 	char	*way_after_change;
 
-	while (zik->cmd->command_array[i++])
+	while (zik->cmd->command_array[++i])
 		;
 	way_to_change = getcwd(NULL, 1024);
 	if (way_to_change == NULL)
