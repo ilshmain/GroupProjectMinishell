@@ -42,10 +42,11 @@ void	ctrl_c_hook(int sgn)
 {
 	rl_on_new_line();
 	rl_redisplay();
-	printf("  \n");
+	write (STDERR_FILENO, "  \n", 3);
 	rl_on_new_line();
 	rl_replace_line("", 0);
 	rl_redisplay();
+	g_exit_code = 1;
 	(void)sgn;
 }
 

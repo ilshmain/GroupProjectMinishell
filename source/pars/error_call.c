@@ -15,5 +15,5 @@
 void	error_call(char *message)
 {
 	ft_putstr_fd_ms(message, 1);
-	exit(0);
+	exit(g_exit_code);
 }

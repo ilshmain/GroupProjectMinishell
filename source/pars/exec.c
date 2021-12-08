@@ -12,29 +12,6 @@
 
 #include "../../include/minishell.h"
 
-void	exefnc(char **line, t_gnrl **gen)
-{
-	while (1)
-	{
-		(*gen)->env = env((*gen)->ptr);
-		(*gen)->errors = 0;
-		*line = readline("minishell$ ");
-		if (*line == NULL)
-			error_call("exit\n");
-		add_history(*line);
-		*line = init_line(*line);
-		if (first_fnc(line, gen, 0) == 0)
-		{
-			(*gen)->cmd = pre_logic_work(&(*gen)->cmd);
-			if ((*gen)->cmd != NULL)
-				logica(gen);
-		}
-		else
-			lstclear(&(*gen)->cmd);
-		(*gen)->env = clear_envp((*gen)->env);
-	}
-}
-
 t_cmnd	*pre_logic_work(t_cmnd **cmd)
 {
 	t_cmnd	*tmp;

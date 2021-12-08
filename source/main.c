@@ -12,6 +12,47 @@
 
 #include "../include/minishell.h"
 
+static void	sig_noninter_ctrl_c(int sig)
+{
+	(void)sig;
+	ft_putstr_fd("\n", STDERR_FILENO);
+	g_exit_code = 130;
+}
+
+void	sign(void)
+{
+	signal(SIGQUIT, SIG_IGN);
+	signal(SIGTERM, SIG_IGN);
+	signal(SIGINT, &ctrl_c_hook);
+}
+
+void	exefnc(char **line, t_gnrl **gen)
+{
+	while (1)
+	{
+		sign();
+		(*gen)->env = env((*gen)->ptr);
+		(*gen)->errors = 0;
+		*line = readline("minishell$ ");
+		if (*line == NULL)
+			error_call("exit\n");
+		if (*line[0] != '\0')
+			add_history(*line);
+		*line = init_line(*line);
+		if (first_fnc(line, gen, 0) == 0)
+		{
+			(*gen)->cmd = pre_logic_work(&(*gen)->cmd);
+			signal(SIGINT, sig_noninter_ctrl_c);
+			if ((*gen)->cmd != NULL)
+				logica(gen);
+		}
+		else
+			lstclear(&(*gen)->cmd);
+		sign();
+		(*gen)->env = clear_envp((*gen)->env);
+	}
+}
+
 int	main(int argc, char const *argv[], char **envp)
 {
 	char	*line;
@@ -23,51 +64,5 @@ int	main(int argc, char const *argv[], char **envp)
 	gen = malloc(sizeof (t_gnrl));
 	gen->heredoc_struct = NULL;
 	initial_env(envp, &gen->ptr, 0);
-	signal(SIGQUIT, SIG_IGN);
-	signal(SIGTERM, SIG_IGN);
-	signal(SIGINT, &ctrl_c_hook);
 	exefnc(&line, &gen);
 }
-
-//void	fncMonitor(t_cmnd *cmd)
-//{
-//	t_cmnd *tmp;
-//	int i = 0;
-//	int j = 0;
-//
-//	tmp = cmd;
-//	while (1)
-//	{
-//		i = 0;
-//		j = 0;
-//		while (1)
-//		{
-//			printf("command_array[%d]: %s\n", i, tmp->command_array[i]);
-//			i++;
-//			if (tmp->command_array[i] == NULL)
-//				break;
-//		}
-//		printf("flg_butil: %d\n", tmp->flg_butil);
-//		printf("flg_pipe: %d\n", tmp->flg_pipe);
-//		printf("fd_open: %d\n", tmp->fd_open);
-//		printf("fd_write: %d\n", tmp->fd_write);
-//		printf("fd_reWrite: %d\n", tmp->fd_reWrite);
-//		printf("err: %d\n", tmp->err);
-//		if (tmp->heredoc != NULL)
-//		while (1)
-//		{
-//			printf("heredoc[%d]: %s\n", j, tmp->heredoc[j]);
-//			j++;
-//			if (tmp->heredoc[j] == NULL)
-//				break;
-//		}
-//		else
-//			printf("heredoc is missing");
-//		if (tmp->nextList == NULL) {
-//			printf("\nlast list\n\n");
-//			break;
-//		}
-//		printf("\nnext list -->>\n\n");
-//		tmp = tmp->nextList;
-//	}
-//}
