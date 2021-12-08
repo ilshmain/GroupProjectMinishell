@@ -35,44 +35,42 @@ SRCS			=	./source/pars/safePage.c \
 					./source/work_pipe/pipex_bonus_utils1.c \
 					./source/work_pipe/redirects.c \
 
-OBJS			=	$(SRCS:.c=.o)
+OBJS			=	$(patsubst %.c, %.o, $(SRCS))
 
 HEADERS			=	-I./include/ -I.source/Libft/
 
 CC				=	gcc
 
-#BRWRINST		=	brew reinstall readline
-
 RM				=	rm -rfv
 
 CFLAGS			=	-Wall -Wextra -Werror
 
+MSH_HRD			=	./include/minishell.h
+STRUCT_HRD		=	./include/structs_minishell.h
+LIB_HRD			=	./source/Libft/libht.h
 LIBS			=	./source/Libft/libft.a
+LIB_DIR			=	./source/Libft/
 RDL				= 	-lreadline
 RDL_MAC			= 	-L/Users/$(USER)/.brew/Cellar/readline/8.1.1/lib/
 
 
 all:			$(NAME)
 
-%.o:			%.c
-				$(CC) $(CFLAGS) -c -g $< -o $@ $(HEADERS)
+%.o:			%.c $(MSH_HRD) $(STRUCT_HRD)
+				$(CC) $(CFLAGS) -c -g $< -o $@
 
-$(NAME):		$(OBJS) ./include/minishell.h ./include/structs_minishell.h ./source/Libft/libft.h
-				cd ./source/Libft/ && $(MAKE)
-				#$(BRWRINST)
-				$(CC) $(CFLAGS) $(LIBS) $(HEADERS) $(RDL_MAC) $(RDL) $(OBJS) -o $(NAME)
+$(NAME):		$(OBJS) ./source/Libft/libft.h
+				@make -C $(LIB_DIR)
+				@$(CC) $(CFLAGS) -o $(NAME) $(LIBS) $(HEADERS) $(RDL_MAC) $(RDL) $(OBJS)
 
 clean:
 				$(MAKE) clean -C ./source/Libft/
 				$(RM) $(OBJS)
-				@echo "\033[36;1m\nCleaning succeed\n\033[0m"
 
 fclean:			clean
 				$(MAKE) fclean -C ./source/Libft/
 				$(RM) $(NAME)
-				@echo "\033[32;1m\nAll created files were deleted\n\033[0m"
 
 re:				fclean $(NAME)
-				@echo "\033[35;1m\nRemake done\n\033[0m"
 
 .PHONY:			all clean fclean re
