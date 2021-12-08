@@ -41,24 +41,20 @@ void	shell_name(char **envp, char **first_argv)
 	ft_putstr_fd("Not executable file", STDERR_FILENO);
 }
 
-char	**path(char **envp, int i)
+char	**dop_path(char *search_path, char **out, char *str)
 {
-	char	**out;
-	char	*search_path;
+	int		i;
 	char	*new_out;
 
-	out = NULL;
-	while (envp[i])
-	{
-		search_path = ft_strnstr(envp[i], "PATH=", 5);
-		if (search_path)
-		{
-			search_path = ft_strrchr(search_path, '=');
-			out = ft_split(search_path, ':');
-		}
-		i++;
-	}
 	i = 0;
+	if (search_path == 0)
+	{
+		ft_putstr_fd("minishell$: ", STDERR_FILENO);
+		ft_putstr_fd(str, STDERR_FILENO);
+		ft_putendl_fd(": No such file or directory", STDERR_FILENO);
+		g_exit_code = 127;
+		exit(g_exit_code);
+	}
 	while (out[i])
 	{
 		new_out = ft_strjoin(out[i], "/");
@@ -70,11 +66,24 @@ char	**path(char **envp, int i)
 	return (out);
 }
 
-void	print_error(char *str, char *str1)
+char	**path(char **envp, int i, char *str)
 {
-	ft_putstr_fd("minishell$: ", STDERR_FILENO);
-	ft_putstr_fd(str, STDERR_FILENO);
-	ft_putstr_fd(str1, STDERR_FILENO);
+	char	**out;
+	char	*search_path;
+
+	out = NULL;
+	while (envp[i])
+	{
+		search_path = ft_strnstr(envp[i], "PATH=", 5);
+		if (search_path)
+		{
+			search_path = ft_strrchr(search_path, '=');
+			out = ft_split(search_path, ':');
+			break ;
+		}
+		i++;
+	}
+	return (dop_path(search_path, out, str));
 }
 
 void	pars_envp(char **envp, char	**first_argv, int i, int k)
@@ -84,7 +93,7 @@ void	pars_envp(char **envp, char	**first_argv, int i, int k)
 
 	if (ft_strcmp("./minishell", first_argv[0]) == 0)
 		shell_name(envp, first_argv);
-	new_out = path(envp, i);
+	new_out = path(envp, i, first_argv[0]);
 	while (new_out[k])
 	{
 		out = ft_strjoin(new_out[k], first_argv[0]);

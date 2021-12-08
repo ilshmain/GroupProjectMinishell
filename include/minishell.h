@@ -35,6 +35,7 @@ char	*change_ft_strrchr(const char *s, int c);
 //********************************************
 
 //BUILT prototype*****************************
+void	print_error(char *str, char *str1);
 char	**clear_envp(char **envp);
 char	*level_up_down(char *str);
 void	check_heredoc(char **argv, t_cmnd *cmd);
@@ -44,7 +45,7 @@ int		pwd_built(void);
 int		cd_built(t_list *ptr, t_gnrl *zik, int i);
 int		echo_built(t_gnrl *zik, int i, int k);
 int		export_built(t_list *ptr, t_gnrl *zik);
-int		unset_built(t_list *ptr, t_gnrl *zik);
+int		unset_built(t_list *ptr, t_gnrl *zik, int i, int k);
 int		built_func(t_gnrl *zik, t_list *ptr);
 int		logica(t_gnrl **zik);
 int		size_heredoc(char **argv);

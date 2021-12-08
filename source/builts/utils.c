@@ -84,3 +84,10 @@ char	*change_ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
+
+void	print_error(char *str, char *str1)
+{
+	ft_putstr_fd("minishell$: ", STDERR_FILENO);
+	ft_putstr_fd(str, STDERR_FILENO);
+	ft_putstr_fd(str1, STDERR_FILENO);
+}

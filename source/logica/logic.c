@@ -29,7 +29,7 @@ int	built_func(t_gnrl *zik, t_list *ptr)
 	if (ft_strcmp(zik->cmd->command_array[0], "export") == 0)
 		i = export_built(ptr, zik);
 	if (ft_strcmp(zik->cmd->command_array[0], "unset") == 0)
-		i = unset_built(ptr, zik);
+		i = unset_built(ptr, zik, 0, 0);
 	if (ft_strcmp(zik->cmd->command_array[0], "exit") == 0)
 		i = exit_built(zik->cmd->command_array, &zik->ptr);
 	clear_envp(zik->env);

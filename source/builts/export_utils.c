@@ -30,6 +30,26 @@ void	ft_lstdel(t_list *lst)
 	lst = NULL;
 }
 
+int	check_export(char *str, t_list *ptr)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '=')
+		i++;
+	while (ptr)
+	{
+		if (!ft_strncmp(str, ptr->str, i))
+		{
+			free(ptr->str);
+			ptr->str = ft_strdup(str);
+			return (1);
+		}
+		ptr = ptr->next;
+	}
+	return (0);
+}
+
 void	dop_func_export(t_list *ptr, t_gnrl *zik)
 {
 	int	i;
@@ -37,10 +57,12 @@ void	dop_func_export(t_list *ptr, t_gnrl *zik)
 	i = 1;
 	while (zik->cmd->command_array[i])
 	{
+		if (check_export(zik->cmd->command_array[i], zik->ptr) == 1)
+			return ;
 		if (checking_validity_string(zik->cmd->command_array[i]) != 0)
 		{
 			print_error_func("minishell$: export: ", \
-					zik->cmd->command_array[i]);
+			zik->cmd->command_array[i]);
 		}
 		else
 		{
