@@ -171,5 +171,6 @@ int		no_one_symbol_in_str(char *str, char sym);
 char	*get_tilda(char **line, int *i);
 void	bin_dir_check(char **cmd);
 void	lstclear(t_cmnd **lst);
+void	sign(void);
 
 #endif

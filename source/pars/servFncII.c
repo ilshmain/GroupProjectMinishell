@@ -42,7 +42,7 @@ void	ctrl_c_hook(int sgn)
 {
 	rl_on_new_line();
 	rl_redisplay();
-	write (STDERR_FILENO, "  \n", 3);
+	ft_putendl_fd("           ", STDERR_FILENO);
 	rl_on_new_line();
 	rl_replace_line("", 0);
 	rl_redisplay();

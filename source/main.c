@@ -48,7 +48,6 @@ void	exefnc(char **line, t_gnrl **gen)
 		}
 		else
 			lstclear(&(*gen)->cmd);
-		sign();
 		(*gen)->env = clear_envp((*gen)->env);
 	}
 }

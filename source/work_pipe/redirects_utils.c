@@ -22,19 +22,24 @@ int	size_heredoc(char **argv)
 	return (i - 1);
 }
 
-void	heredoc(char **argv, t_cmnd *cmd)
+void	cch_hrd(int sgn)
 {
-	int		i;
+	(void)sgn;
+	exit(g_exit_code);
+}
+
+void	heredoc(char **argv, t_cmnd *cmd, int i)
+{
 	int		len;
 	char	*buf;
 
 	buf = NULL;
-	i = 0;
 	len = size_heredoc(argv);
 	while (argv[i])
 	{
 		while (ft_strcmp(buf, argv[i]))
 		{
+			signal(SIGINT, cch_hrd);
 			write(1, "> ", 2);
 			if (get_next_line(0, &buf) && \
 				ft_strncmp(buf, argv[i], ft_strlen(argv[i])))
@@ -42,6 +47,8 @@ void	heredoc(char **argv, t_cmnd *cmd)
 				if (len == i)
 					ft_putendl_fd(buf, cmd->out);
 			}
+			else
+				error_call("");
 			free(buf);
 		}
 		free(argv[i]);
@@ -54,7 +61,9 @@ void	check_heredoc(char **argv, t_cmnd *cmd)
 {
 	int	fd[2];
 	int	pid;
+	int	i;
 
+	i = 0;
 	if (pipe(fd) < 0)
 		ft_perror("Error pipe");
 	pid = fork();
@@ -62,7 +71,7 @@ void	check_heredoc(char **argv, t_cmnd *cmd)
 	{
 		close(fd[0]);
 		cmd->out = fd[1];
-		heredoc(argv, cmd);
+		heredoc(argv, cmd, i);
 	}
 	else
 	{
