@@ -35,7 +35,7 @@ void	exefnc(char **line, t_gnrl **gen)
 		(*gen)->errors = 0;
 		*line = readline("minishell$ ");
 		if (*line == NULL)
-			error_call("exit\n");
+			error_call("\e[1A\e[12C" "\bexit\n");
 		if (*line[0] != '\0')
 			add_history(*line);
 		*line = init_line(*line);
