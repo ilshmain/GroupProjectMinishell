@@ -36,7 +36,6 @@ char	*fnc_dollar(char *line, int *i, char **env)
 	tmp2 = dollar_assigment(line, i, &j, env);
 	if (tmp != NULL && tmp2 != NULL)
 		tmp = pre_use_str_join(tmp, tmp2);
-	tmp2 = NULL;
 	if (line[*i] != '\0')
 	{
 		tmp2 = ft_strdup_ms(line + *i);

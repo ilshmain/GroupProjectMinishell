@@ -35,17 +35,19 @@ char	*fnc_dquot(char **line, int *i, char **env, t_gnrl **gen)
 {
 	int	j;
 
-	j = *i;
-	while (line[0][++*i])
+	j = (*i)++;
+	while (line[0][*i])
 	{
 		if (line[0][*i] == '\\' && (line[0][*i + 1] == '\"'
 				|| line[0][*i + 1] == '$'
 				|| line[0][*i + 1] == '\\'))
 			line[0] = fnc_bslsh(line[0], i, gen);
-		if (line[0][*i] == '$')
+		else if (line[0][*i] == '$')
 			line[0] = pre_use_fnc_dollar(line[0], i, env);
-		if (line[0][*i] == '\"')
+		else if (line[0][*i] == '\"')
 			break ;
+		else
+			(*i)++;
 	}
 	if (line[0][*i] == '\0')
 		(*gen)->errors = 1;
