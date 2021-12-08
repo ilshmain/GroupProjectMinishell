@@ -48,6 +48,8 @@ void	change_str_value(t_list *ptr, char *wayAfterChange, char *wayToChange)
 		}
 		ptr = ptr->next;
 	}
+	free(wayToChange);
+	free(wayAfterChange);
 }
 
 void	oldpwd_way(t_list *ptr)
@@ -83,7 +85,10 @@ int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 		;
 	way_to_change = getcwd(NULL, 1024);
 	if (way_to_change == NULL)
+	{
+		free(way_to_change);
 		way_to_change = use_way(ptr, "PWD=");
+	}
 	if (i == 1)
 		g_exit_code = chdir(use_way(ptr, "HOME="));
 	else if (ft_strcmp(zik->cmd->command_array[1], "-") == 0)
@@ -96,8 +101,6 @@ int	cd_built(t_list *ptr, t_gnrl *zik, int i)
 		g_exit_code = 0;
 	way_after_change = getcwd(NULL, 1024);
 	change_str_value(ptr, way_after_change, way_to_change);
-	free(way_to_change);
-	free(way_after_change);
 	return (1);
 }
 //**************************************
