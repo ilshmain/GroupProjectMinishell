@@ -35,7 +35,13 @@ int	check_export(char *str, t_list *ptr)
 	int	i;
 
 	i = 0;
-	while (str[i] != '=')
+	while (str[i])
+	{
+		if (str[i] != '=')
+			break ;
+		i++;
+	}
+	if (i == 0)
 		i++;
 	while (ptr)
 	{
