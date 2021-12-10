@@ -12,20 +12,18 @@
 
 #include "../../include/minishell.h"
 
-char	**fake_split(char *str, char sym)
+char	**fake_split(char *str, char sym, char **tmp, int i)
 {
-	char	**tmp;
-	int		i;
 	int		j;
 	int		qt;
 
 	if (!str)
 		return (0);
-	i = -1;
+	i = 0;
 	j = 0;
 	qt = 0;
 	tmp = (char **)malloc(sizeof (char *) * get_qt_str(str, ' ') + 1);
-	while (str[++i])
+	while (str[i])
 	{
 		if (str[i] == sym && (str[i + 1] != '\0' || qt == 0))
 		{
@@ -34,8 +32,10 @@ char	**fake_split(char *str, char sym)
 			while (str[i] && str[i++] == sym)
 				;
 		}
+		if (str[i])
+			i++;
 	}
-	if (str[j] != '\0')
+	if (str[j] != '\0' && no_one_symbol_in_str(&str[j], ' '))
 		tmp[qt++] = ft_substr(str, j, i - j);
 	tmp[qt] = NULL;
 	return (tmp);

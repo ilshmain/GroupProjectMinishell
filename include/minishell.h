@@ -165,7 +165,7 @@ int		fd_closer(int fd);
 void	clear_hrd(t_list **strct);
 int		comparison_first_word(char *str, char delimiter, char *compr_word);
 int		get_qt_str(char *str, char sym);
-char	**fake_split(char *str, char sym);
+char	**fake_split(char *str, char sym, char **tmp, int i);
 void	ffnc_in_cycle(char **line, int *i, t_gnrl **gen);
 char	*space_cut_for_ffnc(char **line, int *i);
 int		no_one_symbol_in_str(char *str, char sym);

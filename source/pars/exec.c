@@ -77,7 +77,7 @@ char	*pre_use_fnc_pipe(char *line, int *where_is_pipe, t_gnrl **gen)
 	pu_fnc_pipe_safe_page(line, where_is_pipe, &tmp_command_line, &(*gen)->cmd);
 	tmp = ft_substr_ms(line, 0, *where_is_pipe);
 	if (comparison_first_word(tmp, ' ', "echo"))
-		tmp_command_line->command_array = fake_split(tmp, ' ');
+		tmp_command_line->command_array = fake_split(tmp, ' ', NULL, 0);
 	else
 		tmp_command_line->command_array = ft_split(tmp, ' ');
 	bin_dir_check(tmp_command_line->command_array);
